@@ -9,11 +9,11 @@
 import Foundation
 import SceneKit
 
-extension SCNNode {
+extension SCNGeometry {
     
-    class func lineBetweenNodeA(nodeA: SCNNode, nodeB: SCNNode) -> SCNNode {
-        let positions: [CGFloat] = [nodeA.position.x, nodeA.position.y, nodeA.position.z,
-                                    nodeB.position.x, nodeB.position.y, nodeB.position.z]
+    class func lineBetweenPoints(pointA: SCNVector3, pointB: SCNVector3) -> SCNGeometry {
+        let positions: [CGFloat] = [pointA.x, pointA.y, pointA.z,
+                                    pointB.x, pointB.y, pointB.z]
         let positionData = NSData(bytes: positions,
                                   length: MemoryLayout<Float32>.size*positions.count)
         let indices: [Int32] = [0, 1]
@@ -34,8 +34,7 @@ extension SCNNode {
                                          primitiveCount: indices.count,
                                          bytesPerIndex: MemoryLayout<Int32>.size)
         
-        let line = SCNGeometry(sources: [source], elements: [element])
-        return SCNNode(geometry: line)
+        return SCNGeometry(sources: [source], elements: [element])
     }
     
 }

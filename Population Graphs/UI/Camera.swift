@@ -17,8 +17,9 @@ func getCamera() -> SCNNode {
     //camera.orientation = SCNQuaternion(x: -0.26, y: -0.32, z: 0.0, w: 0.9)
     
     node.camera = camera
-    node.position = SCNVector3Make(-25.0, 10.0, 30.0)
-    node.look(at: SCNVector3Zero )
+    node.position = SCNVector3Make(0, 10, 20)
+    node.rotation = SCNVector4Make(1, 0, 0, -sin(10.0/20.0) )
+    //node.look(at: SCNVector3Zero )
     
     return node
     

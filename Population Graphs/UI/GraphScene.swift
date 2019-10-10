@@ -13,23 +13,22 @@ class GraphScene: SCNScene {
 
     var axes: SCNNode
     var camera: SCNNode
-    var spotLight: SCNNode
-    var ambientLight:SCNNode
     
     override init() {
         
         axes = createAxes()
         camera = getCamera()
-        spotLight = getSpotLight()
-        ambientLight = getAmbientLight()
         
         super.init()
         
+        camera.addChildNode( getOmniLight() )
+        camera.addChildNode( getSpotLight() )
+        
         rootNode.addChildNode( camera )
         rootNode.addChildNode( axes )
-        rootNode.addChildNode( spotLight )
-        rootNode.addChildNode( ambientLight )
-        
+        rootNode.addChildNode( getAmbientLight() )
+
+        self.background.contents = [NSColor.darkGray]
     }
     
     required init?(coder: NSCoder) {
