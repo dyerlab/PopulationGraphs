@@ -15,6 +15,7 @@
 		2A1042F6234EC2880081D067 /* GraphScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1042F5234EC2880081D067 /* GraphScene.swift */; };
 		2A1042F8234EC4B40081D067 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1042F7234EC4B40081D067 /* Node.swift */; };
 		2A1042FA234EC63C0081D067 /* materials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1042F9234EC63C0081D067 /* materials.swift */; };
+		2A6B0700234ECCB7000CE37B /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B06FF234ECCB7000CE37B /* Edge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		2A1042F5234EC2880081D067 /* GraphScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphScene.swift; sourceTree = "<group>"; };
 		2A1042F7234EC4B40081D067 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		2A1042F9234EC63C0081D067 /* materials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = materials.swift; sourceTree = "<group>"; };
+		2A6B06FF234ECCB7000CE37B /* Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				2A1042F5234EC2880081D067 /* GraphScene.swift */,
 				2A1042F3234EC2020081D067 /* GraphViewController.swift */,
 				2A1042F7234EC4B40081D067 /* Node.swift */,
+				2A6B06FF234ECCB7000CE37B /* Edge.swift */,
 				2A1042F9234EC63C0081D067 /* materials.swift */,
 				2A1042D9234EC14E0081D067 /* Assets.xcassets */,
 				2A1042DB234EC14E0081D067 /* Main.storyboard */,
@@ -206,6 +209,7 @@
 			files = (
 				2A1042F4234EC2020081D067 /* GraphViewController.swift in Sources */,
 				2A1042D6234EC14A0081D067 /* AppDelegate.swift in Sources */,
+				2A6B0700234ECCB7000CE37B /* Edge.swift in Sources */,
 				2A1042F6234EC2880081D067 /* GraphScene.swift in Sources */,
 				2A1042F8234EC4B40081D067 /* Node.swift in Sources */,
 				2A1042FA234EC63C0081D067 /* materials.swift in Sources */,

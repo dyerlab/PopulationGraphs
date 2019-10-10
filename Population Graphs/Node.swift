@@ -11,6 +11,14 @@ import SceneKit
 
 class Node: SCNNode {
     
+    var neighbors: [Node] = []
+    var degree: Int {
+        get { return neighbors.count }
+    }
+    var disconnected: Bool {
+        get { return degree == 0 }
+    }
+    
     init(radius: CGFloat, color: NSColor = NSColor.lightGray) {
         super.init()
         self.geometry = SCNSphere(radius: radius)
