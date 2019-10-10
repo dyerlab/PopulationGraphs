@@ -13,7 +13,5 @@ import SceneKit
 func getSolidMaterial( baseColor: NSColor ) -> SCNMaterial {
     let ret = SCNMaterial()
     ret.diffuse.contents = baseColor
-    ret.ambient.contents = baseColor
-    ret.specular.contents = baseColor
     return ret
 }
