@@ -22,7 +22,8 @@ class Node: SCNNode {
     init(radius: CGFloat, color: NSColor = NSColor.lightGray) {
         super.init()
         self.geometry = SCNSphere(radius: radius)
-        self.geometry?.firstMaterial? = getSolidMaterial(baseColor: color)
+        self.geometry?.firstMaterial?.fillMode = .lines
+
     }
     
     required init?(coder: NSCoder) {
@@ -31,3 +32,6 @@ class Node: SCNNode {
     
     
 }
+
+
+

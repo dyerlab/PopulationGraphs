@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A099C13234F458B00EE9E51 /* SCNNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A099C12234F458B00EE9E51 /* SCNNode.swift */; };
+		2A099C16234F45F000EE9E51 /* SCNGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A099C15234F45F000EE9E51 /* SCNGeometry.swift */; };
+		2A099C19234F4D1000EE9E51 /* materials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1042F9234EC63C0081D067 /* materials.swift */; };
+		2A099C1B234F521600EE9E51 /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A099C1A234F521600EE9E51 /* Axis.swift */; };
+		2A099C1D234F53A500EE9E51 /* Lighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A099C1C234F53A500EE9E51 /* Lighting.swift */; };
+		2A099C1F234F548A00EE9E51 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A099C1E234F548A00EE9E51 /* Camera.swift */; };
 		2A1042D6234EC14A0081D067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1042D5234EC14A0081D067 /* AppDelegate.swift */; };
 		2A1042DA234EC14E0081D067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A1042D9234EC14E0081D067 /* Assets.xcassets */; };
 		2A1042DD234EC14E0081D067 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A1042DB234EC14E0081D067 /* Main.storyboard */; };
@@ -29,6 +35,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A099C12234F458B00EE9E51 /* SCNNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNNode.swift; sourceTree = "<group>"; };
+		2A099C15234F45F000EE9E51 /* SCNGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNGeometry.swift; sourceTree = "<group>"; };
+		2A099C1A234F521600EE9E51 /* Axis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axis.swift; sourceTree = "<group>"; };
+		2A099C1C234F53A500EE9E51 /* Lighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lighting.swift; sourceTree = "<group>"; };
+		2A099C1E234F548A00EE9E51 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		2A1042D2234EC14A0081D067 /* Population Graphs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Population Graphs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1042D5234EC14A0081D067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A1042D9234EC14E0081D067 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +74,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A099C14234F45C500EE9E51 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2A099C12234F458B00EE9E51 /* SCNNode.swift */,
+				2A099C15234F45F000EE9E51 /* SCNGeometry.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2A099C17234F4A6500EE9E51 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				2A1042F7234EC4B40081D067 /* Node.swift */,
+				2A6B06FF234ECCB7000CE37B /* Edge.swift */,
+				2A1042F9234EC63C0081D067 /* materials.swift */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
+		2A099C18234F4A7500EE9E51 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2A099C1A234F521600EE9E51 /* Axis.swift */,
+				2A099C1E234F548A00EE9E51 /* Camera.swift */,
+				2A099C1C234F53A500EE9E51 /* Lighting.swift */,
+				2A1042F5234EC2880081D067 /* GraphScene.swift */,
+				2A1042F3234EC2020081D067 /* GraphViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		2A1042C9234EC14A0081D067 = {
 			isa = PBXGroup;
 			children = (
@@ -85,11 +127,9 @@
 			isa = PBXGroup;
 			children = (
 				2A1042D5234EC14A0081D067 /* AppDelegate.swift */,
-				2A1042F5234EC2880081D067 /* GraphScene.swift */,
-				2A1042F3234EC2020081D067 /* GraphViewController.swift */,
-				2A1042F7234EC4B40081D067 /* Node.swift */,
-				2A6B06FF234ECCB7000CE37B /* Edge.swift */,
-				2A1042F9234EC63C0081D067 /* materials.swift */,
+				2A099C18234F4A7500EE9E51 /* UI */,
+				2A099C17234F4A6500EE9E51 /* Graph */,
+				2A099C14234F45C500EE9E51 /* Extensions */,
 				2A1042D9234EC14E0081D067 /* Assets.xcassets */,
 				2A1042DB234EC14E0081D067 /* Main.storyboard */,
 				2A1042DE234EC14E0081D067 /* Info.plist */,
@@ -207,12 +247,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A099C1F234F548A00EE9E51 /* Camera.swift in Sources */,
+				2A099C1D234F53A500EE9E51 /* Lighting.swift in Sources */,
 				2A1042F4234EC2020081D067 /* GraphViewController.swift in Sources */,
 				2A1042D6234EC14A0081D067 /* AppDelegate.swift in Sources */,
 				2A6B0700234ECCB7000CE37B /* Edge.swift in Sources */,
 				2A1042F6234EC2880081D067 /* GraphScene.swift in Sources */,
+				2A099C16234F45F000EE9E51 /* SCNGeometry.swift in Sources */,
 				2A1042F8234EC4B40081D067 /* Node.swift in Sources */,
 				2A1042FA234EC63C0081D067 /* materials.swift in Sources */,
+				2A099C1B234F521600EE9E51 /* Axis.swift in Sources */,
+				2A099C13234F458B00EE9E51 /* SCNNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A099C19234F4D1000EE9E51 /* materials.swift in Sources */,
 				2A1042E9234EC14E0081D067 /* Population_GraphsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
