@@ -26,6 +26,9 @@ class Edge: SCNNode {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func hasNode( node: Node ) -> Bool {
+        return (node == self.node1 || node == self.node2)
+    }
     
 }
 
