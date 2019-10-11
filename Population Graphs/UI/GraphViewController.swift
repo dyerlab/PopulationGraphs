@@ -20,9 +20,7 @@ class GraphViewController: NSViewController {
         // Do any additional setup after loading the view.
         
         graphView.scene = GraphScene()
-        graphView.autoenablesDefaultLighting = true
-        graphView.allowsCameraControl = true
-        graphView.showsStatistics = true
+        
         
     }
 

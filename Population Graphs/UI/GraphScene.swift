@@ -27,8 +27,8 @@ class GraphScene: SCNScene {
         rootNode.addChildNode( camera )
         rootNode.addChildNode( axes )
         rootNode.addChildNode( getAmbientLight() )
-
-        self.background.contents = [NSColor.darkGray]
+        rootNode.addChildNode( getFloor() )
+        
     }
     
     required init?(coder: NSCoder) {

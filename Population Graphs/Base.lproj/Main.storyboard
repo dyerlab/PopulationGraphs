@@ -710,7 +710,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="693" height="759"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <sceneView translatesAutoresizingMaskIntoConstraints="NO" id="NFe-og-V9O">
+                            <sceneView translatesAutoresizingMaskIntoConstraints="NO" id="NFe-og-V9O" customClass="GraphView" customModule="Population_Graphs" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="693" height="759"/>
                             </sceneView>
                         </subviews>
@@ -727,7 +727,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="306.5" y="1369.5"/>
+            <point key="canvasLocation" x="201" y="1551"/>
         </scene>
     </scenes>
 </document>

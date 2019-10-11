@@ -13,6 +13,7 @@
 		2A099C1B234F521600EE9E51 /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A099C1A234F521600EE9E51 /* Axis.swift */; };
 		2A099C1D234F53A500EE9E51 /* Lighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A099C1C234F53A500EE9E51 /* Lighting.swift */; };
 		2A099C1F234F548A00EE9E51 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A099C1E234F548A00EE9E51 /* Camera.swift */; };
+		2A0B86642350F968002F7181 /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0B86632350F968002F7181 /* Floor.swift */; };
 		2A1042D6234EC14A0081D067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1042D5234EC14A0081D067 /* AppDelegate.swift */; };
 		2A1042DA234EC14E0081D067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A1042D9234EC14E0081D067 /* Assets.xcassets */; };
 		2A1042DD234EC14E0081D067 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A1042DB234EC14E0081D067 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		2A1042F8234EC4B40081D067 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1042F7234EC4B40081D067 /* Node.swift */; };
 		2A1042FA234EC63C0081D067 /* materials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1042F9234EC63C0081D067 /* materials.swift */; };
 		2A6B0700234ECCB7000CE37B /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B06FF234ECCB7000CE37B /* Edge.swift */; };
+		2A9413102350D05700229CA8 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A94130F2350D05700229CA8 /* GraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,7 @@
 		2A099C1A234F521600EE9E51 /* Axis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axis.swift; sourceTree = "<group>"; };
 		2A099C1C234F53A500EE9E51 /* Lighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lighting.swift; sourceTree = "<group>"; };
 		2A099C1E234F548A00EE9E51 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		2A0B86632350F968002F7181 /* Floor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
 		2A1042D2234EC14A0081D067 /* Population Graphs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Population Graphs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1042D5234EC14A0081D067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A1042D9234EC14E0081D067 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 		2A1042F7234EC4B40081D067 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		2A1042F9234EC63C0081D067 /* materials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = materials.swift; sourceTree = "<group>"; };
 		2A6B06FF234ECCB7000CE37B /* Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
+		2A94130F2350D05700229CA8 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +101,10 @@
 			isa = PBXGroup;
 			children = (
 				2A099C1A234F521600EE9E51 /* Axis.swift */,
+				2A0B86632350F968002F7181 /* Floor.swift */,
 				2A099C1E234F548A00EE9E51 /* Camera.swift */,
 				2A099C1C234F53A500EE9E51 /* Lighting.swift */,
+				2A94130F2350D05700229CA8 /* GraphView.swift */,
 				2A1042F5234EC2880081D067 /* GraphScene.swift */,
 				2A1042F3234EC2020081D067 /* GraphViewController.swift */,
 			);
@@ -254,10 +260,12 @@
 				2A6B0700234ECCB7000CE37B /* Edge.swift in Sources */,
 				2A1042F6234EC2880081D067 /* GraphScene.swift in Sources */,
 				2A099C16234F45F000EE9E51 /* SCNGeometry.swift in Sources */,
+				2A0B86642350F968002F7181 /* Floor.swift in Sources */,
 				2A1042F8234EC4B40081D067 /* Node.swift in Sources */,
 				2A1042FA234EC63C0081D067 /* materials.swift in Sources */,
 				2A099C1B234F521600EE9E51 /* Axis.swift in Sources */,
 				2A099C13234F458B00EE9E51 /* SCNNode.swift in Sources */,
+				2A9413102350D05700229CA8 /* GraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

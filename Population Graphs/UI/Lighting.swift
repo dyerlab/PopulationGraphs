@@ -19,7 +19,6 @@ func getAmbientLight() -> SCNNode {
     //light.intensity = 40
     
     node.light = light
-    
 
     return node
 }
@@ -44,11 +43,8 @@ func getOmniLight() -> SCNNode {
     let node = SCNNode()
     let light = SCNLight()
     light.type = .omni
-    light.color = NSColor.white
-    light.attenuationStartDistance = 15
-    light.attenuationEndDistance = 20
-    
     node.light = light
+    node.position = SCNVector3Make(0, 100, 100)
     
     return node
 }
