@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2A099C13234F458B00EE9E51 /* SCNNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A099C12234F458B00EE9E51 /* SCNNode.swift */; };
 		2A099C16234F45F000EE9E51 /* SCNGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A099C15234F45F000EE9E51 /* SCNGeometry.swift */; };
-		2A099C19234F4D1000EE9E51 /* materials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1042F9234EC63C0081D067 /* materials.swift */; };
+		2A099C19234F4D1000EE9E51 /* Materials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1042F9234EC63C0081D067 /* Materials.swift */; };
 		2A099C1B234F521600EE9E51 /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A099C1A234F521600EE9E51 /* Axis.swift */; };
 		2A099C1D234F53A500EE9E51 /* Lighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A099C1C234F53A500EE9E51 /* Lighting.swift */; };
 		2A099C1F234F548A00EE9E51 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A099C1E234F548A00EE9E51 /* Camera.swift */; };
@@ -21,7 +21,7 @@
 		2A1042F4234EC2020081D067 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1042F3234EC2020081D067 /* GraphViewController.swift */; };
 		2A1042F6234EC2880081D067 /* GraphScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1042F5234EC2880081D067 /* GraphScene.swift */; };
 		2A1042F8234EC4B40081D067 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1042F7234EC4B40081D067 /* Node.swift */; };
-		2A1042FA234EC63C0081D067 /* materials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1042F9234EC63C0081D067 /* materials.swift */; };
+		2A1042FA234EC63C0081D067 /* Materials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1042F9234EC63C0081D067 /* Materials.swift */; };
 		2A6B0700234ECCB7000CE37B /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6B06FF234ECCB7000CE37B /* Edge.swift */; };
 		2A9413102350D05700229CA8 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A94130F2350D05700229CA8 /* GraphView.swift */; };
 /* End PBXBuildFile section */
@@ -55,7 +55,7 @@
 		2A1042F3234EC2020081D067 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		2A1042F5234EC2880081D067 /* GraphScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphScene.swift; sourceTree = "<group>"; };
 		2A1042F7234EC4B40081D067 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
-		2A1042F9234EC63C0081D067 /* materials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = materials.swift; sourceTree = "<group>"; };
+		2A1042F9234EC63C0081D067 /* Materials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Materials.swift; sourceTree = "<group>"; };
 		2A6B06FF234ECCB7000CE37B /* Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
 		2A94130F2350D05700229CA8 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,7 +92,7 @@
 			children = (
 				2A1042F7234EC4B40081D067 /* Node.swift */,
 				2A6B06FF234ECCB7000CE37B /* Edge.swift */,
-				2A1042F9234EC63C0081D067 /* materials.swift */,
+				2A1042F9234EC63C0081D067 /* Materials.swift */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -262,7 +262,7 @@
 				2A099C16234F45F000EE9E51 /* SCNGeometry.swift in Sources */,
 				2A0B86642350F968002F7181 /* Floor.swift in Sources */,
 				2A1042F8234EC4B40081D067 /* Node.swift in Sources */,
-				2A1042FA234EC63C0081D067 /* materials.swift in Sources */,
+				2A1042FA234EC63C0081D067 /* Materials.swift in Sources */,
 				2A099C1B234F521600EE9E51 /* Axis.swift in Sources */,
 				2A099C13234F458B00EE9E51 /* SCNNode.swift in Sources */,
 				2A9413102350D05700229CA8 /* GraphView.swift in Sources */,
@@ -273,7 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A099C19234F4D1000EE9E51 /* materials.swift in Sources */,
+				2A099C19234F4D1000EE9E51 /* Materials.swift in Sources */,
 				2A1042E9234EC14E0081D067 /* Population_GraphsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

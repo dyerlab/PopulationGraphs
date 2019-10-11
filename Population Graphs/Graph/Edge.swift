@@ -42,4 +42,7 @@ extension Edge {
             lhs.node2 == rhs.node2 &&
             lhs.weight == rhs.weight
     }
+
 }
+
+
