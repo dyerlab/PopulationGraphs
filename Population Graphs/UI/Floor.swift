@@ -21,7 +21,7 @@ func getFloor() -> SCNNode {
     
     let material = SCNMaterial()
     material.diffuse.contents = NSColor.lightGray
-    material.shininess = 1.0
+    material.shininess = 32.0
     geo.materials = [material]
     
     return node 

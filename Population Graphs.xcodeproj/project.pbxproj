@@ -14,6 +14,10 @@
 		2A099C1D234F53A500EE9E51 /* Lighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A099C1C234F53A500EE9E51 /* Lighting.swift */; };
 		2A099C1F234F548A00EE9E51 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A099C1E234F548A00EE9E51 /* Camera.swift */; };
 		2A0B86642350F968002F7181 /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0B86632350F968002F7181 /* Floor.swift */; };
+		2A0B86662354B1FE002F7181 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0B86652354B1FE002F7181 /* CGFloat.swift */; };
+		2A0B86682354B270002F7181 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0B86672354B270002F7181 /* Array.swift */; };
+		2A0B866A2354B28A002F7181 /* SCNVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0B86692354B28A002F7181 /* SCNVector.swift */; };
+		2A0B866C2354B33A002F7181 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0B866B2354B33A002F7181 /* NotificationName.swift */; };
 		2A1042D6234EC14A0081D067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1042D5234EC14A0081D067 /* AppDelegate.swift */; };
 		2A1042DA234EC14E0081D067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A1042D9234EC14E0081D067 /* Assets.xcassets */; };
 		2A1042DD234EC14E0081D067 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A1042DB234EC14E0081D067 /* Main.storyboard */; };
@@ -43,6 +47,10 @@
 		2A099C1C234F53A500EE9E51 /* Lighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lighting.swift; sourceTree = "<group>"; };
 		2A099C1E234F548A00EE9E51 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		2A0B86632350F968002F7181 /* Floor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
+		2A0B86652354B1FE002F7181 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		2A0B86672354B270002F7181 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		2A0B86692354B28A002F7181 /* SCNVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNVector.swift; sourceTree = "<group>"; };
+		2A0B866B2354B33A002F7181 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		2A1042D2234EC14A0081D067 /* Population Graphs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Population Graphs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1042D5234EC14A0081D067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A1042D9234EC14E0081D067 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,8 +89,12 @@
 		2A099C14234F45C500EE9E51 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2A0B86672354B270002F7181 /* Array.swift */,
+				2A0B86652354B1FE002F7181 /* CGFloat.swift */,
 				2A099C12234F458B00EE9E51 /* SCNNode.swift */,
+				2A0B86692354B28A002F7181 /* SCNVector.swift */,
 				2A099C15234F45F000EE9E51 /* SCNGeometry.swift */,
+				2A0B866B2354B33A002F7181 /* NotificationName.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -254,10 +266,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A099C1F234F548A00EE9E51 /* Camera.swift in Sources */,
+				2A0B866A2354B28A002F7181 /* SCNVector.swift in Sources */,
+				2A0B866C2354B33A002F7181 /* NotificationName.swift in Sources */,
 				2A099C1D234F53A500EE9E51 /* Lighting.swift in Sources */,
+				2A0B86662354B1FE002F7181 /* CGFloat.swift in Sources */,
 				2A1042F4234EC2020081D067 /* GraphViewController.swift in Sources */,
 				2A1042D6234EC14A0081D067 /* AppDelegate.swift in Sources */,
 				2A6B0700234ECCB7000CE37B /* Edge.swift in Sources */,
+				2A0B86682354B270002F7181 /* Array.swift in Sources */,
 				2A1042F6234EC2880081D067 /* GraphScene.swift in Sources */,
 				2A099C16234F45F000EE9E51 /* SCNGeometry.swift in Sources */,
 				2A0B86642350F968002F7181 /* Floor.swift in Sources */,

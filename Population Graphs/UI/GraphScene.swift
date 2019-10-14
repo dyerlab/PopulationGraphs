@@ -27,7 +27,7 @@ class GraphScene: SCNScene {
         rootNode.addChildNode( camera )
         rootNode.addChildNode( axes )
         rootNode.addChildNode( getAmbientLight() )
-        rootNode.addChildNode( getFloor() )
+        // rootNode.addChildNode( getFloor() )
         
     }
     

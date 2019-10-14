@@ -25,7 +25,7 @@ class GraphView: SCNView {
         self.autoenablesDefaultLighting = true
         self.allowsCameraControl = true
         self.showsStatistics = true
-        self.backgroundColor = NSColor.white 
+        self.backgroundColor = NSColor.windowBackgroundColor
     }
     
 }

@@ -11,6 +11,7 @@ import SceneKit
 
 class Node: SCNNode {
     
+    var label: SCNNode
     var neighbors: [Node] = []
     var degree: Int {
         get { return neighbors.count }
@@ -19,11 +20,20 @@ class Node: SCNNode {
         get { return degree == 0 }
     }
     
-    init(radius: CGFloat, color: NSColor = NSColor.lightGray) {
+    
+    
+    init(label: String, radius: CGFloat, color: NSColor = NSColor.lightGray) {
+        let textGeo = SCNText(string: label, extrusionDepth: 1.0)
+        self.label = SCNNode( geometry: textGeo )
+        self.label.position = SCNVector3Make(1.2*radius, 1.2*radius, 1.2*radius)
+        
         super.init()
-        self.geometry = SCNSphere(radius: radius)
+        
+        self.geometry = SCNSphere( radius: radius )
         self.geometry?.firstMaterial?.fillMode = .lines
 
+        self.addChildNode( self.label )
+        
     }
     
     required init?(coder: NSCoder) {
