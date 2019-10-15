@@ -19,6 +19,9 @@ public extension SCNVector3 {
         return SCNVector3Make( lhs.x-rhs.x, lhs.y-rhs.y, lhs.z-rhs.z )
     }
 
+    static func == (lhs: SCNVector3, rhs: SCNVector3 ) -> Bool {
+        return lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z
+    }
 }
 
 
