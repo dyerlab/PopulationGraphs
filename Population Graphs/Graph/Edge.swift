@@ -46,3 +46,14 @@ extension Edge {
 }
 
 
+
+
+
+extension Edge  {
+    
+    public override var description: String {
+        get {
+            return "Edge: \(node1) <-> \(node2) \(self.weight)"
+        }
+    }
+}

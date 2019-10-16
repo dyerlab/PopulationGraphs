@@ -12,6 +12,21 @@ import SceneKit
 public class Graph {
     
     var rootNode: SCNNode
+    var nodes: [Node]  {
+        get {
+            return rootNode.childNodes(passingTest: { (item, _) -> Bool in
+                return ( (item as? Node) != nil) 
+            }) as! [Node]
+        }
+    }
+    
+    var edges: [Edge] {
+        get {
+            return rootNode.childNodes(passingTest: { (item, _) -> Bool in
+                return ( (item as? Edge) != nil)
+            }) as! [Edge]
+        }
+    }
     
     init() {
         self.rootNode = SCNNode()
@@ -21,7 +36,6 @@ public class Graph {
         rootNode.addChildNode( Node(label: label, radius: size, color: color) )
     }
     
-
     func addEdge( from: String, to: String, weight: Float ) {
         if let n1 = rootNode.childNode(withName: from, recursively: true) as? Node {
             if let n2 = rootNode.childNode(withName: to, recursively: true) as? Node {
@@ -29,7 +43,27 @@ public class Graph {
                 rootNode.addChildNode(e)
             }
         }
-        
     }
     
+}
+
+
+
+
+
+extension Graph : CustomStringConvertible {
+    
+    public var description: String {
+        get {
+            var ret = "Graph:\n---------  Nodes \n"
+            for node in self.nodes {
+                ret += " \(node)\n"
+            }
+            ret += "---------  Edges \n"
+            for edge in edges {
+                ret += " \(edge)\n"
+            }
+            return ret
+        }
+    }
 }

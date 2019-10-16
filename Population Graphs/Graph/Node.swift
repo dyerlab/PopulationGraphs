@@ -29,18 +29,15 @@ class Node: SCNNode {
     
     init(label: String, radius: CGFloat, color: NSColor = NSColor.lightGray) {
         let textGeo = SCNText(string: label, extrusionDepth: 1.0)
-        self.name = label
-        
         self.label = SCNNode( geometry: textGeo )
         self.label.position = SCNVector3Make(1.2*radius, 1.2*radius, 1.2*radius)
-        
         self.displacement = SCNVector3Zero
         
         super.init()
         
         self.geometry = SCNSphere( radius: radius )
         self.geometry?.firstMaterial?.fillMode = .lines
-
+        self.name = label
         self.addChildNode( self.label )
     }
     
@@ -68,3 +65,14 @@ extension Node {
 
 
 //
+
+
+
+extension Node  {
+    
+    public override var description: String {
+        get {
+            return "\(self.name ?? "TheNode")"
+        }
+    }
+}
