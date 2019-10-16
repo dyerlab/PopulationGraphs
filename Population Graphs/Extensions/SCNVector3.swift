@@ -21,6 +21,28 @@ public extension SCNVector3 {
         return CGFloat( sqrt( Double(x*x + y*y + z*z ) ) )
     }
         
+
+    /**
+     Distance between two points
+     
+     - Parameters:
+            - other: Other point to measure distance to
+     
+     - Returns: The `CGFloat` distance between self and other.
+     */
+    func distanceTo(_ other: SCNVector3 ) -> CGFloat {
+        let diff = self - other
+        return diff.length()
+    }
+    
+
+    
+}
+
+
+/// Extensions based upon mathematical operations
+
+public extension SCNVector3 {
     
     /// Returns addition of two vectors
     ///
@@ -103,9 +125,5 @@ public extension SCNVector3 {
         return lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z
     }
     
-    
 
-    
 }
-
-

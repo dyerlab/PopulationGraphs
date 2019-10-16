@@ -360,6 +360,11 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="bZf-ox-GW1"/>
+                                        <menuItem title="Toggle Axes" keyEquivalent="A" id="8BD-Zq-jku">
+                                            <connections>
+                                                <action selector="ToggleAxes:" target="Ady-hI-5gd" id="0vs-1h-3uV"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Toggle Labels" keyEquivalent="L" id="mJt-Rv-ILf">
                                             <connections>
                                                 <action selector="ToggleLabels:" target="Ady-hI-5gd" id="nqH-C7-xle"/>

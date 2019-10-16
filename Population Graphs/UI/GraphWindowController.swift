@@ -10,7 +10,7 @@ import Cocoa
 
 class GraphWindowController: NSWindowController {
 
-    var currentGraph: Graph? 
+    var currentGraph: Graph?
     
     var graphController: GraphViewController? {
         get {
@@ -32,6 +32,10 @@ class GraphWindowController: NSWindowController {
     
     @IBAction func ToggleLabels(_ sender: Any?) {
         currentGraph!.toggleLabels()
+    }
+    
+    @IBAction func ToggleAxes(_ sender: Any? ) {
+        (graphController?.graphView.scene as? GraphScene)?.toggleAxes()
     }
 
 }

@@ -39,7 +39,8 @@ public func makeLopho() -> Graph {
                   ["SnE", "TsS"],    ["SnF", "SnI"],    ["SnI", "StR"],   ["StR", "TsS"],    ["StR", "SenBas"],
                   ["CP", "Seri"],    ["CP", "SG"],      ["CP", "SN"],     ["CP", "TS"],      ["LF", "PL"],
                   ["LF", "SG"],      ["LF", "SI"],      ["PL", "SenBas"], ["PL ", "SG"],     ["PL", "SI"],
-                  ["PL", "SN"] ]
+                  ["PL", "SN"],      ["Seri", "SG"],    ["Seri", "SN"],   ["SG", "SI"],      ["SI","SN"],
+                  ["SI", "TS"],      ["SN", "TS"] ]
     
     let coords = getCoordinates()
     
