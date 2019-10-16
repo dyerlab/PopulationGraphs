@@ -32,8 +32,13 @@ public class Graph {
         self.rootNode = SCNNode()
     }
     
-    func addNode( label: String, size: CGFloat, color: NSColor = NSColor.red ) {
-        rootNode.addChildNode( Node(label: label, radius: size, color: color) )
+    func addNode( node: Node ) {
+        rootNode.addChildNode(node)
+    }
+    
+    
+    func addNode( label: String, size: CGFloat, color: String = "red" ) {
+        self.addNode( node: Node(label: label, radius: size, color: color) )
     }
     
     func addEdge( from: String, to: String, weight: Float ) {
@@ -44,6 +49,20 @@ public class Graph {
             }
         }
     }
+    
+}
+
+
+
+
+/// Visual stuff
+extension Graph  {
+    
+    public func toggleLabels() {
+        print("toggling in graph")
+        self.nodes.forEach { $0.toggleLabel() }
+    }
+    
     
 }
 

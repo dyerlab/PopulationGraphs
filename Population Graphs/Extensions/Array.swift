@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SceneKit
 
 extension Array {
     
@@ -19,3 +20,32 @@ extension Array {
     }
     
 }
+
+
+
+
+extension Array where Element == SCNVector3 {
+
+    /**
+    Get centroid of vector space
+    
+    - Parameters:
+           - coords: A vector of SCNVector3 coordinates
+    
+    - Returns: A vector of the centroid.
+    */
+    func centroid() -> SCNVector3 {
+        var ret = SCNVector3Zero
+        for i in 0 ..< count {
+            ret = ret + self[i]
+        }
+
+        ret = ret * CGFloat(1.0 / Double(self.count) )
+        
+        return ret
+    }
+
+    
+}
+
+
