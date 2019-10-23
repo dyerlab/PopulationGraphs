@@ -107,6 +107,7 @@
 		2AA421042357A3E3000D75B0 /* Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		2AA421072357A526000D75B0 /* FileIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileIO.swift; sourceTree = "<group>"; };
 		2AAEBFE2235614C60069B600 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		2AAEFADE2360E4970064F2C8 /* PopgraphPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PopgraphPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2AEBEA1E2358CDFB00944DF9 /* VectorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +166,7 @@
 		2A1042C9234EC14A0081D067 = {
 			isa = PBXGroup;
 			children = (
+				2AAEFADE2360E4970064F2C8 /* PopgraphPlayground.playground */,
 				2A1042D4234EC14A0081D067 /* Population Graphs */,
 				2A1042E7234EC14E0081D067 /* Population GraphsTests */,
 				2A1042D3234EC14A0081D067 /* Products */,

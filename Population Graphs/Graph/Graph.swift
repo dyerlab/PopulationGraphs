@@ -12,21 +12,8 @@ import SceneKit
 public class Graph {
     
     var rootNode: SCNNode
-    var nodes: [Node]  {
-        get {
-            return rootNode.childNodes(passingTest: { (item, _) -> Bool in
-                return ( (item as? Node) != nil) 
-            }) as! [Node]
-        }
-    }
-    
-    var edges: [Edge] {
-        get {
-            return rootNode.childNodes(passingTest: { (item, _) -> Bool in
-                return ( (item as? Edge) != nil)
-            }) as! [Edge]
-        }
-    }
+    var nodes: [Node] = []
+    var edges: [Edge]  = []
     
     init() {
         self.rootNode = SCNNode()
@@ -34,6 +21,7 @@ public class Graph {
     
     func addNode( node: Node ) {
         rootNode.addChildNode(node)
+        nodes.append( node )
     }
     
     
@@ -46,6 +34,7 @@ public class Graph {
             if let n2 = rootNode.childNode(withName: to, recursively: true) as? Node {
                 let e = Edge(node1: n1, node2: n2, weight: weight)
                 rootNode.addChildNode(e)
+                edges.append( e )
             }
         }
     }
@@ -100,7 +89,7 @@ extension Graph {
         var temp: CGFloat = 20.0
         let idealDist = 10000.0 / CGFloat( self.nodes.count )
         
-        ///self.nodes.forEach { $0.position = SCNVector3().random(range: -50 ... 50 ) }
+        
         
         /// Go across iterations -----------------------
         for iter in 0 ..< 100 {
@@ -117,6 +106,7 @@ extension Graph {
             /// Repulsive Forces
             for i in 0 ..< nodes.count {
 
+                print("   -re: \(i) of \(nodes.count)")
                 self.nodes.forEach { $0.displacement = SCNVector3Zero }
                 
                 for j in 0 ..< nodes.count {
@@ -135,6 +125,8 @@ extension Graph {
             
             /// Attractive Forces
             for i in 0 ..< edges.count {
+                
+                print("   -at: \(i) of \(edges.count)")
                 delta = edges[i].node1.position - edges[i].node2.position
                 distance = delta.length() > 0 ? delta.length() : 1.0
                 const = edges[i].weight / distance
@@ -156,6 +148,9 @@ extension Graph {
         
         
         
+        /// Center the data again.
+        let centroid: SCNVector3 = nodes.map { $0.position }.centroid()
+        nodes.forEach { $0.position = $0.position - centroid }
         
         print(self.description)
     }

@@ -13,30 +13,20 @@ class Edge: SCNNode {
     var node1: Node
     var node2: Node
     var weight: CGFloat
+    var color: String
     
     init(node1: Node, node2: Node, weight: Float = 1.0, color: String = "gray" ) {
-        node1.neighbors.append( node2 )
-        node2.neighbors.append( node1 )
-        
         self.node1 = node1
         self.node2 = node2
-        self.weight = CGFloat(weight)
-        
-//        self.cylinder = SCNCylinder( radius: CGFloat(weight), height: height )
-//        self.cylinder.radialSegmentCount = 6
-//        self.cylinder.firstMaterial = getMaterial( name: "gray" )
-        
+        self.weight = CGFloat(weight)/5.0
+        self.color = color
+                
         super.init()
         
-        self.updateCylinder(node1.position, node2.position, radius: CGFloat(weight/5.0), color: color)
+        node1.edges.append(self)
+        node2.edges.append(self)
         
-//        self.geometry = self.cylinder
-//        self.position = (node1.position - node2.position) * ( 1.0 / CGFloat( 2.0 ) )
-//        self.eulerAngles = SCNVector3Make( CGFloat(Double.pi/2),
-//                                           acos( ( node1.position.z - node2.position.z ) / height ),
-//                                           atan2( ( node1.position.y - node2.position.y ), ( node1.position.x - node2.position.x ) ))
-        
-        
+        self.updateCylinder()
     }
     
     required init?(coder: NSCoder) {
@@ -48,17 +38,19 @@ class Edge: SCNNode {
         return (node == self.node1 || node == self.node2)
     }
     
+
     
-    func updateCylinder(_ v1: SCNVector3, _ v2: SCNVector3, radius: CGFloat, color: String) {
+    
+    func updateCylinder() {
         
-        let height = v1.distanceTo( v2 )
-        self.position = v1
+        let height = node1.position.distanceTo( node2.position )
+        self.position = node1.position
         let ndV2 = SCNNode()
-        ndV2.position = v2
+        ndV2.position = node2.position
         let ndZAlign = SCNNode()
         ndZAlign.eulerAngles.x = CGFloat( Float.pi / 2.0 )
 
-        let cylgeo = SCNCylinder(radius: radius, height: height)
+        let cylgeo = SCNCylinder(radius: weight, height: height)
         cylgeo.radialSegmentCount = 12
         cylgeo.materials = [getMaterial(name: color)]
 

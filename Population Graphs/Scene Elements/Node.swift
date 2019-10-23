@@ -16,17 +16,24 @@ class Node: SCNNode {
     /// The text label
     var label: SCNNode
     
-    /// The number of neighbors
-    var neighbors: [Node] = []
+    /// The number of neighboring edges
+    var edges: [Edge] = []
     
     /// Calculation of degree
     var degree: Int {
-        get { return neighbors.count }
+        get { return edges.count }
     }
     
     /// Is this node isolated
     var disconnected: Bool {
         get { return degree == 0 }
+    }
+    
+    /// Catch changes in position
+    override var position: SCNVector3 {
+        didSet {
+            edges.forEach { $0.updateCylinder() }
+        }
     }
     
     /// Vector offset from resting point
@@ -38,6 +45,7 @@ class Node: SCNNode {
             return (self.displacement == SCNVector3Zero)
         }
     }
+    
     
     /**
      Default init for the Node class
@@ -70,13 +78,24 @@ class Node: SCNNode {
         
         self.geometry = SCNSphere( radius: radius )
         self.geometry?.materials = [mat]
-//        self.geometry?.firstMaterial?.fillMode = .lines
         self.name = label
         self.addChildNode( self.label )
         
         self.position = SCNVector3Make( CGFloat.random(in: -50...50),
                                         CGFloat.random(in: -50...50),
                                         CGFloat.random(in: -50...50) )
+        
+        
+        
+        let physShape = SCNPhysicsShape(geometry: geometry!, options: nil )
+        let physBody = SCNPhysicsBody(type: .dynamic , shape: physShape )
+        
+        let physField = SCNPhysicsField.radialGravity()
+        physField.strength = -1.0
+        
+        self.physicsBody = physBody
+        self.physicsField = physField
+        
     }
     
     required init?(coder: NSCoder) {
