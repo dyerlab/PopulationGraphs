@@ -12,7 +12,7 @@ import SceneKit
 class Edge: SCNNode {
     var node1: Node
     var node2: Node
-    var weight: Float
+    var weight: CGFloat
     
     init(node1: Node, node2: Node, weight: Float = 1.0, color: String = "gray" ) {
         node1.neighbors.append( node2 )
@@ -20,7 +20,7 @@ class Edge: SCNNode {
         
         self.node1 = node1
         self.node2 = node2
-        self.weight = weight
+        self.weight = CGFloat(weight)
         
 //        self.cylinder = SCNCylinder( radius: CGFloat(weight), height: height )
 //        self.cylinder.radialSegmentCount = 6
@@ -42,6 +42,7 @@ class Edge: SCNNode {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     func hasNode( node: Node ) -> Bool {
         return (node == self.node1 || node == self.node2)

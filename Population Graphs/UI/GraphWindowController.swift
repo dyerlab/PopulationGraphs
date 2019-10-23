@@ -38,4 +38,7 @@ class GraphWindowController: NSWindowController {
         (graphController?.graphView.scene as? GraphScene)?.toggleAxes()
     }
 
+    @IBAction func LayoutGraph(_ sender: Any? ) {
+        currentGraph?.layout()
+    }
 }

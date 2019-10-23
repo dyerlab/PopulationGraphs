@@ -110,15 +110,14 @@ extension Node {
 
 
 
-//
-
-
+//  Overriding stuff
 
 extension Node  {
     
     public override var description: String {
         get {
-            return "\(self.name ?? "TheNode") (\( (self.geometry as! SCNSphere).radius))"
+            return "\(self.name ?? "TheNode") \( (self.geometry as! SCNSphere).radius) \(self.position) "
         }
     }
+    
 }

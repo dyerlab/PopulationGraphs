@@ -20,13 +20,13 @@ public extension SCNVector3 {
     func length() -> CGFloat {
         return CGFloat( sqrt( Double(x*x + y*y + z*z ) ) )
     }
-        
-
+    
+    
     /**
      Distance between two points
      
      - Parameters:
-            - other: Other point to measure distance to
+     - other: Other point to measure distance to
      
      - Returns: The `CGFloat` distance between self and other.
      */
@@ -35,7 +35,38 @@ public extension SCNVector3 {
         return diff.length()
     }
     
-
+    
+    /**
+     Get random vector in range
+     
+     - Parameters:
+     - range: The range of numbrers (inclusive) to select random coordinates.
+     
+     - Returns: A new vector with random values.
+     */
+    func random( range: ClosedRange<CGFloat> ) -> SCNVector3 {
+        
+        return SCNVector3Make( CGFloat.random(in: range),
+                               CGFloat.random(in: range),
+                               CGFloat.random(in: range) )
+        
+    }
+    
+    /**
+     Limit the magnitude of a vector +/-
+     
+     - Parameters:
+        - max: The `abs(vec)` value of any element.
+     
+     - Returns: New vector whose values are limited in scope to the value of max
+     */
+    func limit( max: CGFloat ) -> SCNVector3 {
+        return SCNVector3Make( min( abs(self.x), max ) * (self.x / abs(self.x) ) ,
+                               min( abs(self.y), max ) * (self.y / abs(self.y) ),
+                               min( abs(self.z), max ) * (self.z / abs(self.z) ) )
+        
+        
+    }
     
 }
 
@@ -56,7 +87,7 @@ public extension SCNVector3 {
                                lhs.y + rhs.y,
                                lhs.z + rhs.z )
     }
-
+    
     /// Returns difference of two vectors
     ///
     /// - Parameters:
@@ -67,13 +98,13 @@ public extension SCNVector3 {
     static func - (lhs: SCNVector3, rhs: SCNVector3 ) -> SCNVector3 {
         return SCNVector3Make( lhs.x-rhs.x, lhs.y-rhs.y, lhs.z-rhs.z )
     }
-
+    
     /**
      Multiplication of two vectors
      
      - Parameters:
-            - lhs: Left vector
-            - rhs: Right vector
+     - lhs: Left vector
+     - rhs: Right vector
      
      - Returns: New product vector
      */
@@ -82,11 +113,11 @@ public extension SCNVector3 {
     }
     
     /**
-    Left Scalar Multiplication
+     Left Scalar Multiplication
      
      - Parameters:
-            - lhs: Scalar multiplier
-            - rhs: Vector
+     - lhs: Scalar multiplier
+     - rhs: Vector
      
      - Returns: New product vector
      */
@@ -97,11 +128,11 @@ public extension SCNVector3 {
     }
     
     /**
-    Right Scalar Multiplication
+     Right Scalar Multiplication
      
      - Parameters:
-            - lhs: Vector
-            - rhs: Scalar multiplier
+     - lhs: Vector
+     - rhs: Scalar multiplier
      
      - Returns: New product vector
      */
@@ -116,8 +147,8 @@ public extension SCNVector3 {
      Overload of equality operator for vectors
      
      - Parameters:
-            - lhs: Left vector
-            - rhs: Right vector
+     - lhs: Left vector
+     - rhs: Right vector
      
      - Returns: Boolean indicating element-wise equality
      */
@@ -125,5 +156,5 @@ public extension SCNVector3 {
         return lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z
     }
     
-
+    
 }

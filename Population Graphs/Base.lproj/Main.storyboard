@@ -343,6 +343,29 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Graph" id="T1F-Ec-AlZ" userLabel="Graph">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Graph" id="SMV-kY-Awg">
+                                    <items>
+                                        <menuItem title="Layout" keyEquivalent="l" id="O5M-S2-RTm">
+                                            <connections>
+                                                <action selector="LayoutGraph:" target="Ady-hI-5gd" id="9Ow-Ql-dfs"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="bZf-ox-GW1"/>
+                                        <menuItem title="Toggle Axes" keyEquivalent="A" id="8BD-Zq-jku">
+                                            <connections>
+                                                <action selector="ToggleAxes:" target="Ady-hI-5gd" id="0vs-1h-3uV"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Toggle Labels" keyEquivalent="L" id="mJt-Rv-ILf">
+                                            <connections>
+                                                <action selector="ToggleLabels:" target="Ady-hI-5gd" id="nqH-C7-xle"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="View" id="H8h-7b-M4v">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="View" id="HyV-fh-RgO">
@@ -357,17 +380,6 @@
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="runToolbarCustomizationPalette:" target="Ady-hI-5gd" id="pQI-g3-MTW"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="bZf-ox-GW1"/>
-                                        <menuItem title="Toggle Axes" keyEquivalent="A" id="8BD-Zq-jku">
-                                            <connections>
-                                                <action selector="ToggleAxes:" target="Ady-hI-5gd" id="0vs-1h-3uV"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Toggle Labels" keyEquivalent="L" id="mJt-Rv-ILf">
-                                            <connections>
-                                                <action selector="ToggleLabels:" target="Ady-hI-5gd" id="nqH-C7-xle"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="hB3-LF-h0Y"/>

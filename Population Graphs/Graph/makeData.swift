@@ -47,7 +47,7 @@ public func makeLopho() -> Graph {
     for i in 0 ..< labels.count {
         let n = Node( label: labels[i],
                       radius: sizes[i] / 4.0,
-                      color: (i < 12) ? "blob1" : "green")
+                      color: (i < 12) ? "blob1" : "green" )
         n.position = coords[i]
         graph.addNode( node: n )
     }
