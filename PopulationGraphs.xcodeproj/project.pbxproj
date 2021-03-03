@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A72813025F00679009E0EFC /* Xs.csv in Resources */ = {isa = PBXBuildFile; fileRef = 2A72811525F005CA009E0EFC /* Xs.csv */; };
+		2A72814625F00684009E0EFC /* X.csv in Resources */ = {isa = PBXBuildFile; fileRef = 2A72811425F005CA009E0EFC /* X.csv */; };
 		2AC83B0A25EFDAA600F2D929 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC83B0925EFDAA600F2D929 /* Tests_iOS.swift */; };
 		2AC83B1525EFDAA600F2D929 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC83B1425EFDAA600F2D929 /* Tests_macOS.swift */; };
 		2AC83B1725EFDAA600F2D929 /* PopulationGraphsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC83AEE25EFDAA600F2D929 /* PopulationGraphsApp.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A72811425F005CA009E0EFC /* X.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = X.csv; sourceTree = "<group>"; };
+		2A72811525F005CA009E0EFC /* Xs.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Xs.csv; sourceTree = "<group>"; };
 		2AC83AEE25EFDAA600F2D929 /* PopulationGraphsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationGraphsApp.swift; sourceTree = "<group>"; };
 		2AC83AEF25EFDAA600F2D929 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2AC83AF025EFDAA600F2D929 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,6 +101,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A72811E25F005D1009E0EFC /* Raw */ = {
+			isa = PBXGroup;
+			children = (
+				2A72811425F005CA009E0EFC /* X.csv */,
+				2A72811525F005CA009E0EFC /* Xs.csv */,
+			);
+			path = Raw;
+			sourceTree = "<group>";
+		};
 		2AC83AE825EFDAA600F2D929 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +125,7 @@
 		2AC83AED25EFDAA600F2D929 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				2A72811E25F005D1009E0EFC /* Raw */,
 				2AC83B5325F0025800F2D929 /* Matrix */,
 				2AC83AEE25EFDAA600F2D929 /* PopulationGraphsApp.swift */,
 				2AC83AEF25EFDAA600F2D929 /* ContentView.swift */,
@@ -325,6 +339,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A72813025F00679009E0EFC /* Xs.csv in Resources */,
+				2A72814625F00684009E0EFC /* X.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
