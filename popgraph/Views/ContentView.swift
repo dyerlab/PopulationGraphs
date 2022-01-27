@@ -6,24 +6,16 @@
 //
 
 import SwiftUI
-import SceneKit
+import SpriteKit
 
 struct ContentView: View {
     
     @Binding var graph: Graph
-    
-    var scene: GraphScene {
-        let ret = GraphScene()
-        ret.addGraph(graph: self.graph)
-        return ret
-    }
-    
+        
     var body: some View {
         GeometryReader { proxy in
             ZStack {
-                GraphView( scene: scene,
-                           proxy: proxy )
-                    .frame(minWidth: 500, minHeight: 500)
+                SpriteView(scene: GraphScene(size: proxy.size, graph: graph) )
                 HStack {
                     Spacer()
                     VStack(alignment:.leading){

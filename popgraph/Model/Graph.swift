@@ -10,63 +10,42 @@ import SpriteKit
 
 class Graph: NSObject  {
     
-    var root: SKNode
-    var size: CGSize {
-        didSet {
-            print("set size")
-        }
-    }
-    var nodes: [Node2D] {
-        get {
-            return root.children.compactMap{ $0 as? Node2D }
-        }
-    }
-    
-    var edges: [Edge2D] {
-        get {
-            return root.children.compactMap{ $0 as? Edge2D }
-        }
-    }
+    var nodes: [Node2D]
+    var edges: [Edge2D]
     
     override init() {
-        self.root = SKNode()
-        self.root.position = CGPoint(x: 0.0, y: 0.0)
-        self.size = CGSize(width: 500, height: 500)
+        self.nodes = [Node2D]()
+        self.edges = [Edge2D]()
         super.init()
         
-        NotificationCenter.default.addObserver(self, selector: #selector( layoutNodes(notification:)), name: .layoutNodes, object: nil )
-        print("initializing graph")
+        //NotificationCenter.default.addObserver(self, selector: #selector( layoutNodes(notification:)), name: .layoutNodes, object: nil )
     }
     
-    
-    func addNode( node: Node2D ) {
-        self.root.addChild( node )
-    }
-    
+
     func addNode( label: String, size: Double ) {
-        self.addNode( node: Node2D(label: label, size: size))
+        self.nodes.append( Node2D(label: label, size: size))
     }
     
-    func addEdge( edge: Edge2D ) {
-        self.root.addChild( edge )
+    func nodeNamed( name: String) -> Node2D? {
+        return self.nodes.first(where: {$0.name == name } )
     }
     
     func addEdge(from: String, to: String, weight: Double ) {
         if let n1 = self.nodes.filter({ $0.name == from }).first,
            let n2 = self.nodes.filter({ $0.name == to }).first  {
-            self.addEdge(edge: Edge2D(from: n1, to: n2, weight: weight) )
+            self.edges.append( Edge2D(from: n1, to: n2, weight: weight) )
         }
     }
     
+    /*
     @objc func layoutNodes( notification: Notification ) {
         if let userInfo = notification.userInfo {
             if let layout = userInfo["layout"] as? LayoutType {
-                runLayout(type: layout)
+                //runLayout(type: layout)
             }
         }
     }
-    
-    
+
     private func runLayout( type: LayoutType ) {
         switch type {
         case .Eigenvalue:
@@ -80,7 +59,7 @@ class Graph: NSObject  {
         }
         
     }
-    
+    */
     
 
     
@@ -116,21 +95,27 @@ extension Graph {
      - Returns: The sum of absolute deviance between portional spatial distances relative to expetations of graph weight based upon edge distances.
      */
     func totalEnergy() -> Double {
-        var graphDistance =  edges.compactMap{ Double($0.strength) }
-        var physicalDistance = edges.compactMap{ Double( ($0.node1.position - $0.node2.position).magnitude ) }
+        let graphDistance =  edges.compactMap{ Double($0.strength) }
+        let physicalDistance = edges.compactMap{ Double( ($0.node1.position - $0.node2.position).magnitude ) }
         
         let totGraph = graphDistance.reduce( 0.0, +)
         let totPhys = physicalDistance.reduce( 0.0, +)
         
         print("totGraph: \(totGraph)")
         print("totPhys: \(totPhys)")
-        
-        graphDistance = graphDistance.compactMap{ abs( $0/totGraph ) }
-        physicalDistance = physicalDistance.compactMap{ abs( $0/totPhys ) }
-        
-        return (graphDistance - physicalDistance).reduce( 0.0, + )
+        var ret: Double = 0.0
+        for i in 0 ..< graphDistance.count {
+            ret += abs( (graphDistance[i] / totGraph) - (physicalDistance[i] - totPhys) )
+        }
+        print("total energy: \(ret)")
+        return ret
     }
      
+    
+    func centerWithinSize() {
+        
+        
+    }
 
     
 }
@@ -149,21 +134,19 @@ extension Graph {
         let nodeB = Node2D(label: "B", size: 20.0)
         let nodeC = Node2D(label: "C", size: 30.0)
         let nodeD = Node2D(label: "D", size: 40.0)
-        
-        ret.addNode(node: nodeA )
-        ret.addNode(node: nodeB )
-        ret.addNode(node: nodeC )
-        ret.addNode(node: nodeD )
-        
+        ret.nodes.append( nodeA )
+        ret.nodes.append( nodeB )
+        ret.nodes.append( nodeC )
+        ret.nodes.append(nodeD )
         
         let edge1 = Edge2D(from: nodeA, to: nodeB, weight: 20.0)
         let edge2 = Edge2D(from: nodeA, to: nodeC, weight: 20.0)
         let edge3 = Edge2D(from: nodeB, to: nodeC, weight: 20.0)
         let edge4 = Edge2D(from: nodeC, to: nodeD, weight: 20.0)
-        ret.addEdge(edge: edge1 )
-        ret.addEdge(edge: edge2 )
-        ret.addEdge(edge: edge3 )
-        ret.addEdge(edge: edge4 )
+        ret.edges.append( edge1 )
+        ret.edges.append( edge2 )
+        ret.edges.append( edge3 )
+        ret.edges.append( edge4 )
         
         return ret
     }
@@ -195,6 +178,28 @@ extension Graph {
         ret.addNode(label: "SN", size: 8.64935)
         ret.addNode(label: "TS", size: 14.85345)
         
+        ret.nodeNamed(name: "BaC")?.position = CGPoint( x: 26.59000,y:111.7900)
+        ret.nodeNamed(name: "Ctv")?.position = CGPoint( x: 29.73000,y:114.7200)
+        ret.nodeNamed(name: "LaV")?.position = CGPoint( x: 24.04000,y:109.9900)
+        ret.nodeNamed(name: "Lig")?.position = CGPoint( x: 25.73000,y:111.2700)
+        ret.nodeNamed(name: "PtC")?.position = CGPoint( x: 24.19000,y:111.1500)
+        ret.nodeNamed(name: "PtP")?.position = CGPoint( x: 29.03000,y:113.9000)
+        ret.nodeNamed(name: "SLG")?.position = CGPoint( x: 29.59000,y:114.4000)
+        ret.nodeNamed(name: "SnE")?.position = CGPoint( x: 24.45000,y:110.7000)
+        ret.nodeNamed(name: "SnF")?.position = CGPoint( x: 30.76000,y:114.7300)
+        ret.nodeNamed(name: "SnI")?.position = CGPoint( x: 27.29000,y:113.0200)
+        ret.nodeNamed(name: "StR")?.position = CGPoint( x: 24.91000,y:111.6200)
+        ret.nodeNamed(name: "TsS")?.position = CGPoint( x: 23.58000,y:110.3400)
+        ret.nodeNamed(name: "CP")?.position = CGPoint( x: 27.95000,y:110.6600)
+        ret.nodeNamed(name: "LF")?.position = CGPoint( x: 30.68000,y:112.2700)
+        ret.nodeNamed(name: "PL")?.position = CGPoint( x: 30.39000,y:112.5800)
+        ret.nodeNamed(name: "SG")?.position = CGPoint( x: 29.40000,y:112.0500)
+        ret.nodeNamed(name: "SI")?.position = CGPoint( x: 29.75000,y:112.5000)
+        ret.nodeNamed(name: "SN")?.position = CGPoint( x: 28.82000,y:111.8000)
+        ret.nodeNamed(name: "SenBas")?.position = CGPoint( x: 31.95000,y:112.8700)
+        ret.nodeNamed(name: "Seri")?.position = CGPoint( x: 28.88000,y:111.9600)
+        ret.nodeNamed(name: "TS")?.position = CGPoint( x: 28.41000,y:111.3700)
+
         ret.addEdge(from: "BaC", to: "LaV", weight: 9.052676)
         ret.addEdge(from: "BaC", to: "Lig", weight: 9.716150)
         ret.addEdge(from: "BaC", to: "PtP", weight: 12.382480)
@@ -245,9 +250,6 @@ extension Graph {
         ret.addEdge(from: "SI", to: "SN", weight: 3.569675)
         ret.addEdge(from: "SI", to: "TS", weight: 3.837508)
         ret.addEdge(from: "SN", to: "TS", weight: 4.875340)
-        
-        
-        layoutNodesCirclular(nodes: ret.nodes, size: ret.size )
         
         return ret
     }

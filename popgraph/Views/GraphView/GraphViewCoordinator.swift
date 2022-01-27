@@ -9,7 +9,7 @@ import Foundation
 import SpriteKit
 import SwiftUI
 
-class GraphViewCoordinator: NSObject {
+class GraphViewCoordinator: NSObject, SKViewDelegate {
     
     var scene: GraphScene
     
@@ -18,8 +18,5 @@ class GraphViewCoordinator: NSObject {
         super.init()
     }
     
-    func resizeScene( proxy: GeometryProxy ) {
-        scene.size = proxy.size
-    }
     
 }

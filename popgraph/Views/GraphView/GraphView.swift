@@ -10,24 +10,35 @@ import SpriteKit
 import SwiftUI
 
 struct GraphView: NSViewRepresentable {
+
+    var coordinator: GraphViewCoordinator
     
-    @State var scene: GraphScene
-    var proxy: GeometryProxy
+    /*
+    init(graph: Graph, size: CGSize) {
+        let scene = GraphScene(graph: graph)
+        coordinator = GraphViewCoordinator(scene: scene )
+        print("graphview::init")
+    }
+     */
     
     func makeCoordinator() -> GraphViewCoordinator {
-        return GraphViewCoordinator(scene: self.scene)
+        return coordinator
     }
     
     func makeNSView(context: Context) -> SKView {
-        scene.size = proxy.size
-        context.coordinator.scene = scene
         let view = SKView()
-        view.presentScene(scene)
+        view.delegate = context.coordinator
+        view.presentScene(context.coordinator.scene)
+        print("makensview")
         return view
     }
     
     func updateNSView(_ nsView: SKView, context: Context) {
-        context.coordinator.resizeScene(proxy: proxy)
+        
+        /*
+        let sz = nsView.frame.size
+        print("updatensview")
+        */
     }
     
     

@@ -7,6 +7,32 @@
 import Foundation
 import SpriteKit
 
+
+class GraphScene: SKScene {
+        
+    init(size: CGSize, graph: Graph ) {
+        super.init(size: size)
+        for node in graph.nodes {
+            self.addChild( node )
+        }
+        for edge in graph.edges {
+            self.addChild( edge )
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func didMove(to view: SKView) {
+        self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
+    }
+    
+}
+
+
+
+/*
 class GraphScene: SKScene, ObservableObject {
     
     @Published var graph = Graph()
@@ -67,3 +93,5 @@ extension GraphScene {
     
     
 }
+
+*/

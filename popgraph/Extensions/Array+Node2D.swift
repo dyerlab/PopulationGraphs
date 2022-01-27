@@ -33,5 +33,37 @@ extension Array where Element == Node2D {
         return ret
     }
 
+    func centerOn( pt: CGPoint) {
+        print("resizing")
+        var centroid = CGPoint.zero
+        self.forEach{ node in
+            centroid = centroid + node.position
+        }
+        centroid = centroid / Double( self.count )
+        let diff = pt - centroid
+        self.forEach{ node in
+            node.position = node.position + diff
+        }
+    }
+    
+    
+    func size() -> CGSize {
+        let byX = self.sorted(by: { $0.position.x < $1.position.x} )
+        if let minX = byX.first?.position.x,
+           let maxX = byX.last?.position.x {
+               let byY = self.sorted(by: { $0.position.y < $1.position.x} )
+               if let minY = byY.first?.position.y,
+                  let maxY = byY.last?.position.y {
+                   return CGSize(width: maxX - minX, height: maxY - minY)
+               }
+           }
+        
+        return CGSize.zero
+    }
+    
+    
+    
+    
+    
     
 }
