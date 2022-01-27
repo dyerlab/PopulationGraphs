@@ -11,7 +11,7 @@ import SwiftUI
 
 struct GraphView: NSViewRepresentable {
     
-    @StateObject var scene: GraphScene
+    @State var scene: GraphScene
     var proxy: GeometryProxy
     
     func makeCoordinator() -> GraphViewCoordinator {

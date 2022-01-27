@@ -43,25 +43,6 @@ class GraphScene: SKScene, ObservableObject {
     }
     
     
-    /**
-     Returns the total energy in the graph, which for this example is the absolute sum of deviance from portional spatial distances relative to expetations of graph weight.
-
-    func totalEnergy() -> Double {
-        var graphDistance =  edges.compactMap{ Double($0.strength) }
-        var physicalDistance = edges.compactMap{ Double( ($0.node1.position - $0.node2.position).magnitude ) }
-        
-        let totGraph = graphDistance.reduce( 0.0, +)
-        let totPhys = physicalDistance.reduce( 0.0, +)
-        
-        print("totGraph: \(totGraph)")
-        print("totPhys: \(totPhys)")
-        
-        graphDistance = graphDistance.compactMap{ abs( $0/totGraph ) }
-        physicalDistance = physicalDistance.compactMap{ abs( $0/totPhys ) }
-        
-        return (graphDistance - physicalDistance).reduce( 0.0, + )
-    }
-     */
 }
 
 

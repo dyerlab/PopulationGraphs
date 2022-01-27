@@ -6,7 +6,7 @@
 
 Current Version: ![](https://img.shields.io/github/v/tag/dyerlab/PopulationGraphs?color=green)
 
-This repository contains the code for the GeneticStudio application, an iOS and MacOS application for the maintenance, archiving, analysis, and communication of landscape and population genetic data created in support of the research conducted in the [DyerLab](https://dyerlab.org).  
+This repository contains the code for the PopulationGraphs application, an iOS and MacOS application for the maintenance, archiving, analysis, and communication of landscape and population genetic data within population graphs. This software was created to support the research conducted in the [DyerLab](https://dyerlab.org).  
 
 
 

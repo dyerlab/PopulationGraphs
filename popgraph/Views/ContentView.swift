@@ -10,7 +10,7 @@ import SceneKit
 
 struct ContentView: View {
     
-    @State var graph: Graph
+    @Binding var graph: Graph
     
     var scene: GraphScene {
         let ret = GraphScene()
@@ -30,6 +30,7 @@ struct ContentView: View {
                         Spacer()
                         Text("N: \(String(graph.nodes.count) )")
                         Text("K: \(String(graph.edges.count) )")
+                        Text("E: \(String(format:"%.2f", graph.totalEnergy() ))")
                     }
                 }
                 .padding()
@@ -41,6 +42,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(graph: Graph.LophoGraph())
+        ContentView(graph: .constant(Graph.LophoGraph()))
     }
 }

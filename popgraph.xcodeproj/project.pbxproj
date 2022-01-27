@@ -41,6 +41,9 @@
 		2A9CE02327A0955600DF86EE /* layoutNodesRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE02227A0955600DF86EE /* layoutNodesRandom.swift */; };
 		2AC57D0927A2D8EE00A31F8B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2AC57D0727A2D8EE00A31F8B /* README.md */; };
 		2AC57D0A27A2D8EE00A31F8B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2AC57D0827A2D8EE00A31F8B /* LICENSE */; };
+		2AC57D0C27A2EBFB00A31F8B /* LayoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC57D0B27A2EBFB00A31F8B /* LayoutType.swift */; };
+		2AC57D1227A2EE0D00A31F8B /* layoutNodesEigenvalue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC57D1127A2EE0D00A31F8B /* layoutNodesEigenvalue.swift */; };
+		2AC57D1427A2EE5300A31F8B /* Array+Node2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC57D1327A2EE5300A31F8B /* Array+Node2D.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +102,9 @@
 		2A9CE02227A0955600DF86EE /* layoutNodesRandom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = layoutNodesRandom.swift; sourceTree = "<group>"; };
 		2AC57D0727A2D8EE00A31F8B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2AC57D0827A2D8EE00A31F8B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		2AC57D0B27A2EBFB00A31F8B /* LayoutType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutType.swift; sourceTree = "<group>"; };
+		2AC57D1127A2EE0D00A31F8B /* layoutNodesEigenvalue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = layoutNodesEigenvalue.swift; sourceTree = "<group>"; };
+		2AC57D1327A2EE5300A31F8B /* Array+Node2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Node2D.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,14 +132,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A6538E327A0990A0037C634 /* Graph Layouts */ = {
+		2A6538E327A0990A0037C634 /* Layouts */ = {
 			isa = PBXGroup;
 			children = (
+				2AC57D1127A2EE0D00A31F8B /* layoutNodesEigenvalue.swift */,
 				2A9CE01E27A07D9500DF86EE /* layoutNodesFruchterman.swift */,
 				2A9CE02027A0848000DF86EE /* layoutNodesCircular.swift */,
 				2A9CE02227A0955600DF86EE /* layoutNodesRandom.swift */,
+				2AC57D0B27A2EBFB00A31F8B /* LayoutType.swift */,
 			);
-			path = "Graph Layouts";
+			path = Layouts;
 			sourceTree = "<group>";
 		};
 		2A6538E427A1A43A0037C634 /* Matrix */ = {
@@ -202,17 +210,9 @@
 				2A9CDFE5279F3F2100DF86EE /* Assets.xcassets */,
 				2A9CDFEA279F3F2100DF86EE /* popgraph.entitlements */,
 				2A9CDFE1279F3F2000DF86EE /* popgraphApp.swift */,
-				2A9CDFE3279F3F2000DF86EE /* ContentView.swift */,
-				2A9CE016279F476D00DF86EE /* Notification.Name.swift */,
-				2A9CE01827A0431900DF86EE /* CGPoint.swift */,
-				2A9CE01C27A05FD600DF86EE /* CGSize.swift */,
-				2A9CE01A27A0519200DF86EE /* Graph.swift */,
-				2A9CE011279F41B500DF86EE /* Edge2D.swift */,
-				2A9CE010279F41B500DF86EE /* Node2D.swift */,
-				2A9CE00C279F3F6F00DF86EE /* GraphView.swift */,
-				2A9CE00E279F3F9100DF86EE /* GraphScene.swift */,
-				2A9CE014279F428900DF86EE /* GraphViewCoordinator.swift */,
-				2A6538E327A0990A0037C634 /* Graph Layouts */,
+				2AC57D0D27A2ED2800A31F8B /* Extensions */,
+				2AC57D0F27A2ED4B00A31F8B /* Model */,
+				2AC57D1027A2ED5E00A31F8B /* Views */,
 			);
 			path = popgraph;
 			sourceTree = "<group>";
@@ -240,6 +240,47 @@
 				2A9CDFFF279F3F2100DF86EE /* popgraphUITestsLaunchTests.swift */,
 			);
 			path = popgraphUITests;
+			sourceTree = "<group>";
+		};
+		2AC57D0D27A2ED2800A31F8B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CE016279F476D00DF86EE /* Notification.Name.swift */,
+				2A9CE01827A0431900DF86EE /* CGPoint.swift */,
+				2A9CE01C27A05FD600DF86EE /* CGSize.swift */,
+				2AC57D1327A2EE5300A31F8B /* Array+Node2D.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2AC57D0E27A2ED4200A31F8B /* GraphView */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CE00C279F3F6F00DF86EE /* GraphView.swift */,
+				2A9CE014279F428900DF86EE /* GraphViewCoordinator.swift */,
+			);
+			path = GraphView;
+			sourceTree = "<group>";
+		};
+		2AC57D0F27A2ED4B00A31F8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2A6538E327A0990A0037C634 /* Layouts */,
+				2A9CE01A27A0519200DF86EE /* Graph.swift */,
+				2A9CE00E279F3F9100DF86EE /* GraphScene.swift */,
+				2A9CE011279F41B500DF86EE /* Edge2D.swift */,
+				2A9CE010279F41B500DF86EE /* Node2D.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2AC57D1027A2ED5E00A31F8B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CDFE3279F3F2000DF86EE /* ContentView.swift */,
+				2AC57D0E27A2ED4200A31F8B /* GraphView */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,10 +418,12 @@
 				2A9CE01D27A05FD600DF86EE /* CGSize.swift in Sources */,
 				2A9CE017279F476D00DF86EE /* Notification.Name.swift in Sources */,
 				2A9CE013279F41B500DF86EE /* Edge2D.swift in Sources */,
+				2AC57D1227A2EE0D00A31F8B /* layoutNodesEigenvalue.swift in Sources */,
 				2A9CDFE4279F3F2000DF86EE /* ContentView.swift in Sources */,
 				2A9CDFE2279F3F2000DF86EE /* popgraphApp.swift in Sources */,
 				2A9CE01B27A0519200DF86EE /* Graph.swift in Sources */,
 				2A65390427A1A43A0037C634 /* MatrixAlgebra.swift in Sources */,
+				2AC57D0C27A2EBFB00A31F8B /* LayoutType.swift in Sources */,
 				2A9CE01927A0431900DF86EE /* CGPoint.swift in Sources */,
 				2A6538F627A1A43A0037C634 /* rSourceConvertible.swift in Sources */,
 				2A65390027A1A43A0037C634 /* MatrixMatrixOperations.swift in Sources */,
@@ -395,6 +438,7 @@
 				2A6538FA27A1A43A0037C634 /* RangeEnum.swift in Sources */,
 				2A6538F927A1A43A0037C634 /* VectorConvertable.swift in Sources */,
 				2A65390227A1A43A0037C634 /* Matrix.swift in Sources */,
+				2AC57D1427A2EE5300A31F8B /* Array+Node2D.swift in Sources */,
 				2A9CE015279F428900DF86EE /* GraphViewCoordinator.swift in Sources */,
 				2A6538FE27A1A43A0037C634 /* Operators.swift in Sources */,
 				2A6538FF27A1A43A0037C634 /* MatrixConvertable.swift in Sources */,

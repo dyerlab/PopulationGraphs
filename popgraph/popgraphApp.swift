@@ -9,39 +9,44 @@ import SwiftUI
 
 @main
 struct popgraphApp: App {
+    
+    @State var graph = Graph.LophoGraph()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView(graph: Graph.LophoGraph())
+            ContentView(graph: $graph)
         }
         .commands {
             CommandMenu("Graph") {
                 
                 Button(action: {
-                    NotificationCenter.default.post(name: .layoutNodes, object: nil, userInfo: ["layout":"Random"] )
-                }, label: {
-                    Text("Randomize Layout")
-                })
-                    .keyboardShortcut("R", modifiers: [.command])
-                
-                
-                Button(action: {
-                    NotificationCenter.default.post(name: .layoutNodes, object: nil, userInfo: ["layout":"Circular"] )
+                    NotificationCenter.default.post(name: .layoutNodes, object: nil, userInfo: ["layout": LayoutType.Random] )
                 }, label: {
                     Text("Layout Circular")
                 })
                     .keyboardShortcut( "C", modifiers: [.shift,.command])
 
-                
                 Button(action: {
-                    NotificationCenter.default.post(name: .layoutNodes, object: nil, userInfo: ["layout":"Fruchterman"] )
+                    NotificationCenter.default.post(name: .layoutNodes, object: nil, userInfo: ["layout": LayoutType.Eigenvalue] )
+                }, label: {
+                    Text("Layout Eigen")
+                })
+                    .keyboardShortcut( "E", modifiers: [.shift,.command])
+
+                Button(action: {
+                    NotificationCenter.default.post(name: .layoutNodes, object: nil, userInfo: ["layout": LayoutType.Fruchterman] )
                 }, label: {
                     Text("Layout FR")
                 })
                     .keyboardShortcut( "F", modifiers: [.shift,.command])
 
+                Button(action: {
+                    NotificationCenter.default.post(name: .layoutNodes, object: nil, userInfo: ["layout": LayoutType.Random ] )
+                }, label: {
+                    Text("Randomize Layout")
+                })
+                    .keyboardShortcut("R", modifiers: [.command])
 
-                
-                
                 
                 Divider()
                 
