@@ -1,0 +1,715 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A6538F627A1A43A0037C634 /* rSourceConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538E527A1A43A0037C634 /* rSourceConvertible.swift */; };
+		2A6538F727A1A43A0037C634 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538E727A1A43A0037C634 /* Random.swift */; };
+		2A6538F827A1A43A0037C634 /* VectorScalarOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538E827A1A43A0037C634 /* VectorScalarOperators.swift */; };
+		2A6538F927A1A43A0037C634 /* VectorConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538E927A1A43A0037C634 /* VectorConvertable.swift */; };
+		2A6538FA27A1A43A0037C634 /* RangeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538EA27A1A43A0037C634 /* RangeEnum.swift */; };
+		2A6538FC27A1A43A0037C634 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538EC27A1A43A0037C634 /* Vector.swift */; };
+		2A6538FD27A1A43A0037C634 /* VectorVectorOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538ED27A1A43A0037C634 /* VectorVectorOperators.swift */; };
+		2A6538FE27A1A43A0037C634 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538EE27A1A43A0037C634 /* Operators.swift */; };
+		2A6538FF27A1A43A0037C634 /* MatrixConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538F027A1A43A0037C634 /* MatrixConvertable.swift */; };
+		2A65390027A1A43A0037C634 /* MatrixMatrixOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538F127A1A43A0037C634 /* MatrixMatrixOperations.swift */; };
+		2A65390227A1A43A0037C634 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538F327A1A43A0037C634 /* Matrix.swift */; };
+		2A65390327A1A43A0037C634 /* MatrixScalarOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538F427A1A43A0037C634 /* MatrixScalarOperators.swift */; };
+		2A65390427A1A43A0037C634 /* MatrixAlgebra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538F527A1A43A0037C634 /* MatrixAlgebra.swift */; };
+		2A9CDFE2279F3F2000DF86EE /* popgraphApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CDFE1279F3F2000DF86EE /* popgraphApp.swift */; };
+		2A9CDFE4279F3F2000DF86EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CDFE3279F3F2000DF86EE /* ContentView.swift */; };
+		2A9CDFE6279F3F2100DF86EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A9CDFE5279F3F2100DF86EE /* Assets.xcassets */; };
+		2A9CDFE9279F3F2100DF86EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A9CDFE8279F3F2100DF86EE /* Preview Assets.xcassets */; };
+		2A9CDFF4279F3F2100DF86EE /* popgraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CDFF3279F3F2100DF86EE /* popgraphTests.swift */; };
+		2A9CDFFE279F3F2100DF86EE /* popgraphUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CDFFD279F3F2100DF86EE /* popgraphUITests.swift */; };
+		2A9CE000279F3F2100DF86EE /* popgraphUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CDFFF279F3F2100DF86EE /* popgraphUITestsLaunchTests.swift */; };
+		2A9CE00D279F3F6F00DF86EE /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE00C279F3F6F00DF86EE /* GraphView.swift */; };
+		2A9CE00F279F3F9100DF86EE /* GraphScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE00E279F3F9100DF86EE /* GraphScene.swift */; };
+		2A9CE012279F41B500DF86EE /* Node2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE010279F41B500DF86EE /* Node2D.swift */; };
+		2A9CE013279F41B500DF86EE /* Edge2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE011279F41B500DF86EE /* Edge2D.swift */; };
+		2A9CE015279F428900DF86EE /* GraphViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE014279F428900DF86EE /* GraphViewCoordinator.swift */; };
+		2A9CE017279F476D00DF86EE /* Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE016279F476D00DF86EE /* Notification.Name.swift */; };
+		2A9CE01927A0431900DF86EE /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE01827A0431900DF86EE /* CGPoint.swift */; };
+		2A9CE01B27A0519200DF86EE /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE01A27A0519200DF86EE /* Graph.swift */; };
+		2A9CE01D27A05FD600DF86EE /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE01C27A05FD600DF86EE /* CGSize.swift */; };
+		2A9CE01F27A07D9500DF86EE /* layoutNodesFruchterman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE01E27A07D9500DF86EE /* layoutNodesFruchterman.swift */; };
+		2A9CE02127A0848000DF86EE /* layoutNodesCircular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE02027A0848000DF86EE /* layoutNodesCircular.swift */; };
+		2A9CE02327A0955600DF86EE /* layoutNodesRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE02227A0955600DF86EE /* layoutNodesRandom.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A9CDFF0279F3F2100DF86EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A9CDFD6279F3F2000DF86EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A9CDFDD279F3F2000DF86EE;
+			remoteInfo = popgraph;
+		};
+		2A9CDFFA279F3F2100DF86EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A9CDFD6279F3F2000DF86EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A9CDFDD279F3F2000DF86EE;
+			remoteInfo = popgraph;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2A6538E527A1A43A0037C634 /* rSourceConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rSourceConvertible.swift; sourceTree = "<group>"; };
+		2A6538E727A1A43A0037C634 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
+		2A6538E827A1A43A0037C634 /* VectorScalarOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorScalarOperators.swift; sourceTree = "<group>"; };
+		2A6538E927A1A43A0037C634 /* VectorConvertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorConvertable.swift; sourceTree = "<group>"; };
+		2A6538EA27A1A43A0037C634 /* RangeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeEnum.swift; sourceTree = "<group>"; };
+		2A6538EC27A1A43A0037C634 /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
+		2A6538ED27A1A43A0037C634 /* VectorVectorOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorVectorOperators.swift; sourceTree = "<group>"; };
+		2A6538EE27A1A43A0037C634 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		2A6538F027A1A43A0037C634 /* MatrixConvertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixConvertable.swift; sourceTree = "<group>"; };
+		2A6538F127A1A43A0037C634 /* MatrixMatrixOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixMatrixOperations.swift; sourceTree = "<group>"; };
+		2A6538F327A1A43A0037C634 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		2A6538F427A1A43A0037C634 /* MatrixScalarOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixScalarOperators.swift; sourceTree = "<group>"; };
+		2A6538F527A1A43A0037C634 /* MatrixAlgebra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixAlgebra.swift; sourceTree = "<group>"; };
+		2A9CDFDE279F3F2000DF86EE /* popgraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = popgraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A9CDFE1279F3F2000DF86EE /* popgraphApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popgraphApp.swift; sourceTree = "<group>"; };
+		2A9CDFE3279F3F2000DF86EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2A9CDFE5279F3F2100DF86EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A9CDFE8279F3F2100DF86EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2A9CDFEA279F3F2100DF86EE /* popgraph.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = popgraph.entitlements; sourceTree = "<group>"; };
+		2A9CDFEF279F3F2100DF86EE /* popgraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = popgraphTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A9CDFF3279F3F2100DF86EE /* popgraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popgraphTests.swift; sourceTree = "<group>"; };
+		2A9CDFF9279F3F2100DF86EE /* popgraphUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = popgraphUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A9CDFFD279F3F2100DF86EE /* popgraphUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popgraphUITests.swift; sourceTree = "<group>"; };
+		2A9CDFFF279F3F2100DF86EE /* popgraphUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popgraphUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2A9CE00C279F3F6F00DF86EE /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		2A9CE00E279F3F9100DF86EE /* GraphScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphScene.swift; sourceTree = "<group>"; };
+		2A9CE010279F41B500DF86EE /* Node2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node2D.swift; sourceTree = "<group>"; };
+		2A9CE011279F41B500DF86EE /* Edge2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edge2D.swift; sourceTree = "<group>"; };
+		2A9CE014279F428900DF86EE /* GraphViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewCoordinator.swift; sourceTree = "<group>"; };
+		2A9CE016279F476D00DF86EE /* Notification.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.Name.swift; sourceTree = "<group>"; };
+		2A9CE01827A0431900DF86EE /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		2A9CE01A27A0519200DF86EE /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		2A9CE01C27A05FD600DF86EE /* CGSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
+		2A9CE01E27A07D9500DF86EE /* layoutNodesFruchterman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = layoutNodesFruchterman.swift; sourceTree = "<group>"; };
+		2A9CE02027A0848000DF86EE /* layoutNodesCircular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = layoutNodesCircular.swift; sourceTree = "<group>"; };
+		2A9CE02227A0955600DF86EE /* layoutNodesRandom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = layoutNodesRandom.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A9CDFDB279F3F2000DF86EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A9CDFEC279F3F2100DF86EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A9CDFF6279F3F2100DF86EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A6538E327A0990A0037C634 /* Graph Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CE01E27A07D9500DF86EE /* layoutNodesFruchterman.swift */,
+				2A9CE02027A0848000DF86EE /* layoutNodesCircular.swift */,
+				2A9CE02227A0955600DF86EE /* layoutNodesRandom.swift */,
+			);
+			path = "Graph Layouts";
+			sourceTree = "<group>";
+		};
+		2A6538E427A1A43A0037C634 /* Matrix */ = {
+			isa = PBXGroup;
+			children = (
+				2A6538E527A1A43A0037C634 /* rSourceConvertible.swift */,
+				2A6538E627A1A43A0037C634 /* Vectors */,
+				2A6538EE27A1A43A0037C634 /* Operators.swift */,
+				2A6538EF27A1A43A0037C634 /* Matrices */,
+			);
+			path = Matrix;
+			sourceTree = "<group>";
+		};
+		2A6538E627A1A43A0037C634 /* Vectors */ = {
+			isa = PBXGroup;
+			children = (
+				2A6538E727A1A43A0037C634 /* Random.swift */,
+				2A6538E827A1A43A0037C634 /* VectorScalarOperators.swift */,
+				2A6538E927A1A43A0037C634 /* VectorConvertable.swift */,
+				2A6538EA27A1A43A0037C634 /* RangeEnum.swift */,
+				2A6538EC27A1A43A0037C634 /* Vector.swift */,
+				2A6538ED27A1A43A0037C634 /* VectorVectorOperators.swift */,
+			);
+			path = Vectors;
+			sourceTree = "<group>";
+		};
+		2A6538EF27A1A43A0037C634 /* Matrices */ = {
+			isa = PBXGroup;
+			children = (
+				2A6538F027A1A43A0037C634 /* MatrixConvertable.swift */,
+				2A6538F127A1A43A0037C634 /* MatrixMatrixOperations.swift */,
+				2A6538F327A1A43A0037C634 /* Matrix.swift */,
+				2A6538F427A1A43A0037C634 /* MatrixScalarOperators.swift */,
+				2A6538F527A1A43A0037C634 /* MatrixAlgebra.swift */,
+			);
+			path = Matrices;
+			sourceTree = "<group>";
+		};
+		2A9CDFD5279F3F2000DF86EE = {
+			isa = PBXGroup;
+			children = (
+				2A9CDFE0279F3F2000DF86EE /* popgraph */,
+				2A9CDFF2279F3F2100DF86EE /* popgraphTests */,
+				2A9CDFFC279F3F2100DF86EE /* popgraphUITests */,
+				2A9CDFDF279F3F2000DF86EE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A9CDFDF279F3F2000DF86EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CDFDE279F3F2000DF86EE /* popgraph.app */,
+				2A9CDFEF279F3F2100DF86EE /* popgraphTests.xctest */,
+				2A9CDFF9279F3F2100DF86EE /* popgraphUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A9CDFE0279F3F2000DF86EE /* popgraph */ = {
+			isa = PBXGroup;
+			children = (
+				2A6538E427A1A43A0037C634 /* Matrix */,
+				2A9CDFE7279F3F2100DF86EE /* Preview Content */,
+				2A9CDFE5279F3F2100DF86EE /* Assets.xcassets */,
+				2A9CDFEA279F3F2100DF86EE /* popgraph.entitlements */,
+				2A9CDFE1279F3F2000DF86EE /* popgraphApp.swift */,
+				2A9CDFE3279F3F2000DF86EE /* ContentView.swift */,
+				2A9CE016279F476D00DF86EE /* Notification.Name.swift */,
+				2A9CE01827A0431900DF86EE /* CGPoint.swift */,
+				2A9CE01C27A05FD600DF86EE /* CGSize.swift */,
+				2A9CE01A27A0519200DF86EE /* Graph.swift */,
+				2A9CE011279F41B500DF86EE /* Edge2D.swift */,
+				2A9CE010279F41B500DF86EE /* Node2D.swift */,
+				2A9CE00C279F3F6F00DF86EE /* GraphView.swift */,
+				2A9CE00E279F3F9100DF86EE /* GraphScene.swift */,
+				2A9CE014279F428900DF86EE /* GraphViewCoordinator.swift */,
+				2A6538E327A0990A0037C634 /* Graph Layouts */,
+			);
+			path = popgraph;
+			sourceTree = "<group>";
+		};
+		2A9CDFE7279F3F2100DF86EE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CDFE8279F3F2100DF86EE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2A9CDFF2279F3F2100DF86EE /* popgraphTests */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CDFF3279F3F2100DF86EE /* popgraphTests.swift */,
+			);
+			path = popgraphTests;
+			sourceTree = "<group>";
+		};
+		2A9CDFFC279F3F2100DF86EE /* popgraphUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CDFFD279F3F2100DF86EE /* popgraphUITests.swift */,
+				2A9CDFFF279F3F2100DF86EE /* popgraphUITestsLaunchTests.swift */,
+			);
+			path = popgraphUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A9CDFDD279F3F2000DF86EE /* popgraph */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A9CE003279F3F2100DF86EE /* Build configuration list for PBXNativeTarget "popgraph" */;
+			buildPhases = (
+				2A9CDFDA279F3F2000DF86EE /* Sources */,
+				2A9CDFDB279F3F2000DF86EE /* Frameworks */,
+				2A9CDFDC279F3F2000DF86EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = popgraph;
+			productName = popgraph;
+			productReference = 2A9CDFDE279F3F2000DF86EE /* popgraph.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2A9CDFEE279F3F2100DF86EE /* popgraphTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A9CE006279F3F2100DF86EE /* Build configuration list for PBXNativeTarget "popgraphTests" */;
+			buildPhases = (
+				2A9CDFEB279F3F2100DF86EE /* Sources */,
+				2A9CDFEC279F3F2100DF86EE /* Frameworks */,
+				2A9CDFED279F3F2100DF86EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A9CDFF1279F3F2100DF86EE /* PBXTargetDependency */,
+			);
+			name = popgraphTests;
+			productName = popgraphTests;
+			productReference = 2A9CDFEF279F3F2100DF86EE /* popgraphTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2A9CDFF8279F3F2100DF86EE /* popgraphUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A9CE009279F3F2100DF86EE /* Build configuration list for PBXNativeTarget "popgraphUITests" */;
+			buildPhases = (
+				2A9CDFF5279F3F2100DF86EE /* Sources */,
+				2A9CDFF6279F3F2100DF86EE /* Frameworks */,
+				2A9CDFF7279F3F2100DF86EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A9CDFFB279F3F2100DF86EE /* PBXTargetDependency */,
+			);
+			name = popgraphUITests;
+			productName = popgraphUITests;
+			productReference = 2A9CDFF9279F3F2100DF86EE /* popgraphUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A9CDFD6279F3F2000DF86EE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					2A9CDFDD279F3F2000DF86EE = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					2A9CDFEE279F3F2100DF86EE = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 2A9CDFDD279F3F2000DF86EE;
+					};
+					2A9CDFF8279F3F2100DF86EE = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 2A9CDFDD279F3F2000DF86EE;
+					};
+				};
+			};
+			buildConfigurationList = 2A9CDFD9279F3F2000DF86EE /* Build configuration list for PBXProject "popgraph" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2A9CDFD5279F3F2000DF86EE;
+			productRefGroup = 2A9CDFDF279F3F2000DF86EE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A9CDFDD279F3F2000DF86EE /* popgraph */,
+				2A9CDFEE279F3F2100DF86EE /* popgraphTests */,
+				2A9CDFF8279F3F2100DF86EE /* popgraphUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A9CDFDC279F3F2000DF86EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A9CDFE9279F3F2100DF86EE /* Preview Assets.xcassets in Resources */,
+				2A9CDFE6279F3F2100DF86EE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A9CDFED279F3F2100DF86EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A9CDFF7279F3F2100DF86EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A9CDFDA279F3F2000DF86EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A9CE01D27A05FD600DF86EE /* CGSize.swift in Sources */,
+				2A9CE017279F476D00DF86EE /* Notification.Name.swift in Sources */,
+				2A9CE013279F41B500DF86EE /* Edge2D.swift in Sources */,
+				2A9CDFE4279F3F2000DF86EE /* ContentView.swift in Sources */,
+				2A9CDFE2279F3F2000DF86EE /* popgraphApp.swift in Sources */,
+				2A9CE01B27A0519200DF86EE /* Graph.swift in Sources */,
+				2A65390427A1A43A0037C634 /* MatrixAlgebra.swift in Sources */,
+				2A9CE01927A0431900DF86EE /* CGPoint.swift in Sources */,
+				2A6538F627A1A43A0037C634 /* rSourceConvertible.swift in Sources */,
+				2A65390027A1A43A0037C634 /* MatrixMatrixOperations.swift in Sources */,
+				2A6538F727A1A43A0037C634 /* Random.swift in Sources */,
+				2A9CE02127A0848000DF86EE /* layoutNodesCircular.swift in Sources */,
+				2A6538FC27A1A43A0037C634 /* Vector.swift in Sources */,
+				2A6538F827A1A43A0037C634 /* VectorScalarOperators.swift in Sources */,
+				2A9CE00D279F3F6F00DF86EE /* GraphView.swift in Sources */,
+				2A9CE012279F41B500DF86EE /* Node2D.swift in Sources */,
+				2A9CE00F279F3F9100DF86EE /* GraphScene.swift in Sources */,
+				2A6538FD27A1A43A0037C634 /* VectorVectorOperators.swift in Sources */,
+				2A6538FA27A1A43A0037C634 /* RangeEnum.swift in Sources */,
+				2A6538F927A1A43A0037C634 /* VectorConvertable.swift in Sources */,
+				2A65390227A1A43A0037C634 /* Matrix.swift in Sources */,
+				2A9CE015279F428900DF86EE /* GraphViewCoordinator.swift in Sources */,
+				2A6538FE27A1A43A0037C634 /* Operators.swift in Sources */,
+				2A6538FF27A1A43A0037C634 /* MatrixConvertable.swift in Sources */,
+				2A65390327A1A43A0037C634 /* MatrixScalarOperators.swift in Sources */,
+				2A9CE02327A0955600DF86EE /* layoutNodesRandom.swift in Sources */,
+				2A9CE01F27A07D9500DF86EE /* layoutNodesFruchterman.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A9CDFEB279F3F2100DF86EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A9CDFF4279F3F2100DF86EE /* popgraphTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A9CDFF5279F3F2100DF86EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A9CE000279F3F2100DF86EE /* popgraphUITestsLaunchTests.swift in Sources */,
+				2A9CDFFE279F3F2100DF86EE /* popgraphUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A9CDFF1279F3F2100DF86EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A9CDFDD279F3F2000DF86EE /* popgraph */;
+			targetProxy = 2A9CDFF0279F3F2100DF86EE /* PBXContainerItemProxy */;
+		};
+		2A9CDFFB279F3F2100DF86EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A9CDFDD279F3F2000DF86EE /* popgraph */;
+			targetProxy = 2A9CDFFA279F3F2100DF86EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2A9CE001279F3F2100DF86EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2A9CE002279F3F2100DF86EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		2A9CE004279F3F2100DF86EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = popgraph/popgraph.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"popgraph/Preview Content\"";
+				DEVELOPMENT_TEAM = 3L9D67FVN7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dyerlab.popgraph;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2A9CE005279F3F2100DF86EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = popgraph/popgraph.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"popgraph/Preview Content\"";
+				DEVELOPMENT_TEAM = 3L9D67FVN7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dyerlab.popgraph;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		2A9CE007279F3F2100DF86EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3L9D67FVN7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dyerlab.popgraphTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/popgraph.app/Contents/MacOS/popgraph";
+			};
+			name = Debug;
+		};
+		2A9CE008279F3F2100DF86EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3L9D67FVN7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dyerlab.popgraphTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/popgraph.app/Contents/MacOS/popgraph";
+			};
+			name = Release;
+		};
+		2A9CE00A279F3F2100DF86EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3L9D67FVN7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dyerlab.popgraphUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = popgraph;
+			};
+			name = Debug;
+		};
+		2A9CE00B279F3F2100DF86EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3L9D67FVN7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dyerlab.popgraphUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = popgraph;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A9CDFD9279F3F2000DF86EE /* Build configuration list for PBXProject "popgraph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A9CE001279F3F2100DF86EE /* Debug */,
+				2A9CE002279F3F2100DF86EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A9CE003279F3F2100DF86EE /* Build configuration list for PBXNativeTarget "popgraph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A9CE004279F3F2100DF86EE /* Debug */,
+				2A9CE005279F3F2100DF86EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A9CE006279F3F2100DF86EE /* Build configuration list for PBXNativeTarget "popgraphTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A9CE007279F3F2100DF86EE /* Debug */,
+				2A9CE008279F3F2100DF86EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A9CE009279F3F2100DF86EE /* Build configuration list for PBXNativeTarget "popgraphUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A9CE00A279F3F2100DF86EE /* Debug */,
+				2A9CE00B279F3F2100DF86EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A9CDFD6279F3F2000DF86EE /* Project object */;
+}
