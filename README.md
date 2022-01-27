@@ -1,6 +1,6 @@
 # Population Graphs
 
-> Population genetic software that doesn't suck.
+> Population genetic software that doesn't suck. 
 
 ![](https://img.shields.io/badge/license-GPLv3-green)  ![](https://img.shields.io/badge/swift-5.5-green)  ![](https://img.shields.io/badge/macOS-11-green)
 
