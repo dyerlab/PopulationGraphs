@@ -70,6 +70,7 @@ class graphTests: XCTestCase {
         XCTAssertEqual( diff.magnitude, 0.0, accuracy: 0.00001)
         
         
+        
     }
 
 }

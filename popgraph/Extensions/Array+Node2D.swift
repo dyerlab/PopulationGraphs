@@ -67,12 +67,15 @@ extension Array where Element == Node2D {
         }
     }
     
-    
-    
-    
-    
-    
     func resizeInto( newSize: CGSize) {
+        
+        let diff = CGPoint(x: newSize.width / 2.0 , y: newSize.height / 2.0 ) - self.centroid
+        for i in 0 ..< self.count {
+            
+            
+            
+        }
+        
         self.forEach{ node in
             node.position.x *= self.size.width / newSize.width
             node.position.y *= self.size.height / newSize.height 

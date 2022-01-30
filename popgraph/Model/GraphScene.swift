@@ -18,18 +18,12 @@ class GraphScene: SKScene {
     
     override init(size: CGSize) {
         self.graph = Graph.LophoGraph()
-        
         super.init(size: size )
         self.addGraph()
-        
         self.graph.scene = self
-        
         self.scaleMode = .aspectFill
         self.backgroundColor = .white
-
-        
         self.physicsWorld.contactDelegate = self
-        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(moveNodes(notification:)),
                                                name: .moveNodes,
@@ -102,13 +96,14 @@ extension GraphScene: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         //
         let collision: UInt32 = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
-        
+        /*
         if collision == nodeCategory | nodeCategory {
             print("node node collistion")
         }
         else {
             print("not node collision")
         }
+         */
     }
      
 }
