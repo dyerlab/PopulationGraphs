@@ -49,8 +49,8 @@ extension CGPoint {
     
     /// Override scalar division
     static func /(lhs: CGPoint, s: CGFloat ) -> CGPoint {
-        return CGPoint(x: lhs.x * s,
-                       y: lhs.y * s)
+        return CGPoint(x: lhs.x / s,
+                       y: lhs.y / s)
     }
     
     /// Override scalar multiplication

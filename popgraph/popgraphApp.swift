@@ -10,38 +10,46 @@ import SwiftUI
 @main
 struct popgraphApp: App {
     
-    @State var graph = Graph.LophoGraph()
+    var graph = GraphScene(size: CGSize(width: 600, height: 600))
     
     var body: some Scene {
         WindowGroup {
-            ContentView(graph: $graph)
+            ContentView(scene: graph)
         }
         .commands {
             CommandMenu("Graph") {
                 
                 Button(action: {
-                    NotificationCenter.default.post(name: .layoutNodes, object: nil, userInfo: ["layout": LayoutType.Random] )
+                    NotificationCenter.default.post(name: .moveNodes,
+                                                    object: nil,
+                                                    userInfo: ["layout": LayoutType.LayoutRandom] )
                 }, label: {
                     Text("Layout Circular")
                 })
                     .keyboardShortcut( "C", modifiers: [.shift,.command])
 
                 Button(action: {
-                    NotificationCenter.default.post(name: .layoutNodes, object: nil, userInfo: ["layout": LayoutType.Eigenvalue] )
+                    NotificationCenter.default.post(name: .moveNodes,
+                                                    object: nil,
+                                                    userInfo: ["layout": LayoutType.LayoutEigenvalue] )
                 }, label: {
                     Text("Layout Eigen")
                 })
                     .keyboardShortcut( "E", modifiers: [.shift,.command])
 
                 Button(action: {
-                    NotificationCenter.default.post(name: .layoutNodes, object: nil, userInfo: ["layout": LayoutType.Fruchterman] )
+                    NotificationCenter.default.post(name: .moveNodes,
+                                                    object: nil,
+                                                    userInfo: ["layout": LayoutType.LayoutFruchterman] )
                 }, label: {
                     Text("Layout FR")
                 })
                     .keyboardShortcut( "F", modifiers: [.shift,.command])
 
                 Button(action: {
-                    NotificationCenter.default.post(name: .layoutNodes, object: nil, userInfo: ["layout": LayoutType.Random ] )
+                    NotificationCenter.default.post(name: .moveNodes,
+                                                    object: nil,
+                                                    userInfo: ["layout": LayoutType.LayoutRandom ] )
                 }, label: {
                     Text("Randomize Layout")
                 })
@@ -52,8 +60,9 @@ struct popgraphApp: App {
                 
                 
                 Button(action: {
-                    print("shifting up")
-                    NotificationCenter.default.post(name: .shiftNodes, object: nil, userInfo: ["Direction": "up"] )
+                    NotificationCenter.default.post(name: .moveNodes,
+                                                    object: nil,
+                                                    userInfo: ["layout": LayoutType.ShiftUp ] )
                 }, label: {
                     Text("Shift Up")
                 })
@@ -61,8 +70,9 @@ struct popgraphApp: App {
                 
                 
                 Button(action: {
-                    print("shifting down")
-                    NotificationCenter.default.post(name: .shiftNodes, object: nil, userInfo: ["Direction": "down"] )
+                    NotificationCenter.default.post(name: .moveNodes,
+                                                    object: nil,
+                                                    userInfo: ["layout": LayoutType.ShiftDown] )
                 }, label: {
                     Text("Shift Down")
                 })
@@ -70,8 +80,9 @@ struct popgraphApp: App {
 
                 
                 Button(action: {
-                    print("shifting left")
-                    NotificationCenter.default.post(name: .shiftNodes, object: nil, userInfo: ["Direction": "left"] )
+                    NotificationCenter.default.post(name: .moveNodes,
+                                                    object: nil,
+                                                    userInfo: ["layout": LayoutType.ShiftLeft ] )
                 }, label: {
                     Text("Shift Left")
                 })
@@ -79,8 +90,9 @@ struct popgraphApp: App {
 
                 
                 Button(action: {
-                    print("shifting right")
-                    NotificationCenter.default.post(name: .shiftNodes, object: nil, userInfo: ["Direction": "right"] )
+                    NotificationCenter.default.post(name: .moveNodes,
+                                                    object: nil,
+                                                    userInfo: ["layout": LayoutType.ShiftRight ] )
                 }, label: {
                     Text("Shift Right")
                 })

@@ -8,7 +8,7 @@
 import Foundation
 import SpriteKit
 
-public class Edge2D: SKNode {
+class Edge2D: SKNode {
     
     var node1: Node2D
     var node2: Node2D
@@ -16,6 +16,10 @@ public class Edge2D: SKNode {
     var lineNode: SKShapeNode
     var path: CGMutablePath
     
+    override var description: String {
+        return String("\(self.node1.name) - \(self.node2.name): wt = \(self.strength)")
+    }
+
     init(from: Node2D, to: Node2D, weight: CGFloat) {
         self.node1 = from
         self.node2 = to

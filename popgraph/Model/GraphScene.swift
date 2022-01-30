@@ -9,89 +9,65 @@ import SpriteKit
 
 
 class GraphScene: SKScene {
+    
+    @Published var graph: Graph
+    
+    override init(size: CGSize) {
+        self.graph = Graph.LophoGraph()
         
-    init(size: CGSize, graph: Graph ) {
-        super.init(size: size)
-        for node in graph.nodes {
-            self.addChild( node )
-        }
-        for edge in graph.edges {
-            self.addChild( edge )
-        }
+        super.init(size: size )
+        self.addGraph()
+        
+        self.graph.scene = self
+        
+        self.scaleMode = .aspectFill
+        self.backgroundColor = .white
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(moveNodes(notification:)), name: .moveNodes, object: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func didMove(to view: SKView) {
-        self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
-    }
     
-}
-
-
-
-/*
-class GraphScene: SKScene, ObservableObject {
-    
-    @Published var graph = Graph()
-    
-    var edges: [Edge2D] {
-        return self.children.compactMap{ $0 as? Edge2D }
-    }
-    
-    override var size: CGSize {
-        didSet {
-            self.graph.size = self.size
+    private func addGraph() {
+        for node in graph.nodes {
+            self.addChild(node)
+        }
+        for edge in graph.edges {
+            self.addChild(edge)
         }
     }
-
-    override func didMove(to view: SKView ) {
-        physicsBody = SKPhysicsBody(edgeLoopFrom: frame )
-    }
-        
-    override func mouseDown(with event: NSEvent) {
-        let location = event.location(in: self)
-        print( "down at \(location.x) \(location.y) ")
+    
+    override func didChangeSize(_ oldSize: CGSize) {
+        self.graph.nodes.resizeInto(newSize: self.size )
     }
     
-    
-    func addGraph( graph: Graph ) {
-        self.graph = graph
-        if self.size > CGSize(width: 1.0, height: 1.0) {
-            layoutNodesCirclular(nodes: self.graph.nodes, size: self.graph.size)
-        } else {
-            layoutNodesCirclular(nodes: self.graph.nodes, size: CGSize(width: 500, height: 500))
+    @objc func moveNodes( notification: Notification ) {
+        if let userInfo = notification.userInfo {
+            if let layout = userInfo["layout"] as? LayoutType {
+                switch layout {
+                case .LayoutRandom:
+                    layoutNodesRandom(nodes: graph.nodes, size: self.size)
+                case .LayoutCircular:
+                    layoutNodesCirclular(nodes: graph.nodes, size: self.size)
+                case .LayoutEigenvalue:
+                    layoutNodesEigenvalue(nodes: graph.nodes, size: self.size)
+                case .LayoutFruchterman:
+                    layoutNodesFruchterman(nodes: graph.nodes, size: self.size)
+                case .ShiftUp:
+                    shiftNodePositions(nodes: graph.nodes, by: CGPoint(x: 0, y: 5))
+                case .ShiftDown:
+                    shiftNodePositions(nodes: graph.nodes, by: CGPoint(x: 0, y: -5))
+                case .ShiftLeft:
+                    shiftNodePositions(nodes: graph.nodes, by: CGPoint(x: -5, y: 0))
+                case .ShiftRight:
+                    shiftNodePositions(nodes: graph.nodes, by: CGPoint(x: 5, y: 0))
+                }
+            }
         }
-
-        self.addChild( self.graph.root )
     }
-    
     
 }
 
-
-
-
-
-
-
-
-
-
-
-// MARK: - Static Functions
-
-extension GraphScene {
-    
-    static func DefaultScene() -> GraphScene {
-        let scene = GraphScene()
-        scene.addGraph(graph: Graph.LophoGraph())
-        return scene
-    }
-    
-    
-}
-
-*/

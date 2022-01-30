@@ -29,6 +29,10 @@ class Node2D: SKNode {
         }
     }
     
+    override var description: String {
+        return String("\(self.name): sz = \(self.mass); position = (\(self.position.x),\(self.position.y))")
+    }
+    
     init( label: String, size: Double ) {
         self.displacement = CGPoint.zero
         self.force = CGPoint.zero
@@ -49,7 +53,7 @@ class Node2D: SKNode {
         shape.lineWidth = 1.0
         addChild( shape )
         
-        labelNode.fontSize = 20.0
+        labelNode.fontSize = 12.0
         labelNode.fontColor = .orange
         labelNode.position = CGPoint(x: 0.0,
                                      y: labelNode.frame.height)
@@ -69,9 +73,6 @@ class Node2D: SKNode {
         
         self.position = CGPoint(x: CGFloat.random(in: 0.0 ... 500.0 ),
                                 y: CGFloat.random(in: 0.0 ... 500.0 ) )
-        
-        NotificationCenter.default.addObserver( self, selector: #selector( shiftNodes(notification:) ), name: .shiftNodes, object: nil )
-        NotificationCenter.default.addObserver( self, selector: #selector( toggleLabel(notification:) ), name: .toggleLabel, object: nil )
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -81,6 +82,9 @@ class Node2D: SKNode {
     
     
 }
+
+
+
 
 
 // MARK: - Force Related Methods

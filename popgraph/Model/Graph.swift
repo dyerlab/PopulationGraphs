@@ -8,23 +8,51 @@
 import Foundation
 import SpriteKit
 
-class Graph: NSObject  {
+class Graph: NSObject, ObservableObject  {
     
     var nodes: [Node2D]
     var edges: [Edge2D]
+    var scene: GraphScene?
+    
+    var size: CGSize {
+        guard let sz = self.scene?.size else { return CGSize(width: 500, height: 500)}
+        return sz
+    }
+    
+    override var description: String {
+        var ret = ""
+        for node in nodes {
+            ret += String("\(node)\n")
+        }
+        for edge in edges {
+            ret += String("\(edge)\n")
+        }
+        return ret
+    }
+    
+    var energy: Double {
+        let graphDistance =  edges.compactMap{ Double($0.strength) }
+        let physicalDistance = edges.compactMap{ Double( ($0.node1.position - $0.node2.position).magnitude ) }
+        
+        let totGraph = graphDistance.reduce( 0.0, +)
+        let totPhys = physicalDistance.reduce( 0.0, +)
+        
+        print("totGraph: \(totGraph)")
+        print("totPhys: \(totPhys)")
+        var ret: Double = 0.0
+        for i in 0 ..< graphDistance.count {
+            ret += abs( (graphDistance[i] / totGraph) - (physicalDistance[i] - totPhys) )
+        }
+        print("total energy: \(ret)")
+        return ret
+    }
     
     override init() {
         self.nodes = [Node2D]()
         self.edges = [Edge2D]()
         super.init()
-        
-        //NotificationCenter.default.addObserver(self, selector: #selector( layoutNodes(notification:)), name: .layoutNodes, object: nil )
     }
     
-
-    func addNode( label: String, size: Double ) {
-        self.nodes.append( Node2D(label: label, size: size))
-    }
     
     func nodeNamed( name: String) -> Node2D? {
         return self.nodes.first(where: {$0.name == name } )
@@ -34,34 +62,10 @@ class Graph: NSObject  {
         if let n1 = self.nodes.filter({ $0.name == from }).first,
            let n2 = self.nodes.filter({ $0.name == to }).first  {
             self.edges.append( Edge2D(from: n1, to: n2, weight: weight) )
+        } else {
+            print("Cannot find nodes for edge from \(from) - \(to)")
         }
     }
-    
-    /*
-    @objc func layoutNodes( notification: Notification ) {
-        if let userInfo = notification.userInfo {
-            if let layout = userInfo["layout"] as? LayoutType {
-                //runLayout(type: layout)
-            }
-        }
-    }
-
-    private func runLayout( type: LayoutType ) {
-        switch type {
-        case .Eigenvalue:
-            layoutNodesEigenvalue(nodes: self.nodes, size: self.size)
-        case .Fruchterman:
-            layoutNodesFruchterman(nodes: self.nodes, size: self.size)
-        case .Random:
-            layoutNodesRandom(nodes: self.nodes, size: self.size )
-        case .Circular:
-            layoutNodesCirclular(nodes: self.nodes, size: self.size)
-        }
-        
-    }
-    */
-    
-
     
     /// Adjacency as incidence matrix or weight matrix
     func adjacency( weighted: Bool ) -> Matrix {
@@ -81,44 +85,16 @@ class Graph: NSObject  {
                 }
             }
         }
-        ret.rowNames = nodes.compactMap{ $0.name }
-        ret.colNames = nodes.compactMap{ $0.name }
-        return ret
-    }
-}
-
-
-
-extension Graph {
-    /**
-     Estimates the total energy in the graph
-     - Returns: The sum of absolute deviance between portional spatial distances relative to expetations of graph weight based upon edge distances.
-     */
-    func totalEnergy() -> Double {
-        let graphDistance =  edges.compactMap{ Double($0.strength) }
-        let physicalDistance = edges.compactMap{ Double( ($0.node1.position - $0.node2.position).magnitude ) }
-        
-        let totGraph = graphDistance.reduce( 0.0, +)
-        let totPhys = physicalDistance.reduce( 0.0, +)
-        
-        print("totGraph: \(totGraph)")
-        print("totPhys: \(totPhys)")
-        var ret: Double = 0.0
-        for i in 0 ..< graphDistance.count {
-            ret += abs( (graphDistance[i] / totGraph) - (physicalDistance[i] - totPhys) )
+        let names = nodes.compactMap{ $0.name }
+        if names.count == N {
+            ret.rowNames = names
+            ret.colNames = names
         }
-        print("total energy: \(ret)")
         return ret
     }
-     
-    
-    func centerWithinSize() {
-        
-        
-    }
-
-    
 }
+
+
 
 
 
@@ -137,7 +113,7 @@ extension Graph {
         ret.nodes.append( nodeA )
         ret.nodes.append( nodeB )
         ret.nodes.append( nodeC )
-        ret.nodes.append(nodeD )
+        ret.nodes.append( nodeD )
         
         let edge1 = Edge2D(from: nodeA, to: nodeB, weight: 20.0)
         let edge2 = Edge2D(from: nodeA, to: nodeC, weight: 20.0)
@@ -156,50 +132,19 @@ extension Graph {
         
         let ret = Graph()
         
-        ret.addNode(label: "BaC", size: 12.8707)
-        ret.addNode(label: "Ctv", size: 3.381395)
-        ret.addNode(label: "LaV", size: 4.00305)
-        ret.addNode(label: "Lig", size: 5.0032)
-        ret.addNode(label: "PtC", size: 5.4503)
-        ret.addNode(label: "PtP", size: 11.3172)
-        ret.addNode(label: "SLG", size: 6.41525)
-        ret.addNode(label: "SnE", size: 12.53715)
-        ret.addNode(label: "SnF", size: 7.004)
-        ret.addNode(label: "SnI", size: 5.8391)
-        ret.addNode(label: "StR", size: 7.1324)
-        ret.addNode(label: "TsS", size: 5.9387)
-        ret.addNode(label: "CP", size: 7.8462)
-        ret.addNode(label: "LF", size: 6.06715)
-        ret.addNode(label: "PL", size: 7.1986)
-        ret.addNode(label: "SenBas", size: 10.27315)
-        ret.addNode(label: "Seri", size: 2.5)
-        ret.addNode(label: "SG", size: 11.73435)
-        ret.addNode(label: "SI", size: 11.84485)
-        ret.addNode(label: "SN", size: 8.64935)
-        ret.addNode(label: "TS", size: 14.85345)
+        let labels: [String] = ["BaC", "Ctv", "LaV", "Lig", "PtC", "PtP", "SLG", "SnE", "SnF", "SnI", "StR", "TsS", "CP", "LF", "PL", "SenBas", "Seri", "SG" , "SI", "SN", "TS"]
+        let sizes: [Double] = [12.8707, 3.381395, 4.00305, 5.0032, 5.4503, 11.3172, 6.41525, 12.53715, 7.004, 5.8391, 7.1324, 5.9387, 7.8462, 6.06715, 7.1986, 10.27315, 2.5, 11.73435, 11.84485, 8.64935, 14.85345]
+        let coords: [CGPoint] = [ CGPoint( x: 26.59, y: 111.79), CGPoint( x: 29.73, y: 114.72), CGPoint( x: 24.04, y: 109.99), CGPoint( x: 25.73, y: 111.27), CGPoint( x: 24.19, y: 111.15), CGPoint( x: 29.03, y: 113.90), CGPoint( x: 29.59, y: 114.40), CGPoint( x: 24.45, y: 110.70), CGPoint( x: 30.76, y: 114.73), CGPoint( x: 27.29, y: 113.02), CGPoint( x: 24.91, y: 111.62), CGPoint( x: 23.58, y: 110.34), CGPoint( x: 27.95, y: 110.66), CGPoint( x: 30.68, y: 112.27), CGPoint( x: 30.39, y: 112.58), CGPoint( x: 29.40, y: 112.05), CGPoint( x: 29.75, y: 112.50), CGPoint( x: 28.82, y: 111.80), CGPoint( x: 31.95, y: 112.87), CGPoint( x: 28.88, y: 111.96), CGPoint( x: 28.41, y: 111.37) ]
+        for i in 0 ..< labels.count {
+            let node = Node2D(label: labels[i], size: sizes[i])
+            node.position = coords[i]
+            ret.nodes.append( node )
+        }
         
-        ret.nodeNamed(name: "BaC")?.position = CGPoint( x: 26.59000,y:111.7900)
-        ret.nodeNamed(name: "Ctv")?.position = CGPoint( x: 29.73000,y:114.7200)
-        ret.nodeNamed(name: "LaV")?.position = CGPoint( x: 24.04000,y:109.9900)
-        ret.nodeNamed(name: "Lig")?.position = CGPoint( x: 25.73000,y:111.2700)
-        ret.nodeNamed(name: "PtC")?.position = CGPoint( x: 24.19000,y:111.1500)
-        ret.nodeNamed(name: "PtP")?.position = CGPoint( x: 29.03000,y:113.9000)
-        ret.nodeNamed(name: "SLG")?.position = CGPoint( x: 29.59000,y:114.4000)
-        ret.nodeNamed(name: "SnE")?.position = CGPoint( x: 24.45000,y:110.7000)
-        ret.nodeNamed(name: "SnF")?.position = CGPoint( x: 30.76000,y:114.7300)
-        ret.nodeNamed(name: "SnI")?.position = CGPoint( x: 27.29000,y:113.0200)
-        ret.nodeNamed(name: "StR")?.position = CGPoint( x: 24.91000,y:111.6200)
-        ret.nodeNamed(name: "TsS")?.position = CGPoint( x: 23.58000,y:110.3400)
-        ret.nodeNamed(name: "CP")?.position = CGPoint( x: 27.95000,y:110.6600)
-        ret.nodeNamed(name: "LF")?.position = CGPoint( x: 30.68000,y:112.2700)
-        ret.nodeNamed(name: "PL")?.position = CGPoint( x: 30.39000,y:112.5800)
-        ret.nodeNamed(name: "SG")?.position = CGPoint( x: 29.40000,y:112.0500)
-        ret.nodeNamed(name: "SI")?.position = CGPoint( x: 29.75000,y:112.5000)
-        ret.nodeNamed(name: "SN")?.position = CGPoint( x: 28.82000,y:111.8000)
-        ret.nodeNamed(name: "SenBas")?.position = CGPoint( x: 31.95000,y:112.8700)
-        ret.nodeNamed(name: "Seri")?.position = CGPoint( x: 28.88000,y:111.9600)
-        ret.nodeNamed(name: "TS")?.position = CGPoint( x: 28.41000,y:111.3700)
-
+        ret.nodes.centerOn(pt: CGPoint(x: 500, y: 500))
+        ret.nodes.resizeInto(newSize: CGSize(width: 500, height: 500))
+        
+        
         ret.addEdge(from: "BaC", to: "LaV", weight: 9.052676)
         ret.addEdge(from: "BaC", to: "Lig", weight: 9.716150)
         ret.addEdge(from: "BaC", to: "PtP", weight: 12.382480)
@@ -250,6 +195,10 @@ extension Graph {
         ret.addEdge(from: "SI", to: "SN", weight: 3.569675)
         ret.addEdge(from: "SI", to: "TS", weight: 3.837508)
         ret.addEdge(from: "SN", to: "TS", weight: 4.875340)
+        
+        
+        print("\(ret)")
+        
         
         return ret
     }

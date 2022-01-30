@@ -6,9 +6,10 @@
 //
 
 import XCTest
-
+/*
 class popgraphUITestsLaunchTests: XCTestCase {
 
+    
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }
@@ -16,6 +17,7 @@ class popgraphUITestsLaunchTests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = false
     }
+
 
     func testLaunch() throws {
         let app = XCUIApplication()
@@ -29,4 +31,6 @@ class popgraphUITestsLaunchTests: XCTestCase {
         attachment.lifetime = .keepAlways
         add(attachment)
     }
+  
 }
+ */

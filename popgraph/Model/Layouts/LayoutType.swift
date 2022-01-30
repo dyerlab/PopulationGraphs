@@ -7,9 +7,14 @@
 
 import Foundation
 
+/// Keyboard commands for node
 enum LayoutType: String {
-    case Random
-    case Circular
-    case Fruchterman
-    case Eigenvalue
+    case LayoutRandom
+    case LayoutCircular
+    case LayoutFruchterman
+    case LayoutEigenvalue
+    case ShiftUp
+    case ShiftDown
+    case ShiftRight
+    case ShiftLeft
 }
