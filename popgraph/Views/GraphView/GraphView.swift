@@ -9,33 +9,37 @@ import Foundation
 import SpriteKit
 import SwiftUI
 
-struct GraphView: NSViewRepresentable {
-
-    var coordinator: GraphViewCoordinator
-    
-    /*
-    init(graph: Graph, size: CGSize) {
-        let scene = GraphScene(graph: graph)
-        coordinator = GraphViewCoordinator(scene: scene )
-        print("graphview::init")
+class Coordinator: NSObject, SKViewDelegate {
+    var view: GraphView
+    init( view: GraphView) {
+        self.view = view
     }
-     */
+}
+
+
+
+struct GraphView: NSViewRepresentable {
     
-    func makeCoordinator() -> GraphViewCoordinator {
-        return coordinator
+    @Binding var scene: GraphScene
+
+    
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(view: self)
     }
     
     func makeNSView(context: Context) -> SKView {
         let view = SKView()
         view.delegate = context.coordinator
-        view.presentScene(context.coordinator.scene)
-        print("makensview")
+        view.presentScene(self.scene)
+        view.showsFields = true
+        view.showsPhysics = true
+        view.showsFPS = true
         return view
     }
     
     func updateNSView(_ nsView: SKView, context: Context) {
-        
         /*
+        coordinator.scene.graph.size = nsView.scene?.size
         let sz = nsView.frame.size
         print("updatensview")
         */

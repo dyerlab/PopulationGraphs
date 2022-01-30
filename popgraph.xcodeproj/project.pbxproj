@@ -39,6 +39,34 @@
 		2A9CE01F27A07D9500DF86EE /* layoutNodesFruchterman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE01E27A07D9500DF86EE /* layoutNodesFruchterman.swift */; };
 		2A9CE02127A0848000DF86EE /* layoutNodesCircular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE02027A0848000DF86EE /* layoutNodesCircular.swift */; };
 		2A9CE02327A0955600DF86EE /* layoutNodesRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE02227A0955600DF86EE /* layoutNodesRandom.swift */; };
+		2AB8810F27A6FD0400D5CA91 /* edgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB8810E27A6FD0400D5CA91 /* edgeTests.swift */; };
+		2AB8811027A6FF7700D5CA91 /* Node2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE010279F41B500DF86EE /* Node2D.swift */; };
+		2AB8811127A6FF7F00D5CA91 /* layoutNodesFruchterman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE01E27A07D9500DF86EE /* layoutNodesFruchterman.swift */; };
+		2AB8811227A6FF7F00D5CA91 /* layoutNodesEigenvalue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC57D1127A2EE0D00A31F8B /* layoutNodesEigenvalue.swift */; };
+		2AB8811327A6FF7F00D5CA91 /* layoutNodesRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE02227A0955600DF86EE /* layoutNodesRandom.swift */; };
+		2AB8811427A6FF7F00D5CA91 /* layoutNodesCircular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE02027A0848000DF86EE /* layoutNodesCircular.swift */; };
+		2AB8811527A6FF7F00D5CA91 /* Edge2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE011279F41B500DF86EE /* Edge2D.swift */; };
+		2AB8811627A6FF7F00D5CA91 /* GraphScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE00E279F3F9100DF86EE /* GraphScene.swift */; };
+		2AB8811727A6FF7F00D5CA91 /* LayoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC57D0B27A2EBFB00A31F8B /* LayoutType.swift */; };
+		2AB8811827A6FF7F00D5CA91 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE01A27A0519200DF86EE /* Graph.swift */; };
+		2AB8811927A6FF8600D5CA91 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE01C27A05FD600DF86EE /* CGSize.swift */; };
+		2AB8811A27A6FF8600D5CA91 /* Array+Node2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC57D1327A2EE5300A31F8B /* Array+Node2D.swift */; };
+		2AB8811B27A6FF8600D5CA91 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE01827A0431900DF86EE /* CGPoint.swift */; };
+		2AB8811C27A6FF8600D5CA91 /* Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE016279F476D00DF86EE /* Notification.Name.swift */; };
+		2AB8811D27A6FFB600D5CA91 /* rSourceConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538E527A1A43A0037C634 /* rSourceConvertible.swift */; };
+		2AB8811E27A6FFB800D5CA91 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538EE27A1A43A0037C634 /* Operators.swift */; };
+		2AB8811F27A6FFBD00D5CA91 /* VectorScalarOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538E827A1A43A0037C634 /* VectorScalarOperators.swift */; };
+		2AB8812027A6FFBD00D5CA91 /* VectorConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538E927A1A43A0037C634 /* VectorConvertable.swift */; };
+		2AB8812127A6FFBD00D5CA91 /* RangeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538EA27A1A43A0037C634 /* RangeEnum.swift */; };
+		2AB8812227A6FFBD00D5CA91 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538E727A1A43A0037C634 /* Random.swift */; };
+		2AB8812327A6FFBD00D5CA91 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538EC27A1A43A0037C634 /* Vector.swift */; };
+		2AB8812427A6FFBD00D5CA91 /* VectorVectorOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538ED27A1A43A0037C634 /* VectorVectorOperators.swift */; };
+		2AB8812527A6FFC200D5CA91 /* MatrixScalarOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538F427A1A43A0037C634 /* MatrixScalarOperators.swift */; };
+		2AB8812627A6FFC200D5CA91 /* MatrixConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538F027A1A43A0037C634 /* MatrixConvertable.swift */; };
+		2AB8812727A6FFC200D5CA91 /* MatrixAlgebra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538F527A1A43A0037C634 /* MatrixAlgebra.swift */; };
+		2AB8812827A6FFC200D5CA91 /* MatrixMatrixOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538F127A1A43A0037C634 /* MatrixMatrixOperations.swift */; };
+		2AB8812927A6FFC200D5CA91 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6538F327A1A43A0037C634 /* Matrix.swift */; };
+		2AB8812A27A7044A00D5CA91 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CE00C279F3F6F00DF86EE /* GraphView.swift */; };
 		2AC57D0927A2D8EE00A31F8B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2AC57D0727A2D8EE00A31F8B /* README.md */; };
 		2AC57D0A27A2D8EE00A31F8B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2AC57D0827A2D8EE00A31F8B /* LICENSE */; };
 		2AC57D0C27A2EBFB00A31F8B /* LayoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC57D0B27A2EBFB00A31F8B /* LayoutType.swift */; };
@@ -95,7 +123,6 @@
 		2A9CE00E279F3F9100DF86EE /* GraphScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphScene.swift; sourceTree = "<group>"; };
 		2A9CE010279F41B500DF86EE /* Node2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node2D.swift; sourceTree = "<group>"; };
 		2A9CE011279F41B500DF86EE /* Edge2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edge2D.swift; sourceTree = "<group>"; };
-		2A9CE014279F428900DF86EE /* GraphViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewCoordinator.swift; sourceTree = "<group>"; };
 		2A9CE016279F476D00DF86EE /* Notification.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.Name.swift; sourceTree = "<group>"; };
 		2A9CE01827A0431900DF86EE /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		2A9CE01A27A0519200DF86EE /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
@@ -103,6 +130,7 @@
 		2A9CE01E27A07D9500DF86EE /* layoutNodesFruchterman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = layoutNodesFruchterman.swift; sourceTree = "<group>"; };
 		2A9CE02027A0848000DF86EE /* layoutNodesCircular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = layoutNodesCircular.swift; sourceTree = "<group>"; };
 		2A9CE02227A0955600DF86EE /* layoutNodesRandom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = layoutNodesRandom.swift; sourceTree = "<group>"; };
+		2AB8810E27A6FD0400D5CA91 /* edgeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = edgeTests.swift; sourceTree = "<group>"; };
 		2AC57D0727A2D8EE00A31F8B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2AC57D0827A2D8EE00A31F8B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		2AC57D0B27A2EBFB00A31F8B /* LayoutType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutType.swift; sourceTree = "<group>"; };
@@ -234,6 +262,7 @@
 			children = (
 				2A9CDFF3279F3F2100DF86EE /* popgraphTests.swift */,
 				2A13B85727A6EA3000308D7A /* nodeTests.swift */,
+				2AB8810E27A6FD0400D5CA91 /* edgeTests.swift */,
 			);
 			path = popgraphTests;
 			sourceTree = "<group>";
@@ -262,7 +291,6 @@
 			isa = PBXGroup;
 			children = (
 				2A9CE00C279F3F6F00DF86EE /* GraphView.swift */,
-				2A9CE014279F428900DF86EE /* GraphViewCoordinator.swift */,
 			);
 			path = GraphView;
 			sourceTree = "<group>";
@@ -425,6 +453,7 @@
 				2A9CE013279F41B500DF86EE /* Edge2D.swift in Sources */,
 				2AC57D1227A2EE0D00A31F8B /* layoutNodesEigenvalue.swift in Sources */,
 				2A9CDFE4279F3F2000DF86EE /* ContentView.swift in Sources */,
+				2AB8812A27A7044A00D5CA91 /* GraphView.swift in Sources */,
 				2A13B85D27A6ED9A00308D7A /* shiftNodePosition.swift in Sources */,
 				2A9CDFE2279F3F2000DF86EE /* popgraphApp.swift in Sources */,
 				2A9CE01B27A0519200DF86EE /* Graph.swift in Sources */,
@@ -456,8 +485,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AB8811527A6FF7F00D5CA91 /* Edge2D.swift in Sources */,
+				2AB8811D27A6FFB600D5CA91 /* rSourceConvertible.swift in Sources */,
+				2AB8811827A6FF7F00D5CA91 /* Graph.swift in Sources */,
 				2A13B85E27A6ED9A00308D7A /* shiftNodePosition.swift in Sources */,
+				2AB8812127A6FFBD00D5CA91 /* RangeEnum.swift in Sources */,
+				2AB8812427A6FFBD00D5CA91 /* VectorVectorOperators.swift in Sources */,
+				2AB8811627A6FF7F00D5CA91 /* GraphScene.swift in Sources */,
+				2AB8812827A6FFC200D5CA91 /* MatrixMatrixOperations.swift in Sources */,
+				2AB8811427A6FF7F00D5CA91 /* layoutNodesCircular.swift in Sources */,
+				2AB8811F27A6FFBD00D5CA91 /* VectorScalarOperators.swift in Sources */,
+				2AB8812727A6FFC200D5CA91 /* MatrixAlgebra.swift in Sources */,
+				2AB8811E27A6FFB800D5CA91 /* Operators.swift in Sources */,
+				2AB8811227A6FF7F00D5CA91 /* layoutNodesEigenvalue.swift in Sources */,
+				2AB8812327A6FFBD00D5CA91 /* Vector.swift in Sources */,
+				2AB8811327A6FF7F00D5CA91 /* layoutNodesRandom.swift in Sources */,
 				2A9CDFF4279F3F2100DF86EE /* popgraphTests.swift in Sources */,
+				2AB8811A27A6FF8600D5CA91 /* Array+Node2D.swift in Sources */,
+				2AB8811727A6FF7F00D5CA91 /* LayoutType.swift in Sources */,
+				2AB8810F27A6FD0400D5CA91 /* edgeTests.swift in Sources */,
+				2AB8812627A6FFC200D5CA91 /* MatrixConvertable.swift in Sources */,
+				2AB8812027A6FFBD00D5CA91 /* VectorConvertable.swift in Sources */,
+				2AB8812527A6FFC200D5CA91 /* MatrixScalarOperators.swift in Sources */,
+				2AB8811927A6FF8600D5CA91 /* CGSize.swift in Sources */,
+				2AB8811C27A6FF8600D5CA91 /* Notification.Name.swift in Sources */,
+				2AB8811B27A6FF8600D5CA91 /* CGPoint.swift in Sources */,
+				2AB8811127A6FF7F00D5CA91 /* layoutNodesFruchterman.swift in Sources */,
+				2AB8812927A6FFC200D5CA91 /* Matrix.swift in Sources */,
+				2AB8812227A6FFBD00D5CA91 /* Random.swift in Sources */,
+				2AB8811027A6FF7700D5CA91 /* Node2D.swift in Sources */,
 				2A13B85827A6EA3000308D7A /* nodeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

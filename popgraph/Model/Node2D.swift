@@ -16,11 +16,11 @@ class Node2D: SKNode {
     
     var labelNode: SKLabelNode
     var displacement: CGPoint
-    var force: CGPoint
     var mass: CGFloat
     var mouseIsDown: Bool = true
     var edges: [Edge2D]
     
+    /// Override to move attached edges when I move.
     override var position: CGPoint {
         didSet {
             for edge in edges {
@@ -29,13 +29,13 @@ class Node2D: SKNode {
         }
     }
     
+    /// Generic description
     override var description: String {
         return String("\(self.name): sz = \(self.mass); position = (\(self.position.x),\(self.position.y))")
     }
     
     init( label: String, size: Double ) {
         self.displacement = CGPoint.zero
-        self.force = CGPoint.zero
         
         self.labelNode = SKLabelNode(text: label)
         self.mass = CGFloat( size )
@@ -110,30 +110,6 @@ extension Node2D {
 // MARK: - Mouse/Touch related Operations
 extension Node2D {
     
-    /// Keyboard shifting
-    @objc func shiftNodes( notification: Notification ) {
-        
-        if let direction = notification.userInfo?["Direction"] as? String  {
-            let magnitude: CGFloat = 5.0
-            
-            
-            switch direction {
-            case "left":
-                self.position.x -= magnitude
-            case "right":
-                self.position.x += magnitude
-            case "up":
-                self.position.y += magnitude
-            case "down":
-                self.position.y -= magnitude
-            default:
-                return
-            }
-            
-        }
-    }
-    
-    
     
     #if os(OSX)
     public override func mouseDown(with event: NSEvent) {
@@ -159,21 +135,6 @@ extension Node2D {
     
 }
 
-
-
-
-// MARK: - Notifications
-extension Node2D {
-    
-    @objc func toggleLabel(notification: Notification) {
-        if self.children.contains( labelNode ) {
-            labelNode.removeFromParent()
-        } else {
-            self.addChild( labelNode )
-        }
-    }
-    
-}
 
 
 

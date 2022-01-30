@@ -19,85 +19,103 @@ struct popgraphApp: App {
         .commands {
             CommandMenu("Graph") {
                 
+                
                 Button(action: {
-                    NotificationCenter.default.post(name: .moveNodes,
-                                                    object: nil,
-                                                    userInfo: ["layout": LayoutType.LayoutRandom] )
-                }, label: {
-                    Text("Layout Circular")
-                })
-                    .keyboardShortcut( "C", modifiers: [.shift,.command])
-
-                Button(action: {
-                    NotificationCenter.default.post(name: .moveNodes,
-                                                    object: nil,
-                                                    userInfo: ["layout": LayoutType.LayoutEigenvalue] )
-                }, label: {
-                    Text("Layout Eigen")
-                })
-                    .keyboardShortcut( "E", modifiers: [.shift,.command])
-
-                Button(action: {
-                    NotificationCenter.default.post(name: .moveNodes,
-                                                    object: nil,
-                                                    userInfo: ["layout": LayoutType.LayoutFruchterman] )
-                }, label: {
-                    Text("Layout FR")
-                })
-                    .keyboardShortcut( "F", modifiers: [.shift,.command])
-
-                Button(action: {
-                    NotificationCenter.default.post(name: .moveNodes,
+                    NotificationCenter.default.post(name: .toggleLabel,
                                                     object: nil,
                                                     userInfo: ["layout": LayoutType.LayoutRandom ] )
                 }, label: {
-                    Text("Randomize Layout")
+                    Text("Toggle Labels")
                 })
-                    .keyboardShortcut("R", modifiers: [.command])
+                    .keyboardShortcut("L", modifiers: [.command])
+
+                Divider()
+                
+                Group {
+                    Button(action: {
+                        NotificationCenter.default.post(name: .moveNodes,
+                                                        object: nil,
+                                                        userInfo: ["layout": LayoutType.LayoutRandom] )
+                    }, label: {
+                        Text("Layout Circular")
+                    })
+                        .keyboardShortcut( "C", modifiers: [.shift,.command])
+
+                    Button(action: {
+                        NotificationCenter.default.post(name: .moveNodes,
+                                                        object: nil,
+                                                        userInfo: ["layout": LayoutType.LayoutEigenvalue] )
+                    }, label: {
+                        Text("Layout Eigenvalue")
+                    })
+                        .keyboardShortcut( "E", modifiers: [.shift,.command])
+
+                    Button(action: {
+                        NotificationCenter.default.post(name: .moveNodes,
+                                                        object: nil,
+                                                        userInfo: ["layout": LayoutType.LayoutFruchterman] )
+                    }, label: {
+                        Text("Layout Fruchterman")
+                    })
+                        .keyboardShortcut( "F", modifiers: [.shift,.command])
+
+                    Button(action: {
+                        NotificationCenter.default.post(name: .moveNodes,
+                                                        object: nil,
+                                                        userInfo: ["layout": LayoutType.LayoutRandom ] )
+                    }, label: {
+                        Text("Randomize Layout")
+                    })
+                        .keyboardShortcut("R", modifiers: [.command])
+
+                }
 
                 
                 Divider()
                 
-                
-                Button(action: {
-                    NotificationCenter.default.post(name: .moveNodes,
-                                                    object: nil,
-                                                    userInfo: ["layout": LayoutType.ShiftUp ] )
-                }, label: {
-                    Text("Shift Up")
-                })
-                    .keyboardShortcut(KeyEquivalent.upArrow, modifiers: [.command])
-                
-                
-                Button(action: {
-                    NotificationCenter.default.post(name: .moveNodes,
-                                                    object: nil,
-                                                    userInfo: ["layout": LayoutType.ShiftDown] )
-                }, label: {
-                    Text("Shift Down")
-                })
-                    .keyboardShortcut(KeyEquivalent.downArrow, modifiers: [.command])
+                Group {
+                    Button(action: {
+                        NotificationCenter.default.post(name: .moveNodes,
+                                                        object: nil,
+                                                        userInfo: ["layout": LayoutType.ShiftUp ] )
+                    }, label: {
+                        Text("Shift Up")
+                    })
+                        .keyboardShortcut(KeyEquivalent.upArrow, modifiers: [.command])
+                    
+                    
+                    Button(action: {
+                        NotificationCenter.default.post(name: .moveNodes,
+                                                        object: nil,
+                                                        userInfo: ["layout": LayoutType.ShiftDown] )
+                    }, label: {
+                        Text("Shift Down")
+                    })
+                        .keyboardShortcut(KeyEquivalent.downArrow, modifiers: [.command])
+
+                    
+                    Button(action: {
+                        NotificationCenter.default.post(name: .moveNodes,
+                                                        object: nil,
+                                                        userInfo: ["layout": LayoutType.ShiftLeft ] )
+                    }, label: {
+                        Text("Shift Left")
+                    })
+                        .keyboardShortcut(KeyEquivalent.leftArrow, modifiers: [.command])
+
+                    Button(action: {
+                        NotificationCenter.default.post(name: .moveNodes,
+                                                        object: nil,
+                                                        userInfo: ["layout": LayoutType.ShiftRight ] )
+                    }, label: {
+                        Text("Shift Right")
+                    })
+                        .keyboardShortcut(KeyEquivalent.rightArrow, modifiers: [.command])
+
+                }
+
 
                 
-                Button(action: {
-                    NotificationCenter.default.post(name: .moveNodes,
-                                                    object: nil,
-                                                    userInfo: ["layout": LayoutType.ShiftLeft ] )
-                }, label: {
-                    Text("Shift Left")
-                })
-                    .keyboardShortcut(KeyEquivalent.leftArrow, modifiers: [.command])
-
-                
-                Button(action: {
-                    NotificationCenter.default.post(name: .moveNodes,
-                                                    object: nil,
-                                                    userInfo: ["layout": LayoutType.ShiftRight ] )
-                }, label: {
-                    Text("Shift Right")
-                })
-                    .keyboardShortcut(KeyEquivalent.rightArrow, modifiers: [.command])
-
                 
             }
         }
