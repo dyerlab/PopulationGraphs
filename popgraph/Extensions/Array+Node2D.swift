@@ -118,23 +118,35 @@ extension Array where Element == Node2D {
         }
     }
     
+    
+    func scale( size: CGSize ) {
+        
+        let sz = self.size
+        let ht = size.height / sz.height
+        let wd = size.width / sz.width
+        
+        let scale = CGFloat.minimum( ht, wd )
+        
+        print("graph: \(sz)")
+        print("new: \(size)")
+        
+        let neSz = CGSize(width: sz.width * scale, height: sz.height * scale)
+        print("after: \(neSz)")
+        
+        /*
+        self.forEach{ node in
+            node.newPosition = node.position / scale
+            node.applyForces()
+        }
+         */
+        
+    }
+    
+    
     func resizeInto( newSize: CGSize) {
 
-        let sz = self.size
-        let scale = CGPoint( x: newSize.width / sz.width,
-                             y: newSize.height / sz.height )
-
-        let mn  =  self.minimum
-        self.centerOnZero()
-        
-        self.forEach{ node in
-            node.newPosition = node.position - mn
-            
-            node.newPosition.x = node.newPosition.x * scale.x
-            node.newPosition.y = node.newPosition.y * scale.y
-        }
-        
-        // 3. translate to
+        self.scale(size: newSize )
+        self.centerOn(pt: CGPoint(x: newSize.width / 2.0, y: newSize.height / 2.0  )  )
         self.forEach{ node in
             node.applyForces()
         }

@@ -35,10 +35,6 @@ class GraphSceneDelegate: NSObject, SKSceneDelegate {
     
     
     func didFinishUpdate(for scene: SKScene) {
-        
-        print("Bounds")
-        print( "\(graph.nodes.bounds) ")
-        print("Size")
-        print("\(scene.size)")
+        print("Bounds \(graph.nodes.bounds) & Size: \(graph.nodes.size)" )
     }
 }

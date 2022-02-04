@@ -40,4 +40,7 @@ enum LayoutType: String {
     case ZoomIn
     /// Zoom out
     case ZoomOut
+    
+    /// Reset to Center
+    case ShiftCenter
 }

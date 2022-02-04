@@ -29,9 +29,12 @@ struct popgraphApp: App {
                 })
                     .keyboardShortcut("L", modifiers: [.command])
 
-                Divider()
+                
                 
                 Group {
+                    Divider()
+                    
+                    
                     Button(action: {
                         NotificationCenter.default.post(name: .moveNodes,
                                                         object: nil,
@@ -71,9 +74,11 @@ struct popgraphApp: App {
                 }
 
                 
-                Divider()
+                
                 
                 Group {
+                    Divider()
+                    
                     Button(action: {
                         NotificationCenter.default.post(name: .moveNodes,
                                                         object: nil,
@@ -114,10 +119,11 @@ struct popgraphApp: App {
 
                 }
                 
-                Divider()
+                
                 
                 Group {
-                    
+                
+                    Divider()
                     
                     Button(action: {
                         print("CCW")
@@ -145,9 +151,11 @@ struct popgraphApp: App {
                 }
                 
                 
-                Divider()
+                
                 
                 Group {
+                    
+                    Divider()
                     
                     Button(action: {
                         NotificationCenter.default.post(name: .rotateNodes,
@@ -170,6 +178,23 @@ struct popgraphApp: App {
 
                     
                 }
+                
+                
+                Group {
+                    Divider()
+                    
+                    
+                    Button(action: {
+                        NotificationCenter.default.post(name: .moveNodes ,
+                                                        object: nil,
+                                                        userInfo: ["layout": LayoutType.ShiftCenter ] )
+                    }, label: {
+                        Text("Center")
+                    })
+                        .keyboardShortcut(KeyEquivalent.home, modifiers: [.option])
+
+                }
+
 
 
                 

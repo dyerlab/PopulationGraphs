@@ -78,7 +78,8 @@ class GraphScene: SKScene {
             self.addChild(edge)
         }
         
-        graph.nodes.resizeInto(newSize: self.size )
+        //graph.nodes.resizeInto(newSize: self.size )
+        graph.nodes.scale(size: self.size )
         print("--------------------------------------------------------------------   my size: \(self.size)")
     }
     
@@ -108,6 +109,8 @@ class GraphScene: SKScene {
                     graph.nodes.shift(by: CGPoint(x: -5, y: 0))
                 case .ShiftRight:
                     graph.nodes.shift(by: CGPoint(x: 5, y: 0))
+                case .ShiftCenter:
+                    graph.nodes.centerOn(pt: CGPoint(x: self.size.width/2.0, y: self.size.height/2.0))
                 case .RotateClockwise:
                     rotateNodePositions(nodes: graph.nodes, clockwise: true)
                 case .RotateCounterClockwise:
