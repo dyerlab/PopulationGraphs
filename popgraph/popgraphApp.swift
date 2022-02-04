@@ -23,7 +23,7 @@ struct popgraphApp: App {
                 Button(action: {
                     NotificationCenter.default.post(name: .toggleLabel,
                                                     object: nil,
-                                                    userInfo: ["layout": LayoutType.LayoutRandom ] )
+                                                    userInfo: ["layout": LayoutType.ToggleLabels ] )
                 }, label: {
                     Text("Toggle Labels")
                 })
@@ -35,7 +35,7 @@ struct popgraphApp: App {
                     Button(action: {
                         NotificationCenter.default.post(name: .moveNodes,
                                                         object: nil,
-                                                        userInfo: ["layout": LayoutType.LayoutRandom] )
+                                                        userInfo: ["layout": LayoutType.LayoutCircular] )
                     }, label: {
                         Text("Layout Circular")
                     })
@@ -112,6 +112,63 @@ struct popgraphApp: App {
                     })
                         .keyboardShortcut(KeyEquivalent.rightArrow, modifiers: [.command])
 
+                }
+                
+                Divider()
+                
+                Group {
+                    
+                    
+                    Button(action: {
+                        print("CCW")
+                        NotificationCenter.default.post(name: .rotateNodes,
+                                                        object: nil,
+                                                        userInfo: ["layout": LayoutType.RotateCounterClockwise ] )
+                    }, label: {
+                        Text("Rotate Counterclockwise")
+                    })
+                        .keyboardShortcut(KeyEquivalent.leftArrow, modifiers: [.option])
+
+                    
+                    
+                    Button(action: {
+                        print("CW")
+                        NotificationCenter.default.post(name: .rotateNodes,
+                                                        object: nil,
+                                                        userInfo: ["layout": LayoutType.RotateClockwise ] )
+                    }, label: {
+                        Text("Rotate Clockwise")
+                    })
+                        .keyboardShortcut(KeyEquivalent.rightArrow, modifiers: [.option])
+
+                    
+                }
+                
+                
+                Divider()
+                
+                Group {
+                    
+                    Button(action: {
+                        NotificationCenter.default.post(name: .rotateNodes,
+                                                        object: nil,
+                                                        userInfo: ["layout": LayoutType.ZoomIn ] )
+                    }, label: {
+                        Text("Zoom In")
+                    })
+                        .keyboardShortcut(KeyEquivalent.upArrow, modifiers: [.option])
+
+                    
+                    Button(action: {
+                        NotificationCenter.default.post(name: .rotateNodes,
+                                                        object: nil,
+                                                        userInfo: ["layout": LayoutType.ZoomOut ] )
+                    }, label: {
+                        Text("Zoom In")
+                    })
+                        .keyboardShortcut(KeyEquivalent.downArrow, modifiers: [.option])
+
+                    
                 }
 
 

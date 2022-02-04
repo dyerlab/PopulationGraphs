@@ -9,6 +9,8 @@ import Foundation
 
 extension Array where Element == Node2D {
     
+    
+    /// Returns the center of the array of points
     var centroid: CGPoint {
         var centroid = CGPoint.zero
         self.forEach{ node in
@@ -18,6 +20,8 @@ extension Array where Element == Node2D {
         return centroid
     }
     
+    
+    /// Size of the array of points
     var size: CGSize {
         let byX = self.sorted(by: { $0.position.x < $1.position.x} )
         if let minX = byX.first?.position.x,
@@ -31,10 +35,56 @@ extension Array where Element == Node2D {
         
         return CGSize.zero
     }
+    
+    
+    var bounds: CGRect {
+        return CGRect(origin: self.minimum, size: self.size)
+    }
+    
+    
+    /// Returns bottom left point
+    var minimum: CGPoint {
+        if self.count == 0 { return CGPoint.zero }
+        var ret: CGPoint = self.first!.position
+        for i in 1 ..< self.count {
+            if self[i].position.x < ret.x {
+                ret.x = self[i].position.x
+            } else if self[i].position.y < ret.y {
+                ret.y = self[i].position.y
+            }
+        }
+        return ret
+    }
+
+    /// Returns top right point
+    var maximum: CGPoint {
+        if self.count == 0 { return CGPoint.zero }
+        var ret: CGPoint = self.first!.position
+        for i in 1 ..< self.count {
+            if self[i].position.x > ret.x {
+                ret.x = self[i].position.x
+            } else if self[i].position.y > ret.y {
+                ret.y = self[i].position.y
+            }
+        }
+        return ret
+    }
 
     
+    /// Shift all the points by some amount
+    func shift(by: CGPoint) {
+        self.forEach{ node in
+            node.position = node.position + by
+        }
+    }
     
-    
+    /// Center all the nodes at the zero
+    func centerOnZero() {
+        var center  = self.centroid
+        center.x *= -1
+        center.y *= -1
+        self.shift(by: center )
+    }
     
     /// Adjacency as incidence matrix or weight matrix
     func adjacency( weighted: Bool ) -> Matrix {
@@ -60,6 +110,7 @@ extension Array where Element == Node2D {
         return ret
     }
 
+    // Moves the whole set of points to a new location
     func centerOn( pt: CGPoint) {
         let diff = pt - centroid
         self.forEach{ node in
@@ -68,17 +119,24 @@ extension Array where Element == Node2D {
     }
     
     func resizeInto( newSize: CGSize) {
-        
-        let diff = CGPoint(x: newSize.width / 2.0 , y: newSize.height / 2.0 ) - self.centroid
-        for i in 0 ..< self.count {
-            
-            
-            
-        }
+
+        let sz = self.size
+        let scale = CGPoint( x: newSize.width / sz.width,
+                             y: newSize.height / sz.height )
+
+        let mn  =  self.minimum
+        self.centerOnZero()
         
         self.forEach{ node in
-            node.position.x *= self.size.width / newSize.width
-            node.position.y *= self.size.height / newSize.height 
+            node.newPosition = node.position - mn
+            
+            node.newPosition.x = node.newPosition.x * scale.x
+            node.newPosition.y = node.newPosition.y * scale.y
+        }
+        
+        // 3. translate to
+        self.forEach{ node in
+            node.applyForces()
         }
         
     }

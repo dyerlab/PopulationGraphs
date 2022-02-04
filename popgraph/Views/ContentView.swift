@@ -17,6 +17,16 @@ struct ContentView: View {
             .ignoresSafeArea()
             .frame(minWidth: 600, minHeight: 600 )
     }
+    
+    
+    
+    
+    private func layoutFruchterman() {
+        NotificationCenter.default.post(name: .moveNodes,
+                                        object: nil,
+                                        userInfo: ["layout": LayoutType.LayoutFruchterman] )
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

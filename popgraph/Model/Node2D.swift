@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 import SpriteKit
 import SwiftUI
 
@@ -16,7 +17,10 @@ class Node2D: SKNode {
     
     var labelNode: SKLabelNode
     var displacement: CGPoint
+    var newPosition: CGPoint
     var mass: CGFloat
+    var coordinate: CLLocationCoordinate2D?
+    
     var mouseIsDown: Bool = true
     var edges: [Edge2D]
     
@@ -36,11 +40,10 @@ class Node2D: SKNode {
     
     init( label: String, size: Double ) {
         self.displacement = CGPoint.zero
-        
+        self.newPosition = CGPoint.zero
         self.labelNode = SKLabelNode(text: label)
         self.mass = CGFloat( size )
         self.edges = [Edge2D]()
-        
         super.init()
         
         self.name = label
@@ -53,7 +56,7 @@ class Node2D: SKNode {
         shape.lineWidth = 1.0
         addChild( shape )
         
-        labelNode.fontSize = 12.0
+        labelNode.fontSize = 9.0
         labelNode.fontColor = .orange
         labelNode.position = CGPoint(x: 0.0,
                                      y: labelNode.frame.height)
@@ -73,6 +76,7 @@ class Node2D: SKNode {
         
         self.position = CGPoint(x: CGFloat.random(in: 0.0 ... 500.0 ),
                                 y: CGFloat.random(in: 0.0 ... 500.0 ) )
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -91,13 +95,19 @@ class Node2D: SKNode {
 
 extension Node2D {
     
+    func sync() {
+        self.newPosition = self.position
+        self.displacement = CGPoint.zero
+    }
+    
     ///  Applys the displacement to the node and moves edges
     func applyForces() {
-        if !displacement.x.isZero {
-            self.position = self.position + self.displacement
-            self.displacement = CGPoint(x: 0.0, y: 0.0)
+        if self.position != self.newPosition {
+            let moveAction = SKAction.move(to: newPosition, duration: 1.0)
+            self.run( moveAction )
         }
     }
+    
     
 }
 

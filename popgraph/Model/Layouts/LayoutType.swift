@@ -27,4 +27,17 @@ enum LayoutType: String {
     case ShiftRight
     /// Shift nodes left
     case ShiftLeft
+    
+    /// Rotate CCW
+    case RotateCounterClockwise
+    /// Rotate CW
+    case RotateClockwise
+    
+    /// Toggle Lables
+    case ToggleLabels
+    
+    /// Zoom in
+    case ZoomIn
+    /// Zoom out
+    case ZoomOut
 }

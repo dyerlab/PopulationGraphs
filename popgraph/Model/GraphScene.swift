@@ -11,27 +11,54 @@ import SpriteKit
 class GraphScene: SKScene {
     
     @Published var graph: Graph
+    var sceneDelegate: GraphSceneDelegate
     
     let nodeCategory: UInt32 = 0x1 << 0
     let edgeCategory: UInt32 = 0x1 << 1
     
+    let zoomFactor: CGFloat = 1.1
+    let cameraNode = SKCameraNode()
     
     override init(size: CGSize) {
-        self.graph = Graph.LophoGraph()
+        let theGraph = Graph.LophoGraph()
+        
+        self.graph = theGraph
+        self.sceneDelegate = GraphSceneDelegate(graph: theGraph)
+        
         super.init(size: size )
         self.addGraph()
         self.graph.scene = self
+        self.anchorPoint = CGPoint(x: 0, y: 0)
         self.scaleMode = .aspectFill
         self.backgroundColor = .white
         self.physicsWorld.contactDelegate = self
+        
+
+        self.delegate = self.sceneDelegate
+        
+        // Set up the camera stuff
+        self.cameraNode.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
+        self.addChild( cameraNode )
+        self.camera = cameraNode
+        
+        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(moveNodes(notification:)),
                                                name: .moveNodes,
                                                object: nil)
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(toggleNodes(notification:)),
+                                               selector: #selector(moveNodes(notification:)),
                                                name: .toggleLabel,
                                                object: nil )
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(moveNodes(notification:)),
+                                               name: .rotateNodes,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(moveNodes(notification:)),
+                                               name: .zoomNodes,
+                                               object: nil)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -50,19 +77,18 @@ class GraphScene: SKScene {
             edge.physicsBody?.categoryBitMask = self.edgeCategory
             self.addChild(edge)
         }
+        
+        graph.nodes.resizeInto(newSize: self.size )
+        print("--------------------------------------------------------------------   my size: \(self.size)")
     }
     
     override func didChangeSize(_ oldSize: CGSize) {
         self.graph.nodes.resizeInto(newSize: self.size )
     }
     
-    @objc func toggleNodes(notification: Notification ) {
-        graph.nodes.forEach{ node in
-            node.labelNode.isHidden = !node.labelNode.isHidden
-        }
-    }
     
     @objc func moveNodes( notification: Notification ) {
+        
         if let userInfo = notification.userInfo {
             if let layout = userInfo["layout"] as? LayoutType {
                 switch layout {
@@ -75,13 +101,25 @@ class GraphScene: SKScene {
                 case .LayoutFruchterman:
                     layoutNodesFruchterman(nodes: graph.nodes, size: self.size)
                 case .ShiftUp:
-                    shiftNodePositions(nodes: graph.nodes, by: CGPoint(x: 0, y: 5))
+                    graph.nodes.shift(by: CGPoint(x: 0, y: 5))
                 case .ShiftDown:
-                    shiftNodePositions(nodes: graph.nodes, by: CGPoint(x: 0, y: -5))
+                    graph.nodes.shift(by: CGPoint(x: 0, y: -5))
                 case .ShiftLeft:
-                    shiftNodePositions(nodes: graph.nodes, by: CGPoint(x: -5, y: 0))
+                    graph.nodes.shift(by: CGPoint(x: -5, y: 0))
                 case .ShiftRight:
-                    shiftNodePositions(nodes: graph.nodes, by: CGPoint(x: 5, y: 0))
+                    graph.nodes.shift(by: CGPoint(x: 5, y: 0))
+                case .RotateClockwise:
+                    rotateNodePositions(nodes: graph.nodes, clockwise: true)
+                case .RotateCounterClockwise:
+                    rotateNodePositions(nodes: graph.nodes, clockwise: false)
+                case .ZoomIn:
+                    self.cameraNode.run( SKAction.scale(by: 1.0 / zoomFactor, duration: 1) )
+                case .ZoomOut:
+                    self.cameraNode.run( SKAction.scale(by: zoomFactor, duration: 1) )
+                case .ToggleLabels:
+                    graph.nodes.forEach{ node in
+                        node.labelNode.isHidden = !node.labelNode.isHidden
+                    }
                 }
             }
         }
@@ -93,18 +131,18 @@ class GraphScene: SKScene {
 
 extension GraphScene: SKPhysicsContactDelegate {
     
+    /*
     func didBegin(_ contact: SKPhysicsContact) {
-        //
         let collision: UInt32 = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
-        /*
+       
         if collision == nodeCategory | nodeCategory {
             print("node node collistion")
         }
         else {
             print("not node collision")
         }
-         */
     }
+     */
      
 }
 

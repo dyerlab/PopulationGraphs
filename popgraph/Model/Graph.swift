@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 import SpriteKit
 
 class Graph: NSObject, ObservableObject  {
@@ -134,10 +135,11 @@ extension Graph {
         
         let labels: [String] = ["BaC", "Ctv", "LaV", "Lig", "PtC", "PtP", "SLG", "SnE", "SnF", "SnI", "StR", "TsS", "CP", "LF", "PL", "SenBas", "Seri", "SG" , "SI", "SN", "TS"]
         let sizes: [Double] = [12.8707, 3.381395, 4.00305, 5.0032, 5.4503, 11.3172, 6.41525, 12.53715, 7.004, 5.8391, 7.1324, 5.9387, 7.8462, 6.06715, 7.1986, 10.27315, 2.5, 11.73435, 11.84485, 8.64935, 14.85345]
-        let coords: [CGPoint] = [ CGPoint( x: 111.79, y:26.59 ), CGPoint( x: 114.72, y:29.73 ), CGPoint( x: 109.99, y:24.04 ), CGPoint( x: 111.27, y:25.73 ), CGPoint( x: 111.15, y:24.19 ), CGPoint( x: 113.90, y:29.03 ), CGPoint( x: 114.40, y:29.59 ), CGPoint( x: 110.70, y:24.45 ), CGPoint( x: 114.73, y:30.76 ), CGPoint( x: 113.02, y:27.29 ), CGPoint( x: 111.62, y:24.91 ), CGPoint( x: 110.34, y:23.58 ), CGPoint( x: 110.66, y:27.95 ), CGPoint( x: 112.27, y:30.68 ), CGPoint( x: 112.58, y:30.39 ), CGPoint( x: 112.05, y:29.40 ), CGPoint( x: 112.50, y:29.75 ), CGPoint( x: 111.80, y:28.82 ), CGPoint( x: 112.87, y:31.95 ), CGPoint( x: 111.96, y:28.88 ), CGPoint( x: 111.37, y:28.41 ) ]
+        let coords: [CGPoint] = [ CGPoint( x: -111.79, y:26.59 ), CGPoint( x: -114.72, y:29.73 ), CGPoint( x: -109.99, y:24.04 ), CGPoint( x: -111.27, y:25.73 ), CGPoint( x: -111.15, y:24.19 ), CGPoint( x: -113.90, y:29.03 ), CGPoint( x: -114.40, y:29.59 ), CGPoint( x: -110.70, y:24.45 ), CGPoint( x: -114.73, y:30.76 ), CGPoint( x: -113.02, y:27.29 ), CGPoint( x: -111.62, y:24.91 ), CGPoint( x: -110.34, y:23.58 ), CGPoint( x: -110.66, y:27.95 ), CGPoint( x: -112.27, y:30.68 ), CGPoint( x: -112.58, y:30.39 ), CGPoint( x: -112.05, y:29.40 ), CGPoint( x: -112.50, y:29.75 ), CGPoint( x: -111.80, y:28.82 ), CGPoint( x: -112.87, y:31.95 ), CGPoint( x: -111.96, y:28.88 ), CGPoint( x: -111.37, y:28.41 ) ]
         for i in 0 ..< labels.count {
             let node = Node2D(label: labels[i], size: sizes[i])
             node.position = coords[i]
+            node.coordinate = CLLocationCoordinate2D(latitude: coords[i].y, longitude: coords[i].x)
             ret.nodes.append( node )
         }
         
@@ -193,7 +195,7 @@ extension Graph {
         ret.addEdge(from: "SN", to: "TS", weight: 4.875340)
         
         
-        print("\(ret)")
+        
         
         
         return ret
