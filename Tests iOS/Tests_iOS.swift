@@ -1,15 +1,15 @@
 //
-//  popgraphUITests.swift
-//  popgraphUITests
+//  Tests_iOS.swift
+//  Tests iOS
 //
-//  Created by Rodney Dyer on 1/24/22.
+//  Created by Rodney Dyer on 2/6/22.
 //
 
 import XCTest
 /*
-class popgraphUITests: XCTestCase {
+ 
+class Tests_iOS: XCTestCase {
 
-    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
@@ -40,7 +40,6 @@ class popgraphUITests: XCTestCase {
             }
         }
     }
-     
 }
- 
- */
+
+*/

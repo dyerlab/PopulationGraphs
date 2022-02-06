@@ -9,12 +9,11 @@ import Foundation
 import SpriteKit
 import SwiftUI
 
-
-
-
-
-struct GraphView: NSViewRepresentable {
+struct GraphView : NSViewRepresentable {
     
+    typealias NSViewType = SKView
+    
+    @Binding var scene: GraphScene
     
     class Coordinator: NSObject, SKViewDelegate {
         var view: GraphView
@@ -27,41 +26,23 @@ struct GraphView: NSViewRepresentable {
         }
     }
     
-    @Binding var scene: GraphScene
-
     
     func makeCoordinator() -> Coordinator {
         return Coordinator(view: self)
     }
-    
-    func makeNSView(context: Context) -> SKView {
+
+    func makeNSView( context: Context ) -> SKView {
         let view = SKView()
         view.delegate = context.coordinator
-        
-        
-        
         view.presentScene(self.scene)
         view.showsFields = true
         view.showsPhysics = true
         view.showsFPS = true
-        
-        
-        let menu = NSMenu()
-        let item = menu.addItem(withTitle: "Spring Layout", action: #selector(Coordinator.action(_:)), keyEquivalent: "")
-        item.target = context.coordinator
-        view.menu = menu
-        
-        
         return view
     }
     
     func updateNSView(_ nsView: SKView, context: Context) {
-        /*
-        coordinator.scene.graph.size = nsView.scene?.size
-        let sz = nsView.frame.size
-        print("updatensview")
-        */
+        // do nothing
     }
-    
-    
 }
+

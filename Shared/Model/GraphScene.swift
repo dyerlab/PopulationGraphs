@@ -19,13 +19,13 @@ class GraphScene: SKScene {
     let zoomFactor: CGFloat = 1.1
     let cameraNode = SKCameraNode()
     
-    override init(size: CGSize) {
+    override init(size: CGSize ) {
         let theGraph = Graph.LophoGraph()
         
         self.graph = theGraph
         self.sceneDelegate = GraphSceneDelegate(graph: theGraph)
         
-        super.init(size: size )
+        super.init(size: self.view?.scene?.size )
         self.addGraph()
         self.graph.scene = self
         self.anchorPoint = CGPoint(x: 0, y: 0)
@@ -40,7 +40,6 @@ class GraphScene: SKScene {
         self.cameraNode.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
         self.addChild( cameraNode )
         self.camera = cameraNode
-        
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(moveNodes(notification:)),

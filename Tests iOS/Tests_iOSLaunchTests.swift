@@ -1,15 +1,15 @@
 //
-//  popgraphUITestsLaunchTests.swift
-//  popgraphUITests
+//  Tests_iOSLaunchTests.swift
+//  Tests iOS
 //
-//  Created by Rodney Dyer on 1/24/22.
+//  Created by Rodney Dyer on 2/6/22.
 //
 
 import XCTest
-/*
-class popgraphUITestsLaunchTests: XCTestCase {
 
-    
+/*
+class Tests_iOSLaunchTests: XCTestCase {
+
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }
@@ -17,7 +17,6 @@ class popgraphUITestsLaunchTests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = false
     }
-
 
     func testLaunch() throws {
         let app = XCUIApplication()
@@ -31,6 +30,7 @@ class popgraphUITestsLaunchTests: XCTestCase {
         attachment.lifetime = .keepAlways
         add(attachment)
     }
-  
 }
- */
+
+*/
+

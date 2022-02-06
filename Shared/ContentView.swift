@@ -1,12 +1,11 @@
 //
 //  ContentView.swift
-//  popgraph
+//  Shared
 //
-//  Created by Rodney Dyer on 1/24/22.
+//  Created by Rodney Dyer on 2/6/22.
 //
 
 import SwiftUI
-import SpriteKit
 
 struct ContentView: View {
     

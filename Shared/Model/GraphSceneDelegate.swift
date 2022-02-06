@@ -12,13 +12,13 @@ class GraphSceneDelegate: NSObject, SKSceneDelegate {
     
     var graph: Graph
     
-    init( graph: Graph ) {
+    init( graph: Graph, scene: SKScene ) {
         self.graph = graph
+        scene.delegate = self
     }
     
     func update(_ currentTime: TimeInterval, for scene: SKScene) {
         //
-        
     }
     
     func didEvaluateActions(for scene: SKScene) {
