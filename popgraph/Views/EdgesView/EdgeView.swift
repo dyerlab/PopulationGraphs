@@ -10,7 +10,7 @@ import SwiftData
 
 struct EdgeView: View {
     @Environment(\.modelContext) var modelContext
-    @Query(sort: [SortDescriptor(\Edge.nodeA.label)]) var edges: [Edge]
+    @Query(sort: [SortDescriptor(\Edge.nodeA)]) var edges: [Edge]
     @State private var selectedEdgeID: Edge.ID?
     var selectedEdge: Edge? {
         if let theID = selectedEdgeID {
@@ -58,7 +58,7 @@ struct EdgeView: View {
         }
         .sheet(isPresented: $isPresentingEditView) {
             NavigationStack {
-                NodeEditor( node: selectedEdge )
+                EdgesEditView( edge: selectedEdge )
             }
             .toolbar {
                 ToolbarItem(placement:.cancellationAction) {

@@ -11,15 +11,15 @@ struct EdgesDetailView: View {
     var edge: Edge
     var body: some View {
         VStack(alignment: .leading) {
-            Text("\(edge.nodeA.label) <----> \(edge.nodeB.label)")
+            Text("\(edge.nodeA) <----> \(edge.nodeB)")
                 .font(.largeTitle)
             Text("Weight: \(edge.weight, specifier: "%0.2f")")
         }
     }
 }
 
-/*
+
  #Preview {
- EdgesDetailView()
+     EdgesDetailView(edge: Edge.defaultEdge )
  }
- */
+ 

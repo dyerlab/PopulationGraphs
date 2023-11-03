@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2A808AAE2AF509AC00A8B464 /* popgraphApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808AAD2AF509AC00A8B464 /* popgraphApp.swift */; };
 		2A808AB02AF509AC00A8B464 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808AAF2AF509AC00A8B464 /* ContentView.swift */; };
-		2A808AB22AF509AC00A8B464 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808AB12AF509AC00A8B464 /* Item.swift */; };
 		2A808AB42AF509AE00A8B464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A808AB32AF509AE00A8B464 /* Assets.xcassets */; };
 		2A808AB82AF509AE00A8B464 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A808AB72AF509AE00A8B464 /* Preview Assets.xcassets */; };
 		2A808AC22AF509AE00A8B464 /* popgraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808AC12AF509AE00A8B464 /* popgraphTests.swift */; };
@@ -53,7 +52,6 @@
 		2A808AAA2AF509AC00A8B464 /* popgraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = popgraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A808AAD2AF509AC00A8B464 /* popgraphApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popgraphApp.swift; sourceTree = "<group>"; };
 		2A808AAF2AF509AC00A8B464 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		2A808AB12AF509AC00A8B464 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		2A808AB32AF509AE00A8B464 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A808AB52AF509AE00A8B464 /* popgraph.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = popgraph.entitlements; sourceTree = "<group>"; };
 		2A808AB72AF509AE00A8B464 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 				2A808AAF2AF509AC00A8B464 /* ContentView.swift */,
 				2A808ADA2AF50A1800A8B464 /* Models */,
 				2A808ADF2AF50B3B00A8B464 /* Views */,
-				2A808AB12AF509AC00A8B464 /* Item.swift */,
 				2A808AB32AF509AE00A8B464 /* Assets.xcassets */,
 				2A808AB52AF509AE00A8B464 /* popgraph.entitlements */,
 				2A808AB62AF509AE00A8B464 /* Preview Content */,
@@ -369,7 +366,6 @@
 				2A808AE82AF50CB900A8B464 /* TitlePage.swift in Sources */,
 				2A808AEC2AF51BCB00A8B464 /* GraphView.swift in Sources */,
 				2A808B032AF54A1A00A8B464 /* EdgesEditView.swift in Sources */,
-				2A808AB22AF509AC00A8B464 /* Item.swift in Sources */,
 				2A808AF52AF5250C00A8B464 /* Data.swift in Sources */,
 				2A808B012AF54A1000A8B464 /* EdgesDetailView.swift in Sources */,
 				2A808AAE2AF509AC00A8B464 /* popgraphApp.swift in Sources */,

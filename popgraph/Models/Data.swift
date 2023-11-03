@@ -19,68 +19,64 @@ public let previewContainer: ModelContainer = {
         let context = container.mainContext
         
         let allNodes = Node.DefaultNodes
-        var edges = [Edge]()
-        
-        if let edge = allNodes.connectNodes( from: "BaC", to: "LaV", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "BaC", to: "Lig", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "BaC", to: "PtP", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "BaC", to: "SnE", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "BaC", to: "SnI", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "BaC", to: "StR", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "BaC", to: "SenBas", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "Ctv", to: "PtP", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "Ctv", to: "SLG", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "Ctv", to: "SnF", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "Ctv", to: "SenBas", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "LaV", to: "Lig", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "LaV", to: "SnE", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "LaV", to: "SnF", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "LaV", to: "TsS", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "Lig", to: "PtC", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "Lig", to: "SnE", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "Lig", to: "SnI", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "Lig", to: "StR", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "PtC", to: "SnE", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "PtC", to: "StR", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "PtC", to: "TsS", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "PtP", to: "SnF", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "PtP", to: "SnI", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "PtP", to: "SenBas", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "SLG", to: "SnF", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "SLG", to: "SnI", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "SnE", to: "StR", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "SnE", to: "TsS", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "SnF", to: "SnI", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "SnI", to: "StR", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "StR", to: "TsS", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "StR", to: "SenBas", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "CP", to: "LF", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "CP", to: "Seri", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "CP", to: "SG", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "CP", to: "SN", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "CP", to: "TS", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "LF", to: "PL", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "LF", to: "SG", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "LF", to: "SI", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "PL", to: "SenBas", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "PL", to: "SG", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "PL", to: "SI", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "Seri", to: "SG", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "Seri", to: "SN", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "SG", to: "SI", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "SI", to: "SN", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "SI", to: "TS", weight: 5) { edges.append( edge ) }
-        if let edge = allNodes.connectNodes( from: "SN", to: "TS", weight: 5) { edges.append( edge ) }
-        
-        
-        
         for node in allNodes {
             context.insert( node )
         }
+        
+        var edges = [Edge]()
+        edges.append( Edge( weight: 5.0, fromNode: "BaC", toNode: "LaV"))
+        edges.append( Edge( weight: 5.0, fromNode: "BaC", toNode: "Lig"))
+        edges.append( Edge( weight: 5.0, fromNode: "BaC", toNode: "PtP"))
+        edges.append( Edge( weight: 5.0, fromNode: "BaC", toNode: "SnE"))
+        edges.append( Edge( weight: 5.0, fromNode: "BaC", toNode: "SnI"))
+        edges.append( Edge( weight: 5.0, fromNode: "BaC", toNode: "StR"))
+        edges.append( Edge( weight: 5.0, fromNode: "BaC", toNode: "SenBas"))
+        edges.append( Edge( weight: 5.0, fromNode: "Ctv", toNode: "PtP"))
+        edges.append( Edge( weight: 5.0, fromNode: "Ctv", toNode: "SLG"))
+        edges.append( Edge( weight: 5.0, fromNode: "Ctv", toNode: "SnF"))
+        edges.append( Edge( weight: 5.0, fromNode: "Ctv", toNode: "SenBas"))
+        edges.append( Edge( weight: 5.0, fromNode: "LaV", toNode: "Lig"))
+        edges.append( Edge( weight: 5.0, fromNode: "LaV", toNode: "SnE"))
+        edges.append( Edge( weight: 5.0, fromNode: "LaV", toNode: "SnF"))
+        edges.append( Edge( weight: 5.0, fromNode: "LaV", toNode: "TsS"))
+        edges.append( Edge( weight: 5.0, fromNode: "Lig", toNode: "PtC"))
+        edges.append( Edge( weight: 5.0, fromNode: "Lig", toNode: "SnE"))
+        edges.append( Edge( weight: 5.0, fromNode: "Lig", toNode: "SnI"))
+        edges.append( Edge( weight: 5.0, fromNode: "Lig", toNode: "StR"))
+        edges.append( Edge( weight: 5.0, fromNode: "PtC", toNode: "SnE"))
+        edges.append( Edge( weight: 5.0, fromNode: "PtC", toNode: "StR"))
+        edges.append( Edge( weight: 5.0, fromNode: "PtC", toNode: "TsS"))
+        edges.append( Edge( weight: 5.0, fromNode: "PtP", toNode: "SnF"))
+        edges.append( Edge( weight: 5.0, fromNode: "PtP", toNode: "SnI"))
+        edges.append( Edge( weight: 5.0, fromNode: "PtP", toNode: "SenBas"))
+        edges.append( Edge( weight: 5.0, fromNode: "SLG", toNode: "SnF"))
+        edges.append( Edge( weight: 5.0, fromNode: "SLG", toNode: "SnI"))
+        edges.append( Edge( weight: 5.0, fromNode: "SnE", toNode: "StR"))
+        edges.append( Edge( weight: 5.0, fromNode: "SnE", toNode: "TsS"))
+        edges.append( Edge( weight: 5.0, fromNode: "SnF", toNode: "SnI"))
+        edges.append( Edge( weight: 5.0, fromNode: "SnI", toNode: "StR"))
+        edges.append( Edge( weight: 5.0, fromNode: "StR", toNode: "TsS"))
+        edges.append( Edge( weight: 5.0, fromNode: "StR", toNode: "SenBas"))
+        edges.append( Edge( weight: 5.0, fromNode: "CP", toNode: "LF"))
+        edges.append( Edge( weight: 5.0, fromNode: "CP", toNode: "Seri"))
+        edges.append( Edge( weight: 5.0, fromNode: "CP", toNode: "SG"))
+        edges.append( Edge( weight: 5.0, fromNode: "CP", toNode: "SN"))
+        edges.append( Edge( weight: 5.0, fromNode: "CP", toNode: "TS"))
+        edges.append( Edge( weight: 5.0, fromNode: "LF", toNode: "PL"))
+        edges.append( Edge( weight: 5.0, fromNode: "LF", toNode: "SG"))
+        edges.append( Edge( weight: 5.0, fromNode: "LF", toNode: "SI"))
+        edges.append( Edge( weight: 5.0, fromNode: "PL", toNode: "SenBas"))
+        edges.append( Edge( weight: 5.0, fromNode: "PL", toNode: "SG"))
+        edges.append( Edge( weight: 5.0, fromNode: "PL", toNode: "SI"))
+        edges.append( Edge( weight: 5.0, fromNode: "Seri", toNode: "SG"))
+        edges.append( Edge( weight: 5.0, fromNode: "Seri", toNode: "SN"))
+        edges.append( Edge( weight: 5.0, fromNode: "SG", toNode: "SI"))
+        edges.append( Edge( weight: 5.0, fromNode: "SI", toNode: "SN"))
+        edges.append( Edge( weight: 5.0, fromNode: "SI", toNode: "TS"))
+        edges.append( Edge( weight: 5.0, fromNode: "SN", toNode: "TS"))
+
         for edge in edges {
             context.insert( edge )
-            edge.nodeA.edges.append( edge )
-            edge.nodeB.edges.append( edge )
         }
         
         return container

@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct EdgesListView: View {
-    @State private var sortOrder = [KeyPathComparator( \Edge.nodeA.label) ]
+    @State private var sortOrder = [KeyPathComparator( \Edge.nodeA) ]
     @Binding var selection: Edge.ID?
     
     var edges: [Edge]
@@ -19,8 +19,8 @@ struct EdgesListView: View {
     
     var body: some View {
         Table( sortedEdges, selection: $selection, sortOrder: $sortOrder) {
-            TableColumn("Left Node", value: \.nodeA.label)
-            TableColumn("Right Node", value: \.nodeB.label)
+            TableColumn("Left Node", value: \.nodeA)
+            TableColumn("Right Node", value: \.nodeB)
             TableColumn("Weight") { edge in
                 Text("\(edge.weight)")
             }

@@ -22,7 +22,7 @@ struct NodeDetail: View {
                 .font(.title3)
             
             ForEach( node.edges ) { edge in
-                Text(" \(edge.nodeA.label) <-- \(edge.weight) --> \(edge.nodeB.label )")
+                Text(" \(edge.nodeA) <-- \(edge.weight) --> \(edge.nodeB)")
             }
         }
     }
