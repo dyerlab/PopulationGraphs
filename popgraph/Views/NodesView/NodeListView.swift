@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct NodeListView: View {
     @State private var sortOrder = [ KeyPathComparator(\Node.label) ]

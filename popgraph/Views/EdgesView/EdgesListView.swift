@@ -6,13 +6,28 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct EdgesListView: View {
+    @State private var sortOrder = [KeyPathComparator( \Edge.nodeA.label) ]
+    @Binding var selection: Edge.ID?
+    
+    var edges: [Edge]
+    var sortedEdges: [Edge] {
+        return edges.sorted( using: sortOrder )
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Table( sortedEdges, selection: $selection, sortOrder: $sortOrder) {
+            TableColumn("Left Node", value: \.nodeA.label)
+            TableColumn("Right Node", value: \.nodeB.label)
+            TableColumn("Weight") { edge in
+                Text("\(edge.weight)")
+            }
+        }
     }
 }
 
 #Preview {
-    EdgesListView()
+    EdgesListView(selection: .constant(nil), edges: Edge.defaultEdges )
 }

@@ -15,8 +15,8 @@ final class Node {
     @Attribute(.unique) var label: String
     var size: Double
     
-    @Relationship(deleteRule: .cascade, inverse: \Edge.fromNode )
-    var edges: [Edge] = []
+    
+    var edges = [Edge]()
     
     var degree: Int {
         return edges.count

@@ -29,6 +29,7 @@
 		2A808AFF2AF54A0500A8B464 /* EdgesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808AFE2AF54A0500A8B464 /* EdgesListView.swift */; };
 		2A808B012AF54A1000A8B464 /* EdgesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808B002AF54A1000A8B464 /* EdgesDetailView.swift */; };
 		2A808B032AF54A1A00A8B464 /* EdgesEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808B022AF54A1A00A8B464 /* EdgesEditView.swift */; };
+		2A808B052AF56CEF00A8B464 /* Array+Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808B042AF56CEF00A8B464 /* Array+Node.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		2A808AFE2AF54A0500A8B464 /* EdgesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgesListView.swift; sourceTree = "<group>"; };
 		2A808B002AF54A1000A8B464 /* EdgesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgesDetailView.swift; sourceTree = "<group>"; };
 		2A808B022AF54A1A00A8B464 /* EdgesEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgesEditView.swift; sourceTree = "<group>"; };
+		2A808B042AF56CEF00A8B464 /* Array+Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Node.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				2A808AFB2AF53DAB00A8B464 /* ModelContext.swift */,
+				2A808B042AF56CEF00A8B464 /* Array+Node.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A808AB02AF509AC00A8B464 /* ContentView.swift in Sources */,
+				2A808B052AF56CEF00A8B464 /* Array+Node.swift in Sources */,
 				2A808AFC2AF53DAB00A8B464 /* ModelContext.swift in Sources */,
 				2A808AE82AF50CB900A8B464 /* TitlePage.swift in Sources */,
 				2A808AEC2AF51BCB00A8B464 /* GraphView.swift in Sources */,

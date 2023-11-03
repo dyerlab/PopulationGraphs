@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct EdgesDetailView: View {
+    var edge: Edge
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            Text("\(edge.nodeA.label) <----> \(edge.nodeB.label)")
+                .font(.largeTitle)
+            Text("Weight: \(edge.weight, specifier: "%0.2f")")
+        }
     }
 }
 
-#Preview {
-    EdgesDetailView()
-}
+/*
+ #Preview {
+ EdgesDetailView()
+ }
+ */
