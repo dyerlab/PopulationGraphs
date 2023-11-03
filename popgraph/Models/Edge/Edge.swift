@@ -20,3 +20,14 @@ final class Edge {
         self.toNode = toNode
     }
 }
+
+
+
+extension Edge {
+    static var DefaultEdges: [Edge] {
+        var ret = [Edge]()
+        
+        
+        return ret
+    }
+}

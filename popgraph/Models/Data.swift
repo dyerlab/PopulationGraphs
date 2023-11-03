@@ -18,6 +18,9 @@ public let previewContainer: ModelContainer = {
         let container = try ModelContainer(for: schema, configurations: [modelConfiguration])
         let context = container.mainContext
         
+        let allNodes = Node.DefaultNodes
+        let allEdges = Edge.DefaultEdges
+        
         for node in Node.DefaultNodes {
             context.insert( node )
         }

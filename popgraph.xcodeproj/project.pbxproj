@@ -26,6 +26,9 @@
 		2A808AF72AF52D1100A8B464 /* NodeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808AF62AF52D1100A8B464 /* NodeEditor.swift */; };
 		2A808AF92AF5362500A8B464 /* NodeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808AF82AF5362500A8B464 /* NodeListView.swift */; };
 		2A808AFC2AF53DAB00A8B464 /* ModelContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808AFB2AF53DAB00A8B464 /* ModelContext.swift */; };
+		2A808AFF2AF54A0500A8B464 /* EdgesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808AFE2AF54A0500A8B464 /* EdgesListView.swift */; };
+		2A808B012AF54A1000A8B464 /* EdgesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808B002AF54A1000A8B464 /* EdgesDetailView.swift */; };
+		2A808B032AF54A1A00A8B464 /* EdgesEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808B022AF54A1A00A8B464 /* EdgesEditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		2A808AF62AF52D1100A8B464 /* NodeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeEditor.swift; sourceTree = "<group>"; };
 		2A808AF82AF5362500A8B464 /* NodeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeListView.swift; sourceTree = "<group>"; };
 		2A808AFB2AF53DAB00A8B464 /* ModelContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelContext.swift; sourceTree = "<group>"; };
+		2A808AFE2AF54A0500A8B464 /* EdgesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgesListView.swift; sourceTree = "<group>"; };
+		2A808B002AF54A1000A8B464 /* EdgesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgesDetailView.swift; sourceTree = "<group>"; };
+		2A808B022AF54A1A00A8B464 /* EdgesEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgesEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +178,7 @@
 			children = (
 				2A808AEB2AF51BCB00A8B464 /* GraphView.swift */,
 				2A808AF12AF51F9500A8B464 /* NodesView */,
-				2A808AEF2AF51C0600A8B464 /* EdgeView.swift */,
+				2A808AFD2AF549E700A8B464 /* EdgesView */,
 				2A808AE72AF50CB900A8B464 /* TitlePage.swift */,
 			);
 			path = Views;
@@ -211,6 +217,17 @@
 				2A808AFB2AF53DAB00A8B464 /* ModelContext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2A808AFD2AF549E700A8B464 /* EdgesView */ = {
+			isa = PBXGroup;
+			children = (
+				2A808AEF2AF51C0600A8B464 /* EdgeView.swift */,
+				2A808AFE2AF54A0500A8B464 /* EdgesListView.swift */,
+				2A808B002AF54A1000A8B464 /* EdgesDetailView.swift */,
+				2A808B022AF54A1A00A8B464 /* EdgesEditView.swift */,
+			);
+			path = EdgesView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,12 +364,15 @@
 				2A808AFC2AF53DAB00A8B464 /* ModelContext.swift in Sources */,
 				2A808AE82AF50CB900A8B464 /* TitlePage.swift in Sources */,
 				2A808AEC2AF51BCB00A8B464 /* GraphView.swift in Sources */,
+				2A808B032AF54A1A00A8B464 /* EdgesEditView.swift in Sources */,
 				2A808AB22AF509AC00A8B464 /* Item.swift in Sources */,
 				2A808AF52AF5250C00A8B464 /* Data.swift in Sources */,
+				2A808B012AF54A1000A8B464 /* EdgesDetailView.swift in Sources */,
 				2A808AAE2AF509AC00A8B464 /* popgraphApp.swift in Sources */,
 				2A808AEE2AF51BF900A8B464 /* NodeView.swift in Sources */,
 				2A808ADE2AF50A8B00A8B464 /* Edge.swift in Sources */,
 				2A808AF72AF52D1100A8B464 /* NodeEditor.swift in Sources */,
+				2A808AFF2AF54A0500A8B464 /* EdgesListView.swift in Sources */,
 				2A808AF02AF51C0600A8B464 /* EdgeView.swift in Sources */,
 				2A808AF92AF5362500A8B464 /* NodeListView.swift in Sources */,
 				2A808AF32AF51FB400A8B464 /* NodeDetail.swift in Sources */,
