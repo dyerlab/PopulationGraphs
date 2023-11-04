@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class Edge {
+class Edge {
     var id: UUID
     var weight: Double
     var nodeA: String
@@ -21,7 +21,6 @@ final class Edge {
         self.nodeA = fromNode
         self.nodeB = toNode
     }
-
 }
 
 

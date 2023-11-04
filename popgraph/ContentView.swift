@@ -22,6 +22,13 @@ struct ContentView: View {
                 } label: {
                     Label("PopGraph", systemImage: "perspective")
                 }
+                
+                NavigationLink {
+                    MapsPage()
+                } label: {
+                    Label("Map", systemImage: "map")
+                }
+                
                 NavigationLink {
                     NodeView()
                 } label: {

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A73645B2AF66A7600F549DA /* MapsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73645A2AF66A7600F549DA /* MapsPage.swift */; };
+		2A73645E2AF66BBD00F549DA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73645D2AF66BBD00F549DA /* Location.swift */; };
+		2A7364602AF66D3100F549DA /* GraphMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73645F2AF66D3100F549DA /* GraphMap.swift */; };
+		2A7364622AF66F8D00F549DA /* EdgeCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7364612AF66F8D00F549DA /* EdgeCurve.swift */; };
+		2A7364642AF673DC00F549DA /* Array+Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7364632AF673DC00F549DA /* Array+Edge.swift */; };
 		2A808AAE2AF509AC00A8B464 /* popgraphApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808AAD2AF509AC00A8B464 /* popgraphApp.swift */; };
 		2A808AB02AF509AC00A8B464 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808AAF2AF509AC00A8B464 /* ContentView.swift */; };
 		2A808AB42AF509AE00A8B464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A808AB32AF509AE00A8B464 /* Assets.xcassets */; };
@@ -49,6 +54,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A73645A2AF66A7600F549DA /* MapsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsPage.swift; sourceTree = "<group>"; };
+		2A73645D2AF66BBD00F549DA /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		2A73645F2AF66D3100F549DA /* GraphMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMap.swift; sourceTree = "<group>"; };
+		2A7364612AF66F8D00F549DA /* EdgeCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeCurve.swift; sourceTree = "<group>"; };
+		2A7364632AF673DC00F549DA /* Array+Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Edge.swift"; sourceTree = "<group>"; };
 		2A808AAA2AF509AC00A8B464 /* popgraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = popgraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A808AAD2AF509AC00A8B464 /* popgraphApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popgraphApp.swift; sourceTree = "<group>"; };
 		2A808AAF2AF509AC00A8B464 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +112,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A7364582AF66A5300F549DA /* MapsView */ = {
+			isa = PBXGroup;
+			children = (
+				2A73645A2AF66A7600F549DA /* MapsPage.swift */,
+				2A73645F2AF66D3100F549DA /* GraphMap.swift */,
+			);
+			path = MapsView;
+			sourceTree = "<group>";
+		};
+		2A7364592AF66A5E00F549DA /* GraphViews */ = {
+			isa = PBXGroup;
+			children = (
+				2A808AEB2AF51BCB00A8B464 /* GraphView.swift */,
+			);
+			path = GraphViews;
+			sourceTree = "<group>";
+		};
+		2A73645C2AF66BAB00F549DA /* Spatial */ = {
+			isa = PBXGroup;
+			children = (
+				2A73645D2AF66BBD00F549DA /* Location.swift */,
+				2A7364612AF66F8D00F549DA /* EdgeCurve.swift */,
+			);
+			path = Spatial;
+			sourceTree = "<group>";
+		};
 		2A808AA12AF509AC00A8B464 = {
 			isa = PBXGroup;
 			children = (
@@ -165,9 +201,10 @@
 			isa = PBXGroup;
 			children = (
 				2A808AF42AF5250C00A8B464 /* Data.swift */,
+				2A808AE42AF50B9A00A8B464 /* Edge */,
 				2A808AFA2AF53D9D00A8B464 /* Extensions */,
 				2A808AE32AF50B9400A8B464 /* Node */,
-				2A808AE42AF50B9A00A8B464 /* Edge */,
+				2A73645C2AF66BAB00F549DA /* Spatial */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -175,7 +212,8 @@
 		2A808ADF2AF50B3B00A8B464 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2A808AEB2AF51BCB00A8B464 /* GraphView.swift */,
+				2A7364592AF66A5E00F549DA /* GraphViews */,
+				2A7364582AF66A5300F549DA /* MapsView */,
 				2A808AF12AF51F9500A8B464 /* NodesView */,
 				2A808AFD2AF549E700A8B464 /* EdgesView */,
 				2A808AE72AF50CB900A8B464 /* TitlePage.swift */,
@@ -215,6 +253,7 @@
 			children = (
 				2A808AFB2AF53DAB00A8B464 /* ModelContext.swift */,
 				2A808B042AF56CEF00A8B464 /* Array+Node.swift */,
+				2A7364632AF673DC00F549DA /* Array+Edge.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -362,19 +401,24 @@
 			files = (
 				2A808AB02AF509AC00A8B464 /* ContentView.swift in Sources */,
 				2A808B052AF56CEF00A8B464 /* Array+Node.swift in Sources */,
+				2A7364622AF66F8D00F549DA /* EdgeCurve.swift in Sources */,
 				2A808AFC2AF53DAB00A8B464 /* ModelContext.swift in Sources */,
 				2A808AE82AF50CB900A8B464 /* TitlePage.swift in Sources */,
 				2A808AEC2AF51BCB00A8B464 /* GraphView.swift in Sources */,
 				2A808B032AF54A1A00A8B464 /* EdgesEditView.swift in Sources */,
 				2A808AF52AF5250C00A8B464 /* Data.swift in Sources */,
+				2A7364642AF673DC00F549DA /* Array+Edge.swift in Sources */,
 				2A808B012AF54A1000A8B464 /* EdgesDetailView.swift in Sources */,
 				2A808AAE2AF509AC00A8B464 /* popgraphApp.swift in Sources */,
 				2A808AEE2AF51BF900A8B464 /* NodeView.swift in Sources */,
 				2A808ADE2AF50A8B00A8B464 /* Edge.swift in Sources */,
 				2A808AF72AF52D1100A8B464 /* NodeEditor.swift in Sources */,
+				2A73645B2AF66A7600F549DA /* MapsPage.swift in Sources */,
 				2A808AFF2AF54A0500A8B464 /* EdgesListView.swift in Sources */,
+				2A73645E2AF66BBD00F549DA /* Location.swift in Sources */,
 				2A808AF02AF51C0600A8B464 /* EdgeView.swift in Sources */,
 				2A808AF92AF5362500A8B464 /* NodeListView.swift in Sources */,
+				2A7364602AF66D3100F549DA /* GraphMap.swift in Sources */,
 				2A808AF32AF51FB400A8B464 /* NodeDetail.swift in Sources */,
 				2A808ADC2AF50A2700A8B464 /* Node.swift in Sources */,
 			);
