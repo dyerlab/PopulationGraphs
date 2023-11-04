@@ -26,6 +26,12 @@ struct NodeListView: View {
             TableColumn("Degree") { node in
                 Text("\(node.degree)")
             }
+            TableColumn("Longitude"){ node in
+                Text("\(node.longitude, specifier: "%.3f")")
+            }
+            TableColumn("Latitude"){ node in
+                Text("\(node.latitude, specifier: "%.3f")")
+            }
         }
     }
 }

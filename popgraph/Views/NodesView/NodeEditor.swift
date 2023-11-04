@@ -20,12 +20,16 @@ struct NodeEditor: View {
     
     @State private var nodeLabel: String = ""
     @State private var nodeSize: Double = 1.0
+    @State private var longitude: Double = 0.0
+    @State private var latitude: Double = 0.0
     
     var body: some View {
         
         Form {
             TextField("Name", text: $nodeLabel)
             TextField("Size", value: $nodeSize, format: .number )
+            TextField("Longitude", value: $longitude, format: .number )
+            TextField("Latitude", value: $latitude, format: .number )
         }
         
         .padding()
@@ -55,8 +59,13 @@ struct NodeEditor: View {
         if let node {
             node.label = nodeLabel
             node.size = nodeSize
+            node.longitude = longitude
+            node.latitude = latitude
         } else {
-            let newNode = Node(label: nodeLabel, size: nodeSize)
+            let newNode = Node( label: nodeLabel,
+                                size: nodeSize,
+                                longitude: longitude,
+                                latitude: latitude )
             modelContext.insert( newNode )
         }
     }
