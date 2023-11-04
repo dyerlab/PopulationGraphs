@@ -22,12 +22,9 @@ struct EdgesListView: View {
             TableColumn("Left Node", value: \.nodeA)
             TableColumn("Right Node", value: \.nodeB)
             TableColumn("Weight") { edge in
-                Text("\(edge.weight)")
+                Text("\(edge.weight, specifier: "%0.2f")")
             }
         }
     }
 }
 
-#Preview {
-    EdgesListView(selection: .constant(nil), edges: Edge.defaultEdges )
-}
