@@ -6,9 +6,24 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct NodeDetail: View {
     var node: Node
+    @Query var edges: [Edge]
+    
+    init(node: Node) {
+        self.node = node
+        let idVals = node.edges
+        
+        let predicate = #Predicate<Edge> {
+            idVals.contains( $0.id )
+        }
+        
+        _edges = Query( filter: predicate,
+                        sort: [SortDescriptor(\Edge.nodeA)] )
+        
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -21,7 +36,7 @@ struct NodeDetail: View {
             Text("Neighbors")
                 .font(.title3)
             
-            ForEach( node.edges ) { edge in
+            ForEach( edges ) { edge in
                 Text(" \(edge.nodeA) <-- \(edge.weight) --> \(edge.nodeB)")
             }
         }

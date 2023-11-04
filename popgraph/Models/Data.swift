@@ -19,9 +19,7 @@ public let previewContainer: ModelContainer = {
         let context = container.mainContext
         
         let allNodes = Node.DefaultNodes
-        for node in allNodes {
-            context.insert( node )
-        }
+        
         
         var edges = [Edge]()
         edges.append( Edge( weight: 5.0, fromNode: "BaC", toNode: "LaV"))
@@ -75,8 +73,22 @@ public let previewContainer: ModelContainer = {
         edges.append( Edge( weight: 5.0, fromNode: "SI", toNode: "TS"))
         edges.append( Edge( weight: 5.0, fromNode: "SN", toNode: "TS"))
 
+        
+
+        
         for edge in edges {
+            if let n1 = allNodes.getNodeNamed(name: edge.nodeA) {
+                n1.edges.append( edge.id )
+            }
+            if let n2 = allNodes.getNodeNamed(name: edge.nodeB) {
+                n2.edges.append( edge.id )
+            }
+            
             context.insert( edge )
+        }
+        
+        for node in allNodes {
+            context.insert( node )
         }
         
         return container

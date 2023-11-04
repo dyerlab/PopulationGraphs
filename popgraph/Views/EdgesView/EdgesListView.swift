@@ -10,7 +10,7 @@ import SwiftData
 
 struct EdgesListView: View {
     @State private var sortOrder = [KeyPathComparator( \Edge.nodeA) ]
-    @Binding var selection: Edge.ID?
+    @Binding var selection: UUID?
     
     var edges: [Edge]
     var sortedEdges: [Edge] {

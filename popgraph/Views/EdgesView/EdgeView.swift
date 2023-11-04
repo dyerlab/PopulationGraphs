@@ -11,12 +11,13 @@ import SwiftData
 struct EdgeView: View {
     @Environment(\.modelContext) var modelContext
     @Query(sort: [SortDescriptor(\Edge.nodeA)]) var edges: [Edge]
-    @State private var selectedEdgeID: Edge.ID?
+    @State private var selectedEdgeID: UUID?
+    
     var selectedEdge: Edge? {
         if let theID = selectedEdgeID {
             do {
                 let fd = FetchDescriptor<Edge>(
-                    predicate: #Predicate { $0.persistentModelID == theID }
+                    predicate: #Predicate { $0.id == theID }
                 )
                 let theEdge = try modelContext.fetch( fd ).first
                 return theEdge

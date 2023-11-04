@@ -10,11 +10,13 @@ import SwiftData
 
 @Model
 final class Edge {
+    var id: UUID
     var weight: Double
     var nodeA: String
     var nodeB: String
     
     init(weight: Double, fromNode: String, toNode: String) {
+        self.id = UUID()
         self.weight = weight
         self.nodeA = fromNode
         self.nodeB = toNode

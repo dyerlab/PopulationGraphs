@@ -14,9 +14,10 @@ final class Node {
     
     @Attribute(.unique) var label: String
     var size: Double
+    var latitude: Double?
+    var longitude: Double?
     
-    
-    var edges = [Edge]()
+    var edges = [UUID]()
     
     var degree: Int {
         return edges.count
