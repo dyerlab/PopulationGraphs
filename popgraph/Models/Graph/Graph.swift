@@ -8,7 +8,7 @@
 import Foundation
 import DLMatrix
 
-class Graph {
+public class Graph {
     var nodes: [Node]
     var edges: [Edge]
     

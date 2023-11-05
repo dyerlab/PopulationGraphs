@@ -36,10 +36,12 @@
 		2A808B052AF56CEF00A8B464 /* Array+Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808B042AF56CEF00A8B464 /* Array+Node.swift */; };
 		2AC9D04A2AF79EF30038A685 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9D0492AF79EF30038A685 /* Graph.swift */; };
 		2AC9D04E2AF7A5FE0038A685 /* DLMatrix in Frameworks */ = {isa = PBXBuildFile; productRef = 2AC9D04D2AF7A5FE0038A685 /* DLMatrix */; };
-		2AC9D0512AF7AB230038A685 /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9D0502AF7AB230038A685 /* Dijkstra.swift */; };
 		2AC9D0532AF7AC7C0038A685 /* CentralityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9D0522AF7AC7C0038A685 /* CentralityType.swift */; };
 		2AC9D0552AF7AD1B0038A685 /* ShortestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9D0542AF7AD1B0038A685 /* ShortestPath.swift */; };
 		2AC9D0572AF7B1450038A685 /* ShortestPathsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9D0562AF7B1450038A685 /* ShortestPathsTests.swift */; };
+		2AC9D0592AF7B8CC0038A685 /* DegreeCentrality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9D0582AF7B8CC0038A685 /* DegreeCentrality.swift */; };
+		2AC9D05B2AF7BACC0038A685 /* BetweenessCentrality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9D05A2AF7BACC0038A685 /* BetweenessCentrality.swift */; };
+		2AC9D05D2AF7BF280038A685 /* ClosenessCentrality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9D05C2AF7BF280038A685 /* ClosenessCentrality.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,10 +94,12 @@
 		2A808B022AF54A1A00A8B464 /* EdgesEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgesEditView.swift; sourceTree = "<group>"; };
 		2A808B042AF56CEF00A8B464 /* Array+Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Node.swift"; sourceTree = "<group>"; };
 		2AC9D0492AF79EF30038A685 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
-		2AC9D0502AF7AB230038A685 /* Dijkstra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dijkstra.swift; sourceTree = "<group>"; };
 		2AC9D0522AF7AC7C0038A685 /* CentralityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralityType.swift; sourceTree = "<group>"; };
 		2AC9D0542AF7AD1B0038A685 /* ShortestPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortestPath.swift; sourceTree = "<group>"; };
 		2AC9D0562AF7B1450038A685 /* ShortestPathsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortestPathsTests.swift; sourceTree = "<group>"; };
+		2AC9D0582AF7B8CC0038A685 /* DegreeCentrality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreeCentrality.swift; sourceTree = "<group>"; };
+		2AC9D05A2AF7BACC0038A685 /* BetweenessCentrality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetweenessCentrality.swift; sourceTree = "<group>"; };
+		2AC9D05C2AF7BF280038A685 /* ClosenessCentrality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosenessCentrality.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,9 +299,11 @@
 		2AC9D04F2AF7A8ED0038A685 /* Algorithms */ = {
 			isa = PBXGroup;
 			children = (
-				2AC9D0502AF7AB230038A685 /* Dijkstra.swift */,
 				2AC9D0522AF7AC7C0038A685 /* CentralityType.swift */,
 				2AC9D0542AF7AD1B0038A685 /* ShortestPath.swift */,
+				2AC9D0582AF7B8CC0038A685 /* DegreeCentrality.swift */,
+				2AC9D05A2AF7BACC0038A685 /* BetweenessCentrality.swift */,
+				2AC9D05C2AF7BF280038A685 /* ClosenessCentrality.swift */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -438,12 +444,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AC9D05B2AF7BACC0038A685 /* BetweenessCentrality.swift in Sources */,
 				2A808AB02AF509AC00A8B464 /* ContentView.swift in Sources */,
 				2A808B052AF56CEF00A8B464 /* Array+Node.swift in Sources */,
 				2A7364622AF66F8D00F549DA /* EdgeCurve.swift in Sources */,
 				2A808AFC2AF53DAB00A8B464 /* ModelContext.swift in Sources */,
 				2A808AE82AF50CB900A8B464 /* TitlePage.swift in Sources */,
-				2AC9D0512AF7AB230038A685 /* Dijkstra.swift in Sources */,
 				2AC9D0552AF7AD1B0038A685 /* ShortestPath.swift in Sources */,
 				2A808AEC2AF51BCB00A8B464 /* GraphView.swift in Sources */,
 				2A808B032AF54A1A00A8B464 /* EdgesEditView.swift in Sources */,
@@ -456,11 +462,13 @@
 				2A808ADE2AF50A8B00A8B464 /* Edge.swift in Sources */,
 				2A808AF72AF52D1100A8B464 /* NodeEditor.swift in Sources */,
 				2A73645B2AF66A7600F549DA /* MapsPage.swift in Sources */,
+				2AC9D05D2AF7BF280038A685 /* ClosenessCentrality.swift in Sources */,
 				2A808AFF2AF54A0500A8B464 /* EdgesListView.swift in Sources */,
 				2A73645E2AF66BBD00F549DA /* Location.swift in Sources */,
 				2AC9D0532AF7AC7C0038A685 /* CentralityType.swift in Sources */,
 				2A808AF02AF51C0600A8B464 /* EdgeView.swift in Sources */,
 				2A808AF92AF5362500A8B464 /* NodeListView.swift in Sources */,
+				2AC9D0592AF7B8CC0038A685 /* DegreeCentrality.swift in Sources */,
 				2A7364602AF66D3100F549DA /* GraphMap.swift in Sources */,
 				2A808AF32AF51FB400A8B464 /* NodeDetail.swift in Sources */,
 				2A808ADC2AF50A2700A8B464 /* Node.swift in Sources */,
