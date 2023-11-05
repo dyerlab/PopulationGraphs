@@ -9,8 +9,7 @@ import Foundation
 import SwiftData
 
 
-@Model
-final class Node {
+@Model class Node {
     
     @Attribute(.unique) var label: String
     var size: Double

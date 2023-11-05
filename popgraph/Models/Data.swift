@@ -77,10 +77,10 @@ public let previewContainer: ModelContainer = {
 
         
         for edge in edges {
-            if let n1 = allNodes.getNodeNamed(name: edge.nodeA) {
+            if let n1 = allNodes.nodeNamed(name: edge.nodeA) {
                 n1.edges.append( edge.id )
             }
-            if let n2 = allNodes.getNodeNamed(name: edge.nodeB) {
+            if let n2 = allNodes.nodeNamed(name: edge.nodeB) {
                 n2.edges.append( edge.id )
             }
             

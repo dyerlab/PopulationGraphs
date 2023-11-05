@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "dlmatrix",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dyerlab/dlmatrix",
+      "state" : {
+        "revision" : "702bf6dcd6b5c28f0f362f35134fb004099b3dfe",
+        "version" : "1.0.3"
+      }
+    }
+  ],
+  "version" : 2
+}
