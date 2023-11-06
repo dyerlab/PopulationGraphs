@@ -62,6 +62,29 @@ extension Graph {
     
 }
 
+extension Graph {
+    
+    func nodeNeighborSubgraph( probit: Node) -> Graph {
+        
+        let neighborEdges = self.edges.filter( { probit.edges.contains($0.id) } )
+        var neighborNodes = [Node]()
+        neighborNodes.append( probit )
+        for edge in neighborEdges {
+            
+            let newNodeLabel = ( edge.nodeA == probit.label ) ? edge.nodeB : edge.nodeA
+            if let otherNode = self.nodes.nodeNamed(name: newNodeLabel ) {
+                let newNode = Node( label: otherNode.label,
+                                    size: otherNode.size,
+                                    longitude: otherNode.longitude,
+                                    latitude: otherNode.latitude)
+                neighborNodes.append( newNode )
+            }
+        }
+        return Graph(nodes: neighborNodes, edges: neighborEdges )
+    }
+    
+}
+
 
 extension Graph {
     

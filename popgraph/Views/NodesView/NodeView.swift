@@ -10,38 +10,34 @@ import SwiftData
 
 struct NodeView: View {
     @Environment(\.modelContext) var modelContext
-    @Query(sort: [SortDescriptor(\Node.label) ] ) var nodes: [Node]
+    @State private var selectedNodeID: UUID?
+    @State var isPresentingEditView = false
+    var graph: Graph
     
-    @State private var selectedNodeID: Node.ID?
-    var theSelectedNode: Node? {
-        if let theID = selectedNodeID {
-            do {
-                let fd = FetchDescriptor<Node>(
-                    predicate: #Predicate { $0.persistentModelID == theID }
-                )
-                let theNode = try modelContext.fetch( fd ).first
-                print("\(theNode?.label ?? "bob") is selected")
-                return theNode
-            } catch {
-                print("Caught error in nodeFromID with \(error.localizedDescription)")
-            }
-        }
-        return nil
+    var nodes: [Node] {
+        return graph.nodes
+    }
+    var edges: [Edge] {
+        return graph.edges
     }
     
-    @State var isPresentingEditView = false
+    var theSelectedNode: Node? {
+        return nodes.filter( {$0.id == selectedNodeID} ).first
+    }
+    
+    
     
     var body: some View {
         VSplitView(content: {
             NodeListView( selection: $selectedNodeID, nodes: nodes )
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-
+            
             VStack(alignment: .leading) {
                 if let node = theSelectedNode {
-                        NodeDetail(node: node )
+                    NodeDetail(node: node )
                 } else {
                     Text("No selected node")
-                        
+                    
                 }
                 Spacer()
             }
@@ -49,7 +45,7 @@ struct NodeView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         })
         .onAppear {
-            selectedNodeID = nodes.first!.persistentModelID
+            selectedNodeID = nodes.first!.id
         }
         .toolbar {
             ToolbarItem(placement: .primaryAction ) {
@@ -59,28 +55,27 @@ struct NodeView: View {
                 }, label: {
                     Image(systemName: selectedNodeID == nil ? "plus" : "pencil")
                 })
-
+                
             }
         }
-        .sheet(isPresented: $isPresentingEditView) { 
+        .sheet(isPresented: $isPresentingEditView) {
             NavigationStack {
                 NodeEditor( node: theSelectedNode )
             }
             .toolbar {
                 ToolbarItem(placement:.cancellationAction) {
                     Button("Cancel", role: .cancel) {
-                        isPresentingEditView = false 
+                        isPresentingEditView = false
                     }
                 }
             }
         }
         
     }
-
+    
     
 }
 
 #Preview {
-    NodeView()
-        .modelContainer( previewContainer )
+    NodeView( graph: Graph.DefaultGraph)
 }

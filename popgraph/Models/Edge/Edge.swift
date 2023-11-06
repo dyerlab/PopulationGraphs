@@ -14,6 +14,7 @@ class Edge {
     var weight: Double
     var nodeA: String
     var nodeB: String
+    var compression: Double = Double.nan 
     
     init(fromNode: String, toNode: String, weight: Double ) {
         self.id = UUID()

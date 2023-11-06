@@ -11,7 +11,7 @@ import SwiftData
 
 
 @Model class Node {
-    
+    var id: UUID
     @Attribute(.unique) var label: String
     var size: Double
     var latitude: Double
@@ -28,6 +28,7 @@ import SwiftData
     }
     
     init(label: String, size: Double, longitude: Double, latitude: Double ) {
+        self.id = UUID()
         self.label = label
         self.size = size
         self.longitude = longitude

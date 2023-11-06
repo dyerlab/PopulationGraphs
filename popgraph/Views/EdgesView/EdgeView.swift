@@ -10,8 +10,12 @@ import SwiftData
 
 struct EdgeView: View {
     @Environment(\.modelContext) var modelContext
-    @Query(sort: [SortDescriptor(\Edge.nodeA)]) var edges: [Edge]
     @State private var selectedEdgeID: UUID?
+    
+    var graph: Graph
+    var edges: [Edge] {
+        return graph.edges
+    }
     
     var selectedEdge: Edge? {
         if let theID = selectedEdgeID {
@@ -76,5 +80,5 @@ struct EdgeView: View {
 }
 
 #Preview {
-    EdgeView()
+    EdgeView(graph: Graph.DefaultGraph)
 }

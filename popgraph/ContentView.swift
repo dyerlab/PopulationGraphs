@@ -33,13 +33,13 @@ struct ContentView: View {
                 }
                 
                 NavigationLink {
-                    NodeView()
+                    NodeView(graph: graph)
                 } label: {
                     Label("Nodes", systemImage: "circle.grid.2x1")
                 }
 
                 NavigationLink {
-                    EdgeView()
+                    EdgeView(graph: graph )
                 } label: {
                     Label("Edges", systemImage: "arrow.left.arrow.right")
                 }

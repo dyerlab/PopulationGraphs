@@ -11,7 +11,7 @@ import SwiftData
 struct NodeDetail: View {
     var node: Node
     @Query var edges: [Edge]
-    
+        
     init(node: Node) {
         self.node = node
         let idVals = node.edges
@@ -33,6 +33,9 @@ struct NodeDetail: View {
             Text("Size: \(node.size, specifier: "%.2f")")
             Text("Degree: \(node.degree)")
             
+            
+            
+            
             Text("Neighbors")
                 .font(.title3)
             
@@ -40,6 +43,7 @@ struct NodeDetail: View {
                 Text(" \(edge.nodeA) <-- \(edge.weight) --> \(edge.nodeB)")
             }
         }
+        .padding()
     }
 }
 
