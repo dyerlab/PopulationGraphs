@@ -11,11 +11,15 @@ struct GraphPage: View {
     var graph: Graph
     
     var body: some View {
-        VStack(alignment: .leading) {
-            
-            GraphMetaData(graph: graph )
-            
-            IBGDView(data: graph.ibgdData )
+        ScrollView {
+            VStack(alignment: .leading) {
+                
+                GraphMetaData(graph: graph )
+                
+                IBGDView(data: graph.ibgdData )
+                
+            }
+
         }
     }
 }

@@ -40,27 +40,27 @@ struct CorrelationView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 5) {
             
             if correlation.type == .Pearson {
                 Text("Pearson's Product-Moment Correlation")
-                    .font( .title2 )
+                    .font( .title3 )
             } else {
                 Text("Spearmans rho Correlation")
-                    .font( .title2 )
+                    .font( .title3 )
             }
             
             HStack(alignment:.top) {
                 VStack(alignment:.leading){
                     Text("Data:")
-                        .font(.title3)
+                        .font(.headline)
                     Text(" • \(xLabel): [min: \(minX, specifier: "%0.3f"), max: \(maxX, specifier: "%0.3f")]")
                     Text(" • \(yLabel): [min: \(minY, specifier: "%0.3f"), max: \(maxY, specifier: "%0.3f")]")
                     Text(" • Probability iterations: \(correlation.numIter)")
                 }
                 VStack(alignment:.leading){
                     Text("Parameters")
-                        .font(.title3)
+                        .font(.headline)
                     Text(" • df: \(correlation.data.count-2)")
                     Text(" • Correlation: \(correlation.parameter, specifier: "%0.8f")")
                     Text(" • Probability: \(correlation.probability, specifier: "%0.5f")")

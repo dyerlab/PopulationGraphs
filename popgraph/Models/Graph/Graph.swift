@@ -105,7 +105,6 @@ extension Graph {
             for j in (i+1) ..< P.cols {
                 if !P[i,j].isNaN && !G[i,j].isNaN {
                     let pt = PointChartData(x: P[i,j], y: G[i,j])
-                    print("\(pt)")
                     ret.append( pt )
                 }
             }
