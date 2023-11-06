@@ -15,7 +15,7 @@ class Edge {
     var nodeA: String
     var nodeB: String
     
-    init(weight: Double, fromNode: String, toNode: String) {
+    init(fromNode: String, toNode: String, weight: Double ) {
         self.id = UUID()
         self.weight = weight
         self.nodeA = fromNode
@@ -29,14 +29,13 @@ class Edge {
 extension Edge {
     
     static var defaultEdge: Edge {
-        let edge = Edge(weight: 5.4, fromNode: "Bob", toNode: "Alice")
+        let edge = Edge(fromNode: "Bob", toNode: "Alice",weight: 5.4)
         return edge
     }
     
     static var defaultEdges: [Edge] {
-        let edge1 = Edge(weight: 2.3, fromNode: "Bob", toNode: "Alice")
-        let edge2 = Edge(weight: 5.3, fromNode: "Alice", toNode: "Jane")
-        
+        let edge1 = Edge(fromNode: "Bob", toNode: "Alice", weight: 2.3)
+        let edge2 = Edge(fromNode: "Alice", toNode: "Jane", weight: 5.3)
         return [edge1,edge2]
     }
     

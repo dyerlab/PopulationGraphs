@@ -9,9 +9,9 @@ import Foundation
 import DLMatrix
 
 public func ClosenessCentrality( graph: Graph ) -> Vector {
-    var N = graph.numberOfNodes
+    let N = graph.numberOfNodes
     var ret = Vector(repeating: 0.0, count: N)
-    var D = ShortestPaths(A: graph.weighedAdjacenty )
+    let D = ShortestPaths(A: graph.weighedAdjacenty )
     
     for i in 0 ..< N {
         for j in 0 ..< N {

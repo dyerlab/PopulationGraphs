@@ -5,6 +5,7 @@
 //  Created by Rodney Dyer on 11/3/23.
 //
 
+import CoreLocation
 import Foundation
 import SwiftData
 
@@ -20,6 +21,10 @@ import SwiftData
     
     var degree: Int {
         return edges.count
+    }
+    
+    var coordinate: CLLocation {
+        return CLLocation(latitude: latitude, longitude: longitude)
     }
     
     init(label: String, size: Double, longitude: Double, latitude: Double ) {

@@ -47,10 +47,10 @@ struct NodeView: View {
             }
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            
-            
-                
         })
+        .onAppear {
+            selectedNodeID = nodes.first!.persistentModelID
+        }
         .toolbar {
             ToolbarItem(placement: .primaryAction ) {
                 Button(action:{

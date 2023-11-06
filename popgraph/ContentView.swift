@@ -10,21 +10,24 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-
-    @Query private var nodes: [Node]
-    @Query private var edge: [Edge]
+    @Query(sort: [SortDescriptor(\Node.label) ] ) private var nodes: [Node]
+    @Query(sort: [SortDescriptor(\Edge.nodeA) ] ) private var edges: [Edge]
+    
+    var graph: Graph {
+        return Graph(nodes: nodes, edges: edges)
+    }
 
     var body: some View {
         NavigationSplitView(sidebar: {
             List {
                 NavigationLink {
-                    GraphView()
+                    GraphPage(graph: graph)
                 } label: {
                     Label("PopGraph", systemImage: "perspective")
                 }
                 
                 NavigationLink {
-                    MapsPage()
+                    MapsPage(graph: graph)
                 } label: {
                     Label("Map", systemImage: "map")
                 }

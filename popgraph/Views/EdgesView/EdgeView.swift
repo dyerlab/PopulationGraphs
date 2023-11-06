@@ -46,6 +46,9 @@ struct EdgeView: View {
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         })
+        .onAppear {
+            selectedEdgeID = edges.first!.id 
+        }
         .toolbar {
             ToolbarItem(placement: .primaryAction ) {
                 Button(action:{

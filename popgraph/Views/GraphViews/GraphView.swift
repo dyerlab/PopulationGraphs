@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct GraphView: View {
+
     var body: some View {
-        Text("Graph View")
+        Text("Graph View Here")
     }
 }
 
 #Preview {
     GraphView()
+        .modelContainer( previewContainer )
 }

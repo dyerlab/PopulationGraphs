@@ -7,24 +7,22 @@
 
 import SwiftUI
 import MapKit
-import SwiftData
 
 
 struct MapsPage: View {
-    @Environment(\.modelContext) var modelContext
-    @Query(sort: [SortDescriptor(\Node.label) ] ) var nodes: [Node]
-    @Query var edges: [Edge]
+    var graph: Graph
+    var locations: [Location] {
+        return graph.nodes.locations
+    }
     
     var mapStyles = [ MapStyle.standard(elevation: .realistic),
                       MapStyle.hybrid( elevation: .realistic ),
                       MapStyle.imagery(elevation: .realistic ) ]
     @State private var selectedStyle: Int = 1
     
-    
-    
     var body: some View {
-        GraphMap( locations: nodes.locations,
-                  edges: edges.getEdgeCurves(nodes: nodes ),
+        GraphMap( locations: locations,
+                  edges: graph.edgeCurves,
                   mapStyle: mapStyles[ selectedStyle] )
         .toolbar {
             /**
@@ -43,6 +41,5 @@ struct MapsPage: View {
 }
 
 #Preview {
-    MapsPage()
-        .modelContainer(previewContainer)
+    MapsPage( graph: Graph.DefaultGraph )
 }

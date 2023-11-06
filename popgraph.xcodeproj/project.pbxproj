@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A12E1C02AF7FB68002B66C7 /* IBGDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A12E1BF2AF7FB68002B66C7 /* IBGDView.swift */; };
+		2A12E1C22AF7FBDC002B66C7 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A12E1C12AF7FBDC002B66C7 /* Matrix.swift */; };
+		2A12E1C42AF8E2A8002B66C7 /* PointChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A12E1C32AF8E2A8002B66C7 /* PointChartData.swift */; };
+		2A12E1C72AF8EDFB002B66C7 /* Correlation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A12E1C62AF8EDFB002B66C7 /* Correlation.swift */; };
+		2A12E1C92AF8EE43002B66C7 /* CorrelationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A12E1C82AF8EE43002B66C7 /* CorrelationType.swift */; };
+		2A12E1CC2AF8F239002B66C7 /* CorrelationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A12E1CB2AF8F239002B66C7 /* CorrelationView.swift */; };
 		2A73645B2AF66A7600F549DA /* MapsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73645A2AF66A7600F549DA /* MapsPage.swift */; };
 		2A73645E2AF66BBD00F549DA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73645D2AF66BBD00F549DA /* Location.swift */; };
 		2A7364602AF66D3100F549DA /* GraphMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73645F2AF66D3100F549DA /* GraphMap.swift */; };
@@ -42,6 +48,9 @@
 		2AC9D0592AF7B8CC0038A685 /* DegreeCentrality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9D0582AF7B8CC0038A685 /* DegreeCentrality.swift */; };
 		2AC9D05B2AF7BACC0038A685 /* BetweenessCentrality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9D05A2AF7BACC0038A685 /* BetweenessCentrality.swift */; };
 		2AC9D05D2AF7BF280038A685 /* ClosenessCentrality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9D05C2AF7BF280038A685 /* ClosenessCentrality.swift */; };
+		2ADA8B362AF9007900EC34DA /* GraphPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADA8B352AF9007900EC34DA /* GraphPage.swift */; };
+		2ADA8B382AF9010700EC34DA /* GraphMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADA8B372AF9010700EC34DA /* GraphMetaData.swift */; };
+		2ADA8B3A2AF908A400EC34DA /* GraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADA8B392AF908A400EC34DA /* GraphTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +71,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A12E1BF2AF7FB68002B66C7 /* IBGDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBGDView.swift; sourceTree = "<group>"; };
+		2A12E1C12AF7FBDC002B66C7 /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		2A12E1C32AF8E2A8002B66C7 /* PointChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointChartData.swift; sourceTree = "<group>"; };
+		2A12E1C62AF8EDFB002B66C7 /* Correlation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Correlation.swift; sourceTree = "<group>"; };
+		2A12E1C82AF8EE43002B66C7 /* CorrelationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrelationType.swift; sourceTree = "<group>"; };
+		2A12E1CB2AF8F239002B66C7 /* CorrelationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrelationView.swift; sourceTree = "<group>"; };
 		2A73645A2AF66A7600F549DA /* MapsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsPage.swift; sourceTree = "<group>"; };
 		2A73645D2AF66BBD00F549DA /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		2A73645F2AF66D3100F549DA /* GraphMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMap.swift; sourceTree = "<group>"; };
@@ -100,6 +115,9 @@
 		2AC9D0582AF7B8CC0038A685 /* DegreeCentrality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreeCentrality.swift; sourceTree = "<group>"; };
 		2AC9D05A2AF7BACC0038A685 /* BetweenessCentrality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetweenessCentrality.swift; sourceTree = "<group>"; };
 		2AC9D05C2AF7BF280038A685 /* ClosenessCentrality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosenessCentrality.swift; sourceTree = "<group>"; };
+		2ADA8B352AF9007900EC34DA /* GraphPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphPage.swift; sourceTree = "<group>"; };
+		2ADA8B372AF9010700EC34DA /* GraphMetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMetaData.swift; sourceTree = "<group>"; };
+		2ADA8B392AF908A400EC34DA /* GraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +146,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A12E1C52AF8E2AD002B66C7 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				2A12E1C32AF8E2A8002B66C7 /* PointChartData.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		2A12E1CA2AF8EE63002B66C7 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				2A12E1C62AF8EDFB002B66C7 /* Correlation.swift */,
+				2A12E1C82AF8EE43002B66C7 /* CorrelationType.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		2A12E1CF2AF8F7F4002B66C7 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				2A12E1CB2AF8F239002B66C7 /* CorrelationView.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
 		2A7364582AF66A5300F549DA /* MapsView */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +183,10 @@
 		2A7364592AF66A5E00F549DA /* GraphViews */ = {
 			isa = PBXGroup;
 			children = (
+				2ADA8B352AF9007900EC34DA /* GraphPage.swift */,
 				2A808AEB2AF51BCB00A8B464 /* GraphView.swift */,
+				2A12E1BF2AF7FB68002B66C7 /* IBGDView.swift */,
+				2ADA8B372AF9010700EC34DA /* GraphMetaData.swift */,
 			);
 			path = GraphViews;
 			sourceTree = "<group>";
@@ -201,6 +247,7 @@
 			children = (
 				2A808AC12AF509AE00A8B464 /* popgraphTests.swift */,
 				2AC9D0562AF7B1450038A685 /* ShortestPathsTests.swift */,
+				2ADA8B392AF908A400EC34DA /* GraphTests.swift */,
 			);
 			path = popgraphTests;
 			sourceTree = "<group>";
@@ -219,11 +266,13 @@
 			children = (
 				2A808AF42AF5250C00A8B464 /* Data.swift */,
 				2AC9D04F2AF7A8ED0038A685 /* Algorithms */,
+				2A12E1C52AF8E2AD002B66C7 /* Chart */,
 				2A808AE42AF50B9A00A8B464 /* Edge */,
 				2A808AFA2AF53D9D00A8B464 /* Extensions */,
 				2AC9D04B2AF7A4FA0038A685 /* Graph */,
 				2A808AE32AF50B9400A8B464 /* Node */,
 				2A73645C2AF66BAB00F549DA /* Spatial */,
+				2A12E1CA2AF8EE63002B66C7 /* Statistics */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -236,6 +285,7 @@
 				2A808AF12AF51F9500A8B464 /* NodesView */,
 				2A808AFD2AF549E700A8B464 /* EdgesView */,
 				2A808AE72AF50CB900A8B464 /* TitlePage.swift */,
+				2A12E1CF2AF8F7F4002B66C7 /* Statistics */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -273,6 +323,7 @@
 				2A808AFB2AF53DAB00A8B464 /* ModelContext.swift */,
 				2A808B042AF56CEF00A8B464 /* Array+Node.swift */,
 				2A7364632AF673DC00F549DA /* Array+Edge.swift */,
+				2A12E1C12AF7FBDC002B66C7 /* Matrix.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -448,15 +499,21 @@
 				2A808AB02AF509AC00A8B464 /* ContentView.swift in Sources */,
 				2A808B052AF56CEF00A8B464 /* Array+Node.swift in Sources */,
 				2A7364622AF66F8D00F549DA /* EdgeCurve.swift in Sources */,
+				2A12E1C02AF7FB68002B66C7 /* IBGDView.swift in Sources */,
+				2ADA8B362AF9007900EC34DA /* GraphPage.swift in Sources */,
+				2A12E1C92AF8EE43002B66C7 /* CorrelationType.swift in Sources */,
 				2A808AFC2AF53DAB00A8B464 /* ModelContext.swift in Sources */,
 				2A808AE82AF50CB900A8B464 /* TitlePage.swift in Sources */,
 				2AC9D0552AF7AD1B0038A685 /* ShortestPath.swift in Sources */,
+				2A12E1C42AF8E2A8002B66C7 /* PointChartData.swift in Sources */,
 				2A808AEC2AF51BCB00A8B464 /* GraphView.swift in Sources */,
 				2A808B032AF54A1A00A8B464 /* EdgesEditView.swift in Sources */,
 				2A808AF52AF5250C00A8B464 /* Data.swift in Sources */,
 				2A7364642AF673DC00F549DA /* Array+Edge.swift in Sources */,
 				2A808B012AF54A1000A8B464 /* EdgesDetailView.swift in Sources */,
+				2A12E1C72AF8EDFB002B66C7 /* Correlation.swift in Sources */,
 				2A808AAE2AF509AC00A8B464 /* popgraphApp.swift in Sources */,
+				2A12E1CC2AF8F239002B66C7 /* CorrelationView.swift in Sources */,
 				2AC9D04A2AF79EF30038A685 /* Graph.swift in Sources */,
 				2A808AEE2AF51BF900A8B464 /* NodeView.swift in Sources */,
 				2A808ADE2AF50A8B00A8B464 /* Edge.swift in Sources */,
@@ -469,7 +526,9 @@
 				2A808AF02AF51C0600A8B464 /* EdgeView.swift in Sources */,
 				2A808AF92AF5362500A8B464 /* NodeListView.swift in Sources */,
 				2AC9D0592AF7B8CC0038A685 /* DegreeCentrality.swift in Sources */,
+				2A12E1C22AF7FBDC002B66C7 /* Matrix.swift in Sources */,
 				2A7364602AF66D3100F549DA /* GraphMap.swift in Sources */,
+				2ADA8B382AF9010700EC34DA /* GraphMetaData.swift in Sources */,
 				2A808AF32AF51FB400A8B464 /* NodeDetail.swift in Sources */,
 				2A808ADC2AF50A2700A8B464 /* Node.swift in Sources */,
 			);
@@ -480,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AC9D0572AF7B1450038A685 /* ShortestPathsTests.swift in Sources */,
+				2ADA8B3A2AF908A400EC34DA /* GraphTests.swift in Sources */,
 				2A808AC22AF509AE00A8B464 /* popgraphTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

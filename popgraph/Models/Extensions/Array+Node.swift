@@ -16,6 +16,7 @@ extension Array where Element == Node {
         }
         return ret
     }
+    
 
     func nodeNamed( name: String ) -> Node? {
         return self.first(where: {$0.label == name})
@@ -24,6 +25,7 @@ extension Array where Element == Node {
     func indexNamed( name: String ) -> Int? {
         return self.firstIndex(where: {$0.label == name })
     }
+    
     
     
     
