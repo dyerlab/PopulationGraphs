@@ -13,7 +13,7 @@ struct Correlation {
     var type: CorrelationType
     var numIter: Int
     var parameter: Double = Double.nan
-
+    
     var xValues: Vector {
         return data.map { $0.xValue }
     }
@@ -55,24 +55,22 @@ struct Correlation {
     
     
     
-    init(data: [PointChartData], type: CorrelationType = .Pearson, numIter: Int = 9999) {
+    init(data: [PointChartData], type: CorrelationType = .Pearson, numIter: Int = 999) {
         self.data = data
         self.type = type
         self.numIter = numIter
         self.parameter = findPearson(x: xValues, y: yValues)
         
-        Task {
-            let nulls = [Double]()
-            for _ in 0 ..< numIter {
-                nulls.append( findPearson(x: xValues, y: yValues.shuffled() ) )
-            }
-            
+        for _ in 0 ..< numIter {
+            nullValues.append( findPearson(x: xValues, y: yValues.shuffled() ) )
         }
+        
+        print("init'd the ibgd")
     }
     
     
     
-
+    
 }
 
 extension Correlation {

@@ -28,13 +28,17 @@ public class Graph {
         /// Run the centralities estimator with the new graph to allocate values for the nodes
         runCentralities()
         
-        /// Estimate the ibgd correlation
-        self.ibgdCorr = Correlation( data: self.ibgdData,
-                                     type: .Pearson,
-                                     numIter: 9999 )
     }
     
     
+    
+    func runIBGD() {
+        if ibgdCorr == nil {
+            self.ibgdCorr = Correlation( data: self.ibgdData,
+                                         type: .Pearson,
+                                         numIter: 999 )
+        }
+    }
     
     
 }
