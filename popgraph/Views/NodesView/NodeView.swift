@@ -25,11 +25,10 @@ struct NodeView: View {
         return nodes.filter( {$0.id == selectedNodeID} ).first
     }
     
-    
-    
     var body: some View {
         VSplitView(content: {
-            NodeListView( selection: $selectedNodeID, nodes: nodes )
+            
+            NodeListView(nodes: nodes, selection: $selectedNodeID)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             
             VStack(alignment: .leading) {
@@ -45,7 +44,7 @@ struct NodeView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         })
         .onAppear {
-            selectedNodeID = nodes.first!.id
+            self.selectedNodeID = nodes.first!.id
         }
         .toolbar {
             ToolbarItem(placement: .primaryAction ) {

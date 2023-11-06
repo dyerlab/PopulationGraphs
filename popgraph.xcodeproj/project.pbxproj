@@ -318,9 +318,9 @@
 			isa = PBXGroup;
 			children = (
 				2A808AED2AF51BF900A8B464 /* NodeView.swift */,
+				2A808AF82AF5362500A8B464 /* NodeListView.swift */,
 				2A808AF22AF51FB400A8B464 /* NodeDetail.swift */,
 				2A808AF62AF52D1100A8B464 /* NodeEditor.swift */,
-				2A808AF82AF5362500A8B464 /* NodeListView.swift */,
 			);
 			path = NodesView;
 			sourceTree = "<group>";

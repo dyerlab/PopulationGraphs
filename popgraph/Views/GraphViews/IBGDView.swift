@@ -55,7 +55,7 @@ struct IBGDView: View {
             .padding()
             .frame(minHeight: 400)
             
-            CorrelationView( data: data,
+            CorrelationView(model: Correlation(data: data), 
                              xLabel: xAxisLabel,
                              yLabel: yAxisLabel )
             

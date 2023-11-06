@@ -21,6 +21,26 @@ struct Correlation {
         return data.map { $0.yValue }
     }
     
+    var minX: Double {
+        guard let mn = xValues.min() else { return Double.nan }
+        return mn
+    }
+    
+    var minY: Double {
+        guard let mn = yValues.min() else { return Double.nan }
+        return mn
+    }
+    
+    var maxX: Double {
+        guard let mn = xValues.max() else { return Double.nan }
+        return mn
+    }
+    
+    var maxY: Double {
+        guard let mn = yValues.max() else { return Double.nan }
+        return mn
+    }
+    
     var probability: Double  {
         if nullValues.count > 0 {
             let numBigger = 1.0 + Double( nullValues.filter { abs($0) >= abs(parameter) }.count )
@@ -41,8 +61,12 @@ struct Correlation {
         self.numIter = numIter
         self.parameter = findPearson(x: xValues, y: yValues)
         
-        for _ in 0 ..< numIter {
-            nullValues.append( findPearson(x: xValues, y: yValues.shuffled() ) )
+        Task {
+            let nulls = [Double]()
+            for _ in 0 ..< numIter {
+                nulls.append( findPearson(x: xValues, y: yValues.shuffled() ) )
+            }
+            
         }
     }
     

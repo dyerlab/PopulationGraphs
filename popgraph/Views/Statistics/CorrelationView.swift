@@ -9,41 +9,16 @@ import SwiftUI
 import Charts
 
 struct CorrelationView: View {
-    var correlation: Correlation
+    var model: Correlation
     var xLabel: String
     var yLabel: String
-    
-    var minX: Double {
-        let xvals = correlation.data.map({ $0.xValue} )
-        return xvals.sorted().first ?? Double.nan
-    }
-    var maxX: Double {
-        let xvals = correlation.data.map({ $0.xValue} )
-        return xvals.sorted().last ?? Double.nan
-    }
-    
-    var minY: Double {
-        let xvals = correlation.data.map({ $0.yValue} )
-        return xvals.sorted().first ?? Double.nan
-    }
-    var maxY: Double {
-        let xvals = correlation.data.map({ $0.yValue} )
-        return xvals.sorted().last ?? Double.nan
-    }
-    
-    init( data: [PointChartData], xLabel: String = "x", yLabel: String = "y") {
-        correlation = Correlation( data: data,
-                                   type: .Pearson,
-                                   numIter: 9999 )
-        self.xLabel = xLabel
-        self.yLabel = yLabel
-    }
+
     
     var body: some View {
         
         VStack(alignment: .leading, spacing: 5) {
             
-            if correlation.type == .Pearson {
+            if model.type == .Pearson {
                 Text("Pearson's Product-Moment Correlation")
                     .font( .title3 )
             } else {
@@ -53,22 +28,23 @@ struct CorrelationView: View {
             
             Text("The following density plot shows the distriubtion of correlation estimates *given* the null hypothesis is true.  These are were derived via permuting one of the variables and estimating the correlation estimate, which is the expectations when *Ho* is true.")
             
-            PermutationDensityPlot( data: correlation.nullValues, observed: correlation.parameter )
+            PermutationDensityPlot( data: model.nullValues,
+                                    observed: model.parameter )
             
             HStack(alignment:.top) {
                 VStack(alignment:.leading){
                     Text("Data:")
                         .font(.headline)
-                    Text(" • \(xLabel): [min: \(minX, specifier: "%0.3f"), max: \(maxX, specifier: "%0.3f")]")
-                    Text(" • \(yLabel): [min: \(minY, specifier: "%0.3f"), max: \(maxY, specifier: "%0.3f")]")
-                    Text(" • Probability iterations: \(correlation.numIter)")
+                    Text(" • \(xLabel): [min: \(model.minX, specifier: "%0.3f"), max: \(model.maxX, specifier: "%0.3f")]")
+                    Text(" • \(yLabel): [min: \(model.minY, specifier: "%0.3f"), max: \(model.maxY, specifier: "%0.3f")]")
+                    Text(" • Probability iterations: \(model.numIter)")
                 }
                 VStack(alignment:.leading){
                     Text("Parameters")
                         .font(.headline)
-                    Text(" • df: \(correlation.data.count-2)")
-                    Text(" • Correlation: \(correlation.parameter, specifier: "%0.8f")")
-                    Text(" • Probability: \(correlation.probability, specifier: "%0.5f")")
+                    Text(" • df: \(model.data.count-2)")
+                    Text(" • Correlation: \(model.parameter, specifier: "%0.8f")")
+                    Text(" • Probability: \(model.probability, specifier: "%0.5f")")
                 }
 
             }
@@ -85,7 +61,7 @@ struct CorrelationView: View {
 }
 
 #Preview {
-    CorrelationView( data: PointChartData.defaultLineChartData,
+    CorrelationView( model: Graph.DefaultGraph.ibgdCorr!,
                      xLabel: "Physical distance",
                      yLabel: "Genetic distance" )
 }

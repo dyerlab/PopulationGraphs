@@ -12,6 +12,7 @@ import DLMatrix
 public class Graph {
     var nodes: [Node]
     var edges: [Edge]
+    var ibgdCorr: Correlation? = nil
     
     var numberOfNodes: Int {
         return nodes.count
@@ -23,7 +24,17 @@ public class Graph {
     init(nodes: [Node], edges: [Edge]) {
         self.nodes = nodes.sorted(by: {$0.label < $1.label} )
         self.edges = edges.sorted(by: {$0.nodeA < $1.nodeA} )
+        
+        /// Run the centralities estimator with the new graph to allocate values for the nodes
+        runCentralities()
+        
+        /// Estimate the ibgd correlation
+        self.ibgdCorr = Correlation( data: self.ibgdData,
+                                     type: .Pearson,
+                                     numIter: 9999 )
     }
+    
+    
     
     
 }
@@ -87,6 +98,24 @@ extension Graph {
 
 
 extension Graph {
+    
+    
+    private func runCentralities() {
+        
+        let closeness = ClosenessCentrality(graph: self)
+        let betweeness = BetweennessCentrality(graph: self )
+        
+        if closeness.count != nodes.count || closeness.count != betweeness.count {
+            fatalError("node count, closeness.count, and betweeness.count do not match.")
+        }
+        
+        for i in 0 ..< nodes.count {
+            nodes[i].closeness = closeness[i]
+            nodes[i].betweenness = betweeness[i]
+        }
+        
+        
+    }
     
     private func getAdjacency( weighed: Bool ) -> Matrix {
         let labels: [String] = nodes.map { $0.label }
