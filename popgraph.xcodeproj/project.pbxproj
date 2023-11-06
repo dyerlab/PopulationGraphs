@@ -51,7 +51,8 @@
 		2ADA8B362AF9007900EC34DA /* GraphPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADA8B352AF9007900EC34DA /* GraphPage.swift */; };
 		2ADA8B382AF9010700EC34DA /* GraphMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADA8B372AF9010700EC34DA /* GraphMetaData.swift */; };
 		2ADA8B3A2AF908A400EC34DA /* GraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADA8B392AF908A400EC34DA /* GraphTests.swift */; };
-		2ADDD8102AF92E1700B1A18C /* Array+PointChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADDD80F2AF92E1700B1A18C /* Array+PointChartData.swift */; };
+		2ADCAB392AF9356400530CE8 /* PermutationDensityPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADCAB382AF9356400530CE8 /* PermutationDensityPlot.swift */; };
+		2ADDD8102AF92E1700B1A18C /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADDD80F2AF92E1700B1A18C /* Vector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,7 +120,8 @@
 		2ADA8B352AF9007900EC34DA /* GraphPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphPage.swift; sourceTree = "<group>"; };
 		2ADA8B372AF9010700EC34DA /* GraphMetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMetaData.swift; sourceTree = "<group>"; };
 		2ADA8B392AF908A400EC34DA /* GraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTests.swift; sourceTree = "<group>"; };
-		2ADDD80F2AF92E1700B1A18C /* Array+PointChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+PointChartData.swift"; sourceTree = "<group>"; };
+		2ADCAB382AF9356400530CE8 /* PermutationDensityPlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermutationDensityPlot.swift; sourceTree = "<group>"; };
+		2ADDD80F2AF92E1700B1A18C /* Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				2A12E1CB2AF8F239002B66C7 /* CorrelationView.swift */,
+				2ADCAB382AF9356400530CE8 /* PermutationDensityPlot.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -326,7 +329,7 @@
 				2A808B042AF56CEF00A8B464 /* Array+Node.swift */,
 				2A7364632AF673DC00F549DA /* Array+Edge.swift */,
 				2A12E1C12AF7FBDC002B66C7 /* Matrix.swift */,
-				2ADDD80F2AF92E1700B1A18C /* Array+PointChartData.swift */,
+				2ADDD80F2AF92E1700B1A18C /* Vector.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -502,7 +505,8 @@
 				2A808AB02AF509AC00A8B464 /* ContentView.swift in Sources */,
 				2A808B052AF56CEF00A8B464 /* Array+Node.swift in Sources */,
 				2A7364622AF66F8D00F549DA /* EdgeCurve.swift in Sources */,
-				2ADDD8102AF92E1700B1A18C /* Array+PointChartData.swift in Sources */,
+				2ADCAB392AF9356400530CE8 /* PermutationDensityPlot.swift in Sources */,
+				2ADDD8102AF92E1700B1A18C /* Vector.swift in Sources */,
 				2A12E1C02AF7FB68002B66C7 /* IBGDView.swift in Sources */,
 				2ADA8B362AF9007900EC34DA /* GraphPage.swift in Sources */,
 				2A12E1C92AF8EE43002B66C7 /* CorrelationType.swift in Sources */,

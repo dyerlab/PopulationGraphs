@@ -23,7 +23,7 @@ struct Correlation {
     
     var probability: Double  {
         if nullValues.count > 0 {
-            let numBigger = Double( nullValues.filter { abs($0) >= abs(parameter) }.count )
+            let numBigger = 1.0 + Double( nullValues.filter { abs($0) >= abs(parameter) }.count )
             return numBigger / Double( nullValues.count)
         } else {
             return Double.nan
@@ -35,7 +35,7 @@ struct Correlation {
     
     
     
-    init(data: [PointChartData], type: CorrelationType = .Pearson, numIter: Int = 999) {
+    init(data: [PointChartData], type: CorrelationType = .Pearson, numIter: Int = 9999) {
         self.data = data
         self.type = type
         self.numIter = numIter
@@ -45,6 +45,8 @@ struct Correlation {
             nullValues.append( findPearson(x: xValues, y: yValues.shuffled() ) )
         }
     }
+    
+    
     
 
 }
@@ -73,6 +75,20 @@ extension Correlation {
             return Double.nan
         }
     }
+    
+    
 }
 
 
+
+
+
+extension Correlation {
+    
+    
+    static var Default: Correlation {
+        let corr = Correlation(data: PointChartData.defaultLineChartData )
+        return corr
+    }
+    
+}

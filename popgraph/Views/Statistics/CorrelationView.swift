@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 struct CorrelationView: View {
     var correlation: Correlation
@@ -33,7 +34,7 @@ struct CorrelationView: View {
     init( data: [PointChartData], xLabel: String = "x", yLabel: String = "y") {
         correlation = Correlation( data: data,
                                    type: .Pearson,
-                                   numIter: 999 )
+                                   numIter: 9999 )
         self.xLabel = xLabel
         self.yLabel = yLabel
     }
@@ -49,6 +50,10 @@ struct CorrelationView: View {
                 Text("Spearmans rho Correlation")
                     .font( .title3 )
             }
+            
+            Text("The following density plot shows the distriubtion of correlation estimates *given* the null hypothesis is true.  These are were derived via permuting one of the variables and estimating the correlation estimate, which is the expectations when *Ho* is true.")
+            
+            PermutationDensityPlot( data: correlation.nullValues, observed: correlation.parameter )
             
             HStack(alignment:.top) {
                 VStack(alignment:.leading){

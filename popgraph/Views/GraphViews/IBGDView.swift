@@ -14,6 +14,7 @@ struct IBGDView: View {
     var yAxisLabel = "Genetic Distance (cgd)"
     
     var body: some View {
+        
         VStack(alignment: .leading) {
             
             HStack {
@@ -57,7 +58,7 @@ struct IBGDView: View {
             CorrelationView( data: data,
                              xLabel: xAxisLabel,
                              yLabel: yAxisLabel )
-
+            
         }
         .padding()
     }

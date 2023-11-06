@@ -13,7 +13,7 @@ struct GraphMap: View {
     var locations: [Location]
     var edges: [EdgeCurve]
     
-    @State var edgeColor: Color = .gray
+    @State var edgeColor: Color = .white
     @State var edgeWidth: Double = 2.0
     @State var nodeColor: Color = .red
     
@@ -32,16 +32,18 @@ struct GraphMap: View {
             
             // put down the location pins
             ForEach( locations ) { location in
-                Annotation( "\(location.name )",
+                Annotation( "\(location.name)",
                             coordinate: location.coordinate,
                             anchor: .center
                 ) {
-                    ZStack {
+                    VStack {
+                        Text("\(location.name)")
+                            .font( .callout)
                         Image(systemName: "mappin")
-                            .padding(4)
-                            .foregroundColor(nodeColor)
-                            .font( .body )
+                            .font( .title2 )
                     }
+                    .foregroundColor(nodeColor)
+                    
                 }
                 .annotationTitles(.hidden)
             }

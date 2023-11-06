@@ -10,14 +10,16 @@ import SwiftUI
 struct GraphPage: View {
     var graph: Graph
     
+    @State private var ibdgExpanded: Bool = true
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
                 
                 GraphMetaData(graph: graph )
-                
+
                 IBGDView(data: graph.ibgdData )
-                
+                    
             }
 
         }
