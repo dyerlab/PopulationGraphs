@@ -8,6 +8,7 @@
 import CoreLocation
 import Foundation
 import SwiftData
+import SpriteKit
 
 
 @Model class Node {
@@ -47,6 +48,31 @@ extension Node: CustomStringConvertible {
         return String("\(label): \(size) \(degree) edges")
     }
 }
+
+
+
+
+extension Node {
+    
+    var graphVertex: GraphVertex {
+        return GraphVertex(node: self)
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

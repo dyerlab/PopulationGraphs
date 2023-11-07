@@ -13,7 +13,6 @@ struct GraphPage: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                GraphView()
                 GraphMetaData()
                 IBGDView()
             }

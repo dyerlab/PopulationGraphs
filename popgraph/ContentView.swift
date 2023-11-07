@@ -11,9 +11,12 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
 
+    @State private var columnVisibility = NavigationSplitViewVisibility.detailOnly
+        
 
     var body: some View {
-        NavigationSplitView(sidebar: {
+        NavigationSplitView(columnVisibility: $columnVisibility,
+                            sidebar: {
             List {
                 NavigationLink {
                     GraphPage()
@@ -41,7 +44,8 @@ struct ContentView: View {
 
             }
         }, detail: {
-            TitlePage()
+            //TitlePage()
+            GraphView()
         })
     }
 }
