@@ -6,23 +6,28 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct GraphMetaData: View {
-    var graph: Graph
+    @Environment(\.modelContext) private var modelContext
+    @Query(sort: [SortDescriptor(\Node.label) ] ) private var nodes: [Node]
+    @Query(sort: [SortDescriptor(\Edge.nodeA) ] ) private var edges: [Edge]
+    
+
     
     var linkingProbability: Double {
-        let total = Double(graph.numberOfNodes)
-        return Double( graph.numberOfEdges) / (total * (total-1.0) / 2.0)
+        let total = Double(nodes.count)
+        return Double( edges.count ) / (total * (total-1.0) / 2.0)
     }
     
     var body: some View {
         VStack(alignment: .leading){
             Text("Population Graph")
                 .font(.title)
-            
+                .padding(.bottom,3)
             Text("This population graph has the following characteristics:")
-            Text(" • Nodes: \(graph.numberOfNodes)")
-            Text(" • Edges: \(graph.numberOfEdges)")
+            Text(" • Nodes: \(nodes.count)")
+            Text(" • Edges: \(edges.count)")
             Text(" • Linking Probability: \(linkingProbability, specifier: "%0.3f")")
         }
         .padding()
@@ -31,5 +36,6 @@ struct GraphMetaData: View {
 }
 
 #Preview {
-    GraphMetaData( graph: Graph.DefaultGraph )
+    GraphMetaData()
+        .modelContainer( previewContainer )
 }

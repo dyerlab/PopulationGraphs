@@ -12,7 +12,7 @@ import DLMatrix
 public class Graph {
     var nodes: [Node]
     var edges: [Edge]
-    var ibgdCorr: Correlation? = nil
+
     
     var numberOfNodes: Int {
         return nodes.count
@@ -24,22 +24,9 @@ public class Graph {
     init(nodes: [Node], edges: [Edge]) {
         self.nodes = nodes.sorted(by: {$0.label < $1.label} )
         self.edges = edges.sorted(by: {$0.nodeA < $1.nodeA} )
-        
-        /// Run the centralities estimator with the new graph to allocate values for the nodes
-        runCentralities()
-        
+             
+        print("graph::init")
     }
-    
-    
-    
-    func runIBGD() {
-        if ibgdCorr == nil {
-            self.ibgdCorr = Correlation( data: self.ibgdData,
-                                         type: .Pearson,
-                                         numIter: 999 )
-        }
-    }
-    
     
 }
 
@@ -50,11 +37,11 @@ public class Graph {
 extension Graph {
     
     var adjacency: Matrix {
-        return getAdjacency(weighed: false )
+        return AdjacencyMatrix(nodes: nodes, edges: edges, weighed: false)
     }
     
     var weighedAdjacenty: Matrix {
-        return getAdjacency(weighed: true )
+        return AdjacencyMatrix(nodes: nodes, edges: edges, weighed: true)
     }
     
     
@@ -106,8 +93,8 @@ extension Graph {
     
     private func runCentralities() {
         
-        let closeness = ClosenessCentrality(graph: self)
-        let betweeness = BetweennessCentrality(graph: self )
+        let closeness = ClosenessCentrality(nodes: nodes, edges: edges)
+        let betweeness = BetweennessCentrality(nodes: nodes, edges: edges)
         
         if closeness.count != nodes.count || closeness.count != betweeness.count {
             fatalError("node count, closeness.count, and betweeness.count do not match.")
@@ -121,34 +108,10 @@ extension Graph {
         
     }
     
-    private func getAdjacency( weighed: Bool ) -> Matrix {
-        let labels: [String] = nodes.map { $0.label }
-        let ret = Matrix(numberOfNodes,numberOfNodes,0.0)
-        ret.rowNames = labels
-        ret.colNames = labels
-        for edge in edges {
-            if let idx1 = nodes.indexNamed( name: edge.nodeA ),
-               let idx2 = nodes.indexNamed( name: edge.nodeB ) {
-                ret[idx1,idx2] = weighed ? edge.weight : 1.0
-                ret[idx2,idx1] = ret[idx1,idx2]
-            }
-        }
-        return ret
-    }
+   
     
     private func createEuclideanData() -> Matrix {
-        let N = numberOfNodes
-        let ret = Matrix( N, N, Double.nan  )
-        
-        for i in 0 ..< N {
-            let coord1 = nodes[i].coordinate
-            for j in (i+1) ..< N {
-                let dist = coord1.distance( from: nodes[j].coordinate ) / 1000.0
-                ret[i,j] = dist
-                ret[j,i] = dist
-            }
-        }
-        return ret
+        return EuclideanDistance(nodes: nodes)
     }
     
     private func createIBGDData() -> [PointChartData] {
@@ -242,6 +205,14 @@ extension Graph {
                 n2.edges.append( edge.id )
             }
         }
+        
+        let close = ClosenessCentrality(nodes: nodes, edges: edges)
+        let between = BetweennessCentrality(nodes: nodes, edges: edges)
+        for i in 0 ..< close.count {
+            nodes[i].closeness = close[i]
+            nodes[i].betweenness = between[i]
+        }
+        
         
         return Graph(nodes: nodes, edges: edges)
     }

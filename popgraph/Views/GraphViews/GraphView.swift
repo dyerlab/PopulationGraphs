@@ -11,7 +11,18 @@ import SwiftData
 struct GraphView: View {
 
     var body: some View {
-        Text("Graph View Here")
+        ZStack{
+            RoundedRectangle(cornerRadius: 5)
+                .fill( .secondary )
+                .padding()
+                
+            Text("Graph View Here")
+                .foregroundStyle( .tertiary )
+
+
+        }
+        .frame(minWidth: 400, minHeight: 400)
+            
     }
 }
 

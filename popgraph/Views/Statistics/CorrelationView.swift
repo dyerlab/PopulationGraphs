@@ -13,6 +13,13 @@ struct CorrelationView: View {
     var xLabel: String
     var yLabel: String
 
+    init(data: [PointChartData], xLabel: String, yLabel: String ) {
+        self.model = Correlation(data: data, type: .Pearson, numIter: 999)
+        self.xLabel = xLabel
+        self.yLabel = yLabel
+        
+        print("correlationview::init")
+    }
     
     var body: some View {
         
@@ -61,7 +68,7 @@ struct CorrelationView: View {
 }
 
 #Preview {
-    CorrelationView( model: Graph.DefaultGraph.ibgdCorr!,
+    CorrelationView( data: Graph.DefaultGraph.ibgdData,
                      xLabel: "Physical distance",
                      yLabel: "Genetic distance" )
 }

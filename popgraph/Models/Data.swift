@@ -19,15 +19,18 @@ public let previewContainer: ModelContainer = {
         let context = container.mainContext
         
         let graph = Graph.DefaultGraph
+        print("data::")
         
-        let allNodes = graph.nodes
+        let nodes = graph.nodes
         let edges = graph.edges
         
         for edge in edges {
             context.insert( edge )
         }
         
-        for node in allNodes {
+        
+        
+        for node in nodes {
             context.insert( node )
         }
         

@@ -10,16 +10,10 @@ import SwiftData
 
 struct NodeView: View {
     @Environment(\.modelContext) var modelContext
+    @Query(sort: [SortDescriptor(\Node.label)]) var nodes: [Node]
+    
     @State private var selectedNodeID: UUID?
     @State var isPresentingEditView = false
-    var graph: Graph
-    
-    var nodes: [Node] {
-        return graph.nodes
-    }
-    var edges: [Edge] {
-        return graph.edges
-    }
     
     var theSelectedNode: Node? {
         return nodes.filter( {$0.id == selectedNodeID} ).first
@@ -69,12 +63,9 @@ struct NodeView: View {
                 }
             }
         }
-        
     }
-    
-    
 }
 
 #Preview {
-    NodeView( graph: Graph.DefaultGraph)
+    NodeView()
 }

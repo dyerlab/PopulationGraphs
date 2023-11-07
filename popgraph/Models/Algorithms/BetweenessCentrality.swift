@@ -8,10 +8,10 @@
 import Foundation
 import DLMatrix
 
-public func BetweennessCentrality( graph: Graph ) -> Vector {
-    let N = graph.numberOfNodes
+func BetweennessCentrality( nodes: [Node], edges: [Edge] ) -> Vector {
+    let N = nodes.count
     var btwn = Vector(repeating: 0.0, count: N)
-    let A = graph.weighedAdjacenty
+    let A = AdjacencyMatrix(nodes: nodes, edges: edges, weighed: true )
     let gMax = A.sum
     let D = Matrix(N,N,0.0)
     
@@ -54,7 +54,5 @@ public func BetweennessCentrality( graph: Graph ) -> Vector {
     }
     
     btwn = btwn * ((Double(N) - 1.0 ) * ( Double(N) - 2.0 )/2)
-    
-    
     return btwn
 }

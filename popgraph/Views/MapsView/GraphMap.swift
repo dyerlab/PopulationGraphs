@@ -5,13 +5,22 @@
 //  Created by Rodney Dyer on 11/4/23.
 //
 
+import SwiftData
 import SwiftUI
 import MapKit
 
 
 struct GraphMap: View {
-    var locations: [Location]
-    var edges: [EdgeCurve]
+    @Environment(\.modelContext) private var modelContext
+    @Query(sort: [SortDescriptor(\Node.label) ] ) private var nodes: [Node]
+    @Query(sort: [SortDescriptor(\Edge.nodeA) ] ) private var edges: [Edge]
+    
+    var locations: [Location] {
+        return nodes.locations
+    }
+    var edgeCurves: [EdgeCurve] {
+        return edges.getEdgeCurves(nodes: nodes)
+    }
     
     @State var edgeColor: Color = .white
     @State var edgeWidth: Double = 2.0
@@ -25,7 +34,7 @@ struct GraphMap: View {
         Map {
             
             // Put down the edges
-            ForEach( edges ) { edge in
+            ForEach( edgeCurves ) { edge in
                 MapPolyline( coordinates: edge.coordinates )
                     .stroke(edgeColor, lineWidth: edgeWidth )
             }
@@ -58,7 +67,5 @@ struct GraphMap: View {
 }
 
 #Preview {
-    GraphMap( locations: Node.DefaultNodes.locations,
-              edges: [EdgeCurve.DefaultCurve],
-              mapStyle: .imagery(elevation: .realistic))
+    GraphMap( mapStyle: .imagery(elevation: .realistic))
 }

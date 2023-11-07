@@ -10,26 +10,11 @@ import SwiftData
 
 struct EdgeView: View {
     @Environment(\.modelContext) var modelContext
+    @Query(sort: [SortDescriptor(\Edge.nodeA)] ) var edges: [Edge]
     @State private var selectedEdgeID: UUID?
-    
-    var graph: Graph
-    var edges: [Edge] {
-        return graph.edges
-    }
-    
+        
     var selectedEdge: Edge? {
-        if let theID = selectedEdgeID {
-            do {
-                let fd = FetchDescriptor<Edge>(
-                    predicate: #Predicate { $0.id == theID }
-                )
-                let theEdge = try modelContext.fetch( fd ).first
-                return theEdge
-            } catch {
-                print("Caught error in selectedEdge with \(error.localizedDescription)")
-            }
-        }
-        return nil
+        return edges.filter({$0.id == selectedEdgeID}).first
     }
     
     @State var isPresentingEditView = false
@@ -80,5 +65,5 @@ struct EdgeView: View {
 }
 
 #Preview {
-    EdgeView(graph: Graph.DefaultGraph)
+    EdgeView()
 }

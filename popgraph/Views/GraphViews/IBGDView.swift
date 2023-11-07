@@ -6,12 +6,9 @@
 //
 
 import SwiftUI
-import Charts
+
 
 struct IBGDView: View {
-    var data: [PointChartData]
-    var xAxisLabel = "Physical Distance (km)"
-    var yAxisLabel = "Genetic Distance (cgd)"
     
     var body: some View {
         
@@ -31,39 +28,18 @@ struct IBGDView: View {
             Text("Pairwise Plot")
                 .font(.title3)
             
-            Chart {
-                ForEach( data ) { item in
-                    PointMark(x: .value("Physical Distance", item.xValue),
-                              y: .value("Graph Distance", item.yValue)
-                    )
-                    .symbolSize( 75.0)
-                    .symbol( .circle )
-                }
-            }
-            .chartYAxis {
-                AxisMarks(position: .trailing)
-            }
-            .chartYAxisLabel(position: .trailing, alignment: .center) {
-                Text(yAxisLabel)
-                    .font(.title3)
-            }
-            .chartXAxisLabel(position: .bottom, alignment: .center) {
-                Text(xAxisLabel)
-                    .font(.title3)
-                    .bold()
-            }
-            .padding()
-            .frame(minHeight: 400)
             
-            CorrelationView(model: Correlation(data: data), 
-                             xLabel: xAxisLabel,
-                             yLabel: yAxisLabel )
-            
+             IsolationScatterPlot()
+            /*
+             CorrelationView(xLabel: xAxisLabel,
+             yLabel: yAxisLabel )
+             */
         }
         .padding()
     }
 }
 
 #Preview {
-    IBGDView( data: PointChartData.defaultLineChartData )
+    IBGDView()
+        .modelContainer( previewContainer )
 }
