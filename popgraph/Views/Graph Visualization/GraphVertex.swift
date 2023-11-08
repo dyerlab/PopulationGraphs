@@ -41,18 +41,19 @@ class GraphVertex: Identifiable {
         let physicsBody = SKPhysicsBody(circleOfRadius: node.size)
         physicsBody.isDynamic = true
         physicsBody.charge = -0.0001
-        physicsBody.linearDamping = 0.95
+        physicsBody.linearDamping = 10
         physicsBody.affectedByGravity = false
         physicsBody.mass = node.size * 10.0
         physicsBody.friction = 1.0
-        physicsBody.allowsRotation = false
+        physicsBody.restitution = 0.1
+        physicsBody.allowsRotation = true
         shapeNode.physicsBody = physicsBody
         
         let fieldNode = SKFieldNode.radialGravityField()
         fieldNode.isEnabled = true
         fieldNode.strength = -0.0005
         fieldNode.falloff = 2.0
-        fieldNode.region = SKRegion(size: CGSize(width: node.size*5.0, height: node.size*5.0))
+        fieldNode.region = SKRegion(size: CGSize(width: node.size*20.0, height: node.size*20.0))
         shapeNode.addChild( fieldNode )
 
         

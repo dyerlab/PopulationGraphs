@@ -42,8 +42,9 @@ class GraphScene: SKScene {
         
         let body = SKPhysicsBody(edgeLoopFrom: frame )
         body.friction = 1.0
-        body.linearDamping = 1.0
-        body.affectedByGravity = false 
+        body.linearDamping = 10.0
+        body.friction = 5.0
+        body.affectedByGravity = false
         body.density = 10.0
         self.physicsBody = body
         
@@ -75,10 +76,22 @@ class GraphScene: SKScene {
         let vertices = graphVertices.map( {$0.shapeNode})
         
         for vertex in vertices {
+            
             if let body = vertex.physicsBody {
-                let dx = body.velocity.dx * damping
-                let dy = body.velocity.dy * damping
-                body.velocity = CGVectorMake( dx, dy)
+                if body.velocity.dx.magnitude > 0 || body.velocity.dy.magnitude > 0 {
+                    print("vertex.body")
+                    var dx = body.velocity.dx * damping
+                    var dy = body.velocity.dy * damping
+                    
+                    dx = (dx < 0.1) ? 0.0 : dx
+                    dy = (dy < 0.1) ? 0.0 : dy
+                    
+                    let vec = CGVectorMake( dx, dy)
+                    body.velocity = CGVectorMake( dx, dy)
+                }
+                else {
+                    print("vertex.body.stable")
+                }
             }
         }
     }
