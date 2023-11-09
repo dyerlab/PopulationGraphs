@@ -26,6 +26,24 @@ class GraphVertex: Identifiable {
     var shapeNode: SKShapeNode
     var displacement: CGPoint
     
+    
+    var name: String {
+        return self.labelNode.text ?? "Node"
+    }
+    
+    var edges: [GraphEdge] {
+        get {
+            return self.labelNode.childrenOfType( GraphEdge.self )
+        }
+    }
+    
+    override var position: CGPoint {
+        didSet {
+            print("setting from position change")
+            NotificationCenter.default.post(name: .nodeMoved, object: nil, userInfo: ["Name": self.labelNode.text ?? "Node"])
+        }
+    }
+    
     init( node: Node ) {
         id = UUID()
         displacement = CGPoint(x: 0, y: 0)
@@ -86,5 +104,11 @@ class GraphVertex: Identifiable {
         }
     }
     
+    
+    func moveEdges() {
+        for edge in edges {
+            edge.edgeMoved()
+        }
+    }
     
 }

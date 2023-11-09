@@ -18,6 +18,8 @@
 import Foundation
 
 extension Notification.Name {
-    static let toggleNodeLabels = Notification.Name("ToggleNodeLabels")
+    static let nodeMoved = Notification.Name("NodeMoved")
     static let layoutNodes = Notification.Name("LayoutNodes")
+    static let toggleNodeLabels = Notification.Name("ToggleNodeLabels")
+    
 }

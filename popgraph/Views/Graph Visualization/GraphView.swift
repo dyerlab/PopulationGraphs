@@ -26,7 +26,7 @@ struct GraphView: View {
 
     var graphScene: GraphScene {
         let scene = GraphScene()
-        scene.addNodes(nodes: self.nodes)
+        scene.addNodesAndEdges(nodes: self.nodes, edges: self.edges)
         return scene
     }
     

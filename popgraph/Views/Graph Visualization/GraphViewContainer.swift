@@ -28,16 +28,6 @@ struct GraphViewContainer: NSViewRepresentable {
     init(scene: SKScene) {
         skScene = scene
         
-        /*
-        skScene.scaleMode = .resizeFill
-        skScene.backgroundColor = Color.background.toNSColor()
-
-        if let body = skScene.physicsBody {
-            print("physics scene has body")
-            body.friction = 1.0
-        }
-         */
-        
     }
     
     class Coordinator: NSObject {

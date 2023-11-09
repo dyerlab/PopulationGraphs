@@ -22,10 +22,14 @@ import SwiftUI
 class GraphScene: SKScene {
     
     var graphVertices: [GraphVertex] = []
+    var graphEdges: [GraphEdge] = []
+    
     
     var touchedNode: SKNode?
     
-    func addNodes( nodes: [Node]) {
+
+    
+    func addNodesAndEdges( nodes: [Node], edges: [Edge]) {
         
         
         let sz: CGSize
@@ -37,14 +41,49 @@ class GraphScene: SKScene {
             print("no view")
         }
         
-        
+        // Add the individual nodes
         for node in nodes {
             let spNode = GraphVertex(node: node)
             spNode.shapeNode.position = CGPoint(x: Double.random(in: 50 ..< sz.width ),
                                                 y: Double.random(in: 50 ..< sz.height ) )
             graphVertices.append( spNode )
-            self.addChild( spNode.shapeNode )
         }
+        
+        
+        // Add the edges
+        for edge in edges {
+            
+            if let node1 = graphVertices.filter( {$0.labelNode.text == edge.nodeA}).first,
+               let node2 = graphVertices.filter( {$0.labelNode.text == edge.nodeB}).first {
+            
+                let graphEdge = GraphEdge(fromNode: node1, toNode: node2, weight: edge.weight)
+                node1.shapeNode.addChild( graphEdge )
+                node2.shapeNode.addChild( graphEdge )
+                
+                graphEdges.append( graphEdge )
+                
+            } else {
+                print("could not find nodes for \(edge.nodeA) <-> \(edge.nodeB)")
+            }
+            
+            
+        }
+        
+        
+        
+        // Add both to the scene
+        for edge in self.graphEdges {
+            self.addChild( edge )
+        }
+        for vertex in self.graphVertices {
+            self.addChild( vertex.shapeNode )
+        }
+        
+        
+        
+        
+        
+        
         
     }
     
@@ -97,7 +136,7 @@ class GraphScene: SKScene {
                     dy = (dy < 0.1) ? 0.0 : dy
                     
                     let vec = CGVectorMake( dx, dy)
-                    body.velocity = CGVectorMake( dx, dy)
+                    body.velocity = vec
                 }
                 else {
                     print("vertex.body.stable")

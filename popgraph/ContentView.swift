@@ -54,8 +54,8 @@ struct ContentView: View {
 
             }
         }, detail: {
-            TitlePage()
-            //GraphView()
+            //TitlePage()
+            GraphView()
         })
     }
 }
