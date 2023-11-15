@@ -62,24 +62,6 @@ extension Node: CustomStringConvertible {
 
 
 
-extension Node {
-    
-    var graphVertex: GraphVertex {
-        return GraphVertex(node: self)
-    }
-    
-    
-}
-
-
-
-
-
-
-
-
-
-
 
 
 

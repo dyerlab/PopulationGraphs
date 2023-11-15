@@ -27,4 +27,10 @@ extension SKNode {
         return currentLevel + moreLevels
     }
     
+    /// Get single item named from children.
+    func childNamed<Element:  SKNode>(_ type: Element.Type, named: String) -> SKNode? {
+        let children = childrenOfType(type)
+        return children.filter( {$0.name == named} ).first
+    }
+    
 }

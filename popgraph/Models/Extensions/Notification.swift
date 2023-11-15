@@ -18,8 +18,9 @@
 import Foundation
 
 extension Notification.Name {
-    static let nodeMoved = Notification.Name("NodeMoved")
-    static let layoutNodes = Notification.Name("LayoutNodes")
-    static let toggleNodeLabels = Notification.Name("ToggleNodeLabels")
-    
+    static let ToggleLabel = Notification.Name("Toggle Labels")
+    static let LayoutNodes = Notification.Name("Layout Nodes")
+    static let ShiftNodes = Notification.Name("Shift Nodes")
+    static let NodeMoved = Notification.Name("Node Moved")
+    static let CenterNodes = Notification.Name("Center Nodes")
 }

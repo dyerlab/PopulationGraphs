@@ -29,7 +29,7 @@ struct ContentView: View {
                             sidebar: {
             List {
                 NavigationLink {
-                    GraphPage()
+                    PopgraphView()
                 } label: {
                     Label("PopGraph", systemImage: "perspective")
                 }
@@ -54,8 +54,8 @@ struct ContentView: View {
 
             }
         }, detail: {
-            //TitlePage()
-            GraphView()
+            TitlePage()
+            //PopgraphView()
         })
     }
 }

@@ -1,32 +1,25 @@
 //
-//  dyerlab.org                                          @dyerlab
-//                      _                 _       _
-//                   __| |_   _  ___ _ __| | __ _| |__
-//                  / _` | | | |/ _ \ '__| |/ _` | '_ \
-//                 | (_| | |_| |  __/ |  | | (_| | |_) |
-//                  \__,_|\__, |\___|_|  |_|\__,_|_.__/
-//                        |_ _/
+//  PGView.swift
+//  popgraphTest
 //
-//         Making Population Genetic Software That Doesn't Suck
-//
-//  GraphViewController.swift
-//  popgraph
-//
-//  Created by Rodney Dyer on 11/7/23.
+//  Created by Rodney Dyer on 11/9/23.
 //
 
-import AppKit
-import SwiftUI
+import Foundation
 import SpriteKit
+import SwiftUI
+import AppKit
 
 
-struct GraphViewContainer: NSViewRepresentable {
+
+struct PGView: NSViewRepresentable {
     typealias NSViewType = SKView
     
     var skScene: SKScene!
     
     init(scene: SKScene) {
         skScene = scene
+        skScene.scaleMode = .resizeFill
         
     }
     
@@ -53,9 +46,4 @@ struct GraphViewContainer: NSViewRepresentable {
         view.presentScene(context.coordinator.scene)
     }
     
-}
-
-
-#Preview {
-    GraphViewContainer(scene: GraphScene())
 }

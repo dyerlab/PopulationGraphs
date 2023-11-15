@@ -16,11 +16,7 @@
 		2A4DFCD42AFA4A23001D3988 /* IsolationScatterPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4DFCD32AFA4A23001D3988 /* IsolationScatterPlot.swift */; };
 		2A4DFCD62AFA4BA1001D3988 /* AdjacencyMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4DFCD52AFA4BA1001D3988 /* AdjacencyMatrix.swift */; };
 		2A4DFCD82AFA4C6A001D3988 /* EuclideanDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4DFCD72AFA4C6A001D3988 /* EuclideanDistance.swift */; };
-		2A4DFCDB2AFA5751001D3988 /* GraphScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4DFCDA2AFA5751001D3988 /* GraphScene.swift */; };
-		2A4DFCE12AFA5B8A001D3988 /* GraphViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4DFCE02AFA5B8A001D3988 /* GraphViewContainer.swift */; };
 		2A4DFCE32AFA637D001D3988 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4DFCE22AFA637D001D3988 /* Color.swift */; };
-		2A4DFCE72AFA8DA1001D3988 /* GraphEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4DFCE62AFA8DA1001D3988 /* GraphEdge.swift */; };
-		2A4DFCE92AFA8E1A001D3988 /* GraphVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4DFCE82AFA8E1A001D3988 /* GraphVertex.swift */; };
 		2A4DFCEB2AFA8F61001D3988 /* SKNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4DFCEA2AFA8F61001D3988 /* SKNode.swift */; };
 		2A4DFCED2AFA975A001D3988 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4DFCEC2AFA975A001D3988 /* Notification.swift */; };
 		2A73645B2AF66A7600F549DA /* MapsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73645A2AF66A7600F549DA /* MapsPage.swift */; };
@@ -38,7 +34,6 @@
 		2A808ADC2AF50A2700A8B464 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808ADB2AF50A2700A8B464 /* Node.swift */; };
 		2A808ADE2AF50A8B00A8B464 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808ADD2AF50A8B00A8B464 /* Edge.swift */; };
 		2A808AE82AF50CB900A8B464 /* TitlePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808AE72AF50CB900A8B464 /* TitlePage.swift */; };
-		2A808AEC2AF51BCB00A8B464 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808AEB2AF51BCB00A8B464 /* GraphView.swift */; };
 		2A808AEE2AF51BF900A8B464 /* NodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808AED2AF51BF900A8B464 /* NodeView.swift */; };
 		2A808AF02AF51C0600A8B464 /* EdgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808AEF2AF51C0600A8B464 /* EdgeView.swift */; };
 		2A808AF32AF51FB400A8B464 /* NodeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808AF22AF51FB400A8B464 /* NodeDetail.swift */; };
@@ -50,6 +45,16 @@
 		2A808B012AF54A1000A8B464 /* EdgesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808B002AF54A1000A8B464 /* EdgesDetailView.swift */; };
 		2A808B032AF54A1A00A8B464 /* EdgesEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808B022AF54A1A00A8B464 /* EdgesEditView.swift */; };
 		2A808B052AF56CEF00A8B464 /* Array+Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A808B042AF56CEF00A8B464 /* Array+Node.swift */; };
+		2AB429AB2B04DD130012D0E7 /* PGEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB429A92B04DD130012D0E7 /* PGEdge.swift */; };
+		2AB429AC2B04DD130012D0E7 /* PGNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB429AA2B04DD130012D0E7 /* PGNode.swift */; };
+		2AB429B12B04DD550012D0E7 /* PopgraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB429AE2B04DD550012D0E7 /* PopgraphView.swift */; };
+		2AB429B22B04DD550012D0E7 /* PGScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB429AF2B04DD550012D0E7 /* PGScene.swift */; };
+		2AB429B32B04DD550012D0E7 /* PGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB429B02B04DD550012D0E7 /* PGView.swift */; };
+		2AB429B62B04DD730012D0E7 /* Array+PGNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB429B42B04DD730012D0E7 /* Array+PGNode.swift */; };
+		2AB429B72B04DD730012D0E7 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB429B52B04DD730012D0E7 /* CGPoint.swift */; };
+		2AB429B92B04DDC10012D0E7 /* SpringLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB429B82B04DDC10012D0E7 /* SpringLayout.swift */; };
+		2AB429BB2B04DDD40012D0E7 /* ShiftDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB429BA2B04DDD40012D0E7 /* ShiftDirection.swift */; };
+		2AB429BE2B04E0270012D0E7 /* PGFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB429BD2B04E0270012D0E7 /* PGFactory.swift */; };
 		2ABDDEC82AF990EC0073077C /* AnalysisTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABDDEC72AF990EC0073077C /* AnalysisTypes.swift */; };
 		2ABDDECB2AF995120073077C /* ScatterPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABDDECA2AF995120073077C /* ScatterPlot.swift */; };
 		2AC9D04A2AF79EF30038A685 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9D0492AF79EF30038A685 /* Graph.swift */; };
@@ -95,11 +100,7 @@
 		2A4DFCD32AFA4A23001D3988 /* IsolationScatterPlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsolationScatterPlot.swift; sourceTree = "<group>"; };
 		2A4DFCD52AFA4BA1001D3988 /* AdjacencyMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjacencyMatrix.swift; sourceTree = "<group>"; };
 		2A4DFCD72AFA4C6A001D3988 /* EuclideanDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuclideanDistance.swift; sourceTree = "<group>"; };
-		2A4DFCDA2AFA5751001D3988 /* GraphScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphScene.swift; sourceTree = "<group>"; };
-		2A4DFCE02AFA5B8A001D3988 /* GraphViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewContainer.swift; sourceTree = "<group>"; };
 		2A4DFCE22AFA637D001D3988 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		2A4DFCE62AFA8DA1001D3988 /* GraphEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphEdge.swift; sourceTree = "<group>"; };
-		2A4DFCE82AFA8E1A001D3988 /* GraphVertex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphVertex.swift; sourceTree = "<group>"; };
 		2A4DFCEA2AFA8F61001D3988 /* SKNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKNode.swift; sourceTree = "<group>"; };
 		2A4DFCEC2AFA975A001D3988 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		2A73645A2AF66A7600F549DA /* MapsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsPage.swift; sourceTree = "<group>"; };
@@ -121,7 +122,6 @@
 		2A808ADB2AF50A2700A8B464 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		2A808ADD2AF50A8B00A8B464 /* Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
 		2A808AE72AF50CB900A8B464 /* TitlePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePage.swift; sourceTree = "<group>"; };
-		2A808AEB2AF51BCB00A8B464 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		2A808AED2AF51BF900A8B464 /* NodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeView.swift; sourceTree = "<group>"; };
 		2A808AEF2AF51C0600A8B464 /* EdgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeView.swift; sourceTree = "<group>"; };
 		2A808AF22AF51FB400A8B464 /* NodeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeDetail.swift; sourceTree = "<group>"; };
@@ -133,6 +133,16 @@
 		2A808B002AF54A1000A8B464 /* EdgesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgesDetailView.swift; sourceTree = "<group>"; };
 		2A808B022AF54A1A00A8B464 /* EdgesEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgesEditView.swift; sourceTree = "<group>"; };
 		2A808B042AF56CEF00A8B464 /* Array+Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Node.swift"; sourceTree = "<group>"; };
+		2AB429A92B04DD130012D0E7 /* PGEdge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PGEdge.swift; sourceTree = "<group>"; };
+		2AB429AA2B04DD130012D0E7 /* PGNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PGNode.swift; sourceTree = "<group>"; };
+		2AB429AE2B04DD550012D0E7 /* PopgraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopgraphView.swift; sourceTree = "<group>"; };
+		2AB429AF2B04DD550012D0E7 /* PGScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PGScene.swift; sourceTree = "<group>"; };
+		2AB429B02B04DD550012D0E7 /* PGView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PGView.swift; sourceTree = "<group>"; };
+		2AB429B42B04DD730012D0E7 /* Array+PGNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+PGNode.swift"; sourceTree = "<group>"; };
+		2AB429B52B04DD730012D0E7 /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		2AB429B82B04DDC10012D0E7 /* SpringLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringLayout.swift; sourceTree = "<group>"; };
+		2AB429BA2B04DDD40012D0E7 /* ShiftDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShiftDirection.swift; sourceTree = "<group>"; };
+		2AB429BD2B04E0270012D0E7 /* PGFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGFactory.swift; sourceTree = "<group>"; };
 		2ABDDEC72AF990EC0073077C /* AnalysisTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisTypes.swift; sourceTree = "<group>"; };
 		2ABDDECA2AF995120073077C /* ScatterPlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterPlot.swift; sourceTree = "<group>"; };
 		2AC9D0492AF79EF30038A685 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
@@ -205,11 +215,6 @@
 		2A4DFCD92AFA5732001D3988 /* Graph Visualization */ = {
 			isa = PBXGroup;
 			children = (
-				2A808AEB2AF51BCB00A8B464 /* GraphView.swift */,
-				2A4DFCDA2AFA5751001D3988 /* GraphScene.swift */,
-				2A4DFCE02AFA5B8A001D3988 /* GraphViewContainer.swift */,
-				2A4DFCE62AFA8DA1001D3988 /* GraphEdge.swift */,
-				2A4DFCE82AFA8E1A001D3988 /* GraphVertex.swift */,
 			);
 			path = "Graph Visualization";
 			sourceTree = "<group>";
@@ -314,8 +319,10 @@
 				2A12E1C52AF8E2AD002B66C7 /* Chart */,
 				2A808AE42AF50B9A00A8B464 /* Edge */,
 				2A808AFA2AF53D9D00A8B464 /* Extensions */,
+				2AB429BC2B04E0170012D0E7 /* Factories */,
 				2AC9D04B2AF7A4FA0038A685 /* Graph */,
 				2A808AE32AF50B9400A8B464 /* Node */,
+				2AB429A82B04DCE50012D0E7 /* PopGraph */,
 				2A73645C2AF66BAB00F549DA /* Spatial */,
 				2A12E1CA2AF8EE63002B66C7 /* Statistics */,
 			);
@@ -331,6 +338,7 @@
 				2A4DFCD92AFA5732001D3988 /* Graph Visualization */,
 				2A7364582AF66A5300F549DA /* MapsView */,
 				2A808AF12AF51F9500A8B464 /* NodesView */,
+				2AB429AD2B04DD2A0012D0E7 /* PopGraph */,
 				2A12E1CF2AF8F7F4002B66C7 /* Statistics */,
 				2A808AE72AF50CB900A8B464 /* TitlePage.swift */,
 			);
@@ -367,14 +375,16 @@
 		2A808AFA2AF53D9D00A8B464 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				2A808AFB2AF53DAB00A8B464 /* ModelContext.swift */,
-				2A808B042AF56CEF00A8B464 /* Array+Node.swift */,
 				2A7364632AF673DC00F549DA /* Array+Edge.swift */,
+				2A808B042AF56CEF00A8B464 /* Array+Node.swift */,
+				2AB429B42B04DD730012D0E7 /* Array+PGNode.swift */,
+				2AB429B52B04DD730012D0E7 /* CGPoint.swift */,
+				2A4DFCE22AFA637D001D3988 /* Color.swift */,
+				2A12E1C12AF7FBDC002B66C7 /* Matrix.swift */,
+				2A808AFB2AF53DAB00A8B464 /* ModelContext.swift */,
 				2A4DFCEC2AFA975A001D3988 /* Notification.swift */,
 				2A4DFCEA2AFA8F61001D3988 /* SKNode.swift */,
-				2A12E1C12AF7FBDC002B66C7 /* Matrix.swift */,
 				2ADDD80F2AF92E1700B1A18C /* Vector.swift */,
-				2A4DFCE22AFA637D001D3988 /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -388,6 +398,34 @@
 				2A808B022AF54A1A00A8B464 /* EdgesEditView.swift */,
 			);
 			path = EdgesView;
+			sourceTree = "<group>";
+		};
+		2AB429A82B04DCE50012D0E7 /* PopGraph */ = {
+			isa = PBXGroup;
+			children = (
+				2AB429BA2B04DDD40012D0E7 /* ShiftDirection.swift */,
+				2AB429A92B04DD130012D0E7 /* PGEdge.swift */,
+				2AB429AA2B04DD130012D0E7 /* PGNode.swift */,
+			);
+			path = PopGraph;
+			sourceTree = "<group>";
+		};
+		2AB429AD2B04DD2A0012D0E7 /* PopGraph */ = {
+			isa = PBXGroup;
+			children = (
+				2AB429AE2B04DD550012D0E7 /* PopgraphView.swift */,
+				2AB429AF2B04DD550012D0E7 /* PGScene.swift */,
+				2AB429B02B04DD550012D0E7 /* PGView.swift */,
+			);
+			path = PopGraph;
+			sourceTree = "<group>";
+		};
+		2AB429BC2B04E0170012D0E7 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				2AB429BD2B04E0270012D0E7 /* PGFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		2ABDDEC42AF98FB50073077C /* Analyses */ = {
@@ -417,6 +455,7 @@
 		2AC9D04F2AF7A8ED0038A685 /* Algorithms */ = {
 			isa = PBXGroup;
 			children = (
+				2AB429B82B04DDC10012D0E7 /* SpringLayout.swift */,
 				2AC9D0542AF7AD1B0038A685 /* ShortestPath.swift */,
 				2AC9D0522AF7AC7C0038A685 /* CentralityType.swift */,
 				2A4DFCD52AFA4BA1001D3988 /* AdjacencyMatrix.swift */,
@@ -568,47 +607,52 @@
 				2ADCAB3B2AF94A3F00530CE8 /* NodeGraph.swift in Sources */,
 				2A808AB02AF509AC00A8B464 /* ContentView.swift in Sources */,
 				2A4DFCD82AFA4C6A001D3988 /* EuclideanDistance.swift in Sources */,
+				2AB429BB2B04DDD40012D0E7 /* ShiftDirection.swift in Sources */,
 				2A808B052AF56CEF00A8B464 /* Array+Node.swift in Sources */,
 				2A4DFCEB2AFA8F61001D3988 /* SKNode.swift in Sources */,
-				2A4DFCE92AFA8E1A001D3988 /* GraphVertex.swift in Sources */,
 				2A7364622AF66F8D00F549DA /* EdgeCurve.swift in Sources */,
 				2ADCAB392AF9356400530CE8 /* PermutationDensityPlot.swift in Sources */,
 				2ADDD8102AF92E1700B1A18C /* Vector.swift in Sources */,
-				2A4DFCDB2AFA5751001D3988 /* GraphScene.swift in Sources */,
 				2A12E1C02AF7FB68002B66C7 /* IBGDView.swift in Sources */,
 				2ADA8B362AF9007900EC34DA /* GraphPage.swift in Sources */,
 				2A12E1C92AF8EE43002B66C7 /* CorrelationType.swift in Sources */,
+				2AB429AB2B04DD130012D0E7 /* PGEdge.swift in Sources */,
 				2A808AFC2AF53DAB00A8B464 /* ModelContext.swift in Sources */,
 				2A808AE82AF50CB900A8B464 /* TitlePage.swift in Sources */,
 				2AC9D0552AF7AD1B0038A685 /* ShortestPath.swift in Sources */,
+				2AB429B62B04DD730012D0E7 /* Array+PGNode.swift in Sources */,
+				2AB429B72B04DD730012D0E7 /* CGPoint.swift in Sources */,
 				2A4DFCD62AFA4BA1001D3988 /* AdjacencyMatrix.swift in Sources */,
 				2A12E1C42AF8E2A8002B66C7 /* PointChartData.swift in Sources */,
 				2A4DFCE32AFA637D001D3988 /* Color.swift in Sources */,
-				2A808AEC2AF51BCB00A8B464 /* GraphView.swift in Sources */,
 				2ABDDEC82AF990EC0073077C /* AnalysisTypes.swift in Sources */,
+				2AB429AC2B04DD130012D0E7 /* PGNode.swift in Sources */,
 				2A808B032AF54A1A00A8B464 /* EdgesEditView.swift in Sources */,
 				2A808AF52AF5250C00A8B464 /* Data.swift in Sources */,
 				2A7364642AF673DC00F549DA /* Array+Edge.swift in Sources */,
 				2A808B012AF54A1000A8B464 /* EdgesDetailView.swift in Sources */,
 				2A12E1C72AF8EDFB002B66C7 /* Correlation.swift in Sources */,
+				2AB429B92B04DDC10012D0E7 /* SpringLayout.swift in Sources */,
 				2A808AAE2AF509AC00A8B464 /* popgraphApp.swift in Sources */,
 				2A12E1CC2AF8F239002B66C7 /* CorrelationView.swift in Sources */,
 				2AC9D04A2AF79EF30038A685 /* Graph.swift in Sources */,
 				2A4DFCD42AFA4A23001D3988 /* IsolationScatterPlot.swift in Sources */,
 				2A808AEE2AF51BF900A8B464 /* NodeView.swift in Sources */,
+				2AB429B12B04DD550012D0E7 /* PopgraphView.swift in Sources */,
 				2A808ADE2AF50A8B00A8B464 /* Edge.swift in Sources */,
 				2A808AF72AF52D1100A8B464 /* NodeEditor.swift in Sources */,
 				2A73645B2AF66A7600F549DA /* MapsPage.swift in Sources */,
+				2AB429BE2B04E0270012D0E7 /* PGFactory.swift in Sources */,
 				2AC9D05D2AF7BF280038A685 /* ClosenessCentrality.swift in Sources */,
 				2A808AFF2AF54A0500A8B464 /* EdgesListView.swift in Sources */,
 				2A73645E2AF66BBD00F549DA /* Location.swift in Sources */,
 				2AC9D0532AF7AC7C0038A685 /* CentralityType.swift in Sources */,
+				2AB429B32B04DD550012D0E7 /* PGView.swift in Sources */,
+				2AB429B22B04DD550012D0E7 /* PGScene.swift in Sources */,
 				2A808AF02AF51C0600A8B464 /* EdgeView.swift in Sources */,
 				2A808AF92AF5362500A8B464 /* NodeListView.swift in Sources */,
 				2AC9D0592AF7B8CC0038A685 /* DegreeCentrality.swift in Sources */,
-				2A4DFCE12AFA5B8A001D3988 /* GraphViewContainer.swift in Sources */,
 				2A12E1C22AF7FBDC002B66C7 /* Matrix.swift in Sources */,
-				2A4DFCE72AFA8DA1001D3988 /* GraphEdge.swift in Sources */,
 				2A7364602AF66D3100F549DA /* GraphMap.swift in Sources */,
 				2ADA8B382AF9010700EC34DA /* GraphMetaData.swift in Sources */,
 				2ABDDECB2AF995120073077C /* ScatterPlot.swift in Sources */,
