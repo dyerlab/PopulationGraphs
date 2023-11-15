@@ -77,6 +77,26 @@ class PGScene: SKScene {
     
 
     
+    func populateGraphComponents(nodes: [Node], edges: [Edge]) {
+        
+        for node in nodes {
+            let pgnode = PGNode(label: node.label, size: node.size)
+            pgnode.position = CGPoint(x: node.longitude, y: node.latitude)
+            self.addChild( pgnode )
+        }
+        
+        for edge in edges {
+            if let n1 = self.childNamed( PGNode.self, named: edge.nodeA) as? PGNode,
+               let n2 = self.childNamed( PGNode.self, named: edge.nodeB) as? PGNode {
+                let pgedge = PGEdge(node1: n1, node2: n2, weight: edge.weight)
+                self.addChild( pgedge )
+            }
+            else {
+                print("Unable to find \(edge.nodeA) and \(edge.nodeB)")
+            }
+        }
+    }
+    
     
     
 }

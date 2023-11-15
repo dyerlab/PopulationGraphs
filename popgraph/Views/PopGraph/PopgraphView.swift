@@ -14,15 +14,16 @@ struct PopgraphView: View {
     @Query var nodes: [Node]
     @Query var edges: [Edge]
     
-    var scene: PGScene {
-        return PGFactory(nodes: nodes, edges: edges)
-    }
+    var scene: PGScene = PGScene()
+    
     
     var body: some View {
         ZStack {
             PGView(scene:  self.scene )
-            ScrollWheelEventView()
         }
+        .onAppear(perform: {
+            scene.populateGraphComponents(nodes: nodes, edges: edges)
+        })
 
     }
     

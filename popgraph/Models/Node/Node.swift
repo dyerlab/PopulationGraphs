@@ -28,6 +28,8 @@ import SpriteKit
     var latitude: Double
     var longitude: Double
     
+    var position: CGPoint
+    var displacement: CGPoint
     
     var betweenness: Double = Double.nan 
     var closeness: Double = Double.nan
@@ -48,6 +50,8 @@ import SpriteKit
         self.size = size
         self.longitude = longitude
         self.latitude = latitude
+        self.position = .zero
+        self.displacement = .zero 
     }
     
     
