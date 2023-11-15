@@ -23,4 +23,5 @@ extension Notification.Name {
     static let ShiftNodes = Notification.Name("Shift Nodes")
     static let NodeMoved = Notification.Name("Node Moved")
     static let CenterNodes = Notification.Name("Center Nodes")
+    static let MouseScroll = Notification.Name("Mouse Scroll")
 }

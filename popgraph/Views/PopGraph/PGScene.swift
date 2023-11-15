@@ -43,17 +43,8 @@ class PGScene: SKScene {
         NotificationCenter.default.addObserver(self, selector: #selector(centerNodesNotification(_:)), name: .CenterNodes, object: nil )
         NotificationCenter.default.addObserver(self, selector: #selector(layoutNodesNotification(_:)), name: .LayoutNodes, object: nil )
         
+        NotificationCenter.default.addObserver(self, selector: #selector(scrollWheelWithEvent(_:)), name: .MouseScroll, object: nil)
         
-        if !nodes.isEmpty {
-            
-            nodes.forEach({ node in
-                node.position = CGPoint(x: Double.random(in: 50 ..< 250),
-                                        y: Double.random(in: 50 ..< 250))
-            })
-            
-            self.layoutNodes()
-            self.centerNodes()
-        }
     }
     
     
@@ -79,6 +70,12 @@ class PGScene: SKScene {
         touchedNode?.zPosition = 3
         touchedNode = nil
     }
+    
+    override func scrollWheel(with event: NSEvent) {
+        print( "Scrolling \(event.deltaY)")
+    }
+    
+
     
     
     
@@ -155,6 +152,11 @@ extension PGScene {
         self.nodes.forEach( { node in
             node.toggleLabels()
         })
+    }
+    
+    @objc func scrollWheelWithEvent(_ notification: Notification) {
+        guard let event = notification.object as? NSEvent else { return }
+        self.scrollWheel(with: event)
     }
     
     @objc func shiftNodes(_ notification: Notification) {

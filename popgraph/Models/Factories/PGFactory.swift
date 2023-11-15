@@ -13,7 +13,9 @@ func PGFactory( nodes: [Node], edges: [Edge] ) -> PGScene {
     let scene = PGScene()
     
     for node in nodes {
-        scene.addChild( PGNode(label: node.label, size: node.size) )
+        let pgnode = PGNode(label: node.label, size: node.size)
+        pgnode.position = CGPoint(x: node.longitude, y: node.latitude)
+        scene.addChild( pgnode )
     }
     
     for edge in edges {

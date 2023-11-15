@@ -19,7 +19,11 @@ struct PopgraphView: View {
     }
     
     var body: some View {
-        PGView(scene:  self.scene )
+        ZStack {
+            PGView(scene:  self.scene )
+            ScrollWheelEventView()
+        }
+
     }
     
 }

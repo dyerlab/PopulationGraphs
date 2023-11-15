@@ -28,6 +28,7 @@ import SpriteKit
     var latitude: Double
     var longitude: Double
     
+    
     var betweenness: Double = Double.nan 
     var closeness: Double = Double.nan
     

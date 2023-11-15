@@ -55,6 +55,7 @@
 		2AB429B92B04DDC10012D0E7 /* SpringLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB429B82B04DDC10012D0E7 /* SpringLayout.swift */; };
 		2AB429BB2B04DDD40012D0E7 /* ShiftDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB429BA2B04DDD40012D0E7 /* ShiftDirection.swift */; };
 		2AB429BE2B04E0270012D0E7 /* PGFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB429BD2B04E0270012D0E7 /* PGFactory.swift */; };
+		2AB5B8682B04EBD000C46C38 /* ScrollWheelEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB5B8672B04EBD000C46C38 /* ScrollWheelEventView.swift */; };
 		2ABDDEC82AF990EC0073077C /* AnalysisTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABDDEC72AF990EC0073077C /* AnalysisTypes.swift */; };
 		2ABDDECB2AF995120073077C /* ScatterPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABDDECA2AF995120073077C /* ScatterPlot.swift */; };
 		2AC9D04A2AF79EF30038A685 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9D0492AF79EF30038A685 /* Graph.swift */; };
@@ -143,6 +144,7 @@
 		2AB429B82B04DDC10012D0E7 /* SpringLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringLayout.swift; sourceTree = "<group>"; };
 		2AB429BA2B04DDD40012D0E7 /* ShiftDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShiftDirection.swift; sourceTree = "<group>"; };
 		2AB429BD2B04E0270012D0E7 /* PGFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGFactory.swift; sourceTree = "<group>"; };
+		2AB5B8672B04EBD000C46C38 /* ScrollWheelEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollWheelEventView.swift; sourceTree = "<group>"; };
 		2ABDDEC72AF990EC0073077C /* AnalysisTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisTypes.swift; sourceTree = "<group>"; };
 		2ABDDECA2AF995120073077C /* ScatterPlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterPlot.swift; sourceTree = "<group>"; };
 		2AC9D0492AF79EF30038A685 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
@@ -413,6 +415,7 @@
 		2AB429AD2B04DD2A0012D0E7 /* PopGraph */ = {
 			isa = PBXGroup;
 			children = (
+				2AB5B8672B04EBD000C46C38 /* ScrollWheelEventView.swift */,
 				2AB429AE2B04DD550012D0E7 /* PopgraphView.swift */,
 				2AB429AF2B04DD550012D0E7 /* PGScene.swift */,
 				2AB429B02B04DD550012D0E7 /* PGView.swift */,
@@ -619,6 +622,7 @@
 				2AB429AB2B04DD130012D0E7 /* PGEdge.swift in Sources */,
 				2A808AFC2AF53DAB00A8B464 /* ModelContext.swift in Sources */,
 				2A808AE82AF50CB900A8B464 /* TitlePage.swift in Sources */,
+				2AB5B8682B04EBD000C46C38 /* ScrollWheelEventView.swift in Sources */,
 				2AC9D0552AF7AD1B0038A685 /* ShortestPath.swift in Sources */,
 				2AB429B62B04DD730012D0E7 /* Array+PGNode.swift in Sources */,
 				2AB429B72B04DD730012D0E7 /* CGPoint.swift in Sources */,
