@@ -214,13 +214,6 @@
 			path = Statistics;
 			sourceTree = "<group>";
 		};
-		2A4DFCD92AFA5732001D3988 /* Graph Visualization */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Graph Visualization";
-			sourceTree = "<group>";
-		};
 		2A7364582AF66A5300F549DA /* MapsView */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,7 +330,6 @@
 				2ABDDEC92AF995060073077C /* Charts */,
 				2A808AFD2AF549E700A8B464 /* EdgesView */,
 				2A7364592AF66A5E00F549DA /* GraphViews */,
-				2A4DFCD92AFA5732001D3988 /* Graph Visualization */,
 				2A7364582AF66A5300F549DA /* MapsView */,
 				2A808AF12AF51F9500A8B464 /* NodesView */,
 				2AB429AD2B04DD2A0012D0E7 /* PopGraph */,
