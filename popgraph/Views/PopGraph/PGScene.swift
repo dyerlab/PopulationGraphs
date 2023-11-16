@@ -15,16 +15,13 @@ class PGScene: SKScene {
     var touchedNode: PGNode?
     var timer: Timer?
     
-    var nodes: [PGNode] {
-        return self.childrenOfType( PGNode.self )
+    var nodes: [SKNode] {
+        return self.childrenOfTypeNamed(SKShapeNode.self, named: "pgnode")
     }
     var edges: [PGEdge] {
         return self.childrenOfType( PGEdge.self )
     }
     
-    var nodesSet: Bool {
-        nodes.allSatisfy( { $0.isSet} )
-    }
     
     override func didMove(to view: SKView) {
         view.allowsTransparency = true
@@ -123,6 +120,7 @@ extension PGScene {
         return ret
     }
     
+    /*
     func layoutNodes() {
         SpringLayout(nodes: nodes, edges: edges, K: self.idealDistance)
         if let sz = self.view?.frame.size {
@@ -134,7 +132,7 @@ extension PGScene {
             edge.move()
         })
     }
-    
+    */
     
     func centerNodes() {
         var nodesCenter: CGPoint = .zero
@@ -158,9 +156,29 @@ extension PGScene {
         })
     }
     
+    func shiftLocation( direction: ShiftDirection ) {
+        let magnitude = 2.0
+        
+        self.nodes.forEach( { node in
+            switch (direction) {
+            case .Down:
+                node.position.y = node.position.y - magnitude
+            case .Left:
+                node.position.x = node.position.x - magnitude
+            case .Right:
+                node.position.x = node.position.x + magnitude
+            case .Up:
+                node.position.y = node.position.y + magnitude
+            }
+        })
+        
+        edges.forEach({ edge in
+            edge.move()
+        })
+    }
     
     @objc func layoutNodesNotification(_ notification: Notification) {
-        layoutNodes()
+        // layoutNodes()
     }
 
     @objc func centerNodesNotification(_ notification: Notification) {
@@ -169,8 +187,12 @@ extension PGScene {
     }
     
     @objc func toggleNodeLabels(_ notification: Notification) {
-        self.nodes.forEach( { node in
-            node.toggleLabels()
+        self.childrenOfType(SKLabelNode.self).forEach({ label in
+            if label.fontSize == 12 {
+                label.fontSize = 0
+            } else {
+                label.fontSize = 12
+            }
         })
     }
     
@@ -182,12 +204,7 @@ extension PGScene {
     @objc func shiftNodes(_ notification: Notification) {
         if let data = notification.userInfo!["Direction"],
            let direction = data as? ShiftDirection {
-            nodes.forEach({ node in
-                node.shiftLocation( direction: direction )
-            })
-            edges.forEach({ edge in
-                edge.move()
-            })
+            self.shiftLocation(direction: direction)
         }
     }
     

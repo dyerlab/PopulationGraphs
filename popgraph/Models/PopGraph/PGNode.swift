@@ -51,7 +51,6 @@ class PGNode: SKShapeNode, Identifiable {
         labelNode.zPosition = 3
         self.addChild( labelNode )
         
-        
         path = NSBezierPath(ovalIn: NSRect(x: 0, y: 0, width: size, height: size)).cgPath
         fillColor = .gray
         strokeColor = .darkGray
@@ -59,7 +58,7 @@ class PGNode: SKShapeNode, Identifiable {
         
         self.addChild( self.addShadowNode() )
         
-        
+            
     }
     
     

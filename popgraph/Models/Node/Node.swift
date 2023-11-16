@@ -19,6 +19,7 @@ import CoreLocation
 import Foundation
 import SwiftData
 import SpriteKit
+import SwiftUI
 
 
 @Model class Node {
@@ -66,7 +67,6 @@ extension Node {
         return edges.count
     }
     
-    
 }
 
 
@@ -91,7 +91,6 @@ extension Node {
             _longitude = newValue.coordinate.longitude
             _latitude = newValue.coordinate.latitude
         }
-
     }
     
     
@@ -101,7 +100,14 @@ extension Node {
 /// Things for making this a plotable node
 extension Node {
     
-
+    var isSet: Bool {
+        return self.displacement == .zero
+    }
+    
+    var centroid: CGPoint {
+        return CGPoint( x: position.x + size/2.0,
+                        y: position.y + size/2.0 )
+    }
 
     var position: CGPoint {
         get {
@@ -120,6 +126,25 @@ extension Node {
             _displacementX = newValue.x
             _displacementY = newValue.y
         }
+    }
+    
+    var shapeNode: SKShapeNode {
+        let node = SKShapeNode(circleOfRadius: size)
+        node.fillColor = Color.primary.toNSColor()
+        node.position = self.position
+        node.name = "pgnode"
+        node.userData = ["Label ID":self.id]
+        
+        let labelNode = SKLabelNode(text: label)
+        labelNode.name = "label"
+        labelNode.fontSize = 12
+        labelNode.fontColor = .labelColor
+        labelNode.fontName = "American Typewriter"
+        labelNode.zPosition = 3
+        labelNode.position = CGPoint(x: size + 12, y: size)
+        node.addChild( labelNode )
+        
+        return node
     }
     
 }

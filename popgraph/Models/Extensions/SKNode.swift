@@ -27,6 +27,12 @@ extension SKNode {
         return currentLevel + moreLevels
     }
     
+    /// Add function to return all elements of a particular type.
+    func childrenOfTypeNamed<Element: SKNode>(_ type: Element.Type, named: String) -> [Element] {
+        let currentLevel:[Element] = children.compactMap { $0 as? Element }.filter({ $0.name == named} )
+        return currentLevel
+    }
+    
     /// Get single item named from children.
     func childNamed<Element:  SKNode>(_ type: Element.Type, named: String) -> SKNode? {
         let children = childrenOfType(type)
