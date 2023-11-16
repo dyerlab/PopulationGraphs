@@ -13,6 +13,9 @@
 		2A12E1C72AF8EDFB002B66C7 /* Correlation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A12E1C62AF8EDFB002B66C7 /* Correlation.swift */; };
 		2A12E1C92AF8EE43002B66C7 /* CorrelationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A12E1C82AF8EE43002B66C7 /* CorrelationType.swift */; };
 		2A12E1CC2AF8F239002B66C7 /* CorrelationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A12E1CB2AF8F239002B66C7 /* CorrelationView.swift */; };
+		2A2249752B0670C7001F999D /* GraphInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2249742B0670C7001F999D /* GraphInspectorView.swift */; };
+		2A2249772B067233001F999D /* NodeInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2249762B067233001F999D /* NodeInspectorView.swift */; };
+		2A2249792B067572001F999D /* EdgeInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2249782B067572001F999D /* EdgeInspectorView.swift */; };
 		2A4DFCD42AFA4A23001D3988 /* IsolationScatterPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4DFCD32AFA4A23001D3988 /* IsolationScatterPlot.swift */; };
 		2A4DFCD62AFA4BA1001D3988 /* AdjacencyMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4DFCD52AFA4BA1001D3988 /* AdjacencyMatrix.swift */; };
 		2A4DFCD82AFA4C6A001D3988 /* EuclideanDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4DFCD72AFA4C6A001D3988 /* EuclideanDistance.swift */; };
@@ -97,6 +100,9 @@
 		2A12E1C62AF8EDFB002B66C7 /* Correlation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Correlation.swift; sourceTree = "<group>"; };
 		2A12E1C82AF8EE43002B66C7 /* CorrelationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrelationType.swift; sourceTree = "<group>"; };
 		2A12E1CB2AF8F239002B66C7 /* CorrelationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrelationView.swift; sourceTree = "<group>"; };
+		2A2249742B0670C7001F999D /* GraphInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphInspectorView.swift; sourceTree = "<group>"; };
+		2A2249762B067233001F999D /* NodeInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeInspectorView.swift; sourceTree = "<group>"; };
+		2A2249782B067572001F999D /* EdgeInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeInspectorView.swift; sourceTree = "<group>"; };
 		2A4DFCD32AFA4A23001D3988 /* IsolationScatterPlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsolationScatterPlot.swift; sourceTree = "<group>"; };
 		2A4DFCD52AFA4BA1001D3988 /* AdjacencyMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjacencyMatrix.swift; sourceTree = "<group>"; };
 		2A4DFCD72AFA4C6A001D3988 /* EuclideanDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuclideanDistance.swift; sourceTree = "<group>"; };
@@ -210,6 +216,16 @@
 				2ADCAB382AF9356400530CE8 /* PermutationDensityPlot.swift */,
 			);
 			path = Statistics;
+			sourceTree = "<group>";
+		};
+		2A2249732B0670B3001F999D /* Graph Inspector */ = {
+			isa = PBXGroup;
+			children = (
+				2A2249742B0670C7001F999D /* GraphInspectorView.swift */,
+				2A2249762B067233001F999D /* NodeInspectorView.swift */,
+				2A2249782B067572001F999D /* EdgeInspectorView.swift */,
+			);
+			path = "Graph Inspector";
 			sourceTree = "<group>";
 		};
 		2A7364582AF66A5300F549DA /* MapsView */ = {
@@ -329,6 +345,7 @@
 				2ABDDEC92AF995060073077C /* Charts */,
 				2A808AFD2AF549E700A8B464 /* EdgesView */,
 				2A7364592AF66A5E00F549DA /* GraphViews */,
+				2A2249732B0670B3001F999D /* Graph Inspector */,
 				2A7364582AF66A5300F549DA /* MapsView */,
 				2A808AF12AF51F9500A8B464 /* NodesView */,
 				2AB429AD2B04DD2A0012D0E7 /* PopGraph */,
@@ -607,6 +624,7 @@
 				2ADCAB392AF9356400530CE8 /* PermutationDensityPlot.swift in Sources */,
 				2ADDD8102AF92E1700B1A18C /* Vector.swift in Sources */,
 				2A12E1C02AF7FB68002B66C7 /* IBGDView.swift in Sources */,
+				2A2249752B0670C7001F999D /* GraphInspectorView.swift in Sources */,
 				2ADA8B362AF9007900EC34DA /* GraphPage.swift in Sources */,
 				2A12E1C92AF8EE43002B66C7 /* CorrelationType.swift in Sources */,
 				2AB429AB2B04DD130012D0E7 /* PGEdge.swift in Sources */,
@@ -626,6 +644,7 @@
 				2A808B012AF54A1000A8B464 /* EdgesDetailView.swift in Sources */,
 				2A12E1C72AF8EDFB002B66C7 /* Correlation.swift in Sources */,
 				2AB429B92B04DDC10012D0E7 /* SpringLayout.swift in Sources */,
+				2A2249792B067572001F999D /* EdgeInspectorView.swift in Sources */,
 				2A808AAE2AF509AC00A8B464 /* popgraphApp.swift in Sources */,
 				2A12E1CC2AF8F239002B66C7 /* CorrelationView.swift in Sources */,
 				2AC9D04A2AF79EF30038A685 /* Graph.swift in Sources */,
@@ -650,6 +669,7 @@
 				2ABDDECB2AF995120073077C /* ScatterPlot.swift in Sources */,
 				2A808AF32AF51FB400A8B464 /* NodeDetail.swift in Sources */,
 				2A808ADC2AF50A2700A8B464 /* Node.swift in Sources */,
+				2A2249772B067233001F999D /* NodeInspectorView.swift in Sources */,
 				2A4DFCED2AFA975A001D3988 /* Notification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,6 +14,8 @@ struct PopgraphView: View {
     @Query var nodes: [Node]
     @Query var edges: [Edge]
     
+    @State var showingInspector: Bool = false
+    
     var scene: PGScene = PGScene()
     
     
@@ -24,6 +26,18 @@ struct PopgraphView: View {
         .onAppear(perform: {
             scene.populateGraphComponents(nodes: nodes, edges: edges)
         })
+        .inspector(isPresented: $showingInspector) {
+            GraphInspectorView()
+        }
+        .toolbar {
+            ToolbarItem(placement: .automatic, content: {
+                Button(action: {
+                    showingInspector.toggle()
+                }, label: {
+                    Image(systemName: "sidebar.trailing")
+                })
+            })
+        }
 
     }
     
