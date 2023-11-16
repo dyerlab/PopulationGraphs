@@ -22,7 +22,7 @@ extension Array where Element == Node {
     var locations: [Location] {
         var ret = [Location]()
         for node in self {
-            ret.append( Location(name: node.label, longitude: node.longitude, latitude: node.latitude) )
+            ret.append( Location(node: node) )
         }
         return ret
     }

@@ -25,37 +25,105 @@ import SpriteKit
     var id: UUID
     @Attribute(.unique) var label: String
     var size: Double
-    var latitude: Double
-    var longitude: Double
     
-    var position: CGPoint
-    var displacement: CGPoint
+    var _latitude: Double = 0.0
+    var _longitude: Double = 0.0
+    var _graphX: Double = 0.0
+    var _graphY: Double = 0.0
+    var _displacementX: Double = 0.0
+    var _displacementY: Double = 0.0
     
     var betweenness: Double = Double.nan 
     var closeness: Double = Double.nan
     
     var edges = [UUID]()
     
-    var degree: Int {
-        return edges.count
-    }
-    
-    var coordinate: CLLocation {
-        return CLLocation(latitude: latitude, longitude: longitude)
-    }
-    
     init(label: String, size: Double, longitude: Double, latitude: Double ) {
         self.id = UUID()
         self.label = label
         self.size = size
-        self.longitude = longitude
-        self.latitude = latitude
-        self.position = .zero
-        self.displacement = .zero 
+        
+        self._longitude = longitude
+        self._latitude = latitude
+    }
+    
+    init( node: Node ) {
+        self.id = UUID()
+        self.label = node.label
+        self.size = node.size
+        self.coordinate = node.coordinate
+        self.position = node.position
+        self.displacement = node.displacement
+    }
+    
+}
+
+
+/// Graph-theoretic extensions
+extension Node {
+    
+    var degree: Int {
+        return edges.count
     }
     
     
 }
+
+
+/// Spatial Extensions
+extension Node {
+    
+    var coordinate2D: CLLocationCoordinate2D {
+        get {
+            return CLLocationCoordinate2D(latitude: _latitude, longitude: _longitude)
+        }
+        set {
+            _latitude = newValue.latitude
+            _longitude = newValue.longitude
+        }
+    }
+    
+    var coordinate: CLLocation {
+        get {
+            return CLLocation(latitude: _latitude, longitude: _longitude)
+        }
+        set {
+            _longitude = newValue.coordinate.longitude
+            _latitude = newValue.coordinate.latitude
+        }
+
+    }
+    
+    
+}
+
+
+/// Things for making this a plotable node
+extension Node {
+    
+
+
+    var position: CGPoint {
+        get {
+            return CGPoint(x: _graphX, y: _graphY)
+        }
+        set {
+            _graphX = newValue.x
+            _graphY = newValue.y
+        }
+    }
+    var displacement: CGPoint {
+        get {
+            return CGPoint(x: _displacementX, y: _displacementY )
+        }
+        set {
+            _displacementX = newValue.x
+            _displacementY = newValue.y
+        }
+    }
+    
+}
+
 
 
 extension Node: CustomStringConvertible {

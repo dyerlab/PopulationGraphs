@@ -24,6 +24,12 @@ struct Location: Identifiable {
     let name: String
     let coordinate: CLLocationCoordinate2D
     
+    init( node: Node ) {
+        self.id = UUID()
+        self.name = node.label
+        self.coordinate = node.coordinate2D
+    }
+    
     init( name: String, longitude: Double, latitude: Double ) {
         self.id = UUID()
         self.name = name

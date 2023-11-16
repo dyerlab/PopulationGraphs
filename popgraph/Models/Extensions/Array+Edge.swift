@@ -25,10 +25,8 @@ extension Array where Element == Edge {
         for edge in self {
             if let node1 = nodes.nodeNamed(name: edge.nodeA),
                let node2 = nodes.nodeNamed(name: edge.nodeB) {
-                let path = EdgeCurve( point1: CLLocationCoordinate2D(latitude: node1.latitude,
-                                                         longitude: node1.longitude),
-                                      point2: CLLocationCoordinate2D(latitude: node2.latitude,
-                                                         longitude: node2.longitude) )
+                let path = EdgeCurve( point1: node1.coordinate2D,
+                                      point2: node2.coordinate2D )
                 ret.append( path )
             }
         }

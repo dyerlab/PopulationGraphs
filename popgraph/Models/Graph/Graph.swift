@@ -85,10 +85,7 @@ extension Graph {
             
             let newNodeLabel = ( edge.nodeA == probit.label ) ? edge.nodeB : edge.nodeA
             if let otherNode = self.nodes.nodeNamed(name: newNodeLabel ) {
-                let newNode = Node( label: otherNode.label,
-                                    size: otherNode.size,
-                                    longitude: otherNode.longitude,
-                                    latitude: otherNode.latitude)
+                let newNode = Node( node: otherNode )
                 neighborNodes.append( newNode )
             }
         }

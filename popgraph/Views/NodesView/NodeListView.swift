@@ -33,10 +33,10 @@ struct NodeListView: View {
         Table(sortedNodes, selection: $selection, sortOrder: $sortOrder) {
             TableColumn("Name", value: \.label)
             TableColumn("Longitude"){ node in
-                Text("\(node.longitude, specifier: "%.4f")")
+                Text("\(node._longitude, specifier: "%.4f")")
             }
             TableColumn("Latitude"){ node in
-                Text("\(node.latitude, specifier: "%.4f")")
+                Text("\(node._latitude, specifier: "%.4f")")
             }
             TableColumn("Size") { node in
                 Text("\(node.size, specifier: "%.4f")")

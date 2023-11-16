@@ -69,8 +69,8 @@ struct NodeEditor: View {
         if let node {
             node.label = nodeLabel
             node.size = nodeSize
-            node.longitude = longitude
-            node.latitude = latitude
+            node._longitude = longitude
+            node._latitude = latitude
         } else {
             let newNode = Node( label: nodeLabel,
                                 size: nodeSize,

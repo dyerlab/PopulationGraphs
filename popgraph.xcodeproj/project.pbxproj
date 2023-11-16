@@ -54,7 +54,6 @@
 		2AB429B72B04DD730012D0E7 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB429B52B04DD730012D0E7 /* CGPoint.swift */; };
 		2AB429B92B04DDC10012D0E7 /* SpringLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB429B82B04DDC10012D0E7 /* SpringLayout.swift */; };
 		2AB429BB2B04DDD40012D0E7 /* ShiftDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB429BA2B04DDD40012D0E7 /* ShiftDirection.swift */; };
-		2AB429BE2B04E0270012D0E7 /* PGFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB429BD2B04E0270012D0E7 /* PGFactory.swift */; };
 		2ABDDEC82AF990EC0073077C /* AnalysisTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABDDEC72AF990EC0073077C /* AnalysisTypes.swift */; };
 		2ABDDECB2AF995120073077C /* ScatterPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABDDECA2AF995120073077C /* ScatterPlot.swift */; };
 		2AC9D04A2AF79EF30038A685 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9D0492AF79EF30038A685 /* Graph.swift */; };
@@ -143,7 +142,6 @@
 		2AB429B52B04DD730012D0E7 /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		2AB429B82B04DDC10012D0E7 /* SpringLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringLayout.swift; sourceTree = "<group>"; };
 		2AB429BA2B04DDD40012D0E7 /* ShiftDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShiftDirection.swift; sourceTree = "<group>"; };
-		2AB429BD2B04E0270012D0E7 /* PGFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGFactory.swift; sourceTree = "<group>"; };
 		2ABDDEC72AF990EC0073077C /* AnalysisTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisTypes.swift; sourceTree = "<group>"; };
 		2ABDDECA2AF995120073077C /* ScatterPlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterPlot.swift; sourceTree = "<group>"; };
 		2AC9D0492AF79EF30038A685 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
@@ -418,7 +416,6 @@
 		2AB429BC2B04E0170012D0E7 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				2AB429BD2B04E0270012D0E7 /* PGFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -638,7 +635,6 @@
 				2A808ADE2AF50A8B00A8B464 /* Edge.swift in Sources */,
 				2A808AF72AF52D1100A8B464 /* NodeEditor.swift in Sources */,
 				2A73645B2AF66A7600F549DA /* MapsPage.swift in Sources */,
-				2AB429BE2B04E0270012D0E7 /* PGFactory.swift in Sources */,
 				2AC9D05D2AF7BF280038A685 /* ClosenessCentrality.swift in Sources */,
 				2A808AFF2AF54A0500A8B464 /* EdgesListView.swift in Sources */,
 				2A73645E2AF66BBD00F549DA /* Location.swift in Sources */,

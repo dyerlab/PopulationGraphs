@@ -81,7 +81,7 @@ class PGScene: SKScene {
         
         for node in nodes {
             let pgnode = PGNode(label: node.label, size: node.size)
-            pgnode.position = CGPoint(x: node.longitude, y: node.latitude)
+            pgnode.position = node.position
             self.addChild( pgnode )
         }
         
