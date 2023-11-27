@@ -16,6 +16,10 @@ class PGNode: SKShapeNode, Identifiable {
     let labelNode: SKLabelNode
     let size: Double
     
+    var label: String {
+        return self.labelNode.text ?? "no label"
+    }
+    
     override var position: CGPoint {
         didSet {
             self.edges.forEach( { $0.move() } )
@@ -45,7 +49,7 @@ class PGNode: SKShapeNode, Identifiable {
         
         labelNode.position = CGPoint(x: size + 12, y: size)
         labelNode.name = "label"
-        labelNode.fontSize = 12
+        labelNode.fontSize = 13
         labelNode.fontColor = .labelColor
         labelNode.fontName = "American Typewriter"
         labelNode.zPosition = 3
@@ -56,11 +60,9 @@ class PGNode: SKShapeNode, Identifiable {
         strokeColor = .darkGray
         lineWidth = 0.5
         
-        self.addChild( self.addShadowNode() )
+        //self.addChild( self.addShadowNode() )
         
-            
     }
-    
     
     
     required init?(coder aDecoder: NSCoder) {

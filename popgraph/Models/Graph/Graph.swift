@@ -22,7 +22,6 @@ import DLMatrix
 public class Graph {
     var nodes: [Node]
     var edges: [Edge]
-
     
     var numberOfNodes: Int {
         return nodes.count

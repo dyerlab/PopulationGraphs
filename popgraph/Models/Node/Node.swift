@@ -29,8 +29,8 @@ import SwiftUI
     
     var _latitude: Double = 0.0
     var _longitude: Double = 0.0
-    var _graphX: Double = 0.0
-    var _graphY: Double = 0.0
+    var _graphX: Double = Double.random(in: 50.0 ..< 500.0 )
+    var _graphY: Double = Double.random(in: 50.0 ..< 500.0 )
     var _displacementX: Double = 0.0
     var _displacementY: Double = 0.0
     
@@ -39,13 +39,14 @@ import SwiftUI
     
     var edges = [UUID]()
     
+    
     init(label: String, size: Double, longitude: Double, latitude: Double ) {
         self.id = UUID()
         self.label = label
         self.size = size
-        
         self._longitude = longitude
         self._latitude = latitude
+       
     }
     
     init( node: Node ) {
@@ -55,6 +56,7 @@ import SwiftUI
         self.coordinate = node.coordinate
         self.position = node.position
         self.displacement = node.displacement
+
     }
     
 }
@@ -62,11 +64,9 @@ import SwiftUI
 
 /// Graph-theoretic extensions
 extension Node {
-    
     var degree: Int {
         return edges.count
     }
-    
 }
 
 
@@ -128,6 +128,12 @@ extension Node {
         }
     }
     
+    var shapeNode: PGNode {
+        let node = PGNode(label: self.label, size: self.size)
+        node.position = self.position
+        return node
+    }
+    /*
     var shapeNode: SKShapeNode {
         let node = SKShapeNode(circleOfRadius: size)
         node.fillColor = Color.primary.toNSColor()
@@ -146,6 +152,7 @@ extension Node {
         
         return node
     }
+     */
     
 }
 

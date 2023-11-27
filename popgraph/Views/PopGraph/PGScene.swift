@@ -13,10 +13,12 @@ import SpriteKit
 class PGScene: SKScene {
     
     var touchedNode: PGNode?
+    var mouseBackgroundDown: CGPoint?
+    
     var timer: Timer?
     
-    var nodes: [SKNode] {
-        return self.childrenOfTypeNamed(SKShapeNode.self, named: "pgnode")
+    var nodes: [PGNode] {
+        return self.childrenOfType( PGNode.self )
     }
     var edges: [PGEdge] {
         return self.childrenOfType( PGEdge.self )
@@ -35,7 +37,7 @@ class PGScene: SKScene {
         physicsBody = pBody
         backgroundColor = .clear
         
-        NotificationCenter.default.addObserver(self, selector: #selector(toggleNodeLabels(_:)), name: .ToggleLabel, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(toggleNodeLabelsNotification(_:)), name: .ToggleLabel, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(shiftNodes(_:)), name: .ShiftNodes, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(centerNodesNotification(_:)), name: .CenterNodes, object: nil )
         NotificationCenter.default.addObserver(self, selector: #selector(layoutNodesNotification(_:)), name: .LayoutNodes, object: nil )
@@ -51,6 +53,9 @@ class PGScene: SKScene {
         if currentNode.count > 0 {
             touchedNode = currentNode[0]
             touchedNode?.zPosition = 4
+        } else {
+            print("Mouse down outside of element")
+            mouseBackgroundDown = location
         }
     }
     
@@ -60,12 +65,26 @@ class PGScene: SKScene {
             touchedNode.position = CGPoint( x: location.x - touchedNode.size/2.0, y: location.y - touchedNode.size/2.0)
             let touchedEdges = childrenOfType( PGEdge.self ).filter( { $0.node1 == touchedNode || $0.node2 == touchedNode} )
             touchedEdges.forEach( { $0.move() })
+        } else if let mouseLocation = mouseBackgroundDown {
+            
+            let delta = location  - mouseLocation
+            
+            print("drag location is \(delta.x), \(delta.y)")
+            shiftBackground(delta: delta )
+            mouseBackgroundDown = location 
         }
     }
     
     override func mouseUp(with event: NSEvent) {
-        touchedNode?.zPosition = 3
+        if let node = touchedNode {
+            node.zPosition = 3
+        } else {
+            print("moving background")
+        }
+        
         touchedNode = nil
+        mouseBackgroundDown = nil
+        
     }
     
     override func scrollWheel(with event: NSEvent) {
@@ -77,8 +96,9 @@ class PGScene: SKScene {
     func populateGraphComponents(nodes: [Node], edges: [Edge]) {
         
         for node in nodes {
-            let pgnode = PGNode(label: node.label, size: node.size)
-            pgnode.position = node.position
+            let pgnode = node.shapeNode
+//            let pgnode = PGNode(label: node.label, size: node.size)
+//            pgnode.position = node.position
             self.addChild( pgnode )
         }
         
@@ -120,7 +140,7 @@ extension PGScene {
         return ret
     }
     
-    /*
+
     func layoutNodes() {
         SpringLayout(nodes: nodes, edges: edges, K: self.idealDistance)
         if let sz = self.view?.frame.size {
@@ -132,7 +152,7 @@ extension PGScene {
             edge.move()
         })
     }
-    */
+
     
     func centerNodes() {
         var nodesCenter: CGPoint = .zero
@@ -147,13 +167,22 @@ extension PGScene {
         let frame = self.frame
         let disp = CGPoint(x: frame.width/2.0 - nodesCenter.x,
                            y: frame.height/2.0 - nodesCenter.y )
-        print("Frame is \(frame) and center of nodes is \(nodesCenter) and the disp is \(disp)")
+        print("Frame is \(frame) and center of nodes \(nodes.count) is \(nodesCenter) and the disp is \(disp)")
         
         let moveAction = SKAction.move(by: CGVector(dx: disp.x, dy: disp.y), duration: 2.5 )
         
         nodes.forEach({ node in
             node.run( moveAction )
         })
+    }
+    
+    func shiftBackground( delta: CGPoint) {
+        self.nodes.forEach { node in
+            node.position = node.position + delta
+        }
+        self.edges.forEach { edge in
+            edge.move()
+        }
     }
     
     func shiftLocation( direction: ShiftDirection ) {
@@ -178,7 +207,8 @@ extension PGScene {
     }
     
     @objc func layoutNodesNotification(_ notification: Notification) {
-        // layoutNodes()
+        layoutNodes()
+        print("layout Nodes notification")
     }
 
     @objc func centerNodesNotification(_ notification: Notification) {
@@ -186,7 +216,8 @@ extension PGScene {
         centerNodes()
     }
     
-    @objc func toggleNodeLabels(_ notification: Notification) {
+    @objc func toggleNodeLabelsNotification(_ notification: Notification) {
+        print("toggle labelsNotifications \(self.childrenOfType(SKLabelNode.self).count)")
         self.childrenOfType(SKLabelNode.self).forEach({ label in
             if label.fontSize == 12 {
                 label.fontSize = 0

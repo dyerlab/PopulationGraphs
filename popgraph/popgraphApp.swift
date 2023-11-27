@@ -51,7 +51,6 @@ struct popgraphApp: App {
                 
                 
                 Button(action: {
-                    print("Toggle Labels")
                     NotificationCenter.default.post(name: .ToggleLabel, object: nil)
                 }, label: {
                     Text("Toggle Labels")
