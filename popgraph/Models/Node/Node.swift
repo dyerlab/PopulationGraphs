@@ -46,7 +46,8 @@ import SwiftUI
         self.size = size
         self._longitude = longitude
         self._latitude = latitude
-       
+    
+        NotificationCenter.default.addObserver(self, selector: #selector(nodePositionChanged(_:)), name: .NodePositionChanged, object: nil )
     }
     
     init( node: Node ) {
@@ -57,6 +58,7 @@ import SwiftUI
         self.position = node.position
         self.displacement = node.displacement
 
+        NotificationCenter.default.addObserver(self, selector: #selector(nodePositionChanged(_:)), name: .NodePositionChanged, object: nil )
     }
     
 }
@@ -129,8 +131,7 @@ extension Node {
     }
     
     var shapeNode: PGNode {
-        let node = PGNode(label: self.label, size: self.size)
-        node.position = self.position
+        let node = PGNode(from: self)
         return node
     }
     /*
@@ -166,7 +167,22 @@ extension Node: CustomStringConvertible {
 
 
 
-
+extension Node {
+    
+    @objc func nodePositionChanged(_ notification: Notification) {
+        
+        print("node position changed")
+        
+        guard let rawlabel = notification.userInfo!["Label"] else { return }
+        
+        let label = rawlabel as! String
+        if !label.isEmpty && label == self.label  {
+            print("found it")
+        }
+        
+    }
+    
+}
 
 
 

@@ -16,6 +16,8 @@ class PGNode: SKShapeNode, Identifiable {
     let labelNode: SKLabelNode
     let size: Double
     
+    let parentNode: Node
+    
     var label: String {
         return self.labelNode.text ?? "no label"
     }
@@ -23,6 +25,7 @@ class PGNode: SKShapeNode, Identifiable {
     override var position: CGPoint {
         didSet {
             self.edges.forEach( { $0.move() } )
+            parentNode.position = self.position
         }
     }
     
@@ -39,13 +42,17 @@ class PGNode: SKShapeNode, Identifiable {
         return self.childrenOfType( PGEdge.self )
     }
     
-    init(label: String, size: Double) {
+    init( from node: Node) {
+        let label = node.label
+        let size = node.size
         
+        self.parentNode = node
         self.labelNode = SKLabelNode(text: label)
         self.size = size
         super.init()
         
         self.name = label
+        self.position = parentNode.position
         
         labelNode.position = CGPoint(x: size + 12, y: size)
         labelNode.name = "label"
