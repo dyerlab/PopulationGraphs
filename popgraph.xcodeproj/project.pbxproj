@@ -416,6 +416,8 @@
 				2AB429BA2B04DDD40012D0E7 /* ShiftDirection.swift */,
 				2AB429A92B04DD130012D0E7 /* PGEdge.swift */,
 				2AB429AA2B04DD130012D0E7 /* PGNode.swift */,
+				2AB429AF2B04DD550012D0E7 /* PGScene.swift */,
+				2AB429B02B04DD550012D0E7 /* PGView.swift */,
 			);
 			path = PopGraph;
 			sourceTree = "<group>";
@@ -424,8 +426,6 @@
 			isa = PBXGroup;
 			children = (
 				2AB429AE2B04DD550012D0E7 /* PopgraphView.swift */,
-				2AB429AF2B04DD550012D0E7 /* PGScene.swift */,
-				2AB429B02B04DD550012D0E7 /* PGView.swift */,
 			);
 			path = PopGraph;
 			sourceTree = "<group>";

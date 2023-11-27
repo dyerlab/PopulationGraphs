@@ -71,7 +71,7 @@ class PGScene: SKScene {
             
             print("drag location is \(delta.x), \(delta.y)")
             shiftBackground(delta: delta )
-            mouseBackgroundDown = location 
+            mouseBackgroundDown = location
         }
     }
     
@@ -91,14 +91,10 @@ class PGScene: SKScene {
         print( "Scrolling \(event.deltaY)")
     }
     
-
-    
     func populateGraphComponents(nodes: [Node], edges: [Edge]) {
         
         for node in nodes {
             let pgnode = node.shapeNode
-//            let pgnode = PGNode(label: node.label, size: node.size)
-//            pgnode.position = node.position
             self.addChild( pgnode )
         }
         
@@ -219,10 +215,13 @@ extension PGScene {
     @objc func toggleNodeLabelsNotification(_ notification: Notification) {
         print("toggle labelsNotifications \(self.childrenOfType(SKLabelNode.self).count)")
         self.childrenOfType(SKLabelNode.self).forEach({ label in
-            if label.fontSize == 12 {
+            
+            if label.fontSize > 0 {
                 label.fontSize = 0
+                label.fontColor = .clear
             } else {
-                label.fontSize = 12
+                label.fontSize = 13
+                label.fontColor = .labelColor
             }
         })
     }
