@@ -28,17 +28,20 @@ struct ContentView: View {
         NavigationSplitView(columnVisibility: $columnVisibility,
                             sidebar: {
             List {
-                NavigationLink {
-                    PopgraphView()
-                } label: {
-                    Label("PopGraph", systemImage: "perspective")
-                }
                 
                 NavigationLink {
                     MapsPage()
                 } label: {
                     Label("Map", systemImage: "map")
                 }
+                
+                NavigationLink {
+                    PopgraphView()
+                } label: {
+                    Label("PopGraph", systemImage: "perspective")
+                }
+                
+                
                 
                 NavigationLink {
                     NodeView()
