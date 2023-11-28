@@ -50,6 +50,7 @@ class PGNode: SKShapeNode, Identifiable {
         self.name = label
         self.position = CGPoint( x: Double.random(in: 50 ... 500),
                                  y: Double.random(in: 50 ... 500) )
+        setProperties()
     }
     
     init( from node: Node) {
@@ -63,7 +64,7 @@ class PGNode: SKShapeNode, Identifiable {
         
         self.name = label
         self.position = node.position
-        
+        setProperties()
     }
     
     
