@@ -13,7 +13,7 @@
 		2A12E1C72AF8EDFB002B66C7 /* Correlation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A12E1C62AF8EDFB002B66C7 /* Correlation.swift */; };
 		2A12E1C92AF8EE43002B66C7 /* CorrelationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A12E1C82AF8EE43002B66C7 /* CorrelationType.swift */; };
 		2A12E1CC2AF8F239002B66C7 /* CorrelationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A12E1CB2AF8F239002B66C7 /* CorrelationView.swift */; };
-		2A177FA12B1648C30007E4C2 /* IBGDOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A177FA02B1648C30007E4C2 /* IBGDOverlay.swift */; };
+		2A177FA32B16588D0007E4C2 /* EdgeCompressionScatterPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A177FA22B16588D0007E4C2 /* EdgeCompressionScatterPlot.swift */; };
 		2A2249752B0670C7001F999D /* GraphInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2249742B0670C7001F999D /* GraphInspectorView.swift */; };
 		2A2249772B067233001F999D /* NodeInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2249762B067233001F999D /* NodeInspectorView.swift */; };
 		2A2249792B067572001F999D /* EdgeInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2249782B067572001F999D /* EdgeInspectorView.swift */; };
@@ -102,7 +102,7 @@
 		2A12E1C62AF8EDFB002B66C7 /* Correlation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Correlation.swift; sourceTree = "<group>"; };
 		2A12E1C82AF8EE43002B66C7 /* CorrelationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrelationType.swift; sourceTree = "<group>"; };
 		2A12E1CB2AF8F239002B66C7 /* CorrelationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrelationView.swift; sourceTree = "<group>"; };
-		2A177FA02B1648C30007E4C2 /* IBGDOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBGDOverlay.swift; sourceTree = "<group>"; };
+		2A177FA22B16588D0007E4C2 /* EdgeCompressionScatterPlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeCompressionScatterPlot.swift; sourceTree = "<group>"; };
 		2A2249742B0670C7001F999D /* GraphInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphInspectorView.swift; sourceTree = "<group>"; };
 		2A2249762B067233001F999D /* NodeInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeInspectorView.swift; sourceTree = "<group>"; };
 		2A2249782B067572001F999D /* EdgeInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeInspectorView.swift; sourceTree = "<group>"; };
@@ -248,8 +248,8 @@
 				2ADA8B352AF9007900EC34DA /* GraphPage.swift */,
 				2ADA8B372AF9010700EC34DA /* GraphMetaData.swift */,
 				2A4DFCD32AFA4A23001D3988 /* IsolationScatterPlot.swift */,
+				2A177FA22B16588D0007E4C2 /* EdgeCompressionScatterPlot.swift */,
 				2A12E1BF2AF7FB68002B66C7 /* IBGDView.swift */,
-				2A177FA02B1648C30007E4C2 /* IBGDOverlay.swift */,
 			);
 			path = GraphViews;
 			sourceTree = "<group>";
@@ -641,6 +641,7 @@
 				2AB429B72B04DD730012D0E7 /* CGPoint.swift in Sources */,
 				2A4DFCD62AFA4BA1001D3988 /* AdjacencyMatrix.swift in Sources */,
 				2A12E1C42AF8E2A8002B66C7 /* PointChartData.swift in Sources */,
+				2A177FA32B16588D0007E4C2 /* EdgeCompressionScatterPlot.swift in Sources */,
 				2A4DFCE32AFA637D001D3988 /* Color.swift in Sources */,
 				2ABDDEC82AF990EC0073077C /* AnalysisTypes.swift in Sources */,
 				2AB429AC2B04DD130012D0E7 /* PGNode.swift in Sources */,
@@ -659,7 +660,6 @@
 				2AB429B12B04DD550012D0E7 /* PopgraphView.swift in Sources */,
 				2A808ADE2AF50A8B00A8B464 /* Edge.swift in Sources */,
 				2A808AF72AF52D1100A8B464 /* NodeEditor.swift in Sources */,
-				2A177FA12B1648C30007E4C2 /* IBGDOverlay.swift in Sources */,
 				2A73645B2AF66A7600F549DA /* MapsPage.swift in Sources */,
 				2AC9D05D2AF7BF280038A685 /* ClosenessCentrality.swift in Sources */,
 				2A808AFF2AF54A0500A8B464 /* EdgesListView.swift in Sources */,
