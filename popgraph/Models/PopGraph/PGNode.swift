@@ -15,8 +15,7 @@ class PGNode: SKShapeNode, Identifiable {
     var displacement: CGPoint = .zero
     let labelNode: SKLabelNode
     let size: Double
-    
-    let parentNode: Node
+    var parentNode: Node?
     
     var label: String {
         return self.labelNode.text ?? "no label"
@@ -25,7 +24,9 @@ class PGNode: SKShapeNode, Identifiable {
     override var position: CGPoint {
         didSet {
             self.edges.forEach( { $0.move() } )
-            parentNode.position = self.position
+            if let pn = parentNode {
+                pn.position = self.position
+            }
         }
     }
     
@@ -37,9 +38,18 @@ class PGNode: SKShapeNode, Identifiable {
         return CGPoint(x: position.x + size/2.0 , y: position.y + size/2.0)
     }
     
-    
     var edges: [PGEdge] {
         return self.childrenOfType( PGEdge.self )
+    }
+    
+    init(label: String, size: Double) {
+        self.parentNode = nil
+        self.labelNode = SKLabelNode(text: label)
+        self.size = size
+        super.init()
+        self.name = label
+        self.position = CGPoint( x: Double.random(in: 50 ... 500),
+                                 y: Double.random(in: 50 ... 500) )
     }
     
     init( from node: Node) {
@@ -52,8 +62,12 @@ class PGNode: SKShapeNode, Identifiable {
         super.init()
         
         self.name = label
-        self.position = parentNode.position
+        self.position = node.position
         
+    }
+    
+    
+    private func setProperties() {
         labelNode.position = CGPoint(x: size + 12, y: size)
         labelNode.name = "label"
         labelNode.fontSize = 13
@@ -66,9 +80,7 @@ class PGNode: SKShapeNode, Identifiable {
         fillColor = .gray
         strokeColor = .darkGray
         lineWidth = 0.5
-        
         //self.addChild( self.addShadowNode() )
-        
     }
     
     

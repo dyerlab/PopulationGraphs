@@ -115,9 +115,6 @@ class PGScene: SKScene {
 }
 
 
-
-
-
  
 extension PGScene {
 
@@ -282,7 +279,5 @@ extension PGScene {
         edge2.move()
         edge3.move()
         edge4.move()
-        
-        
     }
 }

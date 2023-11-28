@@ -16,11 +16,14 @@ struct PGView: NSViewRepresentable {
     typealias NSViewType = SKView
     
     var skScene: SKScene!
+    var sceneDelegate: PGSceneDelegate
     
     init(scene: SKScene) {
         skScene = scene
         skScene.scaleMode = .resizeFill
         
+        sceneDelegate = PGSceneDelegate()
+        skScene.delegate = sceneDelegate
     }
     
     class Coordinator: NSObject {
@@ -34,11 +37,13 @@ struct PGView: NSViewRepresentable {
     }
     
     func makeNSView(context: Context) -> SKView {
+        
         let view = SKView(frame: .zero)
         view.preferredFramesPerSecond = 60
         view.showsFPS = true
         view.showsNodeCount = true
         view.showsFields = true
+        
         return view
     }
     
