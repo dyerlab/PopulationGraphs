@@ -1,0 +1,413 @@
+{
+    "nodes": [
+        {
+            "name": "BaC",
+            "size": 12.15881,
+            "group": 0,
+            "latitude": 26.59,
+            "longitude": -111.79
+        },
+        {
+            "name": "Ctv",
+            "size": 3.880886,
+            "group": 0,
+            "latitude": 29.73,
+            "longitude": -114.72
+        },
+        {
+            "name": "LaV",
+            "size": 3.5337565,
+            "group": 0,
+            "latitude": 24.04,
+            "longitude": -109.99
+        },
+        {
+            "name": "Lig",
+            "size": 4.731355,
+            "group": 0,
+            "latitude": 25.73,
+            "longitude": -111.27
+        },
+        {
+            "name": "PtC",
+            "size": 4.684652,
+            "group": 0,
+            "latitude": 24.19,
+            "longitude": -111.15
+        },
+        {
+            "name": "PtP",
+            "size": 10.925375,
+            "group": 0,
+            "latitude": 29.03,
+            "longitude": -113.9
+        },
+        {
+            "name": "SLG",
+            "size": 5.955645,
+            "group": 0,
+            "latitude": 29.59,
+            "longitude": -114.4
+        },
+        {
+            "name": "SnE",
+            "size": 11.82822,
+            "group": 0,
+            "latitude": 24.45,
+            "longitude": -110.7
+        },
+        {
+            "name": "SnF",
+            "size": 6.325655,
+            "group": 0,
+            "latitude": 30.76,
+            "longitude": -114.73
+        },
+        {
+            "name": "SnI",
+            "size": 5.466695,
+            "group": 0,
+            "latitude": 27.29,
+            "longitude": -113.02
+        },
+        {
+            "name": "StR",
+            "size": 6.859545,
+            "group": 0,
+            "latitude": 24.91,
+            "longitude": -111.62
+        },
+        {
+            "name": "TsS",
+            "size": 5.29057,
+            "group": 0,
+            "latitude": 23.58,
+            "longitude": -110.34
+        },
+        {
+            "name": "CP",
+            "size": 7.870725,
+            "group": 1,
+            "latitude": 27.95,
+            "longitude": -110.66
+        },
+        {
+            "name": "LF",
+            "size": 8.472215,
+            "group": 1,
+            "latitude": 30.68,
+            "longitude": -112.27
+        },
+        {
+            "name": "PL",
+            "size": 6.692795,
+            "group": 1,
+            "latitude": 30.39,
+            "longitude": -112.58
+        },
+        {
+            "name": "SenBas",
+            "size": 9.116705,
+            "group": 1,
+            "latitude": 31.95,
+            "longitude": -112.87
+        },
+        {
+            "name": "Seri",
+            "size": 2.5,
+            "group": 1,
+            "latitude": 28.88,
+            "longitude": -111.96
+        },
+        {
+            "name": "SG",
+            "size": 11.02753,
+            "group": 1,
+            "latitude": 29.4,
+            "longitude": -112.05
+        },
+        {
+            "name": "SI",
+            "size": 11.52145,
+            "group": 1,
+            "latitude": 29.75,
+            "longitude": -112.5
+        },
+        {
+            "name": "SN",
+            "size": 8.325785,
+            "group": 1,
+            "latitude": 28.82,
+            "longitude": -111.8
+        },
+        {
+            "name": "TS",
+            "size": 16.001165,
+            "group": 1,
+            "latitude": 28.41,
+            "longitude": -111.37
+        }
+    ],
+    "edges": [
+            {
+                "source": "Bac",
+                "target": "LaV",
+                "weight": 9.052676
+            },
+            {
+                "source": "Bac",
+                "target": "Lig",
+                "weight": 9.71615
+            },
+            {
+                "source": "Bac",
+                "target": "PtC",
+                "weight": 12.38248
+            },
+            {
+                "source": "Bac",
+                "target": "PtP",
+                "weight": 6.539983
+            },
+            {
+                "source": "Bac",
+                "target": "SnE",
+                "weight": 7.922799
+            },
+            {
+                "source": "Bac",
+                "target": "SnI",
+                "weight": 6.95713
+            },
+            {
+                "source": "Bac",
+                "target": "StR",
+                "weight": 6.766322
+            },
+            {
+                "source": "Ctv",
+                "target": "PtP",
+                "weight": 2.655055
+            },
+            {
+                "source": "Ctv",
+                "target": "SLG",
+                "weight": 1.383612
+            },
+            {
+                "source": "Ctv",
+                "target": "SnF",
+                "weight": 2.696431
+            },
+            {
+                "source": "Ctv",
+                "target": "SenBas",
+                "weight": 6.50686
+            },
+            {
+                "source": "LaV",
+                "target": "Lig",
+                "weight": 12.07282
+            },
+            {
+                "source": "LaV",
+                "target": "PtC",
+                "weight": 12.80017
+            },
+            {
+                "source": "LaV",
+                "target": "SnE",
+                "weight": 8.49112
+            },
+            {
+                "source": "LaV",
+                "target": "SnF",
+                "weight": 10.38688
+            },
+            {
+                "source": "LaV",
+                "target": "TsS",
+                "weight": 8.267106
+            },
+            {
+                "source": "Lig",
+                "target": "PtC",
+                "weight": 14.22483
+            },
+            {
+                "source": "Lig",
+                "target": "SnI",
+                "weight": 9.273806
+            },
+            {
+                "source": "Lig",
+                "target": "StR",
+                "weight": 9.026984
+            },
+            {
+                "source": "Lig",
+                "target": "TsS",
+                "weight": 12.80184
+            },
+            {
+                "source": "PtC",
+                "target": "SnE",
+                "weight": 12.39859
+            },
+            {
+                "source": "PtC",
+                "target": "StR",
+                "weight": 11.93834
+            },
+            {
+                "source": "PtC",
+                "target": "TsS",
+                "weight": 12.58404
+            },
+            {
+                "source": "PtC",
+                "target": "SenBas",
+                "weight": 13.98413
+            },
+            {
+                "source": "PtP",
+                "target": "SnF",
+                "weight": 2.984673
+            },
+            {
+                "source": "PtP",
+                "target": "SnI",
+                "weight": 4.434012
+            },
+            {
+                "source": "PtP",
+                "target": "SenBas",
+                "weight": 6.568057
+            },
+            {
+                "source": "SLG",
+                "target": "SnF",
+                "weight": 2.999361
+            },
+            {
+                "source": "SLG",
+                "target": "SnI",
+                "weight": 4.575605
+            },
+            {
+                "source": "SnE",
+                "target": "StR",
+                "weight": 7.570517
+            },
+            {
+                "source": "SnE",
+                "target": "TsS",
+                "weight": 9.94686
+            },
+            {
+                "source": "SnF",
+                "target": "SnI",
+                "weight": 4.821284
+            },
+            {
+                "source": "SnI",
+                "target": "StR",
+                "weight": 7.665717
+            },
+            {
+                "source": "StR",
+                "target": "TsS",
+                "weight": 10.13719
+            },
+            {
+                "source": "StR",
+                "target": "SenBas",
+                "weight": 9.111798
+            },
+            {
+                "source": "CP",
+                "target": "Seri",
+                "weight": 2.773351
+            },
+            {
+                "source": "CP",
+                "target": "SG",
+                "weight": 3.988562
+            },
+            {
+                "source": "CP",
+                "target": "SN",
+                "weight": 4.143565
+            },
+            {
+                "source": "CP",
+                "target": "TS",
+                "weight": 4.269119
+            },
+            {
+                "source": "LF",
+                "target": "PL",
+                "weight": 2.418533
+            },
+            {
+                "source": "LF",
+                "target": "SG",
+                "weight": 2.854111
+            },
+            {
+                "source": "LF",
+                "target": "SI",
+                "weight": 3.127624
+            },
+            {
+                "source": "PL",
+                "target": "SenBas",
+                "weight": 9.17615
+            },
+            {
+                "source": "PL",
+                "target": "SG",
+                "weight": 3.533888
+            },
+            {
+                "source": "PL",
+                "target": "SI",
+                "weight": 2.915417
+            },
+            {
+                "source": "PL",
+                "target": "SN",
+                "weight": 4.867766
+            },
+            {
+                "source": "Seri",
+                "target": "SG",
+                "weight": 3.414492
+            },
+            {
+                "source": "Seri",
+                "target": "SN",
+                "weight": 3.569675
+            },
+            {
+                "source": "SG",
+                "target": "SI",
+                "weight": 3.837508
+            },
+            {
+                "source": "SI",
+                "target": "SN",
+                "weight": 4.87534
+            },
+            {
+                "source": "SI",
+                "target": "TS",
+                "weight": 4.558169
+            },
+            {
+                "source": "SN",
+                "target": "TS",
+                "weight": 4.672005
+            }
+        ]
+}
