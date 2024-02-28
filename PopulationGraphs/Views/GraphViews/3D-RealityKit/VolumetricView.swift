@@ -13,7 +13,7 @@ struct VolumetricView: View {
     var body: some View {
         VStack {
             #if os(visionOS)
-            VolumetricView(graphData: graphData)
+            VolumetricVisionView(graphData: graphData)
             #else
             Text("Non-VisionOS Version")
             #endif
