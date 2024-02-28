@@ -25,7 +25,6 @@ struct VolumetricVisionView: View {
             
             RealityView { content in
                 
-                
                 var material = PhysicallyBasedMaterial()
                 material.baseColor = PhysicallyBasedMaterial.BaseColor(tint: UIColor(white: 1.0, alpha: 0.2))
                 material.roughness = PhysicallyBasedMaterial.Roughness(floatLiteral: 0.8)
@@ -54,7 +53,7 @@ struct VolumetricVisionView: View {
                 
                 /// Draw the nodes
                 for i in positions.indices {
-                    let gid = graphData.nodes[i].group 
+                    let gid = graphData.nodes[i].group
                     let nodeSize = graphData.nodes[i].size / 1000
                     
                     let sphere = MeshResource.generateSphere(radius: nodeSize )
