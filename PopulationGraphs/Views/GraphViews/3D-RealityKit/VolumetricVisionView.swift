@@ -54,13 +54,13 @@ struct VolumetricVisionView: View {
                 
                 /// Draw the nodes
                 for i in positions.indices {
-                    let gid = graphData.nodes[i].group - 1
+                    let gid = graphData.nodes[i].group 
                     let nodeSize = graphData.nodes[i].size / 1000
                     
                     let sphere = MeshResource.generateSphere(radius: nodeSize )
                     
                     let sphereEntity = ModelEntity(mesh: sphere, materials: [
-                        nodeMaterials[gid%nodeMaterials.count]
+                        nodeMaterials[gid % nodeMaterials.count]
                     ])
                     
                     sphereEntity.position = positions[i]

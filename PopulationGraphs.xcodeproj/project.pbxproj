@@ -36,10 +36,11 @@
 		2A3835A42B825C2F00F659AF /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3835A32B825C2F00F659AF /* TitleView.swift */; };
 		2A3835A62B8262C500F659AF /* Array+Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3835A52B8262C500F659AF /* Array+Node.swift */; };
 		2A8BD8122B8F58C60029D301 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2A8BD8102B8F58C60029D301 /* README.md */; };
-		2A8BD8132B8F58C60029D301 /* TODO.md in Resources */ = {isa = PBXBuildFile; fileRef = 2A8BD8112B8F58C60029D301 /* TODO.md */; };
+		2A8BD8132B8F58C60029D301 /* ToDo.md in Resources */ = {isa = PBXBuildFile; fileRef = 2A8BD8112B8F58C60029D301 /* ToDo.md */; };
 		2AC29C012B8386A900A344F2 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC29C002B8386A900A344F2 /* Graph.swift */; };
 		2AC29C032B83887700A344F2 /* FlatlandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC29C022B83887700A344F2 /* FlatlandView.swift */; };
 		2ACBD0AF2B82E9B500924497 /* GroupColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACBD0AE2B82E9B500924497 /* GroupColors.swift */; };
+		2AD3BA232B8F87AB00E31892 /* GraphInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD3BA222B8F87AB00E31892 /* GraphInspector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,10 +92,11 @@
 		2A3835A32B825C2F00F659AF /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		2A3835A52B8262C500F659AF /* Array+Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Node.swift"; sourceTree = "<group>"; };
 		2A8BD8102B8F58C60029D301 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		2A8BD8112B8F58C60029D301 /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
+		2A8BD8112B8F58C60029D301 /* ToDo.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ToDo.md; sourceTree = "<group>"; };
 		2AC29C002B8386A900A344F2 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 		2AC29C022B83887700A344F2 /* FlatlandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatlandView.swift; sourceTree = "<group>"; };
 		2ACBD0AE2B82E9B500924497 /* GroupColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupColors.swift; sourceTree = "<group>"; };
+		2AD3BA222B8F87AB00E31892 /* GraphInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphInspector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				2A8BD8102B8F58C60029D301 /* README.md */,
-				2A8BD8112B8F58C60029D301 /* TODO.md */,
+				2A8BD8112B8F58C60029D301 /* ToDo.md */,
 				2A04F8E62B822B3A00539350 /* PopulationGraphs */,
 				2A04F8FA2B822B3B00539350 /* PopulationGraphsTests */,
 				2A04F9042B822B3B00539350 /* PopulationGraphsUITests */,
@@ -221,9 +223,8 @@
 		2A3835962B82531400F659AF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2A1479692B82B1D500408D8B /* NodesView.swift */,
-				2A14796B2B82B1F700408D8B /* EdgesView.swift */,
-				2A3835942B82530E00F659AF /* MapView.swift */,
+				2AD3BA212B8F879200E31892 /* Components */,
+				2ADA14322B8F7A1A006D1645 /* MapView */,
 				2AC29C042B83888100A344F2 /* GraphViews */,
 				2A38359B2B82534400F659AF /* SidebarView.swift */,
 				2A3835A32B825C2F00F659AF /* TitleView.swift */,
@@ -244,13 +245,39 @@
 			children = (
 				2A3835972B82532400F659AF /* GraphView.swift */,
 				2AC29C022B83887700A344F2 /* FlatlandView.swift */,
+				2AD3BA242B8F977700E31892 /* 3D-RealityKit */,
+				2A09CFB62B86013F005591FC /* GraphViewDimensionality.swift */,
+				2A09CFBA2B86073E005591FC /* TextEntityGenerator.swift */,
+				2AD3BA222B8F87AB00E31892 /* GraphInspector.swift */,
+			);
+			path = GraphViews;
+			sourceTree = "<group>";
+		};
+		2AD3BA212B8F879200E31892 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2A1479692B82B1D500408D8B /* NodesView.swift */,
+				2A14796B2B82B1F700408D8B /* EdgesView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2AD3BA242B8F977700E31892 /* 3D-RealityKit */ = {
+			isa = PBXGroup;
+			children = (
 				2A09CFB82B86023E005591FC /* VolumetricView.swift */,
 				2A09CFBE2B860E4D005591FC /* VolumetricForce.swift */,
 				2A09CFBC2B860BA6005591FC /* VolumetricVisionView.swift */,
-				2A09CFB62B86013F005591FC /* GraphViewDimensionality.swift */,
-				2A09CFBA2B86073E005591FC /* TextEntityGenerator.swift */,
 			);
-			path = GraphViews;
+			path = "3D-RealityKit";
+			sourceTree = "<group>";
+		};
+		2ADA14322B8F7A1A006D1645 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				2A3835942B82530E00F659AF /* MapView.swift */,
+			);
+			path = MapView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,7 +395,7 @@
 				2A04F8F22B822B3B00539350 /* Preview Assets.xcassets in Resources */,
 				2A8BD8122B8F58C60029D301 /* README.md in Resources */,
 				2A04F8EE2B822B3B00539350 /* Assets.xcassets in Resources */,
-				2A8BD8132B8F58C60029D301 /* TODO.md in Resources */,
+				2A8BD8132B8F58C60029D301 /* ToDo.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +420,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AD3BA232B8F87AB00E31892 /* GraphInspector.swift in Sources */,
 				2A04F8EA2B822B3A00539350 /* ContentView.swift in Sources */,
 				2A3835952B82530E00F659AF /* MapView.swift in Sources */,
 				2A09CFBD2B860BA6005591FC /* VolumetricVisionView.swift in Sources */,

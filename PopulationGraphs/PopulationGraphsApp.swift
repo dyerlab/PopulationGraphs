@@ -10,6 +10,7 @@ import SwiftData
 
 @main
 struct PopulationGraphsApp: App {
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

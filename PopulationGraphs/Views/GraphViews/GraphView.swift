@@ -15,6 +15,8 @@ struct GraphView: View {
     @Query private var nodes: [Node]
     @Query private var edges: [Edge]
     
+    @State var showInspector: Bool = false
+    
     var dimensionality: GraphViewDimensionality
     
     var popGraph: Graph {
@@ -22,11 +24,27 @@ struct GraphView: View {
     }
 
     var body: some View {
-        switch dimensionality {
-        case .Flatland:
-            FlatlandView(graphData: self.popGraph )
-        case .Volumetric:
-            VolumetricView(graphData: self.popGraph )
+        VStack {
+            switch dimensionality {
+            case .Flatland:
+                FlatlandView(graphData: self.popGraph )
+            case .Volumetric:
+                VolumetricView(graphData: self.popGraph )
+            }
+        }
+        #if os(macOS)
+        .inspector(isPresented: $showInspector) {
+            GraphInspector()
+        }
+        #endif 
+        .toolbar {
+            Button(action: {
+                withAnimation {
+                    showInspector.toggle()
+                }
+            }) {
+                Label("Inspector", systemImage: "sidebar.right")
+            }
         }
 
     }

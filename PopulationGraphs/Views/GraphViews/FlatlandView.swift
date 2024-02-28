@@ -11,6 +11,9 @@ import SwiftUI
 struct FlatlandView: View {
     @State private var isRunning = true
     
+    @State private var shiftUpDown: CGFloat = 0.0
+    @State private var shiftLeftRight: CGFloat = 0.0
+    
     @State private var stateMixin = ForceDirectedGraphState(
         initialIsRunning: true,
         initialModelTransform: .identity.scale(by: 1.2)
@@ -63,6 +66,7 @@ struct FlatlandView: View {
                         self.getLabel( node.id,
                                        color: GroupColors[node.group % GroupColors.count] )
                     }
+                            
             }
             
             Series(graphData.links) { l in
@@ -78,7 +82,7 @@ struct FlatlandView: View {
                 stiffness: .weightedByDegree(k: { _, _ in 1.0})
             )
         }
-            
+
     }
 
 }
