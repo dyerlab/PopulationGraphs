@@ -2,7 +2,7 @@
 
 > Population genetic software that doesn't suck. 
 
-![](https://img.shields.io/badge/license-GPLv3-green)  ![](https://img.shields.io/badge/swift-5.9-green)  ![](https://img.shields.io/badge/macOS-11-green)
+![](https://img.shields.io/badge/swift-5.9-green)  ![](https://img.shields.io/badge/macOS-14.0-green)   ![](https://img.shields.io/badge/iOS-17.4-green)   ![](https://img.shields.io/badge/visionOS-1.1-green)
 
 Current Version: ![](https://img.shields.io/github/v/tag/dyerlab/PopulationGraphs?color=green)
 
