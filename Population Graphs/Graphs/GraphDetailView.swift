@@ -9,26 +9,13 @@ import SwiftUI
 import SwiftData
 
 struct GraphDetailView: View {
-    @Environment(\.modelContext) var modelContext
-    @Query var nodes: [Node]
-    @Query var edges: [Edge]
-    var graphID: String
-    
-    init( setID: String ) {
-        self.graphID = setID
+    var graph: Graph
         
-        let edgeSet = setID
-        let predicate = #Predicate<Edge> { $0.edgeSet == edgeSet }
-        _edges = Query( filter: predicate )
-        _nodes = Query()
-        
-    }
-    
     var body: some View {
         VStack {
-            Text("\(graphID)")
-            Text("\(nodes.count) nodes")
-            Text("\(edges.count) edges ")
+            Text("\(graph.locusSet.id)")
+            Text("\(graph.nodes.count) nodes")
+            Text("\(graph.edges.count) edges ")
         }
 
         
@@ -36,6 +23,6 @@ struct GraphDetailView: View {
 }
 
 #Preview {
-    GraphDetailView(setID: LocusSet.DefaultLocusSet.id )
+    GraphDetailView(graph: Graph.DefaultGraph )
         .modelContainer( previewContainer )
 }

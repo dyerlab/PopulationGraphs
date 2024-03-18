@@ -1,0 +1,15 @@
+{
+  "originHash" : "d6617b1454aec1baa990f9f8b8b4002eaead9fed9f73c78934cf1f434842d4d9",
+  "pins" : [
+    {
+      "identity" : "dlmatrix",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dyerlab/DLMatrix",
+      "state" : {
+        "revision" : "56b2ba994bd0e42b0823e52f2923ee1d3a7c5c1b",
+        "version" : "1.1.0"
+      }
+    }
+  ],
+  "version" : 3
+}

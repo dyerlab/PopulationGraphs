@@ -6,10 +6,23 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SummariesListView: View {
+    @Query( sort: \LocusSet.id ) var edgeSets: [LocusSet]
+    @Environment(\.modelContext) var modelContext
+
     var body: some View {
-        Text("Summaries List View")
+        List( edgeSets ) { edgeSet in
+            
+            NavigationLink {
+                GraphInitView( setID: edgeSet.id,
+                               viewModule: .Summary )
+            } label: {
+                Text("\(edgeSet.id)")
+            }
+
+        }
     }
 }
 

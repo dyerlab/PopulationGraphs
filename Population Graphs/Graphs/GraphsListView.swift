@@ -11,21 +11,30 @@ import SwiftData
 struct GraphsListView: View {
     @Query( sort: \LocusSet.id ) var edgeSets: [LocusSet]
     @Environment(\.modelContext) var modelContext
+    var destination: GraphDisplayModule
+    
+    private var setIDs: [String] {
+        return edgeSets.compactMap{ $0.id }.sorted {
+            $0.compare($1, options: .numeric) == .orderedAscending
+        }
+    }
 
     var body: some View {
-        List( edgeSets ) { edgeSet in
-            
-            NavigationLink {
-                GraphDetailView(setID: edgeSet.id )
-            } label: {
-                Text("\(edgeSet.id)")
+        VStack {
+            List( setIDs, id: \.self ) { setID in
+                NavigationLink {
+                    GraphInitView( setID: setID,
+                                   viewModule: destination )
+                } label: {
+                    Text("\(setID)")
+                }
             }
-
+            Text("\(edgeSets.count) topologies")
         }
     }
 }
 
 #Preview {
-    GraphsListView()
+    GraphsListView(destination: .Visualize2D)
         .modelContainer( previewContainer )
 }

@@ -30,7 +30,6 @@
 		2AAF3AEB2BA4F59E009F494C /* Notificaitons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF3AEA2BA4F59E009F494C /* Notificaitons.swift */; };
 		2AAF3AED2BA5A8FB009F494C /* PreviewSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF3AEC2BA5A8FB009F494C /* PreviewSampleData.swift */; };
 		2AAF3AEF2BA5ABA5009F494C /* LocusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF3AEE2BA5ABA5009F494C /* LocusTests.swift */; };
-		2AAF3AF12BA5B509009F494C /* popgraphs.json in Resources */ = {isa = PBXBuildFile; fileRef = 2AAF3AF02BA5B509009F494C /* popgraphs.json */; };
 		2AAF3AF32BA5B5BA009F494C /* JSONLociTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF3AF22BA5B5BA009F494C /* JSONLociTests.swift */; };
 		2AAF3AF52BA5BEDD009F494C /* NodeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF3AF42BA5BEDD009F494C /* NodeListView.swift */; };
 		2AAF3AF72BA5BF68009F494C /* NodesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF3AF62BA5BF68009F494C /* NodesDetailView.swift */; };
@@ -43,6 +42,12 @@
 		2AAF3B062BA71C83009F494C /* LocalesMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF3B052BA71C83009F494C /* LocalesMap.swift */; };
 		2AAF3B092BA71D9A009F494C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF3B082BA71D9A009F494C /* Location.swift */; };
 		2AAF3B0B2BA7209A009F494C /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF3B0A2BA7209A009F494C /* Graph.swift */; };
+		2AF34E0B2BA878D8006A50A6 /* DLMatrix in Frameworks */ = {isa = PBXBuildFile; productRef = 2AF34E0A2BA878D8006A50A6 /* DLMatrix */; };
+		2AF34E0D2BA87A11006A50A6 /* GraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF34E0C2BA87A11006A50A6 /* GraphTests.swift */; };
+		2AF34E0F2BA87ED0006A50A6 /* SummaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF34E0E2BA87ED0006A50A6 /* SummaryDetailView.swift */; };
+		2AF34E112BA88302006A50A6 /* GraphDisplayModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF34E102BA88302006A50A6 /* GraphDisplayModule.swift */; };
+		2AF34E132BA883CD006A50A6 /* GraphInitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF34E122BA883CD006A50A6 /* GraphInitView.swift */; };
+		2AF34E152BA8868A006A50A6 /* MapDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF34E142BA8868A006A50A6 /* MapDetailView.swift */; };
 		2AF70F802BA8555600EE3443 /* GraphDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF70F7F2BA8555600EE3443 /* GraphDetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,7 +97,6 @@
 		2AAF3AEA2BA4F59E009F494C /* Notificaitons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notificaitons.swift; sourceTree = "<group>"; };
 		2AAF3AEC2BA5A8FB009F494C /* PreviewSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSampleData.swift; sourceTree = "<group>"; };
 		2AAF3AEE2BA5ABA5009F494C /* LocusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocusTests.swift; sourceTree = "<group>"; };
-		2AAF3AF02BA5B509009F494C /* popgraphs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = popgraphs.json; path = "Population Graphs/Assets.xcassets/popgraphs.json"; sourceTree = SOURCE_ROOT; };
 		2AAF3AF22BA5B5BA009F494C /* JSONLociTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLociTests.swift; sourceTree = "<group>"; };
 		2AAF3AF42BA5BEDD009F494C /* NodeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeListView.swift; sourceTree = "<group>"; };
 		2AAF3AF62BA5BF68009F494C /* NodesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesDetailView.swift; sourceTree = "<group>"; };
@@ -105,6 +109,11 @@
 		2AAF3B052BA71C83009F494C /* LocalesMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalesMap.swift; sourceTree = "<group>"; };
 		2AAF3B082BA71D9A009F494C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		2AAF3B0A2BA7209A009F494C /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		2AF34E0C2BA87A11006A50A6 /* GraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTests.swift; sourceTree = "<group>"; };
+		2AF34E0E2BA87ED0006A50A6 /* SummaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryDetailView.swift; sourceTree = "<group>"; };
+		2AF34E102BA88302006A50A6 /* GraphDisplayModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphDisplayModule.swift; sourceTree = "<group>"; };
+		2AF34E122BA883CD006A50A6 /* GraphInitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphInitView.swift; sourceTree = "<group>"; };
+		2AF34E142BA8868A006A50A6 /* MapDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailView.swift; sourceTree = "<group>"; };
 		2AF70F7F2BA8555600EE3443 /* GraphDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AF34E0B2BA878D8006A50A6 /* DLMatrix in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +201,7 @@
 			children = (
 				2AAF3AA92BA4D9A6009F494C /* Population_GraphsTests.swift */,
 				2AAF3AEE2BA5ABA5009F494C /* LocusTests.swift */,
+				2AF34E0C2BA87A11006A50A6 /* GraphTests.swift */,
 				2AAF3AF22BA5B5BA009F494C /* JSONLociTests.swift */,
 				2AAF3AFD2BA5C42B009F494C /* JSONEdgeSetTests.swift */,
 			);
@@ -249,7 +260,6 @@
 		2AAF3AD62BA4E690009F494C /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				2AAF3AF02BA5B509009F494C /* popgraphs.json */,
 				2AAF3AD72BA4E6A3009F494C /* Database.swift */,
 				2AAF3AEC2BA5A8FB009F494C /* PreviewSampleData.swift */,
 			);
@@ -271,6 +281,7 @@
 			children = (
 				2AAF3AE12BA4ED8F009F494C /* MapsListView.swift */,
 				2AAF3B052BA71C83009F494C /* LocalesMap.swift */,
+				2AF34E142BA8868A006A50A6 /* MapDetailView.swift */,
 			);
 			path = Maps;
 			sourceTree = "<group>";
@@ -279,8 +290,10 @@
 			isa = PBXGroup;
 			children = (
 				2AAF3B0A2BA7209A009F494C /* Graph.swift */,
+				2AF34E122BA883CD006A50A6 /* GraphInitView.swift */,
 				2AAF3AE42BA4EDAC009F494C /* GraphsListView.swift */,
 				2AF70F7F2BA8555600EE3443 /* GraphDetailView.swift */,
+				2AF34E102BA88302006A50A6 /* GraphDisplayModule.swift */,
 			);
 			path = Graphs;
 			sourceTree = "<group>";
@@ -289,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				2AAF3AE72BA4EDC8009F494C /* SummariesListView.swift */,
+				2AF34E0E2BA87ED0006A50A6 /* SummaryDetailView.swift */,
 			);
 			path = Summaries;
 			sourceTree = "<group>";
@@ -333,6 +347,9 @@
 			dependencies = (
 			);
 			name = "Population Graphs";
+			packageProductDependencies = (
+				2AF34E0A2BA878D8006A50A6 /* DLMatrix */,
+			);
 			productName = "Population Graphs";
 			productReference = 2AAF3A912BA4D9A4009F494C /* Population Graphs.app */;
 			productType = "com.apple.product-type.application";
@@ -405,6 +422,9 @@
 				Base,
 			);
 			mainGroup = 2AAF3A882BA4D9A4009F494C;
+			packageReferences = (
+				2AF34E092BA878D8006A50A6 /* XCRemoteSwiftPackageReference "DLMatrix" */,
+			);
 			productRefGroup = 2AAF3A922BA4D9A4009F494C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -422,7 +442,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AAF3AA02BA4D9A5009F494C /* Preview Assets.xcassets in Resources */,
-				2AAF3AF12BA5B509009F494C /* popgraphs.json in Resources */,
 				2AAF3A9B2BA4D9A5009F494C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,10 +472,12 @@
 				2AAF3AC72BA4DC0F009F494C /* LocusDetailView.swift in Sources */,
 				2AAF3ACA2BA4DE96009F494C /* LocusListView.swift in Sources */,
 				2AF70F802BA8555600EE3443 /* GraphDetailView.swift in Sources */,
+				2AF34E112BA88302006A50A6 /* GraphDisplayModule.swift in Sources */,
 				2AAF3AE52BA4EDAC009F494C /* GraphsListView.swift in Sources */,
 				2AAF3ACD2BA4DEF7009F494C /* SidebarCategory.swift in Sources */,
 				2AAF3B0B2BA7209A009F494C /* Graph.swift in Sources */,
 				2AAF3B092BA71D9A009F494C /* Location.swift in Sources */,
+				2AF34E0F2BA87ED0006A50A6 /* SummaryDetailView.swift in Sources */,
 				2AAF3ADF2BA4ECBA009F494C /* EmptyView.swift in Sources */,
 				2AAF3AED2BA5A8FB009F494C /* PreviewSampleData.swift in Sources */,
 				2AAF3AC52BA4DB8F009F494C /* Locus.swift in Sources */,
@@ -469,8 +490,10 @@
 				2AAF3ADB2BA4EC45009F494C /* ThreePaneMainWindow.swift in Sources */,
 				2AAF3AF52BA5BEDD009F494C /* NodeListView.swift in Sources */,
 				2AAF3A972BA4D9A4009F494C /* ContentView.swift in Sources */,
+				2AF34E132BA883CD006A50A6 /* GraphInitView.swift in Sources */,
 				2AAF3AD82BA4E6A3009F494C /* Database.swift in Sources */,
 				2AAF3A952BA4D9A4009F494C /* Population_GraphsApp.swift in Sources */,
+				2AF34E152BA8868A006A50A6 /* MapDetailView.swift in Sources */,
 				2AAF3AE22BA4ED8F009F494C /* MapsListView.swift in Sources */,
 				2AAF3B002BA5C593009F494C /* JSONEdgeSet.swift in Sources */,
 				2AAF3AFA2BA5C11A009F494C /* Edge.swift in Sources */,
@@ -485,6 +508,7 @@
 			files = (
 				2AAF3AEF2BA5ABA5009F494C /* LocusTests.swift in Sources */,
 				2AAF3AF32BA5B5BA009F494C /* JSONLociTests.swift in Sources */,
+				2AF34E0D2BA87A11006A50A6 /* GraphTests.swift in Sources */,
 				2AAF3AAA2BA4D9A6009F494C /* Population_GraphsTests.swift in Sources */,
 				2AAF3AFE2BA5C42B009F494C /* JSONEdgeSetTests.swift in Sources */,
 			);
@@ -841,6 +865,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2AF34E092BA878D8006A50A6 /* XCRemoteSwiftPackageReference "DLMatrix" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dyerlab/DLMatrix";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2AF34E0A2BA878D8006A50A6 /* DLMatrix */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AF34E092BA878D8006A50A6 /* XCRemoteSwiftPackageReference "DLMatrix" */;
+			productName = DLMatrix;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2AAF3A892BA4D9A4009F494C /* Project object */;
 }

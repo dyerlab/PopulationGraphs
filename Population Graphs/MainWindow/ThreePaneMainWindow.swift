@@ -30,11 +30,11 @@ struct ThreePaneMainWindow: View {
             case .Loci:
                 LocusListView()
             case .Maps:
-                MapsListView()
+                GraphsListView(destination: .Maps)
             case .Graphs:
-                GraphsListView()
+                GraphsListView(destination: .Visualize2D)
             case .Summaries:
-                SummariesListView()
+                GraphsListView(destination: .Summary)
             case nil:
                 EmptyView()
             }
