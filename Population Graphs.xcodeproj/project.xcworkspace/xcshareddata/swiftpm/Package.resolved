@@ -1,5 +1,5 @@
 {
-  "originHash" : "6eb7fb511bbcc9fb4f67e1f4305c34691819ff33a1668862534f73ff632ef00c",
+  "originHash" : "04ff457460c49cf3e47ebc434d0be8ef402ac26e06dde2dbb9e030e7d430c39f",
   "pins" : [
     {
       "identity" : "dlmatrix",
@@ -17,6 +17,15 @@
       "state" : {
         "revision" : "3a64efeed27b266f93390008389372ccd7516232",
         "version" : "0.7.1"
+      }
+    },
+    {
+      "identity" : "presentationzen",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dyerlab/PresentationZen",
+      "state" : {
+        "revision" : "fb7ca6c822d7ef6838328950c62f8ba0990732ee",
+        "version" : "1.0.1"
       }
     }
   ],

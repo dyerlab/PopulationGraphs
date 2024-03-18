@@ -52,6 +52,8 @@
 		2AF34E1A2BA88F16006A50A6 /* Grape in Frameworks */ = {isa = PBXBuildFile; productRef = 2AF34E192BA88F16006A50A6 /* Grape */; };
 		2AF34E1C2BA8951F006A50A6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF34E1B2BA8951F006A50A6 /* Color.swift */; };
 		2AF70F802BA8555600EE3443 /* GraphDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF70F7F2BA8555600EE3443 /* GraphDetailView.swift */; };
+		2AFCAA432BA8D5B2006881D3 /* PresentationZen in Frameworks */ = {isa = PBXBuildFile; productRef = 2AFCAA422BA8D5B2006881D3 /* PresentationZen */; };
+		2AFCAA472BA8D690006881D3 /* LocusDataPlots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFCAA462BA8D690006881D3 /* LocusDataPlots.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,7 @@
 		2AF34E142BA8868A006A50A6 /* MapDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailView.swift; sourceTree = "<group>"; };
 		2AF34E1B2BA8951F006A50A6 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2AF70F7F2BA8555600EE3443 /* GraphDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphDetailView.swift; sourceTree = "<group>"; };
+		2AFCAA462BA8D690006881D3 /* LocusDataPlots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocusDataPlots.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AFCAA432BA8D5B2006881D3 /* PresentationZen in Frameworks */,
 				2AF34E1A2BA88F16006A50A6 /* Grape in Frameworks */,
 				2AF34E0B2BA878D8006A50A6 /* DLMatrix in Frameworks */,
 				2AF34E182BA88F16006A50A6 /* ForceSimulation in Frameworks */,
@@ -179,6 +183,7 @@
 				2AAF3AE92BA4F58E009F494C /* Extensions */,
 				2AAF3AD12BA4E061009F494C /* JSON */,
 				2AAF3AE32BA4ED9D009F494C /* Graphs */,
+				2AFCAA402BA8D551006881D3 /* GraphView */,
 				2AAF3ACB2BA4DE9D009F494C /* Locus */,
 				2AAF3AE02BA4ED82009F494C /* Maps */,
 				2AAF3AD92BA4EC27009F494C /* MainWindow */,
@@ -298,7 +303,6 @@
 				2AAF3B0A2BA7209A009F494C /* Graph.swift */,
 				2AF34E122BA883CD006A50A6 /* GraphInitView.swift */,
 				2AAF3AE42BA4EDAC009F494C /* GraphsListView.swift */,
-				2AF70F7F2BA8555600EE3443 /* GraphDetailView.swift */,
 				2AF34E102BA88302006A50A6 /* GraphDisplayModule.swift */,
 			);
 			path = Graphs;
@@ -338,6 +342,15 @@
 			path = Spatial;
 			sourceTree = "<group>";
 		};
+		2AFCAA402BA8D551006881D3 /* GraphView */ = {
+			isa = PBXGroup;
+			children = (
+				2AF70F7F2BA8555600EE3443 /* GraphDetailView.swift */,
+				2AFCAA462BA8D690006881D3 /* LocusDataPlots.swift */,
+			);
+			path = GraphView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -358,6 +371,7 @@
 				2AF34E0A2BA878D8006A50A6 /* DLMatrix */,
 				2AF34E172BA88F16006A50A6 /* ForceSimulation */,
 				2AF34E192BA88F16006A50A6 /* Grape */,
+				2AFCAA422BA8D5B2006881D3 /* PresentationZen */,
 			);
 			productName = "Population Graphs";
 			productReference = 2AAF3A912BA4D9A4009F494C /* Population Graphs.app */;
@@ -434,6 +448,7 @@
 			packageReferences = (
 				2AF34E092BA878D8006A50A6 /* XCRemoteSwiftPackageReference "DLMatrix" */,
 				2AF34E162BA88F16006A50A6 /* XCRemoteSwiftPackageReference "Grape" */,
+				2AFCAA412BA8D5B2006881D3 /* XCRemoteSwiftPackageReference "PresentationZen" */,
 			);
 			productRefGroup = 2AAF3A922BA4D9A4009F494C /* Products */;
 			projectDirPath = "";
@@ -496,6 +511,7 @@
 				2AAF3B042BA5C5D3009F494C /* JSONLoci.swift in Sources */,
 				2AAF3AF72BA5BF68009F494C /* NodesDetailView.swift in Sources */,
 				2AAF3AEB2BA4F59E009F494C /* Notificaitons.swift in Sources */,
+				2AFCAA472BA8D690006881D3 /* LocusDataPlots.swift in Sources */,
 				2AAF3ADD2BA4EC81009F494C /* HomeView.swift in Sources */,
 				2AF34E1C2BA8951F006A50A6 /* Color.swift in Sources */,
 				2AAF3ADB2BA4EC45009F494C /* ThreePaneMainWindow.swift in Sources */,
@@ -693,7 +709,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dyerlab.Population-Graphs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -734,7 +750,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dyerlab.Population-Graphs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -894,6 +910,14 @@
 				minimumVersion = 0.7.1;
 			};
 		};
+		2AFCAA412BA8D5B2006881D3 /* XCRemoteSwiftPackageReference "PresentationZen" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dyerlab/PresentationZen";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -911,6 +935,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2AF34E162BA88F16006A50A6 /* XCRemoteSwiftPackageReference "Grape" */;
 			productName = Grape;
+		};
+		2AFCAA422BA8D5B2006881D3 /* PresentationZen */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AFCAA412BA8D5B2006881D3 /* XCRemoteSwiftPackageReference "PresentationZen" */;
+			productName = PresentationZen;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
