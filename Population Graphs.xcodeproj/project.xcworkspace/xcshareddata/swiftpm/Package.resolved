@@ -1,5 +1,5 @@
 {
-  "originHash" : "d6617b1454aec1baa990f9f8b8b4002eaead9fed9f73c78934cf1f434842d4d9",
+  "originHash" : "6eb7fb511bbcc9fb4f67e1f4305c34691819ff33a1668862534f73ff632ef00c",
   "pins" : [
     {
       "identity" : "dlmatrix",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "56b2ba994bd0e42b0823e52f2923ee1d3a7c5c1b",
         "version" : "1.1.0"
+      }
+    },
+    {
+      "identity" : "grape",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/li3zhen1/Grape",
+      "state" : {
+        "revision" : "3a64efeed27b266f93390008389372ccd7516232",
+        "version" : "0.7.1"
       }
     }
   ],

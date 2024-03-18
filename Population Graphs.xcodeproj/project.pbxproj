@@ -48,6 +48,9 @@
 		2AF34E112BA88302006A50A6 /* GraphDisplayModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF34E102BA88302006A50A6 /* GraphDisplayModule.swift */; };
 		2AF34E132BA883CD006A50A6 /* GraphInitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF34E122BA883CD006A50A6 /* GraphInitView.swift */; };
 		2AF34E152BA8868A006A50A6 /* MapDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF34E142BA8868A006A50A6 /* MapDetailView.swift */; };
+		2AF34E182BA88F16006A50A6 /* ForceSimulation in Frameworks */ = {isa = PBXBuildFile; productRef = 2AF34E172BA88F16006A50A6 /* ForceSimulation */; };
+		2AF34E1A2BA88F16006A50A6 /* Grape in Frameworks */ = {isa = PBXBuildFile; productRef = 2AF34E192BA88F16006A50A6 /* Grape */; };
+		2AF34E1C2BA8951F006A50A6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF34E1B2BA8951F006A50A6 /* Color.swift */; };
 		2AF70F802BA8555600EE3443 /* GraphDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF70F7F2BA8555600EE3443 /* GraphDetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +117,7 @@
 		2AF34E102BA88302006A50A6 /* GraphDisplayModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphDisplayModule.swift; sourceTree = "<group>"; };
 		2AF34E122BA883CD006A50A6 /* GraphInitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphInitView.swift; sourceTree = "<group>"; };
 		2AF34E142BA8868A006A50A6 /* MapDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailView.swift; sourceTree = "<group>"; };
+		2AF34E1B2BA8951F006A50A6 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2AF70F7F2BA8555600EE3443 /* GraphDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,7 +126,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AF34E1A2BA88F16006A50A6 /* Grape in Frameworks */,
 				2AF34E0B2BA878D8006A50A6 /* DLMatrix in Frameworks */,
+				2AF34E182BA88F16006A50A6 /* ForceSimulation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				2AAF3AEA2BA4F59E009F494C /* Notificaitons.swift */,
+				2AF34E1B2BA8951F006A50A6 /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -349,6 +356,8 @@
 			name = "Population Graphs";
 			packageProductDependencies = (
 				2AF34E0A2BA878D8006A50A6 /* DLMatrix */,
+				2AF34E172BA88F16006A50A6 /* ForceSimulation */,
+				2AF34E192BA88F16006A50A6 /* Grape */,
 			);
 			productName = "Population Graphs";
 			productReference = 2AAF3A912BA4D9A4009F494C /* Population Graphs.app */;
@@ -424,6 +433,7 @@
 			mainGroup = 2AAF3A882BA4D9A4009F494C;
 			packageReferences = (
 				2AF34E092BA878D8006A50A6 /* XCRemoteSwiftPackageReference "DLMatrix" */,
+				2AF34E162BA88F16006A50A6 /* XCRemoteSwiftPackageReference "Grape" */,
 			);
 			productRefGroup = 2AAF3A922BA4D9A4009F494C /* Products */;
 			projectDirPath = "";
@@ -487,6 +497,7 @@
 				2AAF3AF72BA5BF68009F494C /* NodesDetailView.swift in Sources */,
 				2AAF3AEB2BA4F59E009F494C /* Notificaitons.swift in Sources */,
 				2AAF3ADD2BA4EC81009F494C /* HomeView.swift in Sources */,
+				2AF34E1C2BA8951F006A50A6 /* Color.swift in Sources */,
 				2AAF3ADB2BA4EC45009F494C /* ThreePaneMainWindow.swift in Sources */,
 				2AAF3AF52BA5BEDD009F494C /* NodeListView.swift in Sources */,
 				2AAF3A972BA4D9A4009F494C /* ContentView.swift in Sources */,
@@ -875,6 +886,14 @@
 				minimumVersion = 1.1.0;
 			};
 		};
+		2AF34E162BA88F16006A50A6 /* XCRemoteSwiftPackageReference "Grape" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/li3zhen1/Grape";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -882,6 +901,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2AF34E092BA878D8006A50A6 /* XCRemoteSwiftPackageReference "DLMatrix" */;
 			productName = DLMatrix;
+		};
+		2AF34E172BA88F16006A50A6 /* ForceSimulation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AF34E162BA88F16006A50A6 /* XCRemoteSwiftPackageReference "Grape" */;
+			productName = ForceSimulation;
+		};
+		2AF34E192BA88F16006A50A6 /* Grape */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AF34E162BA88F16006A50A6 /* XCRemoteSwiftPackageReference "Grape" */;
+			productName = Grape;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

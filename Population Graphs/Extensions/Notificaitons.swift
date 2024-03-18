@@ -12,5 +12,7 @@ extension Notification.Name {
     /// Notification for importing stuff
     static let importData = Notification.Name("importFromJSON")
     
+    /// Toggle labels on graph
+    static let toggleLabels = Notification.Name("toggleLabels")
     
 }
