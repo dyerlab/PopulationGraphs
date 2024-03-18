@@ -6,24 +6,33 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ThreePaneMainWindow: View {
+    @Query var nodes: [Node]
+    @Environment(\.modelContext) var modelContext
     @State private var selected: SidebarCategory?
     
     var body: some View {
         
         NavigationSplitView(sidebar: {
-            List( SidebarCategory.allCases, selection: $selected) { item in
-            
-                HStack {
-                    Image(systemName: item.icon)
-                        .symbolRenderingMode( .palette )
-                        .foregroundStyle( .blue, .secondary )
-                    Text("\(item.name)")
+            VStack {
+                List( SidebarCategory.allCases, selection: $selected) { item in
+                    HStack {
+                        Image(systemName: item.icon)
+                            .symbolRenderingMode( .palette )
+                            .foregroundStyle( .blue, .secondary )
+                        Text("\(item.name)")
+                    }
                 }
-                
+                .listStyle( SidebarListStyle() )
+                Spacer()
+                Text("ver. 1.0.3")
+                    .font(.footnote)
+                    .padding(.bottom, 4)
+                    .foregroundStyle(.tertiary)
+
             }
-            .listStyle( SidebarListStyle() )
         }, content: {
             
             switch selected {
@@ -38,7 +47,6 @@ struct ThreePaneMainWindow: View {
             case nil:
                 EmptyView()
             }
-            
         }, detail: {
             HomeView()
         })
@@ -48,4 +56,5 @@ struct ThreePaneMainWindow: View {
 
 #Preview {
     ThreePaneMainWindow()
+        .modelContainer( previewContainer )
 }

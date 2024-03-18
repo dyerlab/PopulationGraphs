@@ -62,9 +62,7 @@ struct ContentView: View {
         } catch {
             print("Failed ot load in rawContent: \(error.localizedDescription)")
         }
-        
     }
-    
 }
 
 #Preview {

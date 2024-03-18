@@ -9,12 +9,19 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        HStack{
+        HStack(alignment:.bottom) {
             Spacer()
-            VStack {
+            VStack(alignment: .trailing) {
                 Spacer()
                 Text("Population Graphs")
+                    .font(.largeTitle)
+                Text("The graph-theoretic shape of genetic structure")
+                    .foregroundStyle(.secondary)
+                    .font(.title3)
+                Text("https://dyerlab.org")
+                    .font(.subheadline)
             }
+            .padding()
         }
     }
 }
