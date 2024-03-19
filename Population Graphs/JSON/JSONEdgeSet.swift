@@ -14,13 +14,17 @@ struct JSONEdgeSet: Decodable {
     let targets: [String]
     let weights: [Double]
     let loci: [String]
+    
+    var centroid: Double = Double.nan
+    
     var count: Int {
         return sources.count
     }
     
     var locusSet: LocusSet {
         return LocusSet( id: self.id,
-                         loci: loci )
+                         loci: loci,
+                         centroid: centroid )
     }
     
     var edges: [Edge] {
@@ -33,7 +37,6 @@ struct JSONEdgeSet: Decodable {
         }
         return ret
     }
-    
     
     enum CodingKeys: CodingKey {
         case id
@@ -51,6 +54,19 @@ struct JSONEdgeSet: Decodable {
         self.weights = try container.decode([Double].self, forKey: .weights)
         self.loci = try container.decode([String].self, forKey: .loci)
     }
+    
+}
+
+
+
+
+
+
+
+
+
+
+extension JSONEdgeSet {
     
     static var DefaultEdgeSets: [JSONEdgeSet] {
         let loader = JSONLoader.defaultJSONLoader

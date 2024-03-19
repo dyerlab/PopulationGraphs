@@ -54,6 +54,16 @@ struct JSONLoci: Decodable {
         self.Ht = try container.decode([Double].self, forKey: .Ht)
     }
 
+    func centroidForLoci(locusNames: [String]) -> UInt64 {
+        var ret: [UInt64] = [UInt64]()
+        for locus in locusNames {
+            if let idx = self.Name.firstIndex(where: {$0 == locus} ) {
+                ret.append( Location[idx] )
+            }
+        }
+        return ret.centroid
+    }
+    
     static var DefaultLoci: JSONLoci {
         let loader = JSONLoader.defaultJSONLoader
         return loader.loci

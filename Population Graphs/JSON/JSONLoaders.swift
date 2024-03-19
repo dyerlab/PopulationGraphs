@@ -16,7 +16,7 @@ struct JSONLoader: Decodable {
 
     let nodes: JSONNodes
     let loci: JSONLoci
-    let edgesets: [String:JSONEdgeSet]
+    var edgesets: [String:JSONEdgeSet]
     
     enum CodingKeys: CodingKey {
         case nodes
@@ -35,7 +35,22 @@ struct JSONLoader: Decodable {
     }
     
     
-    
+    private func updateEdgeSetCentroids() {
+        var locations = [String:UInt64]()
+        for (key, edgeSet) in self.edgesets {
+            locations[key] = loci.centroidForLoci( locusNames: edgeSet.loci )
+        }
+        let range = locations.values
+        if let mn = range.min(),
+           let mx = range.max() {
+            
+            for key in edgesets.keys {
+                let val = locations[key, default: 0]
+                var edgeSet = edgesets[key]!
+                edgeSet.centroid = Double(val - mn) / Double( mx - mn )
+            }
+        }
+    }
     
 }
 

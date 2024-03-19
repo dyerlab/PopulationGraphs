@@ -12,11 +12,14 @@ import Foundation
 final class LocusSet {
     @Attribute(.unique) var id: String
     var loci: [String]
+    var centroid: Double
     
-    init(id: String, loci: [String]) {
+    init(id: String, loci: [String], centroid: Double) {
         self.id = id
         self.loci = loci
+        self.centroid = centroid
     }
+    
     
 }
 
