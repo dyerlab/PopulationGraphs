@@ -9,8 +9,8 @@ import SwiftUI
 import SwiftData
 
 struct GraphsListView: View {
-    @Query( sort: \LocusSet.id ) var edgeSets: [LocusSet]
     @Environment(\.modelContext) var modelContext
+    @Query( sort: \LocusSet.id ) var edgeSets: [LocusSet]
     var destination: GraphDisplayModule
     
     private var setIDs: [String] {

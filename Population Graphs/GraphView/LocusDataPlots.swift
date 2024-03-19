@@ -11,6 +11,7 @@ import SwiftData
 import PresentationZen
 
 struct LocusDataPlots: View {
+    @Environment(\.modelContext) var modelContext
     @Query var loci: [Locus]
     
     @State private var showingP = false

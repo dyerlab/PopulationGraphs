@@ -25,7 +25,9 @@ struct GraphDetailView: View {
             VStack{
                 Spacer()
                 LocusDataPlots(locusSet: graph.locusSet)
+                //ContigView( locusSet: graph.locusSet )
             }
+            .padding()
             
             VStack {
                 ForceDirectedGraph( states: graphState) {
