@@ -15,7 +15,7 @@ struct JSONEdgeSet: Decodable {
     let weights: [Double]
     let loci: [String]
     
-    var centroid: Double = Double.nan
+    var centroid: Double
     
     var count: Int {
         return sources.count
@@ -23,17 +23,17 @@ struct JSONEdgeSet: Decodable {
     
     var locusSet: LocusSet {
         return LocusSet( id: self.id,
-                         loci: loci,
-                         centroid: centroid )
+                         loci: self.loci,
+                         centroid: self.centroid )
     }
     
     var edges: [Edge] {
         var ret = [Edge]()
         for i in 0 ..< count {
             ret.append( Edge( edgeSet: self.id,
-                              source: sources[i],
-                              target: targets[i],
-                              weight: weights[i] ) )
+                              source:  self.sources[i],
+                              target:  self.targets[i],
+                              weight:  self.weights[i] ) )
         }
         return ret
     }
@@ -53,6 +53,7 @@ struct JSONEdgeSet: Decodable {
         self.targets = try container.decode([String].self, forKey: .targets)
         self.weights = try container.decode([Double].self, forKey: .weights)
         self.loci = try container.decode([String].self, forKey: .loci)
+        self.centroid = Double.nan
     }
     
 }

@@ -10,12 +10,17 @@ import SwiftUI
 import SwiftData
 
 struct GraphDetailView: View {
+
+    @State var nodeSizeFactor: Double = 1.0
+    
     @State private var showingLabels = true
     @State private var graphState = ForceDirectedGraphState(
         initialIsRunning: true,
         initialModelTransform: .identity.scale(by: 1.2)
     )
     @State private var modelTransform: ViewportTransform = .identity.scale(by: 2.0)
+    
+    
     
     var graph: Graph
     
@@ -25,17 +30,17 @@ struct GraphDetailView: View {
             VStack{
                 Spacer()
                 LocusDataPlots(locusSet: graph.locusSet)
-                //ContigView( locusSet: graph.locusSet )
+                ContigView( locusSet: graph.locusSet )
             }
             .padding()
             
             VStack {
-                ForceDirectedGraph( states: graphState) {
+                ForceDirectedGraph( states: graphState ) {
                     Series( graph.nodes) { node in
                         if showingLabels {
                             NodeMark( id: node.id )
                                 .symbol(.circle)
-                                .symbolSize(radius: CGFloat(node.size))  // TODO: Node size
+                                .symbolSize(radius: CGFloat(node.size * nodeSizeFactor))  // TODO: Node size
                                 .stroke()
                                 .foregroundStyle(
                                     Color.groupColors[ 0 ]
@@ -82,7 +87,6 @@ struct GraphDetailView: View {
                     LinkForce(
                         originalLength: .varied({id, _ in
                             return graph.weightForConnection(source: id.source, target: id.target)
-                            
                         }),
                         stiffness: .weightedByDegree(k: { _, _ in 1.0})
                     )
@@ -101,7 +105,7 @@ struct GraphDetailView: View {
                     Image(systemName: "123.rectangle")
                 })
             })
-            /**
+            
             ToolbarItem(placement: .automatic, content: {
                 Button(action: {
                     print("other button")
@@ -109,7 +113,7 @@ struct GraphDetailView: View {
                     Image(systemName: "sidebar.trailing" )
                 })
             })
-             */
+            
         }
         
     }

@@ -25,6 +25,7 @@ let previewContainer: ModelContainer = {
             
             let json = JSONLoader.defaultJSONLoader
             
+            
             json.loci.loci.forEach { container.mainContext.insert( $0 ) }
             json.nodes.nodes.forEach { container.mainContext.insert( $0 ) }
 

@@ -8,54 +8,22 @@
 import SwiftUI
 import SwiftData
 
-/*
+
 struct ContigView: View {
     @Environment(\.modelContext) var modelContext
     @Query var locusSets: [LocusSet]
     
-    var locations: [Double]
-    var selected: Double
-    
-    
-    init( locusSet: LocusSet ) {
-        self.locations = [Double]()
-        self.selected = Double.nan
-        
-        let fd = FetchDescriptor<LocusSet>()
-        var locations64 = [UInt64]()
-        var selected64: UInt64 = 0
-        
-        do {
-            let allSets = try modelContext.fetch( fd )
-            for locSet in allSets {
-                let loci = locSet.loci
-                let locusPredicate = #Predicate<Locus> { loci.contains( $0.id ) }
-                let lociFD = FetchDescriptor<Locus>( predicate: locusPredicate )
-                let allLoci = try modelContext.fetch( lociFD )
-                if allLoci.count > 0 {
-                    let centroid = allLoci.centroid
-                    locations64.append( centroid )
-                    if locSet.id == locusSet.id {
-                        selected64 = centroid
-                    }
-                }
-            }
-            
-            if selected64 != 0 {
-                locations64.append( selected64 )
-            }
-            self.locations = locations64.toDouble
-            if selected64 != 0 {
-                self.selected = self.locations.popLast()!
-            }
-            
-            
-        } catch {
-            print("Error getting allSets")
-        
-        }
-
+    var locations: [Double] {
+        let vals = locusSets.compactMap( { $0.centroid } )
+        print("vals: \(vals)")
+        return vals
     }
+    var selected: Double {
+        print("selected: \(locusSet.centroid)")
+        return locusSet.centroid
+    }
+    
+    var locusSet: LocusSet
         
     var body: some View {
         GeometryReader { geometry in
@@ -76,12 +44,12 @@ struct ContigView: View {
                 
                 Rectangle()
                     .fill( .gray.gradient )
-                    .frame(width: 4, height: 26 )
+                    .frame(width: 2, height: 26 )
                     .position( x: selected * geometry.size.width, y: 15.0 )
 
                 Path { path in
                     path.move(to: CGPoint(x: 0.0, y: 0.0))
-                    path.addLine(to: CGPoint( x: selected * geometry.size.width, y: 5.0))
+                    path.addLine(to: CGPoint( x: selected * geometry.size.width-1, y: 5.0))
                     path.addLine(to: CGPoint( x: geometry.size.width, y: 0.0) )
                     path.addLine(to: CGPoint(x: 0.0, y: 0.0))
                 }
@@ -97,4 +65,4 @@ struct ContigView: View {
     ContigView( locusSet: Graph.DefaultGraph.locusSet )
         .modelContainer( previewContainer )
 }
-*/
+

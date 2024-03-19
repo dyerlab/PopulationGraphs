@@ -32,24 +32,35 @@ struct JSONLoader: Decodable {
                                           forKey: .loci)
         self.edgesets = try container.decode( [String : JSONEdgeSet].self,
                                               forKey: .edgesets)
+        
+        updateEdgeSetCentroids()
     }
     
     
-    private func updateEdgeSetCentroids() {
+    private mutating func updateEdgeSetCentroids() {
         var locations = [String:UInt64]()
         for (key, edgeSet) in self.edgesets {
             locations[key] = loci.centroidForLoci( locusNames: edgeSet.loci )
         }
+        
         let range = locations.values
         if let mn = range.min(),
            let mx = range.max() {
             
+            let mn1 = Double(mn) * 0.95
+            let mx1 = Double(mx) * 1.05
+            
             for key in edgesets.keys {
                 let val = locations[key, default: 0]
                 var edgeSet = edgesets[key]!
-                edgeSet.centroid = Double(val - mn) / Double( mx - mn )
+                edgeSet.centroid = (Double(val) - mn1) / (mx1 - mn1 )
+                
+                edgesets[key] = edgeSet
             }
         }
+        
+        
+        
     }
     
 }
