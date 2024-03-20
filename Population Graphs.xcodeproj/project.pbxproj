@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A3EDB4B2BAB0C8D00F8DF4B /* GraphMetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3EDB4A2BAB0C8D00F8DF4B /* GraphMetadataView.swift */; };
 		2A65CF9A2BA9F46C00E700FE /* LayoutParameterEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A65CF992BA9F46C00E700FE /* LayoutParameterEditor.swift */; };
 		2AAF3A952BA4D9A4009F494C /* Population_GraphsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF3A942BA4D9A4009F494C /* Population_GraphsApp.swift */; };
 		2AAF3A972BA4D9A4009F494C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF3A962BA4D9A4009F494C /* ContentView.swift */; };
@@ -79,6 +80,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A3EDB4A2BAB0C8D00F8DF4B /* GraphMetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMetadataView.swift; sourceTree = "<group>"; };
 		2A65CF992BA9F46C00E700FE /* LayoutParameterEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutParameterEditor.swift; sourceTree = "<group>"; };
 		2AAF3A912BA4D9A4009F494C /* Population Graphs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Population Graphs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AAF3A942BA4D9A4009F494C /* Population_GraphsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Population_GraphsApp.swift; sourceTree = "<group>"; };
@@ -163,6 +165,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A3EDB492BAAFE1400F8DF4B /* GraphMetaData */ = {
+			isa = PBXGroup;
+			children = (
+				2AFF0AB82BAAC3A000F0783C /* GraphMetaData.swift */,
+				2A3EDB4A2BAB0C8D00F8DF4B /* GraphMetadataView.swift */,
+			);
+			path = GraphMetaData;
+			sourceTree = "<group>";
+		};
 		2AAF3A882BA4D9A4009F494C = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +204,7 @@
 				2AAF3AE92BA4F58E009F494C /* Extensions */,
 				2AAF3AD12BA4E061009F494C /* JSON */,
 				2AAF3AE32BA4ED9D009F494C /* Graphs */,
+				2A3EDB492BAAFE1400F8DF4B /* GraphMetaData */,
 				2AFCAA402BA8D551006881D3 /* GraphView */,
 				2AAF3ACB2BA4DE9D009F494C /* Locus */,
 				2AAF3AE02BA4ED82009F494C /* Maps */,
@@ -314,7 +326,6 @@
 				2AF34E122BA883CD006A50A6 /* GraphInitView.swift */,
 				2AAF3AE42BA4EDAC009F494C /* GraphsListView.swift */,
 				2AF34E102BA88302006A50A6 /* GraphDisplayModule.swift */,
-				2AFF0AB82BAAC3A000F0783C /* GraphMetaData.swift */,
 			);
 			path = Graphs;
 			sourceTree = "<group>";
@@ -515,6 +526,7 @@
 				2AF34E112BA88302006A50A6 /* GraphDisplayModule.swift in Sources */,
 				2AAF3AE52BA4EDAC009F494C /* GraphsListView.swift in Sources */,
 				2AAF3ACD2BA4DEF7009F494C /* SidebarCategory.swift in Sources */,
+				2A3EDB4B2BAB0C8D00F8DF4B /* GraphMetadataView.swift in Sources */,
 				2AAF3B0B2BA7209A009F494C /* Graph.swift in Sources */,
 				2AAF3B092BA71D9A009F494C /* Location.swift in Sources */,
 				2AFCAA4D2BA90921006881D3 /* Array+UInt64.swift in Sources */,

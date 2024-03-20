@@ -49,13 +49,41 @@ struct ContentView: View {
                     withAnimation {
                         loader.loci.loci.forEach { modelContext.insert( $0 ) }
                         loader.nodes.nodes.forEach { modelContext.insert( $0 ) }
-                        for (_, jsonES) in loader.edgesets {
-                            let es = jsonES.locusSet as LocusSet
-                            modelContext.insert( es )
-                            jsonES.edges.forEach { modelContext.insert( $0 ) }
+                        
+                        //
+                        // Wrap this in a Task and use AsyncSequence
+                        //
+                        /*
+                        Task {
+                            let theKeys = Array<String>(loader.edgesets.keys)
+                            for try await key in theKeys {
+                                
+                            }
+                            
                         }
+                         */
+                        Task {
+                            for (_, jsonES) in loader.edgesets {
+                                let es = jsonES.locusSet as LocusSet
+                                modelContext.insert( es )
+                                jsonES.edges.forEach { modelContext.insert( $0 ) }
+                                
+                                let graph = Graph(nodes: loader.nodes.nodes,
+                                                  edges: jsonES.edges,
+                                                  locusSet: es)
+                                let metaData = GraphMetaData(graph: graph)
+                                modelContext.insert( metaData )
+                                
+                            }
+
+                        }
+                        
+
+                        
+                        
                     }
                     
+                
                 }
                 url.stopAccessingSecurityScopedResource()
             }

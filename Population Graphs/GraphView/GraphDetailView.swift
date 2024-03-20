@@ -118,6 +118,7 @@ struct GraphDetailView: View {
         }
         .inspector(isPresented: $isSidebarOpened) {
             VStack {
+                GraphMetadataView(metaData: GraphMetaData(graph: self.graph))
                 LayoutParameterEditor( nodeSizeFactor: $nodeSizeFactor,
                                        manyBodyForce: $manyBodyForce,
                                        linkForceFactor: $linkForceFactor )
