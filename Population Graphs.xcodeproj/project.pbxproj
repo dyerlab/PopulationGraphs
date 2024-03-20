@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2A3EDB4B2BAB0C8D00F8DF4B /* GraphMetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3EDB4A2BAB0C8D00F8DF4B /* GraphMetadataView.swift */; };
 		2A65CF9A2BA9F46C00E700FE /* LayoutParameterEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A65CF992BA9F46C00E700FE /* LayoutParameterEditor.swift */; };
+		2A69C13E2BAB31CF00766135 /* GraphMetaDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A69C13D2BAB31CF00766135 /* GraphMetaDataType.swift */; };
 		2AAF3A952BA4D9A4009F494C /* Population_GraphsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF3A942BA4D9A4009F494C /* Population_GraphsApp.swift */; };
 		2AAF3A972BA4D9A4009F494C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF3A962BA4D9A4009F494C /* ContentView.swift */; };
 		2AAF3A9B2BA4D9A5009F494C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AAF3A9A2BA4D9A5009F494C /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 /* Begin PBXFileReference section */
 		2A3EDB4A2BAB0C8D00F8DF4B /* GraphMetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMetadataView.swift; sourceTree = "<group>"; };
 		2A65CF992BA9F46C00E700FE /* LayoutParameterEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutParameterEditor.swift; sourceTree = "<group>"; };
+		2A69C13D2BAB31CF00766135 /* GraphMetaDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMetaDataType.swift; sourceTree = "<group>"; };
 		2AAF3A912BA4D9A4009F494C /* Population Graphs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Population Graphs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AAF3A942BA4D9A4009F494C /* Population_GraphsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Population_GraphsApp.swift; sourceTree = "<group>"; };
 		2AAF3A962BA4D9A4009F494C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				2AFF0AB82BAAC3A000F0783C /* GraphMetaData.swift */,
+				2A69C13D2BAB31CF00766135 /* GraphMetaDataType.swift */,
 				2A3EDB4A2BAB0C8D00F8DF4B /* GraphMetadataView.swift */,
 			);
 			path = GraphMetaData;
@@ -538,6 +541,7 @@
 				2AAF3AFC2BA5C212009F494C /* LocusSet.swift in Sources */,
 				2AFCAA4B2BA9081F006881D3 /* Array+Locus.swift in Sources */,
 				2AAF3B042BA5C5D3009F494C /* JSONLoci.swift in Sources */,
+				2A69C13E2BAB31CF00766135 /* GraphMetaDataType.swift in Sources */,
 				2AFCAA492BA906BE006881D3 /* ContigView.swift in Sources */,
 				2AAF3AF72BA5BF68009F494C /* NodesDetailView.swift in Sources */,
 				2AFF0AB92BAAC3A000F0783C /* GraphMetaData.swift in Sources */,

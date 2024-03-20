@@ -10,18 +10,23 @@ import SwiftData
 
 struct GraphMetadataView: View {
     var metaData: GraphMetaData
+    var type: GraphMetaDataType
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("\(metaData.locusSet)")
-                .font(.title)
-                .padding(.bottom, 5)
-            
-            Text("  • Nodes: \(metaData.numNodes)")
-            Text("  • Edges: \(metaData.numEdges)")
-            Text("  • Saturation: \(String(format: "%.3f", metaData.saturation))")
-            Text("  • Diameter: \(String(format: "%.3f", metaData.diameter))")
-            
-            
+        
+        switch type {
+        case .Summary:
+            VStack(alignment: .leading) {
+                Text("\(metaData.locusSet)")
+                    .font(.title)
+                    .padding(.bottom, 5)
+                
+                Text("  • Nodes: \(metaData.numNodes)")
+                Text("  • Edges: \(metaData.numEdges)")
+                Text("  • Saturation: \(String(format: "%.3f", metaData.saturation))")
+                Text("  • Diameter: \(String(format: "%.3f", metaData.diameter))")
+            }
+        case .Nodes:
             Grid(alignment: .leading) {
                 GridRow {
                     Text("Node")
@@ -39,15 +44,20 @@ struct GraphMetadataView: View {
                     }
                 }
             }
-            .font(.callout)
-            .padding(.top, 5)
+        case .Edges:
+            VStack(alignment: .leading) {
+                Text("Edges")
+                    .font(.title)
+                    .padding(.bottom, 5)
+            }
+
         }
-        .padding()
+     
     }
 }
 
 #Preview {
-    GraphMetadataView( metaData: GraphMetaData(graph: Graph.DefaultGraph))
+    GraphMetadataView( metaData: GraphMetaData(graph: Graph.DefaultGraph),
+                       type: .Edges )
         .modelContainer( previewContainer )
-        .frame( minHeight: 800 )
 }

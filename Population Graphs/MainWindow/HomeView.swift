@@ -23,6 +23,7 @@ struct HomeView: View {
             }
             .padding()
         }
+        .frame(minWidth: 800, minHeight: 600)
     }
 }
 

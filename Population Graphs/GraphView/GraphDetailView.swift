@@ -117,12 +117,31 @@ struct GraphDetailView: View {
             })
         }
         .inspector(isPresented: $isSidebarOpened) {
-            VStack {
-                GraphMetadataView(metaData: GraphMetaData(graph: self.graph))
+            ScrollView(.vertical) {
                 LayoutParameterEditor( nodeSizeFactor: $nodeSizeFactor,
                                        manyBodyForce: $manyBodyForce,
                                        linkForceFactor: $linkForceFactor )
-                Spacer()
+                
+                TabView {
+                    let metadata = GraphMetaData(graph: self.graph )
+                    GraphMetadataView(metaData: metadata,
+                                      type: .Summary)
+                        .tabItem {
+                            Label("Summary", systemImage: "list.dash")
+                        }
+                    GraphMetadataView(metaData: metadata,
+                                      type: .Nodes)
+                        .tabItem {
+                            Label("Nodes", systemImage: "circle.grid.2x1")
+                        }
+                    GraphMetadataView(metaData: metadata,
+                                      type: .Edges)
+                        .tabItem {
+                            Label("Edges", systemImage: "arrow.left.and.right")
+                        }
+                    
+                }
+                .tabViewStyle( .automatic )
             }
         }
         
@@ -146,4 +165,5 @@ struct GraphDetailView: View {
 #Preview {
     GraphDetailView(graph: Graph.DefaultGraph )
         .modelContainer( previewContainer )
+        .frame(minWidth: 800)
 }
