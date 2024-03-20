@@ -15,11 +15,9 @@ struct ContigView: View {
     
     var locations: [Double] {
         let vals = locusSets.compactMap( { $0.centroid } )
-        print("vals: \(vals)")
         return vals
     }
     var selected: Double {
-        print("selected: \(locusSet.centroid)")
         return locusSet.centroid
     }
     

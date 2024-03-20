@@ -10,8 +10,11 @@ import SwiftUI
 import SwiftData
 
 struct GraphDetailView: View {
-
+    @State private var isSidebarOpened = false
+    
     @State var nodeSizeFactor: Double = 1.0
+    @State var manyBodyForce: Double = -100.0
+    @State var linkForceFactor: Double = 1.0
     
     @State private var showingLabels = true
     @State private var graphState = ForceDirectedGraphState(
@@ -19,8 +22,6 @@ struct GraphDetailView: View {
         initialModelTransform: .identity.scale(by: 1.2)
     )
     @State private var modelTransform: ViewportTransform = .identity.scale(by: 2.0)
-    
-    
     
     var graph: Graph
     
@@ -82,11 +83,11 @@ struct GraphDetailView: View {
                             .foregroundStyle(.red)
                     }
                 } force: {
-                    ManyBodyForce(strength: -100)
+                    ManyBodyForce(strength: manyBodyForce)
                     CenterForce()
                     LinkForce(
                         originalLength: .varied({id, _ in
-                            return graph.weightForConnection(source: id.source, target: id.target)
+                            return ( linkForceFactor * graph.weightForConnection(source: id.source, target: id.target) )
                         }),
                         stiffness: .weightedByDegree(k: { _, _ in 1.0})
                     )
@@ -108,12 +109,20 @@ struct GraphDetailView: View {
             
             ToolbarItem(placement: .automatic, content: {
                 Button(action: {
-                    print("other button")
+                    print("sidebar button pressed")
+                    isSidebarOpened.toggle()
                 }, label: {
                     Image(systemName: "sidebar.trailing" )
                 })
             })
-            
+        }
+        .inspector(isPresented: $isSidebarOpened) {
+            VStack {
+                LayoutParameterEditor( nodeSizeFactor: $nodeSizeFactor,
+                                       manyBodyForce: $manyBodyForce,
+                                       linkForceFactor: $linkForceFactor )
+                Spacer()
+            }
         }
         
     }

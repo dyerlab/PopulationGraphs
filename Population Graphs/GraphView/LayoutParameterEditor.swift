@@ -10,14 +10,21 @@ import SwiftUI
 struct LayoutParameterEditor: View {
     
     @Binding var nodeSizeFactor: Double
+    @Binding var manyBodyForce: Double
+    @Binding var linkForceFactor: Double
     
     var body: some View {
-        Form(content: {
-            Slider(value: $nodeSizeFactor, in: 0 ... 2)
-        })
+        VStack {
+            Text("Node Size Factor: \(nodeSizeFactor)")
+            Text("Many Body Force: \(manyBodyForce)")
+            Text("Link Force Factor: \(linkForceFactor)")
+        }
     }
 }
 
 #Preview {
-    LayoutParameterEditor(nodeSizeFactor: .constant(1.0))
+    LayoutParameterEditor( nodeSizeFactor: .constant( 1.0 ),
+                           manyBodyForce: .constant(-100),
+                           linkForceFactor: .constant( 1.0 )
+    )
 }

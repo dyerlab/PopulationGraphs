@@ -51,6 +51,7 @@ struct Population_GraphsVersionedSchema: VersionedSchema {
     static var models: [any PersistentModel.Type] = [ Locus.self,
                                                       Node.self,
                                                       LocusSet.self,
-                                                      Edge.self
+                                                      Edge.self,
+                                                      GraphMetaData.self
                                                     ]
 }

@@ -58,6 +58,7 @@
 		2AFCAA492BA906BE006881D3 /* ContigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFCAA482BA906BD006881D3 /* ContigView.swift */; };
 		2AFCAA4B2BA9081F006881D3 /* Array+Locus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFCAA4A2BA9081F006881D3 /* Array+Locus.swift */; };
 		2AFCAA4D2BA90921006881D3 /* Array+UInt64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFCAA4C2BA90921006881D3 /* Array+UInt64.swift */; };
+		2AFF0AB92BAAC3A000F0783C /* GraphMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF0AB82BAAC3A000F0783C /* GraphMetaData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 		2AFCAA482BA906BD006881D3 /* ContigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContigView.swift; sourceTree = "<group>"; };
 		2AFCAA4A2BA9081F006881D3 /* Array+Locus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Locus.swift"; sourceTree = "<group>"; };
 		2AFCAA4C2BA90921006881D3 /* Array+UInt64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+UInt64.swift"; sourceTree = "<group>"; };
+		2AFF0AB82BAAC3A000F0783C /* GraphMetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMetaData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +314,7 @@
 				2AF34E122BA883CD006A50A6 /* GraphInitView.swift */,
 				2AAF3AE42BA4EDAC009F494C /* GraphsListView.swift */,
 				2AF34E102BA88302006A50A6 /* GraphDisplayModule.swift */,
+				2AFF0AB82BAAC3A000F0783C /* GraphMetaData.swift */,
 			);
 			path = Graphs;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				2AAF3B042BA5C5D3009F494C /* JSONLoci.swift in Sources */,
 				2AFCAA492BA906BE006881D3 /* ContigView.swift in Sources */,
 				2AAF3AF72BA5BF68009F494C /* NodesDetailView.swift in Sources */,
+				2AFF0AB92BAAC3A000F0783C /* GraphMetaData.swift in Sources */,
 				2AAF3AEB2BA4F59E009F494C /* Notificaitons.swift in Sources */,
 				2AFCAA472BA8D690006881D3 /* LocusDataPlots.swift in Sources */,
 				2AAF3ADD2BA4EC81009F494C /* HomeView.swift in Sources */,

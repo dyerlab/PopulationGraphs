@@ -15,7 +15,8 @@ let previewContainer: ModelContainer = {
         let schema = Schema( [ Locus.self,
                                Node.self,
                                LocusSet.self,
-                               Edge.self
+                               Edge.self,
+                               GraphMetaData.self
                              ])
         
         let container = try ModelContainer(for: schema,

@@ -33,7 +33,11 @@ struct JSONLoader: Decodable {
         self.edgesets = try container.decode( [String : JSONEdgeSet].self,
                                               forKey: .edgesets)
         
+        // Things to do to connect
         updateEdgeSetCentroids()
+        
+        
+        
     }
     
     
