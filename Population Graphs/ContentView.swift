@@ -42,50 +42,46 @@ struct ContentView: View {
         do {
             if url.startAccessingSecurityScopedResource() {
                 let json = try String(contentsOf: url)
+                url.stopAccessingSecurityScopedResource()
+                
                 if !json.isEmpty {
-                    let loader = JSONLoader.loadFromJSON(rawJSON: json )
                     
-                    /// Import the loci
-                    withAnimation {
-                        loader.loci.loci.forEach { modelContext.insert( $0 ) }
-                        loader.nodes.nodes.forEach { modelContext.insert( $0 ) }
+                    //
+                    // Wrap this in a Task and use AsyncSequence
+                    //
+                    Task {
                         
-                        //
-                        // Wrap this in a Task and use AsyncSequence
-                        //
-                        /*
-                        Task {
-                            let theKeys = Array<String>(loader.edgesets.keys)
-                            for try await key in theKeys {
-                                
-                            }
-                            
-                        }
-                         */
-                        Task {
+                        print("starting raw load---------------------")
+                        let loader = JSONLoader.loadFromJSON(rawJSON: json )
+                        print("ending raw load-----------------------")
+                        
+                        
+                        /// Import the loci
+                        withAnimation {
+                            loader.loci.loci.forEach { modelContext.insert( $0 ) }
+                            print("Loaded \(loader.loci.loci.count) loci")
+                            loader.nodes.nodes.forEach { modelContext.insert( $0 ) }
+                            print("Added \(loader.nodes.nodes.count) nodes")
                             for (_, jsonES) in loader.edgesets {
                                 let es = jsonES.locusSet as LocusSet
+                                
                                 modelContext.insert( es )
                                 jsonES.edges.forEach { modelContext.insert( $0 ) }
                                 
+                                print(" - \(es.id) \(jsonES.edges.count) edges inserted")
+                                
+                                /*
                                 let graph = Graph(nodes: loader.nodes.nodes,
                                                   edges: jsonES.edges,
                                                   locusSet: es)
                                 let metaData = GraphMetaData(graph: graph)
                                 modelContext.insert( metaData )
-                                
+                                 */
                             }
-
                         }
-                        
-
-                        
-                        
                     }
                     
-                
                 }
-                url.stopAccessingSecurityScopedResource()
             }
         } catch {
             print("Failed ot load in rawContent: \(error.localizedDescription)")
