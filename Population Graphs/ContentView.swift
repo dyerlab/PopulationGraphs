@@ -70,13 +70,12 @@ struct ContentView: View {
                                 
                                 print(" - \(es.id) \(jsonES.edges.count) edges inserted")
                                 
-                                /*
+                                
                                 let graph = Graph(nodes: loader.nodes.nodes,
                                                   edges: jsonES.edges,
                                                   locusSet: es)
                                 let metaData = GraphMetaData(graph: graph)
                                 modelContext.insert( metaData )
-                                 */
                             }
                         }
                     }
