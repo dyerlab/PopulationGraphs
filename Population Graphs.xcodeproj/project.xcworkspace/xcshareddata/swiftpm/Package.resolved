@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/li3zhen1/Grape",
       "state" : {
-        "revision" : "3a64efeed27b266f93390008389372ccd7516232",
-        "version" : "0.7.1"
+        "revision" : "fdae2ebfabcc10fe5530946d9b5ff9fb8f76dd8f",
+        "version" : "0.7.3"
       }
     },
     {

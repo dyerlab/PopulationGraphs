@@ -58,6 +58,6 @@ struct GraphMetadataView: View {
 
 #Preview {
     GraphMetadataView( metaData: GraphMetaData(graph: Graph.DefaultGraph),
-                       type: .Edges )
+                       type: .Summary )
         .modelContainer( previewContainer )
 }
