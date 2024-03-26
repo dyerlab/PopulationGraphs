@@ -3,6 +3,7 @@
 rm(list=ls())
 library( d3r )
 library( igraph )
+library( stringr )
 library( gstudio )
 library( popgraph )
 library( jsonlite )
@@ -13,14 +14,15 @@ load("df_samples.rda")
 source("humanCoordinates.R")
 raw <- as.data.frame( df_samples )
 
-edgeSets <- list() 
-
 numLoci <- dim(df_snps)[1]
 baseCtr <- 1
 graphCtr <- 1
 windowSize <- 40 
 windowStep <- windowSize / 2 
 
+totalTopologies <- ceiling( numLoci / windowStep )
+totalTopologies <- 1000
+numDigits <- floor( log10(totalTopologies) ) + 1 
 groups <- raw$Population
 
 data.frame( Population = as.character( levels( groups ) ) ) |>
@@ -30,7 +32,16 @@ data.frame( Population = as.character( levels( groups ) ) ) |>
             by="Population") |>
   mutate(NodeSize = 0.0) -> df_coords 
 
-while( graphCtr < 11) { 
+
+# Make the output Directory to put stuff into
+outDir <- paste("popgraphs",totalTopologies,sep="_")
+if( !dir.exists(outDir) ) { 
+  dir.create(outDir)
+}
+
+
+
+while( graphCtr <= totalTopologies  ) { 
 # while( baseCtr < (numLoci - windowSize) ) { 
 
   cat(graphCtr, baseCtr, (baseCtr + windowSize - 1), "\n")
@@ -42,7 +53,7 @@ while( graphCtr < 11) {
   
   # Set up the edges
   edgeSet <- list( loci = loci2Use )
-  edgeKey <- paste("Edge Set",graphCtr )
+  edgeKey <- paste("EdgeSet",str_pad(graphCtr, numDigits, pad = "0" ), sep="")
     
   # Set up the edge sets
   edgeTargets <- as_edgelist(graph )
@@ -53,7 +64,11 @@ while( graphCtr < 11) {
                      weights=weights,
                      loci=loci2Use )
   
-  edgeSets[[edgeKey]] <- theEdges
+  jsonlite::write_json( theEdges, 
+                        path=paste(outDir,"/",edgeKey,".json", sep=""), 
+                        pretty=TRUE, 
+                        auto_unbox=TRUE )
+  
   
   # Increment the counters
   baseCtr <- windowStep + baseCtr
@@ -61,25 +76,17 @@ while( graphCtr < 11) {
 } 
 
 
-# Get the loci that were used and then save them as a 
+# Get the loci that were used and then save them as a CSV file
 df_snps |>
   head(n = (baseCtr + (windowStep-1))) |>
-  select( Name, Location, Ho, p, Hs, Ht ) -> loci 
+  select( Name, Location, Ho, p, Hs, Ht ) |>
+  write_csv( file=paste(outDir,"/loci.csv",sep="") )
+
+# Save CSV Output for Coordinates
+write_csv( df_coords, file=paste( outDir,"/nodes.csv",sep="") )
+
+zip(paste(outDir,".zip", sep=""), files = outDir ) 
 
 
-output <- list( nodes = list( Population = df_coords$Population,
-                              Latitude = df_coords$Latitude,
-                              Longitude = df_coords$Longitude, 
-                              Size = df_coords$NodeSize / length(edgeSets)),
-               loci = list( Name = loci$Name,
-                            Location = loci$Location,
-                            p = loci$p,
-                            Ho = loci$Ho,
-                            Hs = loci$Hs,
-                            Ht = loci$Ht),
-               edgesets = edgeSets )
-                              
-
-jsonlite::write_json( output, path="popgraphs.json", pretty = TRUE, auto_unbox=TRUE )
 
 
