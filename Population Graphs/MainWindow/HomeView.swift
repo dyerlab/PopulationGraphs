@@ -18,7 +18,7 @@ struct HomeView: View {
                 Text("The graph-theoretic shape of genetic structure")
                     .foregroundStyle(.secondary)
                     .font(.title3)
-                Text("https://dyerlab.org")
+                Text("https://dyerlab.com")
                     .font(.subheadline)
             }
             .padding()
