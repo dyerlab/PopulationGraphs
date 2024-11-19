@@ -1,14 +1,13 @@
 //
-//  PopulationGraphsUITestsLaunchTests.swift
-//  PopulationGraphsUITests
+//  popgraphUITestsLaunchTests.swift
+//  popgraphUITests
 //
-//  Created by Rodney Dyer on 2/18/24.
+//  Created by Rodney Dyer on 11/19/24.
 //
 
 import XCTest
 
-/*
-final class PopulationGraphsUITestsLaunchTests: XCTestCase {
+final class popgraphUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
@@ -18,6 +17,7 @@ final class PopulationGraphsUITestsLaunchTests: XCTestCase {
         continueAfterFailure = false
     }
 
+    @MainActor
     func testLaunch() throws {
         let app = XCUIApplication()
         app.launch()
@@ -31,5 +31,3 @@ final class PopulationGraphsUITestsLaunchTests: XCTestCase {
         add(attachment)
     }
 }
-*/
-

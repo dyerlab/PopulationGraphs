@@ -1,14 +1,13 @@
 //
-//  PopulationGraphsUITests.swift
-//  PopulationGraphsUITests
+//  popgraphUITests.swift
+//  popgraphUITests
 //
-//  Created by Rodney Dyer on 2/18/24.
+//  Created by Rodney Dyer on 11/19/24.
 //
 
 import XCTest
 
-/*
-final class PopulationGraphsUITests: XCTestCase {
+final class popgraphUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -23,6 +22,7 @@ final class PopulationGraphsUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    @MainActor
     func testExample() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
@@ -31,6 +31,7 @@ final class PopulationGraphsUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
+    @MainActor
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
             // This measures how long it takes to launch your application.
@@ -40,4 +41,3 @@ final class PopulationGraphsUITests: XCTestCase {
         }
     }
 }
-*/
