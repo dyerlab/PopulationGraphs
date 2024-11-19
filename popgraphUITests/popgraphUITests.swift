@@ -1,13 +1,25 @@
 //
+<<<<<<<< HEAD:popgraphUITests/popgraphUITests.swift
 //  popgraphUITests.swift
 //  popgraphUITests
 //
 //  Created by Rodney Dyer on 11/19/24.
+========
+//  Population_GraphsUITests.swift
+//  Population GraphsUITests
+//
+//  Created by Rodney Dyer on 3/15/24.
+>>>>>>>> c4cf66c925c0b8b7e5c2f1f4993b42dbe93dc927:Population GraphsUITests/Population_GraphsUITests.swift
 //
 
 import XCTest
 
+<<<<<<<< HEAD:popgraphUITests/popgraphUITests.swift
 final class popgraphUITests: XCTestCase {
+========
+/*
+final class Population_GraphsUITests: XCTestCase {
+>>>>>>>> c4cf66c925c0b8b7e5c2f1f4993b42dbe93dc927:Population GraphsUITests/Population_GraphsUITests.swift
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
