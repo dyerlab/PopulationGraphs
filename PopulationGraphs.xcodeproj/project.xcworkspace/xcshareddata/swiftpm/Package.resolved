@@ -1,0 +1,15 @@
+{
+  "originHash" : "b5bddf615b5432d57dea03a92ee64488be572ab59df32b0b86d7c69a175205c5",
+  "pins" : [
+    {
+      "identity" : "grape",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/li3zhen1/Grape",
+      "state" : {
+        "revision" : "fdae2ebfabcc10fe5530946d9b5ff9fb8f76dd8f",
+        "version" : "0.7.3"
+      }
+    }
+  ],
+  "version" : 3
+}
