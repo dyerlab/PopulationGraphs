@@ -8,7 +8,7 @@
 
 Current Version: ![](https://img.shields.io/github/v/tag/dyerlab/PopulationGraphs?color=green)
 
-This repository contains the code for the PopulationGraphs, an iOS/visionOS/MacOS application for the maintenance, archiving, analysis, and communication of landscape and population genetic data within population graphs.
+This repository contains the code for PopulationGraphs, an iOS/visionOS/MacOS application for maintaining, archiving, analyzing, and communicating landscape and population genetic data within population graphs.
 
 ![](https://live.staticflickr.com/65535/53557836045_596ec72acc_o_d.png)
 
