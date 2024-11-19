@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/li3zhen1/Grape",
       "state" : {
-        "revision" : "fdae2ebfabcc10fe5530946d9b5ff9fb8f76dd8f",
-        "version" : "0.7.3"
+        "revision" : "f1e05b9026851f2804f0a88b3324cef666fbdead",
+        "version" : "0.7.5"
       }
     },
     {
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/dyerlab/PresentationZen",
       "state" : {
-        "revision" : "fb7ca6c822d7ef6838328950c62f8ba0990732ee",
-        "version" : "1.0.1"
+        "revision" : "03f6cbb1807e29a0d8caba7acd40135253b795d6",
+        "version" : "1.0.8"
       }
     }
   ],
