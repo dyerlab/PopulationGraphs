@@ -8,6 +8,28 @@
 import SwiftUI
 import SwiftData
 
+
+struct ContentView: View {
+    @Environment(\.modelContext) private var modelContext
+    @Binding var document: PopGraphDocument
+    
+    
+    var body: some View {
+        VStack {
+            SpriteKitGraphView( graph: document.graph )
+        }
+
+    }
+}
+
+#Preview {
+    @Previewable @State var document = PopGraphDocument()
+    
+    ContentView(document: $document )
+        .modelContainer(for: Graph.self, inMemory: true)
+}
+
+/*
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
@@ -60,7 +82,10 @@ struct ContentView: View {
     }
 }
 
+ 
 #Preview {
     ContentView()
         .modelContainer(for: Item.self, inMemory: true)
 }
+
+*/

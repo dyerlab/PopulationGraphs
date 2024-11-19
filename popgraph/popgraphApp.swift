@@ -12,17 +12,19 @@ import UniformTypeIdentifiers
 @main
 struct popgraphApp: App {
     var body: some Scene {
-        DocumentGroup(editing: .itemDocument, migrationPlan: popgraphMigrationPlan.self) {
+        
+        DocumentGroup(newDocument: PopGraphDocument()) { file in
+            ContentView( document: file.$document )
+                .modelContainer(for: [Graph.self, Node.self, Edge.self])
+        }
+        /*
+        DocumentGroup(editing: .popgraphDocument, migrationPlan: popgraphMigrationPlan.self) {
             ContentView()
         }
+         */
     }
 }
 
-extension UTType {
-    static var itemDocument: UTType {
-        UTType(importedAs: "com.example.item-document")
-    }
-}
 
 struct popgraphMigrationPlan: SchemaMigrationPlan {
     static var schemas: [VersionedSchema.Type] = [
@@ -38,6 +40,10 @@ struct popgraphVersionedSchema: VersionedSchema {
     static var versionIdentifier = Schema.Version(1, 0, 0)
 
     static var models: [any PersistentModel.Type] = [
-        Item.self,
+        Graph.self,
+        Node.self,
+        Edge.self
     ]
 }
+
+
