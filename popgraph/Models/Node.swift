@@ -20,13 +20,13 @@ class Node: Identifiable, Codable  {
     var size: Double = 10
     var color: String
     
-    init(label: String, position: CGPoint, latitude: Double? = nil, longitude: Double? = nil, size: Double, color: Color = .blue ) {
+    init(label: String, size: Double,  color: Color = .blue, position: CGPoint? = nil , latitude: Double? = nil, longitude: Double? = nil ) {
         self.label = label
-        self.position = position
+        self.position = position ?? CGPoint(x: Double.random(in: 100...500), y: Double.random(in: 100...500))
         self.latitude = latitude
         self.longitude = longitude
         self.size = size
-        self.color = "#ccddaa"
+        self.color = color.toHex ?? "#ccddaa"
     }
     
     enum CodingKeys: String, CodingKey {

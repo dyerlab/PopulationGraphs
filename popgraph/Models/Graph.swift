@@ -17,7 +17,7 @@ class Graph: Identifiable, Codable  {
     init(){
         self.id = UUID()
         self.nodes = []
-        self.edges = [] 
+        self.edges = []
     }
     
     enum CodingKeys: String, CodingKey {
@@ -52,22 +52,21 @@ extension Graph {
         
         graph.nodes = [
             Node(label: "A",
+                 size: 12.0,
                  position: CGPoint( x: Double.random(in: 200...400),
-                                                y: Double.random(in: 200...400)),
-                 size: 12.0),
-            
+                                    y: Double.random(in: 200...400))),
             Node(label: "B",
+                 size: 12.0,
                  position: CGPoint( x: Double.random(in: 200...400),
-                                                y: Double.random(in: 200...400)),
-                 size: 20.0),
+                                    y: Double.random(in: 200...400))),
             Node(label: "C",
+                 size: 9.5,
                  position: CGPoint( x: Double.random(in: 200...400),
-                                                y: Double.random(in: 200...400)),
-                 size: 9.5),
+                                    y: Double.random(in: 200...400))),
             Node(label: "D",
+                 size: 11.3,
                  position: CGPoint( x: Double.random(in: 200...400),
-                                                y: Double.random(in: 200...400)),
-                 size: 11.3)
+                                    y: Double.random(in: 200...400)))
         ]
         
         graph.edges = [
