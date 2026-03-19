@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,7 +45,6 @@
 		2AAF3B062BA71C83009F494C /* LocalesMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF3B052BA71C83009F494C /* LocalesMap.swift */; };
 		2AAF3B092BA71D9A009F494C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF3B082BA71D9A009F494C /* Location.swift */; };
 		2AAF3B0B2BA7209A009F494C /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF3B0A2BA7209A009F494C /* Graph.swift */; };
-		2AF34E0B2BA878D8006A50A6 /* DLMatrix in Frameworks */ = {isa = PBXBuildFile; productRef = 2AF34E0A2BA878D8006A50A6 /* DLMatrix */; };
 		2AF34E0D2BA87A11006A50A6 /* GraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF34E0C2BA87A11006A50A6 /* GraphTests.swift */; };
 		2AF34E0F2BA87ED0006A50A6 /* SummaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF34E0E2BA87ED0006A50A6 /* SummaryDetailView.swift */; };
 		2AF34E112BA88302006A50A6 /* GraphDisplayModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF34E102BA88302006A50A6 /* GraphDisplayModule.swift */; };
@@ -145,7 +144,6 @@
 			files = (
 				2AFCAA432BA8D5B2006881D3 /* PresentationZen in Frameworks */,
 				2AF34E1A2BA88F16006A50A6 /* Grape in Frameworks */,
-				2AF34E0B2BA878D8006A50A6 /* DLMatrix in Frameworks */,
 				2AF34E182BA88F16006A50A6 /* ForceSimulation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,7 +395,6 @@
 			);
 			name = "Population Graphs";
 			packageProductDependencies = (
-				2AF34E0A2BA878D8006A50A6 /* DLMatrix */,
 				2AF34E172BA88F16006A50A6 /* ForceSimulation */,
 				2AF34E192BA88F16006A50A6 /* Grape */,
 				2AFCAA422BA8D5B2006881D3 /* PresentationZen */,
@@ -475,9 +472,9 @@
 			);
 			mainGroup = 2AAF3A882BA4D9A4009F494C;
 			packageReferences = (
-				2AF34E092BA878D8006A50A6 /* XCRemoteSwiftPackageReference "DLMatrix" */,
 				2AF34E162BA88F16006A50A6 /* XCRemoteSwiftPackageReference "Grape" */,
 				2AFCAA412BA8D5B2006881D3 /* XCRemoteSwiftPackageReference "PresentationZen" */,
+				2A07ED772F1528A20053D853 /* XCLocalSwiftPackageReference "../MatrixStuff" */,
 			);
 			productRefGroup = 2AAF3A922BA4D9A4009F494C /* Products */;
 			projectDirPath = "";
@@ -929,15 +926,14 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		2AF34E092BA878D8006A50A6 /* XCRemoteSwiftPackageReference "DLMatrix" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/dyerlab/DLMatrix";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 1.1.0;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		2A07ED772F1528A20053D853 /* XCLocalSwiftPackageReference "../MatrixStuff" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../MatrixStuff;
 		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
 		2AF34E162BA88F16006A50A6 /* XCRemoteSwiftPackageReference "Grape" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/li3zhen1/Grape";
@@ -957,11 +953,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2AF34E0A2BA878D8006A50A6 /* DLMatrix */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2AF34E092BA878D8006A50A6 /* XCRemoteSwiftPackageReference "DLMatrix" */;
-			productName = DLMatrix;
-		};
 		2AF34E172BA88F16006A50A6 /* ForceSimulation */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2AF34E162BA88F16006A50A6 /* XCRemoteSwiftPackageReference "Grape" */;

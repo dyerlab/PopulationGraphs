@@ -5,7 +5,7 @@
 //  Created by Rodney Dyer on 3/17/24.
 //
 
-import DLMatrix
+import MatrixStuff
 import Foundation
 
 class Graph {
